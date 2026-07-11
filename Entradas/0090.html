@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O surgimento de A Grande Onda</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: flex-start;     
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            /* Garante que os elementos flex internos respeitem o alinhamento central */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Garante que os parágrafos ocupem a largura total do container */
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        /* CENTRALIZAÇÃO DO TÍTULO DA TABELA E DA TABELA */
+        h2 {
+            text-align: center; 
+            margin-top: 40px;
+            color: #222;
+        }
+
+        table {
+            margin: 20px auto; 
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 500px; 
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8f8f8;
+        }
+
+        ul {
+            margin-bottom: 25px;
+            width: 100%;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        li p {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* --- ESTILOS PARA O VÍDEO RESPONSIVO --- */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            border-radius: 6px; /* Leve arredondamento para combinar com o layout */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- BOTÃO RETORNAR (Estilo SITEFELIPE) --- */
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .btn-retornar:hover {
+            background: #5c8ab3;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Ajustes Responsivos para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 25px 20px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+                padding-bottom: 15px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            table {
+                width: 100%; 
+            }
+
+            .btn-retornar {
+                padding: 8px 20px;
+                font-size: 0.85rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>O surgimento de A Grande Onda</h1>
+        <h3>11/07/2026 Metablog</h3>
+
+<p>Pois é, resolvi reformar o site novamente. Desta vez o motivo foi por entrar no grupo de blogueiros Entreblogs. Vi que um blog simplesmente com meu nome não tinha personalidade alguma. Além de soar meio egocêntrico. Portanto para solucionar isto resolvi mudar o nome.</p>
+
+<p>E foi algo dinâmico e simples, troque a imagem por uma que já tinha no meu banco de imagens. A Onda de Kanagawa, utilizada no post <a href="/Entradas/0068.html">#0068</a>. Troquei a imagem, gostei de como ficou, depois encaixei uma imagem de um quadro estilizado com a onda e me veio a ideia de chamar o blog de “A Grande Onda”.</p>
+
+<p>Claro que para isto eu deveria fazer alguns ajustes. Troquei o endereço do site para um github no meu email pessoal. Depois comprei um domínio www.a-grande-onda.blog.br e a partir dele fica mais fácil divulgar o blog para a meia dúzia de pessoas que lerá ele alguma vez na vida.</p>
+
+<p>Agora falta só eu configurar o indieweb, registrar o blog no blogroll.org e no powRSS. Ainda buscarei mais formas de interação com usuários em inglês, grupos como o Entreblogs devem existir em inglês, atualmente só conheço o coletivo indie Web.</p>
+
+<p>Troquei a cor do blog para azul, acho que fica melhor assim.</p>
+
+<p>Penso em nos próximos meses aprender HTML e CSS do zero no W3schools. Não parece impossível, mas tenho planos de montar um Digital Garden retrô no meu site principal. E dominar algumas edições para não depender de IA eu acho interessante.</p>
+
+<p>Vamos ver o que me aguardo nos próximos meses. Mês que vem tem BEDA (Blog Everyday August) vou participar escrevendo bastante e soltando as reviews que estão paradas e que quero exibir em momento oportuno.</p>
+
+<p>Enquanto isto, o blog funciona, só precisa de um bom conteúdo. Não sei por mais quanto temo este meu hiperfoco em blogs me manterá ativo nisto, mas estou gostando das descobertas atuais e de documentar meus achados aqui.</p>      
+        <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+    </div>
+</body>
+</html>
