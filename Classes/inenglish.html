@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Felipe Brasil Felicio</title>
+    
+    <style>
+        /* Estilos Globais baseados no SITEFELIPE */
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Segoe UI', sans-serif; 
+        }
+        
+        body { 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px; 
+            background-color: #f2f5f3; /* Fundo esverdeado claro do SITEFELIPE */
+            color: #1a1a1a; 
+        }
+
+        /* Container Principal (Estilo do Card do SITEFELIPE) */
+        .container { 
+            width: 100%;
+            max-width: 740px; 
+            background: #fff; 
+            padding: 30px; 
+            border-radius: 20px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Alinhamento do Contador de Visitas */
+        .contador-visitas {
+            margin-bottom: 15px;
+        }
+
+        /* Título do Blog (Estilo H1 do SITEFELIPE) */
+        h1 { 
+            font-size: 1.8rem; 
+            margin-bottom: 20px; 
+            color: #2d4a31; 
+            text-align: center;
+        }
+
+        /* --- GRUPO DE BOTÕES EM LINHA (SITEFELIPE) --- */
+        .menu-botoes {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 25px;
+        }
+
+        .btn-menu {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #7cb382;
+            color: #7cb382;
+            cursor: pointer;
+            flex: 1;
+            max-width: 120px;
+        }
+
+        .btn-menu:hover {
+            background: #7cb382;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Texto Introdutório */
+        .texto-introducao {
+            width: 100%;
+            text-align: justify;
+            line-height: 1.6;
+            color: #444;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .texto-introducao a {
+            text-decoration: underline;
+        }
+
+        /* Tabela Principal de Entradas (Estilo do SITEFELIPE) */
+        .tabela-principal {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1rem;
+            margin: 15px 0 10px 0;
+        }
+
+        .tabela-principal th, .tabela-principal td {
+            text-align: left;
+            padding: 12px 10px;
+            border-bottom: 1px solid #e8eee9;
+            color: #444;
+        }
+
+        .tabela-principal th {
+            color: #7cb382;
+            font-weight: 600;
+            background: transparent;
+            border-bottom: 2px solid #7cb382;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* Ajuste de larguras das colunas da tabela */
+        .tabela-principal td:nth-child(1) { width: 12%; color: #888; font-size: 0.9rem; }
+        .tabela-principal td:nth-child(2) { width: 50%; }
+        .tabela-principal td:nth-child(3) { width: 20%; }
+        .tabela-principal td:nth-child(4) { width: 18%; text-align: right; color: #666; }
+        .tabela-principal th:nth-child(4) { text-align: right; }
+
+        /* Links Gerais */
+        a { 
+            color: #7cb382; 
+            text-decoration: none; 
+            font-weight: 500; 
+        }
+        a:hover { 
+            text-decoration: underline; 
+            color: #5e8c63; 
+        }
+
+        /* --- BOTÃO RETORNAR (Estilo SITEFELIPE) --- */
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #7cb382;
+            color: #7cb382;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .btn-retornar:hover {
+            background: #7cb382;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .container { padding: 20px; border-radius: 12px; }
+            h1 { font-size: 1.5rem; }
+            .menu-botoes { gap: 6px; }
+            .btn-menu { padding: 8px 10px; font-size: 0.85rem; }
+            .tabela-principal { font-size: 0.85rem; }
+            .tabela-principal th, .tabela-principal td { padding: 8px 4px; }
+            .btn-retornar { padding: 8px 20px; font-size: 0.85rem; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="contador-visitas">
+    <img src="https://hitscounter.dev/api/hit?url=felipebrasilblog.github.io&label=Visitantes&icon=broadcast&color=%23198754&message=&style=social&tz=Brazil%2FEast" alt="Contador de Visitas">
+</div>
+
+<div class="container">
+    <h1>Blog posts in English</h1>
+
+    <div class="menu-botoes">
+        <a href="/Cabecalho/about.html" class="btn-menu">About</a>
+        <a href="/Cabecalho/temas.html" class="btn-menu">Tags</a>
+        <a href="/Cabecalho/arquivo.html" class="btn-menu">Archive</a>
+    </div>
+
+    <p class="texto-introducao">
+        Welcome to my posts written in English. Actually, there are 2 classes of posts that I write in English, this one and the <a href="/Classes/weeklynotes.html">Weekly Notes</a>. These are translations of posts I consider important, normally written in Portuguese, my mother language, translated to English by I.A. and reviewed by myself to express what I wrote in the original entry.
+    </p>
+
+    <table class="tabela-principal">
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Article</th>
+                <th>Category</th>
+                <th style="text-align: right;">Date</th>
+            </tr>
+        </thead>
+        <tbody>
+                     <tr>
+                <td>#0087</td>
+                <td><a href="/Entradas/0087.html">World Cup 2026 - Brazil is out</a></td>
+                <td><a href="/Classes/inenglish.html">In English</a></td>
+                <td style="text-align: right;">07/07/2026</td>
+            </tr>
+            <tr>
+                <td>#0081</td>
+                <td><a href="/Entradas/0081.html">Analog counterculture</a></td>
+                <td><a href="inenglish.html">In English</a></td>
+                <td style="text-align: right;">04/07/2026</td>
+            </tr>
+            <tr>
+                <td>#0071</td>
+                <td><a href="/Entradas/0071.html">BD-1</a></td>
+                <td><a href="inenglish.html">In English</a></td>
+                <td style="text-align: right;">20/06/2026</td>
+            </tr>
+             <tr>
+                <td>#0057</td>
+                <td><a href="/Entradas/0057.html">A.I. Free</a></td>
+                <td><a href="inenglish.html">In English</a></td>
+                <td style="text-align: right;">01/06/2026</td>
+            </tr>
+                   <tr>
+                <td>#0054</td>
+                <td><a href="/Entradas/0054.html">10 Things to do in 2026</a></td>
+                <td><a href="inenglish.html">In English</a></td>
+                <td style="text-align: right;">31/05/2026</td>
+            </tr>
+           <tr>
+                <td>#0045</td>
+                <td><a href="/Entradas/0045.html">Welcome on board</a></td>
+                <td><a href="inenglish.html">In English</a></td>
+                <td style="text-align: right;">24/05/2026</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="/index.html" class="btn-retornar">Home</a>
+</div>
+
+</body>
+</html>
