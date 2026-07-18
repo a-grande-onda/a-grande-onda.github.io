@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="icon" type="image/x-icon" href="/Imagens/favicon.png">
+
+    <meta property="og:site_name" content="A Grande Onda">
+<meta property="og:title" content="A Grande Onda" />
+<meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+<meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/agrandeondaminiatura.png" />
+<meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+    <title>Gastar com o que agora?</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: flex-start;     
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            /* Garante que os elementos flex internos respeitem o alinhamento central */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Garante que os parágrafos ocupem a largura total do container */
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        /* CENTRALIZAÇÃO DO TÍTULO DA TABELA E DA TABELA */
+        h2 {
+            text-align: center; 
+            margin-top: 40px;
+            color: #222;
+        }
+
+        table {
+            margin: 20px auto; 
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 500px; 
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8f8f8;
+        }
+
+        ul {
+            margin-bottom: 25px;
+            width: 100%;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        li p {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* --- ESTILOS PARA O VÍDEO RESPONSIVO --- */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            border-radius: 6px; /* Leve arredondamento para combinar com o layout */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- BOTÃO RETORNAR (Estilo SITEFELIPE) --- */
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .btn-retornar:hover {
+            background: #5c8ab3;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Ajustes Responsivos para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 25px 20px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+                padding-bottom: 15px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            table {
+                width: 100%; 
+            }
+
+            .btn-retornar {
+                padding: 8px 20px;
+                font-size: 0.85rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gastar com o que agora?</h1>
+        <h3>18/07/2026 Impressões</h3>
+
+<p>Pode parecer meio besta ficar programando a sua vida e os seus gastos, mas, para mim, faz todo o sentido.</p>
+
+<p>Desde que comecei a planejar o que quero gastar e quanto devo guardar mensalmente ou anualmente para atingir certo objetivo, minha vida mudou. Iniciei essa rotina na pandemia de 2020, época em que programei a troca de um notebook (o meu, na época, era de 2018 e ainda tinha tela HD e SSD de 120 GB). Programei a troca para 2024, considerando 6 anos um tempo razoável de uso do aparelho. Lembro que, na época, queria juntar 6 mil reais e comprar um notebook gamer (que custaria esse valor em 2024).</p>
+
+<p>Pois bem, programei-me, calculei a quantidade de dinheiro que deveria economizar e reservar para a compra. Criei uma caixinha de depósitos em CDB pagando 100% do CDI no Nubank para essa finalidade e, todo mês, colocava uma quantia reservada para esse fim.</p>
+
+<p>Eis que, em setembro de 2023, apareceu-me uma oportunidade muito boa: um Lenovo ThinkPad Gen 3, Ryzen 3 5300U, 8 GB de RAM e 256 GB de SSD. E eu tinha o dinheiro guardado para a compra! Na realidade, eu estava pensando em juntar 6 mil reais, mas esse notebook me custou R$ 2.200,00, novo! Resolvi até dar uma turbinada nele e instalei mais um SSD e mais memória. Uso esse aparelho desde 2023 e ele me atende muito bem. O meu antigo ainda consegui vender por 1.000 reais. Então, mirei em 6 mil, economizei 7 mil (com a venda do meu usado) e gastei cerca de 3 mil. Ou seja, 4 mil reais suavemente guardados porque eu realmente aproveitei essa promoção da Lenovo, que estava fora do comum.</p>
+
+<p>Desde esse sucesso com uma compra “cara” (sim, no meu padrão, considero qualquer coisa acima de 1.000 reais cara), resolvi fazer essas reservas para compras futuras. E, acredite ou não, é muito bom fazer isso. Principalmente pelo fato de que você passa a ter dinheiro guardado para aproveitar promoções, sem precisar retirar a quantia do seu fluxo mensal de gastos e movimentações. Está ali reservado, separado de tudo.</p>
+
+<p>Hoje, penso em comprar um notebook potente no futuro, acredito que daqui a 8 anos. Verei se consigo estender o uso do meu hardware atual até os meus 45 anos de idade, pelo menos, antes de comprar coisas novas. Pois bem, quero adquirir um notebook que hoje é considerado de ponta. O modelo que desejo custa, atualmente, 8 salários mínimos. Calculo a compra com base em salários mínimos porque esse valor teoricamente se ajusta com o tempo e, em 8 anos, representará praticamente o mesmo poder de compra.</p>
+
+<p>8 salários mínimos em 8 anos... significa que tenho que economizar ao menos 1 salário mínimo por ano. E sim, haverá os juros desse investimento; o valor que ultrapassar o preço do produto usarei para comprar algum periférico, um mouse, por exemplo.</p>
+
+<p>E assim vou levando: guardo e deixo reservado mensalmente um doze avos de um salário mínimo. Vai que daqui a 6 ou 7 anos acontece uma promoção imbatível do produto que quero ter? Terei 6 ou 7 salários mínimos para pagar no ato, sem precisar fazer cálculos extras, retirar de outros investimentos ou mexer no meu fundo de reserva.</p>
+
+<p>Só digo que tirar 14 ou 15 mil reais das finanças hoje para pagar à vista em um notebook é impraticável; faria um pequeno rombo nas minhas reservas. Agora, 120 a 130 reais por mês guardados é algo completamente possível.</p>
+
+<p>Então é isso, fica a dica para compras caras. Além de você comprar à vista e com desconto, ainda pode ficar de olho em ofertas quando o prazo limite estimado para a compra estiver chegando. E sim, é menos estresse: aportes pequenos por um longo período e sem afetar o resto do seu dinheiro.</p>
+
+<a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+
+<p>Se quiser comentar me manda um email -" felipefelicio@gmail.com " eu respondo sempre.</p>
+
+</div>
+
+    
+</body>
+</html>
