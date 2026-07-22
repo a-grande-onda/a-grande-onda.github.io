@@ -5,11 +5,22 @@
     <link>https://a-grande-onda.github.io</link>
     <description>Feed RSS de todas as postagens de A Grande Onda</description>
     <language>pt-br</language>
+        <item>
+      <title>#0101 - O centésimo post deste blog</title>
+      <link>https://a-grande-onda.github.io/Entradas/0101.html</link>
+      <guid isPermaLink="true">https://a-grande-onda.github.io/Entradas/0101.html</guid>
+      <category>Diário</category>
+      <pubDate>Quarta, 22 Jul 2026 00:00:00 -0300</pubDate>
+      <description>
+      <p>Detesto férias de meio de ano. Me planejo para fazer muitas coisas, mas não realizo nada. Acho que é a maldição das férias de julho que me assola desde quando eu era criança.</p><p>Nestas férias de 2026, tive exatamente 8 dias úteis de folga (os estudantes da escola têm 10 dias úteis). Bom, fui para Curitiba resolver pendências médicas. Não posso dizer que o tempo foi mal utilizado: fui a 3 consultas e fiz alguns exames.</p>
+         <p>Post completo no link</p>
+    </description>
+    </item> 
     <item>
       <title>#0100 - O centésimo post deste blog</title>
       <link>https://a-grande-onda.github.io/Entradas/0100.html</link>
       <guid isPermaLink="true">https://a-grande-onda.github.io/Entradas/0100.html</guid>
-      <category>Metablogotes</category>
+      <category>Metablog</category>
       <pubDate>Domingo, 19 Jul 2026 00:00:00 -0300</pubDate>
       <description>
       <p>Sim, o blog sobreviveu a 100 posts!</p>
