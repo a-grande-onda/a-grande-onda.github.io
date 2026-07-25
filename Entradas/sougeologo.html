@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sou um Geólogo?</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: flex-start;     
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            /* Garante que os elementos flex internos respeitem o alinhamento central */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Garante que os parágrafos ocupem a largura total do container */
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        /* CENTRALIZAÇÃO DO TÍTULO DA TABELA E DA TABELA */
+        h2 {
+            text-align: center; 
+            margin-top: 40px;
+            color: #222;
+        }
+
+        table {
+            margin: 20px auto; 
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 500px; 
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8f8f8;
+        }
+
+        ul {
+            margin-bottom: 25px;
+            width: 100%;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        li p {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* --- ESTILOS PARA O VÍDEO RESPONSIVO --- */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            border-radius: 6px; /* Leve arredondamento para combinar com o layout */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- BOTÃO RETORNAR (Estilo SITEFELIPE) --- */
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .btn-retornar:hover {
+            background: #5c8ab3;
+            color: #fff;
+            text-decoration: none;
+        }
+
+          /* --- BOTÃO DE CONTATO POR E-MAIL --- */
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* Espaço entre o ícone e o texto */
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background-color: #5c8ab3;
+            color: #fff;
+            border: 2px solid #5c8ab3;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+        }
+
+        .btn-email:hover {
+            background-color: #4a7296;
+            border-color: #4a7296;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+        }
+
+        .btn-email svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Ajustes Responsivos para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 25px 20px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+                padding-bottom: 15px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            table {
+                width: 100%; 
+            }
+
+            .btn-retornar {
+                padding: 8px 20px;
+                font-size: 0.85rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sou um Geólogo?</h1>
+        <h3>03/06/2026 Geo</h3>
+      
+<p>Esta pergunta me assola: sou um geólogo?</p>
+<p>Bom, eu fiquei 7 anos fazendo um curso de graduação, um bacharelado em Geologia na Universidade Federal do Paraná, de 2005 a 2012.</p>
+<p>Mas eu sou um geólogo? Nunca tive CREA, nunca trabalhei na área...</p>
+<p>Bom, o conhecimento do curso eu tive de forma completa. Fiz dois estágios, atuei com mapeamento de centrais hidrelétricas em Minas Gerais e com prospecção mineral em uma mina de ouro em Campo Largo (PR).</p>
+<p>Mas eu sou um geólogo? Fui ao Encontro Nacional de Estudantes de Geologia em 2007.</p>
+<p>E fiz todo o calvário que é o Trabalho de Conclusão de Curso: praticamente 30 dias em campo, análise química, laboratorial, elaboração de mapas e relatórios, etc. Realmente é um trabalho hercúleo para pouco resultado prático. Mas acho que todo TCC, no final das contas, é assim; só que este exige muito mais esforço físico em campo, passando dias no meio do mato, literalmente.</p>
+<p>Bom, gostei do curso? Até que gostei bastante. Ele me abriu muitas possibilidades; conheci várias cidades e estados brasileiros. Fui para Itu, Ilha do Mel, Ibaiti, Barra Velha, Lages, Caldas Novas, Campo Largo, São Joaquim, Ametista do Sul, Aparecida do Norte, Ouro Preto, Jaguariaíva, São Paulo, fora as dezenas de cidadezinhas pequenas de que nem me lembro... entre outras cidades com rochas de interesse para estudo. Normalmente, cada disciplina técnica tinha de 4 a 8 dias de campo viajando pelo Brasil no ônibus da universidade.</p>
+<p>Participei do grupo PET (Programa de Educação Tutorial), conheci muitas pessoas, fiz trabalhos e apresentei em congressos nacionais, entre outras coisas.</p>
+<p>Fui a dois Congressos Brasileiros de Geologia, em Aracaju (2006) e em Curitiba (2008), apresentando trabalhos. Participei de todos os EVINCI da UFPR que pude, evento de iniciação científica que centraliza as pesquisas da universidade.</p>
+<p>A universidade me possibilitou um intercâmbio para o Japão em 2008; viajei e fiquei 5 semanas fora. Também consegui publicar um trabalho no International Geological Congress, o maior congresso de geologia do mundo, em Oslo, na Noruega, em 2008. Publiquei e apresentei em inglês meu trabalho no congresso com bolsa; eles me pagaram tudo, menos a passagem de avião.</p>
+<p>No geral, foi uma boa experiência, mas eu sou um geólogo?</p>
+<p>Alguém que faz um curso e não atua na área tem esse título? Concluir uma graduação te faz um profissional da área? Tenho minhas dúvidas quanto a isso.</p>
+<p>Só sei que o curso de Geologia foi muito importante na minha vida, não só pelo conhecimento sobre a Terra, mas também pelas possibilidades que se abriram para mim nesse contexto. Embora hoje poucas amizades da época tenham ficado, estar naquela universidade vivenciando tudo isso, ainda mais em uma época pré-smartphones, foi ótimo.</p>
+<p>Sou geólogo? Não sei, mas a Geologia me tornou uma pessoa melhor.</p>
+
+        <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+
+          <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Comente me enviando um email
+        </a>
+    </div>
+</body>
+</html>
