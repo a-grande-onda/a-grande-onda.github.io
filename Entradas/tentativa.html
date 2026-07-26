@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="/Imagens/favicon.png">
+
+    <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="A Grande Onda" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/agrandeondaminiatura.png" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+    <title>Weekly Notes / Week#30 / 2026</title>
+    
+    <!-- Google Fonts para tipografia aprimorada -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-body: #f4f6f9;
+            --bg-card: #ffffff;
+            --text-main: #2d3748;
+            --text-muted: #718096;
+            --primary: #4a7296;
+            --primary-hover: #3b5c7a;
+            --accent: #5c8ab3;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.02);
+            --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.05);
+            
+            /* Cores do Xadrez */
+            --chess-bg: #1e293b;
+            --win-color: #10b981;
+            --draw-color: #94a3b8;
+            --loss-color: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            min-height: 100vh;
+            background-color: var(--bg-body);
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px 15px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 760px;
+            padding: 48px;
+            background-color: var(--bg-card);
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        /* Cabeçalho */
+        .header {
+            text-align: center;
+            border-bottom: 2px dashed var(--border-color);
+            padding-bottom: 28px;
+            margin-bottom: 32px;
+        }
+
+        h1 {
+            color: #1a202c;
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            line-height: 1.25;
+            margin-bottom: 8px;
+        }
+
+        .date-subtitle {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Conteúdo Principal */
+        p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            color: #4a5568;
+        }
+
+        p strong {
+            color: #1a202c;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
+
+        .score-badge {
+            display: inline-block;
+            background-color: #feefc3;
+            color: #b45309;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .section-title {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-size: 1.35rem;
+            color: #1a202c;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Mídias / Links */
+        .media-category {
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-top: 18px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        .media-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .media-list li {
+            margin-bottom: 10px;
+        }
+
+        .media-card-link {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.2s ease;
+        }
+
+        .media-card-link:hover {
+            background-color: #ffffff;
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            text-decoration: none;
+            color: var(--accent);
+        }
+
+        .media-card-link::before {
+            content: "↳";
+            margin-right: 12px;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        /* --- CARD DE XADREZ ESTILIZADO --- */
+        .chess-card {
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+            border-radius: 16px;
+            padding: 28px;
+            color: #ffffff;
+            margin: 25px 0 35px 0;
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chess-card::before {
+            content: "♟";
+            position: absolute;
+            right: -10px;
+            bottom: -20px;
+            font-size: 140px;
+            opacity: 0.04;
+            pointer-events: none;
+        }
+
+        .chess-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 14px;
+        }
+
+        .chess-header h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #f8fafc;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chess-platform {
+            font-size: 0.85rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 10px;
+            border-radius: 20px;
+            color: #cbd5e1;
+        }
+
+        .chess-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            text-align: center;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 14px 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+        }
+
+        .stat-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        .stat-box.win .stat-value { color: var(--win-color); }
+        .stat-box.draw .stat-value { color: var(--draw-color); }
+        .stat-box.loss .stat-value { color: var(--loss-color); }
+        .stat-box.total .stat-value { color: #f8fafc; }
+
+        /* Barra de Progresso do Xadrez */
+        .chess-progress {
+            margin-top: 20px;
+            height: 6px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+        }
+
+        .progress-bar.win { width: 54.1%; background-color: var(--win-color); }
+        .progress-bar.draw { width: 2.1%; background-color: var(--draw-color); }
+        .progress-bar.loss { width: 43.8%; background-color: var(--loss-color); }
+
+        /* Rodapé & Botões */
+        .footer-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 40px;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.25 ease;
+            cursor: pointer;
+        }
+
+        .btn-email {
+            background-color: var(--accent);
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 12px rgba(92, 138, 179, 0.25);
+        }
+
+        .btn-email:hover {
+            background-color: var(--primary-hover);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(92, 138, 179, 0.35);
+            text-decoration: none;
+        }
+
+        .btn-email svg {
+            fill: currentColor;
+            width: 18px;
+            height: 18px;
+        }
+
+        .btn-retornar {
+            background: transparent;
+            border: 2px solid var(--border-color);
+            color: var(--text-muted);
+        }
+
+        .btn-retornar:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background-color: #ffffff;
+            text-decoration: none;
+        }
+
+        /* Responsividade */
+        @media (max-width: 640px) {
+            .container {
+                padding: 24px 20px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .chess-stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .chess-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container">
+        <!-- Cabeçalho -->
+        <header class="header">
+            <h1>Weekly Notes / Week#30 / 2026</h1>
+            <h3>26/07/2026 Weekly Notes</h3></header>
+
+        <!-- Conteúdo do Blog -->
+        <p>This week was a complete mess <span class="score-badge">5/10</span>.</p>
+
+        <p>I traveled to Matinhos and had days off on Tuesday and Wednesday. During the last two days of the week, I had bureaucratic presentations and planning for my job at the school.</p>
+
+        <p>I made no major discoveries this week. The most amazing ones were the movie <strong>"Perfect Days"</strong> and the song <strong>"In the City"</strong> by Monari Wakita.</p>
+
+        <p>This week was incredibly boring, so I decided to write some posts in advance for my blog. Next month, the blogging group I participate in will have a challenge to post every single day. Because of this, I am drafting and keeping some posts ready for quick release if necessary.</p>
+
+        <p>I watched a new approach to personal study curriculums, a topic I’ve been studying lately. I also found a great video by Ashley, the autistic LEGO woman. Additionally, finding the Cybercops appearance on the GUGU show from 1994 was quite amazing.</p>
+
+        <p>As for blogs, I read a few this week, but I am mostly borrowing ideas for my own posts from <a href="https://pedro.dalbo.me/" target="_blank" rel="noopener">Ondeando by Pedro Dal Bó</a>.</p>
+
+        <p>Other than that, I am living on my own this week since my family is in the capital. The days feel too slow and cold, and things just don't seem to warm up. It is pretty lonely and boring, to say the least.</p>
+
+        <!-- Seção de Mídias -->
+        <h2 class="section-title">Medias I discovered this week</h2>
+        
+        <div class="media-category">Blogs</div>
+        <ul class="media-list">
+            <li>
+                <a href="https://pedro.dalbo.me/" target="_blank" rel="noopener" class="media-card-link">Ondeando by Pedro Dal Bó</a>
+            </li>
+        </ul>
+
+        <div class="media-category">Music</div>
+        <ul class="media-list">
+            <li>
+                <a href="https://youtu.be/cb1ZEdsOQMs?si=tQst676XnwbXuIiu" target="_blank" rel="noopener" class="media-card-link">脇田もなり - IN THE CITY (Official Music Video)</a>
+            </li>
+        </ul>
+
+        <div class="media-category">YouTube Videos</div>
+        <ul class="media-list">
+            <li>
+                <a href="https://youtu.be/afGC6iZ0XRw?si=el5VzakZvciIthYQ" target="_blank" rel="noopener" class="media-card-link">How to Create a Personal Curriculum 101 🎓 My First Term of Self-Directed Learning</a>
+            </li>
+            <li>
+                <a href="https://youtu.be/72WvTnZ7uv0?si=cpPdptxEhbwW78EZ" target="_blank" rel="noopener" class="media-card-link">Cybercops no Domingo Legal 1994</a>
+            </li>
+            <li>
+                <a href="https://youtu.be/u68r0Z3l2DI?si=d8P-AzGQ_2E2xn2L" target="_blank" rel="noopener" class="media-card-link">I'm 40... and I Miss When Gaming Felt Like This</a>
+            </li>
+        </ul>
+
+        <!-- Card Estilizado de Xadrez -->
+        <section class="chess-card">
+            <div class="chess-header">
+                <h4><span>♟</span> Chess Activity</h4>
+                <span class="chess-platform">lichess.org</span>
+            </div>
+            
+            <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 20px;">
+                I played 48 matches this week. Here is the breakdown:
+            </p>
+
+            <div class="chess-stats-grid">
+                <div class="stat-box win">
+                    <div class="stat-value">26</div>
+                    <div class="stat-label">Victories</div>
+                </div>
+                <div class="stat-box draw">
+                    <div class="stat-value">1</div>
+                    <div class="stat-label">Draws</div>
+                </div>
+                <div class="stat-box loss">
+                    <div class="stat-value">21</div>
+                    <div class="stat-label">Losses</div>
+                </div>
+                <div class="stat-box total">
+                    <div class="stat-value">48</div>
+                    <div class="stat-label">Total</div>
+                </div>
+            </div>
+
+            <!-- Barra Visual proporcional de vitórias/empates/derrotas -->
+            <div class="chess-progress" title="Aproveitamento Visual">
+                <div class="progress-bar win"></div>
+                <div class="progress-bar draw"></div>
+                <div class="progress-bar loss"></div>
+            </div>
+        </section>
+
+        <!-- Botões de Ação -->
+        <footer class="footer-actions">
+            <a href="mailto:felipefelicio@gmail.com" class="btn btn-email">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                Coment sending an e-mail
+            </a>
+            
+            <a href="/index.html" class="btn btn-retornar">Home</a>
+        </footer>
+    </main>
+
+</body>
+</html>
