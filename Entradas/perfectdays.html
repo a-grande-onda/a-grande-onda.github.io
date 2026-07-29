@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect Days (2023)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: flex-start;     
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            /* Garante que os elementos flex internos respeitem o alinhamento central */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Garante que os parágrafos ocupem a largura total do container */
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        /* CENTRALIZAÇÃO DO TÍTULO DA TABELA E DA TABELA */
+        h2 {
+            text-align: center; 
+            margin-top: 40px;
+            color: #222;
+        }
+
+        table {
+            margin: 20px auto; 
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 500px; 
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8f8f8;
+        }
+
+        ul {
+            margin-bottom: 25px;
+            width: 100%;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        li p {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* --- ESTILOS PARA O VÍDEO RESPONSIVO --- */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            border-radius: 6px; /* Leve arredondamento para combinar com o layout */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- BOTÃO RETORNAR (Estilo SITEFELIPE) --- */
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .btn-retornar:hover {
+            background: #5c8ab3;
+            color: #fff;
+            text-decoration: none;
+        }
+
+          /* --- BOTÃO DE CONTATO POR E-MAIL --- */
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* Espaço entre o ícone e o texto */
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background-color: #5c8ab3;
+            color: #fff;
+            border: 2px solid #5c8ab3;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+        }
+
+        .btn-email:hover {
+            background-color: #4a7296;
+            border-color: #4a7296;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+        }
+
+        .btn-email svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Ajustes Responsivos para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 25px 20px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+                padding-bottom: 15px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            table {
+                width: 100%; 
+            }
+
+            .btn-retornar {
+                padding: 8px 20px;
+                font-size: 0.85rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Perfect Days (2023)</h1>
+        <h3>03/06/2026 Filmes</h3>
+      
+<p>Perfect Days, ou Dias Perfeitos, é um filme dirigido por Wim Wenders que deu a Palma de Ouro ao ator protagonista Koji Yakusho em 2023.</p>
+    <p>É um filme inspirador, com múltiplas interpretações, mas, acima de tudo, é uma obra que corre contra a maré do mercado audiovisual atual, assim como seu personagem principal corre contra a maré da modernidade e dos padrões impostos pela sociedade.</p>
+    <p>A história é simples: acompanha os dias do senhor Hirayama, um homem na faixa dos 50 anos em Tóquio. Ele é um personagem metódico, cheio de rituais, que trabalha na limpeza de banheiros públicos da cidade. Vive sozinho em uma pequena casa, onde mantém algumas fitas cassete, alguns bonsais, livros e um rádio toca-fitas. É basicamente essa a vida de Hirayama: simples, analógica e deslocada da realidade rápida e ultratecnológica que o cerca.</p>
+    <p>O filme tem poucos personagens, mas todos eles têm suas intervenções na vida de Hirayama: o colega de trabalho e sua pretendente, sua sobrinha, sua irmã, os idosos com quem compartilha o ofurô, a vendedora de livros, o revelador de fotos e os proprietários de dois izakayas (bares japoneses) que ele frequenta. No final, outro personagem com uma mensagem importante entra em cena, mas não quero estragar a surpresa.</p>
+    <p>A vida de Hirayama traz consigo muitos ideais budistas, sendo o principal deles a vivência do presente. Em um momento com sua sobrinha, ela pergunta se, já que todos os rios vão para o mar, por que eles não iriam ao mar também. Ele responde que não, pois «o agora é o agora e o depois é o depois». Repete essa frase várias vezes, destacando que, para Hirayama, tudo é focado no presente, enquanto o futuro e novas descobertas terão de esperar. É um ideal budista mais do que evidente.</p>
+    <p>Alguns diriam que Hirayama é muito duro consigo mesmo e até estóico. Eu acho que não; ele desenvolveu essa habilidade após traumas familiares. O filme não explica os detalhes, mas nota-se que o limpador de banheiros veio de uma família abastada e, por conflitos familiares, deve ter resolvido optar por essa vida simples.</p>
+    <p>Não acredito que ele se prive de uma realidade além daquela em que está inserido. Ele parece fazer isso por opção, uma decisão pessoal e não algo imposto. Em diversos momentos do filme, ele fotografa a copa das árvores. Ao final do longa, é apresentada uma palavra em japonês (Komorebi) que se refere à luz do sol filtrada pelas folhas das árvores, um fenômeno visual único. Hirayama registra esse momento diariamente e cataloga as fotos impressas em seu armário.</p>
+    <p>Há também uma interpretação do Mito de Sísifo aplicada à rotina do personagem. A estrutura criada pelo cineasta é marcada pela repetição diária. O personagem está sempre focado em seu trabalho, dando o melhor de si para que possa dormir e acordar no dia seguinte com os mesmos objetivos e a mesma empolgação. Aparentemente, essa repetição permitiu ao personagem desenvolver uma estrutura própria para lidar com a existência: focar em seu trabalho e aproveitar a vida nos fins de semana, quando pega sua bicicleta para lavar roupas e comprar livros por 1 dólar.</p>
+    <p>Pessoalmente, achei que essa vida restrita ao momento presente pode ser uma prisão. Não acredito que isso se sustente a longo prazo, pois torna a pessoa menos flexível e adaptável a mudanças. Um pouco de fuga da rotina é necessário; no entanto, Hirayama frequenta sempre os mesmos lugares, vai ao mesmo bar, pede o mesmo prato, toma o mesmo copo d'água, consome o mesmo café gelado de máquina todos os dias e ouve as mesmas fitas cassete. Acredito que, embora essa carapaça proteja o personagem de sua realidade árdua, quando o inesperado ocorre, ele chora e se emociona (não apenas pelo evento em si, mas por perceber que algo fugiu do seu controle).</p>
+    <p>No final do filme, em um plano espetacular, ele parte para mais um dia. Mesmo sofrendo e sabendo que reviravoltas aconteceram, ele cumpre seu papel: trabalha e repete sua rotina, uma rotina que, para ele, é estática.</p>
+    <p>Embora a ideia de viver o momento seja sedutora, ela pode se tornar totalmente enclausurante. Viver também é ir até o oceano, em vez de apenas observá-lo do alto de uma ponte sem se arriscar, tudo em nome do conforto do agora.</p>
+
+        <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+
+          <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Comente me enviando um email
+
+                        <!-- begin wwww.htmlcommentbox.com -->
+ <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+ <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+ <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+<!-- end www.htmlcommentbox.com -->
+        </a>
+    </div>
+</body>
+</html>
