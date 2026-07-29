@@ -14,12 +14,6 @@
 
     <title>Caneca NDS Brasil e cartão MEMBRO GOLD</title>
     <style>
-        :root {
-            --win-color: #22c55e;
-            --draw-color: #f59e0b;
-            --loss-color: #ef4444;
-        }
-
         * {
             box-sizing: border-box;
         }
@@ -77,122 +71,29 @@
             width: 100%;
         }
 
-        /* --- CARD DE XADREZ ESTILIZADO --- */
-        .chess-card {
+        /* --- CONTAINER DE IMAGENS --- */
+        .container-imagem {
             width: 100%;
-            background: linear-gradient(145deg, #1e293b, #0f172a);
-            border-radius: 16px;
-            padding: 28px;
-            color: #ffffff;
-            margin: 25px 0 35px 0;
-            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .chess-card::before {
-            content: "♟";
-            position: absolute;
-            right: -10px;
-            bottom: -20px;
-            font-size: 140px;
-            opacity: 0.04;
-            pointer-events: none;
-        }
-
-        .chess-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             margin-bottom: 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 14px;
         }
 
-        .chess-header h4 {
-            margin: 0;
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: -0.3px;
-            color: #f8fafc;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .chess-platform {
-            font-size: 0.85rem;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 4px 10px;
-            border-radius: 20px;
-            color: #cbd5e1;
-        }
-
-        /* Estilo para o link do lichess ficar branco e sem sublinhado */
-        .chess-platform a {
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        .chess-platform a:hover {
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        .chess-stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            text-align: center;
-        }
-
-        .stat-box {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 14px 8px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(5px);
-        }
-
-        .stat-value {
-            font-size: 1.6rem;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .stat-label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-top: 4px;
-            color: #94a3b8;
-            font-weight: 600;
-        }
-
-        .stat-box.win .stat-value { color: var(--win-color); }
-        .stat-box.draw .stat-value { color: var(--draw-color); }
-        .stat-box.loss .stat-value { color: var(--loss-color); }
-        .stat-box.total .stat-value { color: #f8fafc; }
-
-        /* Barra de Progresso do Xadrez */
-        .chess-progress {
-            margin-top: 20px;
-            height: 6px;
+        .container-imagem a {
+            display: block;
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            display: flex;
-            overflow: hidden;
         }
 
-        .progress-bar {
-            height: 100%;
+        .container-imagem img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 6px;
+            transition: transform 0.3s ease, filter 0.3s ease;
         }
 
-        .progress-bar.win { width: 54.1%; background-color: var(--win-color); }
-        .progress-bar.draw { width: 2.1%; background-color: var(--draw-color); }
-        .progress-bar.loss { width: 43.8%; background-color: var(--loss-color); }
+        .container-imagem a:hover img {
+            transform: scale(1.01);
+            filter: brightness(0.9);
+        }
 
         /* --- BOTÃO DE CONTATO POR E-MAIL --- */
         .btn-email {
@@ -252,16 +153,6 @@
             color: #fff;
         }
 
-              .container-imagem a {
-            display: inline-block;
-            max-width: 100%;
-        }
-        
-        .container-imagem a:hover img {
-            transform: scale(1.01); /* Leve zoom ao passar o mouse */
-            filter: brightness(0.9); /* Escurece sutilmente */
-        }
-
         /* Ajustes para a caixa de comentários */
         #HCB_comment_box {
             width: 100%;
@@ -289,10 +180,6 @@
                 font-size: 1rem;
             }
 
-            .chess-stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
             .btn-retornar, .btn-email {
                 padding: 10px 20px;
                 font-size: 0.9rem;
@@ -306,25 +193,25 @@
         <h1>Caneca NDS Brasil e cartão MEMBRO GOLD</h1>
         <h3>01/08/2026 Objetos</h3>
 
-          <div class="container-imagem">
+        <div class="container-imagem">
             <a href="/Imagens/NDS1.jpg" target="_blank" rel="noopener noreferrer">
-                <img src="/Imagens/NDS1.jpg" alt="Quarto">
+                <img src="/Imagens/NDS1.jpg" alt="Caneca NDS Brasil 1">
             </a>
         </div>
 
         <div class="container-imagem">
             <a href="/Imagens/NDS2.jpg" target="_blank" rel="noopener noreferrer">
-                <img src="/Imagens/NDS2.jpg" alt="Quarto">
+                <img src="/Imagens/NDS2.jpg" alt="Caneca NDS Brasil 2">
             </a>
         </div>
 
         <div class="container-imagem">
             <a href="/Imagens/NDS3.jpg" target="_blank" rel="noopener noreferrer">
-                <img src="/Imagens/NDS3.jpg" alt="Quarto">
+                <img src="/Imagens/NDS3.jpg" alt="Cartão Membro Gold">
             </a>
         </div>
 
-     <p>Este objeto é simples: uma caneca de chopp de metal com a inscrição “1º Encontro Nacional NDS Brasil Membro Gold”.</p>
+        <p>Este objeto é simples: uma caneca de chopp de metal com a inscrição “1º Encontro Nacional NDS Brasil Membro Gold”.</p>
 
         <p>Esta caneca tem muita história por trás. O NDS Brasil era um fórum online de discussão sobre games, em especial sobre Nintendo DS. Entrei no fórum em 2006 para comprar um Nintendo DS e acabei ficando por lá.</p>
 
