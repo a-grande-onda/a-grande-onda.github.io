@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Os Melhores Jogos da Minha Infância e Adolescência</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --border-color: #e9ecef;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+            font-size: 2em;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            margin-top: 30px;
+            font-size: 1.4em;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        .game-list {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .game-item {
+            padding: 10px 15px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .game-item:last-child {
+            border-bottom: none;
+        }
+
+        .game-title {
+            font-weight: 600;
+        }
+
+        .platform-badge {
+            background-color: var(--border-color);
+            color: var(--primary-color);
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            .game-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Os Melhores Jogos da Minha Infância e Adolescência</h1>
+
+    <p>Vamos por partes. Nasci em 1988, e o recorte aqui abrange até meus 18 anos de idade, ou seja, de 1988 a 2006.</p>
+    
+    <p>Esta lista não representa os melhores jogos existentes nesse período, apenas aqueles que tive o prazer de jogar e que me marcaram. A maioria deles eu cheguei a terminar, em alguns fiz 100%, e outros joguei o suficiente para merecerem estar representados aqui.</p>
+
+    <p>Descrições detalhadas de cada um provavelmente aparecerão em algum momento neste blog, caso eu os jogue novamente. Minhas plataformas prioritárias quando criança foram o Super Nintendo, o Nintendo (NES) e o PC. Joguei um ou outro título na casa de amigos, mas esses três foram os que eu realmente possuí, além dos emuladores de PC que já existiam na época.</p>
+
+    <h2>Lista cronológica (de acordo com a ordem em que joguei, não ranqueada):</h2>
+
+    <ul class="game-list">
+        <!-- Atari -->
+        <li class="game-item"><span class="game-title">Pitfall!</span><span class="platform-badge">Atari 2600</span></li>
+        <li class="game-item"><span class="game-title">River Raid</span><span class="platform-badge">Atari 2600</span></li>
+        <li class="game-item"><span class="game-title">Enduro</span><span class="platform-badge">Atari 2600</span></li>
+
+        <!-- NES -->
+        <li class="game-item"><span class="game-title">Donkey Kong</span><span class="platform-badge">NES</span></li>
+        <li class="game-item"><span class="game-title">Mario Bros.</span><span class="platform-badge">NES</span></li>
+        <li class="game-item"><span class="game-title">Popeye</span><span class="platform-badge">NES</span></li>
+        <li class="game-item"><span class="game-title">BurgerTime</span><span class="platform-badge">NES</span></li>
+        <li class="game-item"><span class="game-title">Super Mario Bros.</span><span class="platform-badge">NES</span></li>
+        <li class="game-item"><span class="game-title">Super Mario Bros. 3</span><span class="platform-badge">NES</span></li>
+        <li class="game-item"><span class="game-title">Urban Champion</span><span class="platform-badge">NES</span></li>
+        <li class="game-item"><span class="game-title">Circus Charlie</span><span class="platform-badge">NES</span></li>
+        <li class="game-item"><span class="game-title">Contra</span><span class="platform-badge">NES</span></li>
+        <li class="game-item"><span class="game-title">Duck Hunt</span><span class="platform-badge">NES</span></li>
+        <li class="game-item"><span class="game-title">Excitebike</span><span class="platform-badge">NES</span></li>
+
+        <!-- Game Boy / Game Boy Color -->
+        <li class="game-item"><span class="game-title">Tetris</span><span class="platform-badge">NES / Game Boy</span></li>
+        <li class="game-item"><span class="game-title">Pokémon Red / Blue / Yellow</span><span class="platform-badge">Game Boy</span></li>
+        <li class="game-item"><span class="game-title">Pokémon Gold / Silver</span><span class="platform-badge">Game Boy Color</span></li>
+
+        <!-- SNES -->
+        <li class="game-item"><span class="game-title">Donkey Kong Country</span><span class="platform-badge">SNES</span></li>
+        <li class="game-item"><span class="game-title">Super Mario World</span><span class="platform-badge">SNES</span></li>
+        <li class="game-item"><span class="game-title">Super Mario World 2: Yoshi's Island</span><span class="platform-badge">SNES</span></li>
+        <li class="game-item"><span class="game-title">Ultimate Mortal Kombat 3</span><span class="platform-badge">SNES</span></li>
+        <li class="game-item"><span class="game-title">Blackthorne</span><span class="platform-badge">SNES</span></li>
+        <li class="game-item"><span class="game-title">The Mask</span><span class="platform-badge">SNES</span></li>
+        <li class="game-item"><span class="game-title">Sunset Riders</span><span class="platform-badge">SNES</span></li>
+        <li class="game-item"><span class="game-title">Donkey Kong Country 2: Diddy's Kong Quest</span><span class="platform-badge">SNES</span></li>
+        <li class="game-item"><span class="game-title">Donkey Kong Country 3: Dixie Kong's Double Trouble!</span><span class="platform-badge">SNES</span></li>
+        <li class="game-item"><span class="game-title">International Superstar Soccer Deluxe</span><span class="platform-badge">SNES</span></li>
+        <li class="game-item"><span class="game-title">The Legend of Zelda: A Link to the Past</span><span class="platform-badge">SNES</span></li>
+        <li class="game-item"><span class="game-title">Super Mario RPG: Legend of the Seven Stars</span><span class="platform-badge">SNES</span></li>
+        <li class="game-item"><span class="game-title">Tenchi Muyo! Game Hen</span><span class="platform-badge">SNES</span></li>
+        <li class="game-item"><span class="game-title">Rock N' Roll Racing</span><span class="platform-badge">SNES</span></li>
+        <li class="game-item"><span class="game-title">Top Gear 2</span><span class="platform-badge">SNES</span></li>
+        <li class="game-item"><span class="game-title">Super Mario Kart</span><span class="platform-badge">SNES</span></li>
+        <li class="game-item"><span class="game-title">Magic Knight Rayearth</span><span class="platform-badge">SNES</span></li>
+        <li class="game-item"><span class="game-title">Chrono Trigger</span><span class="platform-badge">SNES</span></li>
+
+        <!-- Nintendo 64 -->
+        <li class="game-item"><span class="game-title">Super Mario 64</span><span class="platform-badge">N64</span></li>
+        <li class="game-item"><span class="game-title">Perfect Dark</span><span class="platform-badge">N64</span></li>
+        <li class="game-item"><span class="game-title">Super Smash Bros.</span><span class="platform-badge">N64</span></li>
+
+        <!-- PC -->
+        <li class="game-item"><span class="game-title">Cool Spot</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Accolade's Winter Challenge</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Rodent's Revenge</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Cyrus 3D Chess</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">JezzBall</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Paciência (Solitaire)</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">FreeCell</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Time Commando</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Dark Reign: The Future of War</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Command & Conquer: Red Alert</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Doom</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Jonny Quest: Cover-Up at Roosevelt</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Duke Nukem 3D</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">World Cup 98</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Age of Empires II: The Age of Kings</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Commandos: Behind Enemy Lines</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Commandos 2: Men of Courage</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Commandos 3: Destination Berlin</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Tomb Raider</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Tomb Raider II</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Tomb Raider III: Adventures of Lara Croft</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">The Secret of Monkey Island</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Monkey Island 2: LeChuck's Revenge</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">The Curse of Monkey Island</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">King's Quest VII: The Princeless Bride / King's Quest: Mask of Eternity</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Age of Mythology</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Prince of Persia: The Sands of Time</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Prince of Persia: Warrior Within</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Need for Speed: Underground</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Need for Speed: Underground 2</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Beyond Good & Evil</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Full Throttle</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">The Dig</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">The Sims</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">The Sims 2</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">SimCity 2000</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Outlaws</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Full Tilt! Pinball (3D Pinball: Space Cadet)</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Chip's Challenge</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Magic: The Gathering (Shandalar)</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Dungeon Siege</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Grand Theft Auto: Vice City</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Half-Life</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Chessmaster 10th Edition</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">Lineage II</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">PangYa</span><span class="platform-badge">PC</span></li>
+        <li class="game-item"><span class="game-title">StarCraft</span><span class="platform-badge">PC</span></li>
+    </ul>
+</div>
+
+</body>
+</html>
