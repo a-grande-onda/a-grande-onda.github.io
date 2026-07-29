@@ -12,8 +12,14 @@
     <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/agrandeondaminiatura.png" />
     <meta property="og:type" content="https://a-grande-onda.blog.br/" />
 
-    <title>Prólogo BEDA 2026 - Samurai Sinewave</title>
+    <title>2026 Julho</title>
     <style>
+        :root {
+            --win-color: #22c55e;
+            --draw-color: #f59e0b;
+            --loss-color: #ef4444;
+        }
+
         * {
             box-sizing: border-box;
         }
@@ -71,12 +77,129 @@
             width: 100%;
         }
 
+        /* --- CARD DE XADREZ ESTILIZADO --- */
+        .chess-card {
+            width: 100%;
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+            border-radius: 16px;
+            padding: 28px;
+            color: #ffffff;
+            margin: 25px 0 35px 0;
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chess-card::before {
+            content: "♟";
+            position: absolute;
+            right: -10px;
+            bottom: -20px;
+            font-size: 140px;
+            opacity: 0.04;
+            pointer-events: none;
+        }
+
+        .chess-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 14px;
+        }
+
+        .chess-header h4 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #f8fafc;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chess-platform {
+            font-size: 0.85rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 10px;
+            border-radius: 20px;
+            color: #cbd5e1;
+        }
+
+        /* Estilo para o link do lichess ficar branco e sem sublinhado */
+        .chess-platform a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .chess-platform a:hover {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .chess-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            text-align: center;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 14px 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+        }
+
+        .stat-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        .stat-box.win .stat-value { color: var(--win-color); }
+        .stat-box.draw .stat-value { color: var(--draw-color); }
+        .stat-box.loss .stat-value { color: var(--loss-color); }
+        .stat-box.total .stat-value { color: #f8fafc; }
+
+        /* Barra de Progresso do Xadrez */
+        .chess-progress {
+            margin-top: 20px;
+            height: 6px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+        }
+
+        .progress-bar.win { width: 54.1%; background-color: var(--win-color); }
+        .progress-bar.draw { width: 2.1%; background-color: var(--draw-color); }
+        .progress-bar.loss { width: 43.8%; background-color: var(--loss-color); }
+
         /* --- BOTÃO DE CONTATO POR E-MAIL --- */
         .btn-email {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px; /* Espaço entre o ícone e o texto */
+            gap: 10px;
             padding: 12px 28px;
             border-radius: 10px;
             font-weight: bold;
@@ -87,7 +210,7 @@
             color: #fff;
             border: 2px solid #5c8ab3;
             cursor: pointer;
-            margin-top: 20px;
+            margin-top: 15px;
             margin-bottom: 10px;
             box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
         }
@@ -129,6 +252,12 @@
             color: #fff;
         }
 
+        /* Ajustes para a caixa de comentários */
+        #HCB_comment_box {
+            width: 100%;
+            margin-top: 30px;
+        }
+
         /* Ajustes Responsivos para Mobile */
         @media (max-width: 600px) {
             .container {
@@ -150,43 +279,84 @@
                 font-size: 1rem;
             }
 
+            .chess-stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .btn-retornar, .btn-email {
                 padding: 10px 20px;
                 font-size: 0.9rem;
-                width: 100%; /* Botões ocupam largura total no celular */
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Prólogo BEDA 2026 - Samurai Sinewave</h1>
-        <h3>29/07/2026 Metablog</h3>
+        <h1>2026 Julho</h1>
+        <h3>01/08/2026 Diário</h3>
 
-<p>Julho, um mês meh. A primeira semana foi a última semana do primeiro trimestre escolar. Tive que “dar um gás” nas pendências de atividades dos meus alunos na escola. Consegui concluir muita coisa e entregamos tudo antes do final da metade do trimestre.</p>
+        <p>Julho, um mês meh. A primeira semana foi a última semana do primeiro trimestre escolar. Tive que “dar um gás” nas pendências de atividades dos meus alunos na escola. Consegui concluir muita coisa e entregamos tudo antes do final da metade do trimestre.</p>
 
-<p>Na segunda semana, iniciaram-se as minhas duas semanas de férias e fui para Curitiba com meus pais. Fiquei na kitnet com eles, e é extremamente estressante aquele ambiente: é basicamente uma sala/cozinha de 5x5 metros, uma TV passando notícia ruim sem parar, e eu fico na mesa da cozinha com meu computador, mas é terrível quando comparado ao meu escritório/quarto. Lá nem quarto tenho; é um colchão no chão da sala para dormir e fica nisso mesmo.</p>
+        <p>Na segunda semana, iniciaram-se as minhas duas semanas de férias e fui para Curitiba com meus pais. Fiquei na kitnet com eles, e é extremamente estressante aquele ambiente: é basicamente uma sala/cozinha de 5x5 metros, uma TV passando notícia ruim sem parar, e eu fico na mesa da cozinha com meu computador, mas é terrível quando comparado ao meu escritório/quarto. Lá nem quarto tenho; é um colchão no chão da sala para dormir e fica nisso mesmo.</p>
 
-<p>Pessoalmente, acho que só gosto de Curitiba estando sozinho ou em períodos curtos. Morar lá em três pessoas em uma kitnet de 40 metros quadrados, sem chance. Parabéns para quem consegue; eu preciso de espaço.</p>
+        <p>Pessoalmente, acho que só gosto de Curitiba estando sozinho ou em períodos curtos. Morar lá em três pessoas em uma kitnet de 40 metros quadrados, sem chance. Parabéns para quem consegue; eu preciso de espaço e calma.</p>
 
-<p>Bom, estava em Curitiba, fiz meus exames e consultas médicas. Deu tudo certo, exceto que agora adicionei mais uma doença à minha lista: o glaucoma. Incurável, crônica… agora é só passar o colírio para evitar perdas maiores de visão. Cerca de 30% do olho esquerdo já foram para as cucuias.</p>
+        <p>Bom, estava em Curitiba, fiz meus exames e consultas médicas. Deu tudo certo, exceto que agora adicionei mais uma doença à minha lista: o glaucoma. Incurável, crônica… agora é só passar o colírio para evitar perdas maiores de visão. Cerca de 30% do olho esquerdo já foram para as cucuias.</p>
 
-<p>Na terça-feira, dia 21, voltei para Matinhos, sozinho. E sim, neste momento tive uma boa semana. Comi algumas marmitas, fiz macarrão, racionei comida porque não queria ir ao mercado… Tudo certo, ficar sozinho é ótimo.</p>
+        <p>Na terça-feira, dia 21, voltei para Matinhos, sozinho. E sim, neste momento tive uma boa semana. Comi algumas marmitas, fiz macarrão, racionei comida porque não queria ir ao mercado… Tudo certo, ficar sozinho é ótimo.</p>
 
-<p>Quanto a jogos, acabei gastando mais do que devia este mês com games. Foram cerca de 400 reais queimados de supetão na promoção da Steam em jogos que até agora não joguei nenhum. É aquela questão de comprar em busca de um acesso e, na hora de consumir, postergar para “quando eu estiver pronto para este jogo”.</p>
+        <p>Quanto a jogos, acabei gastando mais do que devia este mês com games. Foram cerca de 400 reais queimados de supetão na promoção da Steam em jogos que até agora não joguei nenhum. É aquela questão de comprar em busca de um acesso e, na hora de consumir, postergar para “quando eu estiver pronto para este jogo”.</p>
 
-<p>Assisti a um filme neste mês: Perfect Days. Muito bom! De início, achei uma obra-prima, mas, passados alguns dias, pensei em escrever um texto sobre ele e a empolgação se foi. Gostei do filme, certamente estaria na minha lista dos dez melhores que assisti. Mas, ao mesmo tempo, a minha primeira impressão foi muito acentuada; depois caí na real e comecei a achar defeitos na obra. Talvez reassistindo eu tenha uma resposta melhor. Contudo, o ator principal certamente mereceu a Palma de Ouro em Cannes, um trabalho exuberante.</p>
+        <p>Assisti a um filme neste mês: Perfect Days. Muito bom! De início, achei uma obra-prima, mas, passados alguns dias, pensei em escrever um texto sobre ele e a empolgação se foi. Gostei do filme, certamente estaria na minha lista dos dez melhores que assisti. Mas, ao mesmo tempo, a minha primeira impressão foi muito acentuada; depois caí na real e comecei a achar defeitos na obra. Talvez reassistindo eu tenha uma resposta melhor. Contudo, o ator principal certamente mereceu a Palma de Ouro em Cannes, um trabalho exuberante.</p>
 
-<p>Li também um livro do Caio Feijó sobre pedagogia. No geral, não gostei muito do livro. Achei os pontos discutidos meio fora da realidade, e ele realmente escrevia sem lugar de fala. Os problemas das escolas públicas existem desde sempre, mas ele não conseguia elaborar mais sobre o assunto porque sempre deu aula em escolas particulares. Achei válidos alguns pontos, mas o livro como um todo é de alguém que não viveu aquilo na pele. Seria como ler um livro escrito por uma pessoa branca destacando problemas relacionados ao racismo enfrentado por pessoas negras.</p>
+        <p>Li também um livro do Caio Feijó sobre pedagogia. No geral, não gostei muito do livro. Achei os pontos discutidos meio fora da realidade, e ele realmente escrevia sem lugar de fala. Os problemas das escolas públicas existem desde sempre, mas ele não conseguia elaborar mais sobre o assunto porque sempre deu aula em escolas particulares. Achei válidos alguns pontos, mas o livro como um todo é de alguém que não viveu aquilo na pele. Seria como ler um livro escrito por uma pessoa branca destacando problemas relacionados ao racismo enfrentado por pessoas negras.</p>
 
-<p>A parte boa de Julho foi ter descoberto o conceito de “currículo pessoal” por um vídeo do Odysseas e, depois de pesquisar melhor, vi que é uma tendência do TikTok de 2025. Achei a ideia de desenvolver um currículo pessoal de interesses e estudos muito boa. Estou pesquisando mais a fundo o conceito para depois desenvolver o meu formato. Esse processo de descoberta pode levar meses.</p>
+        <p>A parte boa de Julho foi ter descoberto o conceito de “currículo pessoal” por um vídeo do Odysseas e, depois de pesquisar melhor, vi que é uma tendência do TikTok de 2025. Achei a ideia de desenvolver um currículo pessoal de interesses e estudos muito boa. Estou pesquisando mais a fundo o conceito para depois desenvolver o meu formato. Esse processo de descoberta pode levar meses.</p>
 
-<p>Ouvi muito Legião Urbana neste mês. Quero postar sobre a banda em breve; devorei os discos e acompanhei as letras. Foi muito bom, e espero comunicar melhor minhas reações em um post agora em agosto.</p>
+        <p>Ouvi muito Legião Urbana neste mês. Quero postar sobre a banda em breve; devorei os discos e acompanhei as letras. Foi muito bom, e espero comunicar melhor minhas reações em um post agora em agosto.</p>
 
-<p>Em julho, entrei no grupo Entreblogs e comecei a divulgar meu blog online. Participo dos chats de WhatsApp do grupo também. Aparentemente, é um pessoal gente boa, sem grandes atritos no grupo, além de gente muito inteligente e dedicada. Também alcancei meu centésimo post no blog, o que para mim é uma grande vitória.</p>
+        <p>Em julho, entrei no grupo Entreblogs e comecei a divulgar meu blog online. Participo dos chats de WhatsApp do grupo também. Aparentemente, é um pessoal gente boa, sem grandes atritos no grupo, além de gente muito inteligente e dedicada. Também alcancei meu centésimo post no blog, o que para mim é uma grande vitória.</p>
 
-<p>No final do mês, retornaram as aulas na escola. Fui aos planejamentos escolares e participei do teatro (ou do circo, como preferir chamar). Está tudo bem, as aulas continuam e agosto será ótimo.</p>
+        <p>No final do mês, retornaram as aulas na escola. Fui aos planejamentos escolares e participei do teatro (ou do circo, como preferir chamar). Está tudo bem, as aulas continuam e agosto será ótimo.</p>
         
+        <!-- Card Estilizado de Xadrez -->
+        <section class="chess-card">
+            <div class="chess-header">
+                <h4><span>♟</span> Meu Xadrez no mês</h4>
+                <span class="chess-platform"><a href="https://lichess.org/@/prof_felipebrasil" target="_blank" rel="noopener noreferrer">lichess.org</a></span>
+            </div>
+            
+            <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 20px;">
+                Joguei 48 partidas este mês. Aqui está o resumo:
+            </p>
+
+            <div class="chess-stats-grid">
+                <div class="stat-box win">
+                    <div class="stat-value">26</div>
+                    <div class="stat-label">Vitórias</div>
+                </div>
+                <div class="stat-box draw">
+                    <div class="stat-value">1</div>
+                    <div class="stat-label">Empates</div>
+                </div>
+                <div class="stat-box loss">
+                    <div class="stat-value">21</div>
+                    <div class="stat-label">Derrotas</div>
+                </div>
+                <div class="stat-box total">
+                    <div class="stat-value">48</div>
+                    <div class="stat-label">Total</div>
+                </div>
+            </div>
+
+            <div class="chess-progress">
+                <div class="progress-bar win"></div>
+                <div class="progress-bar draw"></div>
+                <div class="progress-bar loss"></div>
+            </div>
+        </section>
+
         <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
 
         <!-- Botão de E-mail com ícone SVG centralizado -->
@@ -196,6 +366,13 @@
             </svg>
             Comente me enviando um email
         </a>
+
+        <!-- begin www.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+
     </div>
 </body>
 </html>
