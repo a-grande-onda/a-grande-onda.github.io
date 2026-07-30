@@ -1,145 +1,151 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="icon" type="image/x-icon" href="/Imagens/favicon.png">
-
-    <meta property="og:site_name" content="A Grande Onda">
-    <meta property="og:title" content="A Grande Onda" />
-    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
-    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/agrandeondaminiatura.png" />
-    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
-
-    <title>Os Melhores Jogos da Minha Infância e Adolescência</title>
+    <title>Temas | Blog de Felipe Brasil Felicio</title>
     <style>
-        * {
-            box-sizing: border-box;
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Segoe UI', sans-serif; 
         }
-
-        body, html {
-            min-height: 100vh; 
-            margin: 0;
+        
+        body { 
             display: flex;
-            justify-content: center; 
-            align-items: flex-start;     
-            background-color: #f0f0f0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.7;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px; 
+            background-color: #f2f5f3; 
+            color: #1a1a1a; 
         }
 
-        .container {
-            width: 90%;
-            max-width: 750px;
-            padding: 40px 50px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            text-align: left;
-            margin: 40px auto;
+        .contador-visitas {
+            margin-bottom: 15px;
+        }
+
+        /* Container Branco Principal unificado */
+        .container-principal {
+            width: 100%;
+            max-width: 820px; 
+            background: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        p {
-            width: 100%;
-            margin-bottom: 20px;
-            color: #333;
-            font-size: 1.1rem;
-        }
-
-        h1, h3 {
+        h1 { 
+            font-size: 1.8rem; 
+            margin-bottom: 25px; 
+            color: #2d4a31; 
             text-align: center;
         }
 
-        h1 {
-            color: #1a1a1a;
-            margin-bottom: 10px;
-            font-size: 2.5rem;
-            line-height: 1.2;
-        }
-
-        h3 {
-            font-weight: normal;
-            color: #666;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-            font-size: 1.2rem;
+        /* --- DISPOSIÇÃO DOS CARDS EM DUAS COLUNAS --- */
+        .grade-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
             width: 100%;
+            margin-bottom: 25px;
         }
 
-        /* --- ESTILOS DA LISTA DE JOGOS --- */
-        .game-list {
-            list-style-type: none;
-            padding: 0;
-            margin: 20px 0;
-            width: 100%;
-        }
-
-        .game-item {
-            padding: 12px 15px;
-            border-bottom: 1px solid #eee;
+        /* --- CARDS DE CATEGORIAS COMPACTOS --- */
+        .categoria-card { 
+            background: #fff; 
+            border-radius: 14px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            overflow: hidden; 
+            border: 1px solid #e2e8e4;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+        }
+        
+        .categoria-titulo { 
+            background: #5c8ab3; 
+            color: white; 
+            padding: 10px 15px; 
+            font-size: 0.95rem; 
+            font-weight: bold; 
+            display: flex; 
+            align-items: center; 
+            gap: 8px; 
         }
 
-        .game-item:last-child {
-            border-bottom: none;
-        }
-
-        .game-title {
-            font-weight: 600;
-            color: #2c3e50;
-        }
-
-        .platform-badge {
-            background-color: #eef2f7;
-            color: #5c8ab3;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border: 1px solid #d5e1ed;
-            white-space: nowrap;
-        }
-
-        /* --- BOTÃO DE CONTATO POR E-MAIL --- */
-        .btn-email {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px; /* Espaço entre o ícone e o texto */
-            padding: 12px 28px;
-            border-radius: 10px;
-            font-weight: bold;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: 0.3s;
-            background-color: #5c8ab3;
-            color: #fff;
-            border: 2px solid #5c8ab3;
-            cursor: pointer;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
-        }
-
-        .btn-email:hover {
-            background-color: #4a7296;
-            border-color: #4a7296;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
-        }
-
-        .btn-email svg {
-            fill: currentColor;
-            width: 20px;
+        .categoria-titulo img {
             height: 20px;
+            width: auto;
+            display: block;
+            border-radius: 2px;
         }
+        
+        /* Grade interna dos botões (2 colunas horizontais) */
+        .grade-temas { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 8px; 
+            padding: 12px; 
+            background: #fff;
+            flex-grow: 1;
+        }
+        
+        /* Botões padronizados no estilo do botão Educação */
+        .btn-tema { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            padding: 8px 6px; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            font-size: 0.85rem; 
+            text-decoration: none; 
+            color: #fff; 
+            transition: all 0.2s ease; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        
+        .btn-tema:hover { 
+            transform: translateY(-1px); 
+            box-shadow: 0 3px 6px rgba(0,0,0,0.08); 
+        }
+
+        /* --- PALETA DE CORES BASEADA NO PADRÃO DO BOTÃO EDUCAÇÃO --- */
+        .solido-verde { background-color: #7cb382; }
+        .solido-verde:hover { background-color: #629668; }
+        
+        .solido-azul { background-color: #5c8ab3; }
+        .solido-azul:hover { background-color: #436d94; }
+
+        .solido-vermelho { background-color: #cc6666; }
+        .solido-vermelho:hover { background-color: #b34d4d; }
+
+        .solido-laranja { background-color: #df8a57; }
+        .solido-laranja:hover { background-color: #c4703f; }
+
+        .solido-roxo { background-color: #9b7cb3; }
+        .solido-roxo:hover { background-color: #806296; }
+
+        .solido-ciano { background-color: #5ba3a3; }
+        .solido-ciano:hover { background-color: #3e8585; }
+
+        .solido-rosa { background-color: #c97280; }
+        .solido-rosa:hover { background-color: #ad5765; }
+
+        .solido-castanho { background-color: #b38461; }
+        .solido-castanho:hover { background-color: #966947; }
+
+        .solido-amarelo { background-color: #cca043; }
+        .solido-amarelo:hover { background-color: #b0852a; }
+
+        .solido-cinza { background-color: #6c757d; }
+        .solido-cinza:hover { background-color: #5a6268; }
 
         /* --- BOTÃO RETORNAR --- */
         .btn-retornar {
@@ -156,8 +162,7 @@
             border: 2px solid #5c8ab3;
             color: #5c8ab3;
             cursor: pointer;
-            margin-top: 25px;
-            margin-bottom: 5px;
+            margin-top: 5px;
         }
 
         .btn-retornar:hover {
@@ -165,162 +170,111 @@
             color: #fff;
         }
 
-        /* Ajustes Responsivos para Mobile */
-        @media (max-width: 600px) {
-            .container {
-                width: 95%;
-                padding: 25px 20px;
-                margin: 20px auto;
-            }
-            
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            h3 {
-                font-size: 1rem;
-                padding-bottom: 15px;
-            }
-
-            p {
-                font-size: 1rem;
-            }
-
-            .game-item {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 6px;
-            }
-
-            .btn-retornar, .btn-email {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-                width: 100%; /* Botões ocupam largura total no celular */
-            }
+        /* --- RESPONSIVIDADE ADAPTADA --- */
+        @media (max-width: 680px) {
+            body { padding: 10px; }
+            .container-principal { padding: 20px 15px; border-radius: 14px; }
+            h1 { font-size: 1.5rem; margin-bottom: 20px; }
+            .grade-cards { grid-template-columns: 1fr; gap: 15px; }
+            .grade-temas { padding: 10px; gap: 8px; }
+            .btn-tema { padding: 10px 4px; font-size: 0.85rem; }
+            .btn-retornar { padding: 10px 20px; font-size: 0.9rem; width: 100%; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Os Melhores Jogos da Minha Infância e Adolescência</h1>
-        <h3>29/07/2026 Games</h3>
 
-        <p>Vamos por partes. Nasci em 1988, e o recorte aqui abrange até meus 18 anos de idade, ou seja, de 1988 a 2006.</p>
+<div class="contador-visitas">
+    <img src="https://hitscounter.dev/api/hit?url=felipebrasilblog.github.io&label=Visitantes&icon=broadcast&color=%23198754&message=&style=social&tz=Brazil%2FEast" alt="Contador de Visitas">
+</div>
 
-        <p>Esta lista não representa os melhores jogos existentes nesse período, apenas aqueles que tive o prazer de jogar e que me marcaram. A maioria deles eu cheguei a terminar, em alguns fiz 100%, e outros joguei o suficiente para merecerem estar representados aqui.</p>
+<div class="container-principal">
+    <h1>Temas do Blog</h1>
 
-        <p>Descrições detalhadas de cada um provavelmente aparecerão em algum momento neste blog, caso eu os jogue novamente. Minhas plataformas prioritárias quando criança foram o Super Nintendo, o Nintendo (NES) e o PC. Joguei um ou outro título na casa de amigos, mas esses três foram os que eu realmente possuí, além dos emuladores de PC que já existiam na época.</p>
+    <div class="grade-cards">
+        <!-- Card 1: Educação & Ciências -->
+        <div class="categoria-card">
+            <div class="categoria-titulo">📁 Educação & Ciências</div>
+            <div class="grade-temas">
+                <a href="/Classes/educacao.html" class="btn-tema solido-verde">Educação</a>
+                <a href="/Classes/escola.html" class="btn-tema solido-rosa">Escola</a>
+                <a href="/Classes/pedagogia.html" class="btn-tema solido-laranja">Pedagogia</a>
+                <a href="/Classes/biologia.html" class="btn-tema solido-verde">Biologia</a>
+                <a href="/Classes/ciencias.html" class="btn-tema solido-azul">Ciências</a>
+                <a href="/Classes/geo.html" class="btn-tema solido-vermelho">Geo</a>
+            </div>
+        </div>
 
-        <p><strong>Lista cronológica (de acordo com a ordem em que joguei, não ranqueada):</strong></p>
+        <!-- Card 2: Cultura & Entretenimento -->
+        <div class="categoria-card">
+            <div class="categoria-titulo">🎬 Cultura & Entretenimento</div>
+            <div class="grade-temas">
+                <a href="/Classes/arte.html" class="btn-tema solido-ciano">Arte</a>
+                <a href="/Classes/musicas.html" class="btn-tema solido-laranja">Músicas</a>
+                <a href="/Classes/animes.html" class="btn-tema solido-castanho">Animes</a>
+                <a href="/Classes/filmes.html" class="btn-tema solido-amarelo">Filmes</a>
+                <a href="/Classes/series.html" class="btn-tema solido-cinza">Séries</a>
+                <a href="/Classes/quadrinhos.html" class="btn-tema solido-castanho">Quadrinhos</a>
+                <a href="/Classes/livros.html" class="btn-tema solido-rosa">Livros</a>
+                <a href="/Classes/youtube.html" class="btn-tema solido-amarelo">YouTube</a>
+            </div>
+        </div>
 
-        <ul class="game-list">
-            <!-- Atari -->
-            <li class="game-item"><span class="game-title">Pitfall!</span><span class="platform-badge">Atari 2600</span></li>
-            <li class="game-item"><span class="game-title">River Raid</span><span class="platform-badge">Atari 2600</span></li>
-            <li class="game-item"><span class="game-title">Enduro</span><span class="platform-badge">Atari 2600</span></li>
+        <!-- Card 3: Jogos & Cotidiano -->
+        <div class="categoria-card">
+            <div class="categoria-titulo">🕹️ Jogos & Cotidiano</div>
+            <div class="grade-temas">
+                <a href="/Classes/jogos.html" class="btn-tema solido-vermelho">Jogos</a>
+                <a href="/Classes/games.html" class="btn-tema solido-castanho">Games</a>
+                <a href="/Classes/xadrez.html" class="btn-tema solido-azul">Xadrez</a>
+                <a href="/Classes/objetos.html" class="btn-tema solido-roxo">Objetos</a>
+                <a href="/Classes/receitas.html" class="btn-tema solido-laranja">Receitas</a>
+                <a href="/Classes/lugares.html" class="btn-tema solido-verde">Lugares</a>
+            </div>
+        </div>
 
-            <!-- NES -->
-            <li class="game-item"><span class="game-title">Donkey Kong</span><span class="platform-badge">NES</span></li>
-            <li class="game-item"><span class="game-title">Mario Bros.</span><span class="platform-badge">NES</span></li>
-            <li class="game-item"><span class="game-title">Popeye</span><span class="platform-badge">NES</span></li>
-            <li class="game-item"><span class="game-title">BurgerTime</span><span class="platform-badge">NES</span></li>
-            <li class="game-item"><span class="game-title">Super Mario Bros.</span><span class="platform-badge">NES</span></li>
-            <li class="game-item"><span class="game-title">Super Mario Bros. 3</span><span class="platform-badge">NES</span></li>
-            <li class="game-item"><span class="game-title">Urban Champion</span><span class="platform-badge">NES</span></li>
-            <li class="game-item"><span class="game-title">Circus Charlie</span><span class="platform-badge">NES</span></li>
-            <li class="game-item"><span class="game-title">Contra</span><span class="platform-badge">NES</span></li>
-            <li class="game-item"><span class="game-title">Duck Hunt</span><span class="platform-badge">NES</span></li>
-            <li class="game-item"><span class="game-title">Excitebike</span><span class="platform-badge">NES</span></li>
+        <!-- Card 4: Reflexões & Registros -->
+        <div class="categoria-card">
+            <div class="categoria-titulo">✍️ Reflexões & Registros</div>
+            <div class="grade-temas">
+                <a href="/Classes/impressoes.html" class="btn-tema solido-azul">Impressões</a>
+                <a href="/Classes/cronicas.html" class="btn-tema solido-roxo">Crônicas</a>
+                <a href="/Classes/registros.html" class="btn-tema solido-laranja">Registros</a>
+                <a href="/Classes/metablog.html" class="btn-tema solido-vermelho">Metablog</a>
+                <a href="/Classes/tecnologia.html" class="btn-tema solido-ciano">Tecnologia</a>
+                <a href="/Classes/diario.html" class="btn-tema solido-roxo">Diário</a>
+                <a href="/Classes/perguntas.html" class="btn-tema solido-ciano">Perguntas</a>
+                <a href="/Classes/listas.html" class="btn-tema solido-rosa">Listas</a>
+            </div>
+        </div>
 
-            <!-- Game Boy / Game Boy Color -->
-            <li class="game-item"><span class="game-title">Tetris</span><span class="platform-badge">NES / Game Boy</span></li>
-            <li class="game-item"><span class="game-title">Pokémon Red / Blue / Yellow</span><span class="platform-badge">Game Boy</span></li>
-            <li class="game-item"><span class="game-title">Pokémon Gold / Silver</span><span class="platform-badge">Game Boy Color</span></li>
+        <!-- Card 5: Idiomas & Outros -->
+        <div class="categoria-card">
+            <div class="categoria-titulo">🌐 English posts & Language learn</div>
+            <div class="grade-temas">
+                <a href="/Classes/inenglish.html" class="btn-tema solido-cinza">In English</a>
+                <a href="/Classes/japones.html" class="btn-tema solido-ciano">Japonês</a>
+                <a href="/Classes/esperanto.html" class="btn-tema solido-verde">Esperanto</a>
+                <a href="/Classes/weeklynotes.html" class="btn-tema solido-azul">Weekly Notes</a>
+            </div>
+        </div>
 
-            <!-- SNES -->
-            <li class="game-item"><span class="game-title">Donkey Kong Country</span><span class="platform-badge">SNES</span></li>
-            <li class="game-item"><span class="game-title">Super Mario World</span><span class="platform-badge">SNES</span></li>
-            <li class="game-item"><span class="game-title">Super Mario World 2: Yoshi's Island</span><span class="platform-badge">SNES</span></li>
-            <li class="game-item"><span class="game-title">Ultimate Mortal Kombat 3</span><span class="platform-badge">SNES</span></li>
-            <li class="game-item"><span class="game-title">Blackthorne</span><span class="platform-badge">SNES</span></li>
-            <li class="game-item"><span class="game-title">The Mask</span><span class="platform-badge">SNES</span></li>
-            <li class="game-item"><span class="game-title">Sunset Riders</span><span class="platform-badge">SNES</span></li>
-            <li class="game-item"><span class="game-title">Donkey Kong Country 2: Diddy's Kong Quest</span><span class="platform-badge">SNES</span></li>
-            <li class="game-item"><span class="game-title">Donkey Kong Country 3: Dixie Kong's Double Trouble!</span><span class="platform-badge">SNES</span></li>
-            <li class="game-item"><span class="game-title">International Superstar Soccer Deluxe</span><span class="platform-badge">SNES</span></li>
-            <li class="game-item"><span class="game-title">The Legend of Zelda: A Link to the Past</span><span class="platform-badge">SNES</span></li>
-            <li class="game-item"><span class="game-title">Super Mario RPG: Legend of the Seven Stars</span><span class="platform-badge">SNES</span></li>
-            <li class="game-item"><span class="game-title">Tenchi Muyo! Game Hen</span><span class="platform-badge">SNES</span></li>
-            <li class="game-item"><span class="game-title">Rock N' Roll Racing</span><span class="platform-badge">SNES</span></li>
-            <li class="game-item"><span class="game-title">Top Gear 2</span><span class="platform-badge">SNES</span></li>
-            <li class="game-item"><span class="game-title">Super Mario Kart</span><span class="platform-badge">SNES</span></li>
-            <li class="game-item"><span class="game-title">Magic Knight Rayearth</span><span class="platform-badge">SNES</span></li>
-            <li class="game-item"><span class="game-title">Chrono Trigger</span><span class="platform-badge">SNES</span></li>
-
-            <!-- Nintendo 64 -->
-            <li class="game-item"><span class="game-title">Super Mario 64</span><span class="platform-badge">N64</span></li>
-            <li class="game-item"><span class="game-title">Perfect Dark</span><span class="platform-badge">N64</span></li>
-            <li class="game-item"><span class="game-title">Super Smash Bros.</span><span class="platform-badge">N64</span></li>
-
-            <!-- PC -->
-            <li class="game-item"><span class="game-title">Cool Spot</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Accolade's Winter Challenge</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Rodent's Revenge</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Cyrus 3D Chess</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">JezzBall</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Paciência (Solitaire)</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">FreeCell</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Time Commando</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Dark Reign: The Future of War</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Command & Conquer: Red Alert</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Doom</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Jonny Quest: Cover-Up at Roosevelt</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Duke Nukem 3D</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">World Cup 98</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Age of Empires II: The Age of Kings</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Commandos: Behind Enemy Lines</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Commandos 2: Men of Courage</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Commandos 3: Destination Berlin</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Tomb Raider</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Tomb Raider II</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Tomb Raider III: Adventures of Lara Croft</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">The Secret of Monkey Island</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Monkey Island 2: LeChuck's Revenge</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">The Curse of Monkey Island</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">King's Quest VII / King's Quest: Mask of Eternity</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Age of Mythology</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Prince of Persia: The Sands of Time</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Prince of Persia: Warrior Within</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Need for Speed: Underground</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Need for Speed: Underground 2</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Beyond Good & Evil</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Full Throttle</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">The Dig</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">The Sims</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">The Sims 2</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">SimCity 2000</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Outlaws</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Full Tilt! Pinball (3D Pinball: Space Cadet)</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Chip's Challenge</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Magic: The Gathering (Shandalar)</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Dungeon Siege</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Grand Theft Auto: Vice City</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Half-Life</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Chessmaster 10th Edition</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">Lineage II</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">PangYa</span><span class="platform-badge">PC</span></li>
-            <li class="game-item"><span class="game-title">StarCraft</span><span class="platform-badge">PC</span></li>
-        </ul>
-        
-        <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
-
-        <!-- Botão de E-mail com ícone SVG centralizado -->
-        <a href="mailto:felipefelicio@gmail.com" class="btn-email">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-            </svg>
-            Comente me enviando um email
-        </a>
+        <!-- Card 6: Entreblogs -->
+        <div class="categoria-card">
+            <div class="categoria-titulo">
+                <img src="https://entreblogs.com.br/assets/selo_1.0.gif" alt="Selo Entreblogs">
+                Entreblogs
+            </div>
+            <div class="grade-temas">
+                <a href="/Classes/beda.html" class="btn-tema solido-laranja">BEDA</a>
+                <a href="/Classes/tags.html" class="btn-tema solido-roxo">TAGs</a>
+                <a href="/Classes/clubedolivro.html" class="btn-tema solido-rosa">Clube do livro</a>
+            </div>
+        </div>
     </div>
+
+    <a href="/index.html" class="btn-retornar">Voltar para o Início / Home</a>
+</div>
+
 </body>
 </html>
