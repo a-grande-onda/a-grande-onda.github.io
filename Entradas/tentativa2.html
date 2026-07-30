@@ -1,280 +1,371 @@
-<!DOCTYPE html>
+```python
+html_content = """<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temas | Blog de Felipe Brasil Felicio</title>
+    <title>Os maiores quadros que vi ao vivo</title>
     <style>
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-            font-family: 'Segoe UI', sans-serif; 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
         }
-        
-        body { 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px; 
-            background-color: #f2f5f3; 
-            color: #1a1a1a; 
-        }
-
-        .contador-visitas {
-            margin-bottom: 15px;
-        }
-
-        /* Container Branco Principal unificado */
-        .container-principal {
-            width: 100%;
-            max-width: 820px; 
-            background: #fff;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        h1 { 
-            font-size: 1.8rem; 
-            margin-bottom: 25px; 
-            color: #2d4a31; 
+        h1 {
+            color: #1a1a1a;
+            border-bottom: 3px solid #e74c3c;
+            padding-bottom: 10px;
             text-align: center;
         }
-
-        /* --- DISPOSIÇÃO DOS CARDS EM DUAS COLUNAS --- */
-        .grade-cards {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            width: 100%;
-            margin-bottom: 25px;
-        }
-
-        /* --- CARDS DE CATEGORIAS COMPACTOS --- */
-        .categoria-card { 
-            background: #fff; 
-            border-radius: 14px; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            overflow: hidden; 
-            border: 1px solid #e2e8e4;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .categoria-titulo { 
-            background: #5c8ab3; 
-            color: white; 
-            padding: 10px 15px; 
-            font-size: 0.95rem; 
-            font-weight: bold; 
-            display: flex; 
-            align-items: center; 
-            gap: 8px; 
-        }
-
-        .categoria-titulo img {
-            height: 20px;
-            width: auto;
-            display: block;
-            border-radius: 2px;
-        }
-        
-        /* Grade interna dos botões (2 colunas horizontais) */
-        .grade-temas { 
-            display: grid; 
-            grid-template-columns: repeat(2, 1fr); 
-            gap: 8px; 
-            padding: 12px; 
+        .intro {
+            font-size: 1.1em;
             background: #fff;
-            flex-grow: 1;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
         }
-        
-        /* Botões padronizados no estilo do botão Educação */
-        .btn-tema { 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            text-align: center; 
-            padding: 8px 6px; 
-            border-radius: 8px; 
-            font-weight: bold; 
-            font-size: 0.85rem; 
-            text-decoration: none; 
-            color: #fff; 
-            transition: all 0.2s ease; 
-            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        .artwork-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            margin-bottom: 35px;
         }
-        
-        .btn-tema:hover { 
-            transform: translateY(-1px); 
-            box-shadow: 0 3px 6px rgba(0,0,0,0.08); 
-        }
-
-        /* --- PALETA DE CORES BASEADA NO PADRÃO DO BOTÃO EDUCAÇÃO --- */
-        .solido-verde { background-color: #7cb382; }
-        .solido-verde:hover { background-color: #629668; }
-        
-        .solido-azul { background-color: #5c8ab3; }
-        .solido-azul:hover { background-color: #436d94; }
-
-        .solido-vermelho { background-color: #cc6666; }
-        .solido-vermelho:hover { background-color: #b34d4d; }
-
-        .solido-laranja { background-color: #df8a57; }
-        .solido-laranja:hover { background-color: #c4703f; }
-
-        .solido-roxo { background-color: #9b7cb3; }
-        .solido-roxo:hover { background-color: #806296; }
-
-        .solido-ciano { background-color: #5ba3a3; }
-        .solido-ciano:hover { background-color: #3e8585; }
-
-        .solido-rosa { background-color: #c97280; }
-        .solido-rosa:hover { background-color: #ad5765; }
-
-        .solido-castanho { background-color: #b38461; }
-        .solido-castanho:hover { background-color: #966947; }
-
-        .solido-amarelo { background-color: #cca043; }
-        .solido-amarelo:hover { background-color: #b0852a; }
-
-        .solido-cinza { background-color: #6c757d; }
-        .solido-cinza:hover { background-color: #5a6268; }
-
-        /* --- BOTÃO RETORNAR --- */
-        .btn-retornar {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px 24px;
-            border-radius: 10px;
+        .artwork-title {
+            font-size: 1.3em;
             font-weight: bold;
-            font-size: 0.95rem;
-            text-decoration: none;
-            transition: 0.3s;
-            background: transparent;
-            border: 2px solid #5c8ab3;
-            color: #5c8ab3;
-            cursor: pointer;
-            margin-top: 5px;
+            color: #2c3e50;
+            padding: 15px 20px 5px 20px;
+            margin: 0;
         }
-
-        .btn-retornar:hover {
-            background: #5c8ab3;
-            color: #fff;
+        .artwork-img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: contain;
+            background-color: #000;
+            display: block;
         }
-
-        /* --- RESPONSIVIDADE ADAPTADA --- */
-        @media (max-width: 680px) {
-            body { padding: 10px; }
-            .container-principal { padding: 20px 15px; border-radius: 14px; }
-            h1 { font-size: 1.5rem; margin-bottom: 20px; }
-            .grade-cards { grid-template-columns: 1fr; gap: 15px; }
-            .grade-temas { padding: 10px; gap: 8px; }
-            .btn-tema { padding: 10px 4px; font-size: 0.85rem; }
-            .btn-retornar { padding: 10px 20px; font-size: 0.9rem; width: 100%; }
+        .artwork-description {
+            padding: 20px;
+            font-size: 1em;
+            color: #444;
+        }
+        .download-info {
+            background-color: #eef9ff;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin-top: 40px;
+            border-radius: 4px;
+        }
+        .download-info h3 {
+            margin-top: 0;
+            color: #2980b9;
+        }
+        .download-info ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+        .download-info li {
+            margin-bottom: 8px;
         }
     </style>
 </head>
 <body>
 
-<div class="contador-visitas">
-    <img src="https://hitscounter.dev/api/hit?url=felipebrasilblog.github.io&label=Visitantes&icon=broadcast&color=%23198754&message=&style=social&tz=Brazil%2FEast" alt="Contador de Visitas">
-</div>
+    <h1>Os maiores quadros que vi ao vivo</h1>
 
-<div class="container-principal">
-    <h1>Temas do Blog</h1>
+    <div class="intro">
+        <p>Pinturas: não sou entendido de arte, mas algumas realmente nos tocam. Mesmo impressas em um livro, em uma imagem na pesquisa online ou como um símbolo para você. Tive o prazer de visitar alguns museus em minha breve vida e tive contato com vários quadros incríveis. Aqui listo o meu top 7 — as sete reações de "WOW!!" que tive em museus pelo mundo.</p>
+    </div>
 
-    <div class="grade-cards">
-        <!-- Card 1: Educação & Ciências -->
-        <div class="categoria-card">
-            <div class="categoria-titulo">📁 Educação & Ciências</div>
-            <div class="grade-temas">
-                <a href="/Classes/educacao.html" class="btn-tema solido-verde">Educação</a>
-                <a href="/Classes/escola.html" class="btn-tema solido-rosa">Escola</a>
-                <a href="/Classes/pedagogia.html" class="btn-tema solido-laranja">Pedagogia</a>
-                <a href="/Classes/biologia.html" class="btn-tema solido-verde">Biologia</a>
-                <a href="/Classes/ciencias.html" class="btn-tema solido-azul">Ciências</a>
-                <a href="/Classes/geo.html" class="btn-tema solido-vermelho">Geo</a>
-            </div>
-        </div>
-
-        <!-- Card 2: Cultura & Entretenimento -->
-        <div class="categoria-card">
-            <div class="categoria-titulo">🎬 Cultura & Entretenimento</div>
-            <div class="grade-temas">
-                <a href="/Classes/arte.html" class="btn-tema solido-ciano">Arte</a>
-                <a href="/Classes/musicas.html" class="btn-tema solido-laranja">Músicas</a>
-                <a href="/Classes/animes.html" class="btn-tema solido-castanho">Animes</a>
-                <a href="/Classes/filmes.html" class="btn-tema solido-amarelo">Filmes</a>
-                <a href="/Classes/series.html" class="btn-tema solido-cinza">Séries</a>
-                <a href="/Classes/quadrinhos.html" class="btn-tema solido-castanho">Quadrinhos</a>
-                <a href="/Classes/livros.html" class="btn-tema solido-rosa">Livros</a>
-                <a href="/Classes/youtube.html" class="btn-tema solido-amarelo">YouTube</a>
-            </div>
-        </div>
-
-        <!-- Card 3: Jogos & Cotidiano -->
-        <div class="categoria-card">
-            <div class="categoria-titulo">🕹️ Jogos & Cotidiano</div>
-            <div class="grade-temas">
-                <a href="/Classes/jogos.html" class="btn-tema solido-vermelho">Jogos</a>
-                <a href="/Classes/games.html" class="btn-tema solido-castanho">Games</a>
-                <a href="/Classes/xadrez.html" class="btn-tema solido-azul">Xadrez</a>
-                <a href="/Classes/objetos.html" class="btn-tema solido-roxo">Objetos</a>
-                <a href="/Classes/receitas.html" class="btn-tema solido-laranja">Receitas</a>
-                <a href="/Classes/lugares.html" class="btn-tema solido-verde">Lugares</a>
-            </div>
-        </div>
-
-        <!-- Card 4: Reflexões & Registros -->
-        <div class="categoria-card">
-            <div class="categoria-titulo">✍️ Reflexões & Registros</div>
-            <div class="grade-temas">
-                <a href="/Classes/impressoes.html" class="btn-tema solido-azul">Impressões</a>
-                <a href="/Classes/cronicas.html" class="btn-tema solido-roxo">Crônicas</a>
-                <a href="/Classes/registros.html" class="btn-tema solido-laranja">Registros</a>
-                <a href="/Classes/metablog.html" class="btn-tema solido-vermelho">Metablog</a>
-                <a href="/Classes/tecnologia.html" class="btn-tema solido-ciano">Tecnologia</a>
-                <a href="/Classes/diario.html" class="btn-tema solido-roxo">Diário</a>
-                <a href="/Classes/perguntas.html" class="btn-tema solido-ciano">Perguntas</a>
-                <a href="/Classes/listas.html" class="btn-tema solido-rosa">Listas</a>
-            </div>
-        </div>
-
-        <!-- Card 5: Idiomas & Outros -->
-        <div class="categoria-card">
-            <div class="categoria-titulo">🌐 English posts & Language learn</div>
-            <div class="grade-temas">
-                <a href="/Classes/inenglish.html" class="btn-tema solido-cinza">In English</a>
-                <a href="/Classes/japones.html" class="btn-tema solido-ciano">Japonês</a>
-                <a href="/Classes/esperanto.html" class="btn-tema solido-verde">Esperanto</a>
-                <a href="/Classes/weeklynotes.html" class="btn-tema solido-azul">Weekly Notes</a>
-            </div>
-        </div>
-
-        <!-- Card 6: Entreblogs -->
-        <div class="categoria-card">
-            <div class="categoria-titulo">
-                <img src="https://entreblogs.com.br/assets/selo_1.0.gif" alt="Selo Entreblogs">
-                Entreblogs
-            </div>
-            <div class="grade-temas">
-                <a href="/Classes/beda.html" class="btn-tema solido-laranja">BEDA</a>
-                <a href="/Classes/tags.html" class="btn-tema solido-roxo">TAGs</a>
-                <a href="/Classes/clubedolivro.html" class="btn-tema solido-rosa">Clube do livro</a>
-            </div>
+    <!-- 1. Os Retirantes -->
+    <div class="artwork-card">
+        <h2 class="artwork-title">1 – Os Retirantes (Cândido Portinari) – MASP São Paulo (2007)</h2>
+        <img class="artwork-img" src="http://googleusercontent.com/image_collection/image_retrieval/16252981440684718700_0" alt="Os Retirantes - Cândido Portinari">
+        <div class="artwork-description">
+            Este quadro emblemático dos retirantes sempre me era mostrado nas aulas de Arte na escola. <em>Os Retirantes</em> é fruto de uma visão humanizada de Portinari sobre os problemas sociais e as aflições do povo brasileiro. É simplesmente uma das obras que impressionam pelo tamanho e pela profundidade. Lembro que no MASP dei mais valor a ela do que ao Botticelli que eles têm por lá. Para mim, <em>Os Retirantes</em> foi o ápice da minha visita ao MASP em 2007.
         </div>
     </div>
 
-    <a href="/index.html" class="btn-retornar">Voltar para o Início / Home</a>
-</div>
+    <!-- 2. Tarsila do Amaral -->
+    <div class="artwork-card">
+        <h2 class="artwork-title">2 – Abaporu / A Negra / Operários (Tarsila do Amaral) – Pinacoteca de SP (2008)</h2>
+        <img class="artwork-img" src="http://googleusercontent.com/image_collection/image_retrieval/9620193868670120937_0" alt="Abaporu - Tarsila do Amaral">
+        <div class="artwork-description">
+            Uma exposição só com quadros da Tarsila do Amaral, originais, em 2008, quando eu morei em São Paulo para fazer um estágio. Bom, sobre a Tarsila não preciso nem comentar. Acho as cores fabulosas demais, os degradês, as composições e os detalhes da geometria, fora a sua importância entre os modernistas, que é absurda. A exposição fazia fila para entrar e foi uma das obras de arte brasileira que mais me impressionaram.
+        </div>
+    </div>
+
+    <!-- 3. Hokusai -->
+    <div class="artwork-card">
+        <h2 class="artwork-title">3 – Trinta e seis vistas do Monte Fuji (Katsushika Hokusai) – Museu Oscar Niemeyer (2008)</h2>
+        <img class="artwork-img" src="http://googleusercontent.com/image_collection/image_retrieval/13931895304051482379_0" alt="A Grande Onda de Kanagawa - Hokusai">
+        <div class="artwork-description">
+            Em 2008 completavam-se 100 anos da imigração japonesa no Brasil, e o Museu Imperial do Japão trouxe para o MON, em Curitiba, uma série de obras da cultura japonesa para apreciação. Entre elas, vários exemplares de xilogravuras de Hokusai. <em>As Trinta e Seis Vistas do Monte Fuji</em> é seu maior trabalho: 36 quadros <em>ukiyo-e</em>, incluindo entre eles <em>A Grande Onda de Kanagawa</em> e o <em>Fuji Vermelho</em>, meus favoritos. Xilogravuras são produzidas em massa, não são um exemplar único, mas mesmo assim achei o contato com estes “originais do Museu Imperial do Japão” fabuloso.
+        </div>
+    </div>
+
+    <!-- 4. O Grito -->
+    <div class="artwork-card">
+        <h2 class="artwork-title">4 – O Grito (Edvard Munch) – Galeria Nacional de Oslo / Museu Munch (2008)</h2>
+        <img class="artwork-img" src="http://googleusercontent.com/image_collection/image_retrieval/1690265792370011440_0" alt="O Grito - Edvard Munch">
+        <div class="artwork-description">
+            Você sabia que <em>O Grito</em> tem 4 versões? Vi duas delas no Museu Munch e a mais famosa na Galeria Nacional de Oslo. Inicialmente vi na Galeria Nacional de Oslo; depois fiquei em dúvida... se <em>O Grito</em> está aqui, o que é que tem de bom no Museu Munch? Fui lá e tinha mais dois quadros. Perguntei no museu qual era o real e me disseram que as 3 versões eram reais e estavam em Oslo. Disseram-me também que duas já foram roubadas (em 1994 e 2004), mas já haviam retornado ao museu.
+        </div>
+    </div>
+
+    <!-- 5. Van Gogh -->
+    <div class="artwork-card">
+        <h2 class="artwork-title">5 – Os Girassóis / Autorretrato / O Quarto (Vincent van Gogh) – Museu Van Gogh Amsterdã (2011)</h2>
+        <img class="artwork-img" src="http://googleusercontent.com/image_collection/image_retrieval/15457286426516074539_0" alt="Girassóis - Vincent van Gogh">
+        <div class="artwork-description">
+            O Museu Van Gogh é absurdo. Eu achava que encontraria <em>A Noite Estrelada</em> lá, mas este quadro está no MoMA, em Nova York. No entanto, o restante da obra do pintor está quase completo no Museu Van Gogh. Os quadros que mais me marcaram foram <em>Os Girassóis</em> (e uma série extensa de quadros florais dele, incluindo <em>Amendoeira em Flor</em>), <em>O Quarto</em> (acho que existem 3 versões deste quadro, com pequenas diferenças entre elas; uma delas estava no museu), as recriações de pinturas <em>ukiyo-e</em> japonesas chamadas <em>Japonaiserie</em>, <em>A Ponte sob a Chuva</em> (original de Hiroshige) e dois autorretratos dele: um com chapéu, mais novo, e o icônico quadro pós-corte da orelha, com o pintor mais velho.
+        </div>
+    </div>
+
+    <!-- 6. A Escola de Atenas -->
+    <div class="artwork-card">
+        <h2 class="artwork-title">6 – A Escola de Atenas (Rafael Sanzio) – Museus do Vaticano (2016)</h2>
+        <img class="artwork-img" src="http://googleusercontent.com/image_collection/image_retrieval/13853057418762934460_0" alt="A Escola de Atenas - Rafael Sanzio">
+        <div class="artwork-description">
+            Esta aqui é surpreendente, principalmente porque você não está esperando por ela. Você está andando por salas centenárias, observando obras magníficas e, de repente, em uma sala pequena, você entra, olha para o lado e lá está <em>A Escola de Atenas</em>!! Foi uma das maiores surpresas que tive na vida. É simplesmente um dos afrescos que eu sempre quis ver, e ao vivo a sensação é outra. Estar no mesmo ambiente em que foi pintada, pensar em quantas pessoas passaram por ali, naquela salinha — reis, papas, pessoas importantes, famosas, pintores, artistas... E uma obra com simples 500 anos de idade, da época em que os portugueses aportavam em nosso território.
+        </div>
+    </div>
+
+    <!-- 7. Capela Sistina -->
+    <div class="artwork-card">
+        <h2 class="artwork-title">7 – O Teto da Capela Sistina / A Criação de Adão (Michelangelo) – Museus do Vaticano (2016)</h2>
+        <img class="artwork-img" src="http://googleusercontent.com/image_collection/image_retrieval/10907156744319408985_0" alt="A Criação de Adão - Michelangelo">
+        <div class="artwork-description">
+            A saída do Museu do Vaticano é por uma pequena porta. Mas, quando você a abre, dá de cara com a Capela Sistina. Olha para cima e lá está <em>A Criação de Adão</em>. Esta obra levou 4 anos para ser pintada por Michelangelo e representa várias passagens do Gênesis ao Juízo Final Bíblico. Infelizmente não deixam você ficar muito tempo lá observando. É olhar (sem tirar fotos) e depois sair pela porta que dá para fora do Museu do Vaticano.
+        </div>
+    </div>
+
+    <div class="download-info">
+        <h3>Onde baixar as fotos em alta resolução (Domínio Público):</h3>
+        <ul>
+            <li><strong>Os Retirantes (Cândido Portinari):</strong> Disponível no acervo digital oficial do <strong>MASP</strong> (masp.org.br) e na plataforma <strong>Google Arts & Culture</strong>.</li>
+            <li><strong>Abaporu (Tarsila do Amaral):</strong> Disponível em alta definição na <strong>Wikimedia Commons</strong> e na <strong>Google Arts & Culture</strong> (Acervo MALBA / Pinacoteca).</li>
+            <li><strong>A Grande Onda de Kanagawa (Hokusai):</strong> Download gratuito em ultra-alta resolução no <strong>Metropolitan Museum of Art (metmuseum.org)</strong>, <strong>Library of Congress</strong> ou <strong>Wikimedia Commons</strong>.</li>
+            <li><strong>O Grito (Edvard Munch):</strong> O acervo do <strong>Nasjonalmuseet (Museu Nacional da Noruega)</strong> e o <strong>Munchmuseet</strong> disponibilizam o download de imagens em alta definição em seus portais oficiais (nasjonalmuseet.no).</li>
+            <li><strong>Os Girassóis (Vincent van Gogh):</strong> Download oficial gratuito de imagem em alta definição diretamente no site do <strong>Van Gogh Museum (vangoghmuseum.nl)</strong> e <strong>National Gallery (Londres)</strong>.</li>
+            <li><strong>A Escola de Atenas (Rafael Sanzio):</strong> Disponível em resolução máxima (gigapixel) na <strong>Wikimedia Commons</strong> e na coleção online dos <strong>Museus do Vaticano (museivaticani.va)</strong>.</li>
+            <li><strong>A Criação de Adão - Capela Sistina (Michelangelo):</strong> Disponível no portal dos <strong>Museus do Vaticano</strong> e no acervo de mídia de domínio público da <strong>Wikimedia Commons</strong>.</li>
+        </ul>
+    </div>
 
 </body>
 </html>
+"""
+
+with open("obras_de_arte.html", "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+print("HTML gerado com sucesso.")
+
+
+```
+
+```text
+HTML gerado com sucesso.
+
+
+```
+
+Aqui está a revisão ortográfica e gramatical do seu texto, juntamente com a estrutura do código HTML contendo as imagens centralizadas em alta resolução logo abaixo de cada título e acima do texto descritivo.
+
+---
+
+### Principais Correções Realizadas no Texto:
+
+1. **Ortografia e Acentuação:** Correção de *quandro* → *quadro*, *MUCH* → *MUNCH*, *lepresenta* → *representa*, *mudeu* → *museu*, *Auto retrato* → *Autorretrato*, *Naiconal* → *Nacional*, *ukio-e* → *ukiyo-e*.
+2. **Pontuação e Concordância:** Ajustes de pontuação, uso de itálico no nome dos quadros para destacar os títulos das obras e correções na concordância de frases (ex.: *"fizeram 100 anos"* → *"completavam-se 100 anos"*).
+
+---
+
+### Onde baixar cada foto em alta resolução (Domínio Público):
+
+1. **Os Retirantes (Cândido Portinari):** Disponível no acervo digital oficial do **MASP** ([masp.org.br](https://masp.org.br)) e na plataforma **Google Arts & Culture**.
+2. **Abaporu / Obras de Tarsila do Amaral:** Disponível em alta definição na **Wikimedia Commons** e no portal **Google Arts & Culture** (Acervo MALBA / Pinacoteca de SP).
+3. **A Grande Onda de Kanagawa / 36 Vistas do Monte Fuji (Hokusai):** Download gratuito em ultra-alta resolução no acervo digital do **Metropolitan Museum of Art** ([metmuseum.org](https://www.metmuseum.org)) e na **Library of Congress**.
+4. **O Grito (Edvard Munch):** O portal oficial do **Nasjonalmuseet (Museu Nacional da Noruega)** ([nasjonalmuseet.no](https://www.nasjonalmuseet.no)) e do **Munchmuseet** disponibilizam downloads das versões em alta resolução.
+5. **Os Girassóis (Vincent van Gogh):** Download oficial gratuito em alta definição diretamente no acervo do **Van Gogh Museum** ([vangoghmuseum.nl](https://www.vangoghmuseum.nl)).
+6. **A Escola de Atenas (Rafael Sanzio):** Disponível em alta qualidade na **Wikimedia Commons** e no acervo dos **Museus do Vaticano** ([museivaticani.va](https://www.museivaticani.va)).
+7. **A Criação de Adão / Capela Sistina (Michelangelo):** Disponível no portal dos **Museus do Vaticano** e na **Wikimedia Commons**.
+
+---
+
+### Código HTML Gerado
+
+Você também pode baixar o arquivo HTML pronto: 
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Os maiores quadros que vi ao vivo</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #1a1a1a;
+            border-bottom: 3px solid #e74c3c;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        .intro {
+            font-size: 1.1em;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .artwork-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            margin-bottom: 35px;
+        }
+        .artwork-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 15px 20px 10px 20px;
+            margin: 0;
+        }
+        .artwork-img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: contain;
+            background-color: #000;
+            display: block;
+        }
+        .artwork-description {
+            padding: 20px;
+            font-size: 1em;
+            color: #444;
+        }
+        .download-info {
+            background-color: #eef9ff;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin-top: 40px;
+            border-radius: 4px;
+        }
+        .download-info h3 {
+            margin-top: 0;
+            color: #2980b9;
+        }
+        .download-info ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+        .download-info li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Os maiores quadros que vi ao vivo</h1>
+
+    <div class="intro">
+        <p>Pinturas: não sou entendido de arte, mas algumas realmente nos tocam. Mesmo impressas em um livro, em uma imagem na pesquisa online ou como um símbolo para você. Tive o prazer de visitar alguns museus em minha breve vida e tive contato com vários quadros incríveis. Aqui listo o meu top 7 — as sete reações de "WOW!!" que tive em museus pelo mundo.</p>
+    </div>
+
+    <!-- 1. Os Retirantes -->
+    <div class="artwork-card">
+        <h2 class="artwork-title">1 – Os Retirantes (Cândido Portinari) – MASP São Paulo (2007)</h2>
+        <img class="artwork-img" src="http://googleusercontent.com/image_collection/image_retrieval/16252981440684718700_0" alt="Os Retirantes - Cândido Portinari">
+        <div class="artwork-description">
+            Este quadro emblemático dos retirantes sempre me era mostrado nas aulas de Arte na escola. <em>Os Retirantes</em> é fruto de uma visão humanizada de Portinari sobre os problemas sociais e as aflições do povo brasileiro. É simplesmente uma das obras que impressionam pelo tamanho e pela profundidade. Lembro que no MASP dei mais valor a ela do que ao Botticelli que eles têm por lá. Para mim, <em>Os Retirantes</em> foi o ápice da minha visita ao MASP em 2007.
+        </div>
+    </div>
+
+    <!-- 2. Tarsila do Amaral -->
+    <div class="artwork-card">
+        <h2 class="artwork-title">2 – Abaporu / A Negra / Operários (Tarsila do Amaral) – Pinacoteca de SP (2008)</h2>
+        <img class="artwork-img" src="http://googleusercontent.com/image_collection/image_retrieval/9620193868670120937_0" alt="Abaporu - Tarsila do Amaral">
+        <div class="artwork-description">
+            Uma exposição só com quadros da Tarsila do Amaral, originais, em 2008, quando eu morei em São Paulo para fazer um estágio. Bom, sobre a Tarsila não preciso nem comentar. Acho as cores fabulosas demais, os degradês, as composições e os detalhes da geometria, fora a sua importância entre os modernistas, que é absurda. A exposição fazia fila para entrar e foi uma das obras de arte brasileira que mais me impressionaram.
+        </div>
+    </div>
+
+    <!-- 3. Hokusai -->
+    <div class="artwork-card">
+        <h2 class="artwork-title">3 – Trinta e seis vistas do Monte Fuji (Katsushika Hokusai) – Museu Oscar Niemeyer (2008)</h2>
+        <img class="artwork-img" src="http://googleusercontent.com/image_collection/image_retrieval/13931895304051482379_0" alt="A Grande Onda de Kanagawa - Hokusai">
+        <div class="artwork-description">
+            Em 2008 completavam-se 100 anos da imigração japonesa no Brasil, e o Museu Imperial do Japão trouxe para o MON, em Curitiba, uma série de obras da cultura japonesa para apreciação. Entre elas, vários exemplares de xilogravuras de Hokusai. <em>As Trinta e Seis Vistas do Monte Fuji</em> é seu maior trabalho: 36 quadros <em>ukiyo-e</em>, incluindo entre eles <em>A Grande Onda de Kanagawa</em> e o <em>Fuji Vermelho</em>, meus favoritos. Xilogravuras são produzidas em massa, não são um exemplar único, mas mesmo assim achei o contato com estes “originais do Museu Imperial do Japão” fabuloso.
+        </div>
+    </div>
+
+    <!-- 4. O Grito -->
+    <div class="artwork-card">
+        <h2 class="artwork-title">4 – O Grito (Edvard Munch) – Galeria Nacional de Oslo / Museu Munch (2008)</h2>
+        <img class="artwork-img" src="http://googleusercontent.com/image_collection/image_retrieval/1690265792370011440_0" alt="O Grito - Edvard Munch">
+        <div class="artwork-description">
+            Você sabia que <em>O Grito</em> tem 4 versões? Vi duas delas no Museu Munch e a mais famosa na Galeria Nacional de Oslo. Inicialmente vi na Galeria Nacional de Oslo; depois fiquei em dúvida... se <em>O Grito</em> está aqui, o que é que tem de bom no Museu Munch? Fui lá e tinha mais dois quadros. Perguntei no museu qual era o real e me disseram que as 3 versões eram reais e estavam em Oslo. Disseram-me também que duas já foram roubadas (em 1994 e 2004), mas já haviam retornado ao museu.
+        </div>
+    </div>
+
+    <!-- 5. Van Gogh -->
+    <div class="artwork-card">
+        <h2 class="artwork-title">5 – Os Girassóis / Autorretrato / O Quarto (Vincent van Gogh) – Museu Van Gogh Amsterdã (2011)</h2>
+        <img class="artwork-img" src="http://googleusercontent.com/image_collection/image_retrieval/15457286426516074539_0" alt="Girassóis - Vincent van Gogh">
+        <div class="artwork-description">
+            O Museu Van Gogh é absurdo. Eu achava que encontraria <em>A Noite Estrelada</em> lá, mas este quadro está no MoMA, em Nova York. No entanto, o restante da obra do pintor está quase completo no Museu Van Gogh. Os quadros que mais me marcaram foram <em>Os Girassóis</em> (e uma série extensa de quadros florais dele, incluindo <em>Amendoeira em Flor</em>), <em>O Quarto</em> (acho que existem 3 versões deste quadro, com pequenas diferenças entre elas; uma delas estava no museu), as recriações de pinturas <em>ukiyo-e</em> japonesas chamadas <em>Japonaiserie</em>, <em>A Ponte sob a Chuva</em> (original de Hiroshige) e dois autorretratos dele: um com chapéu, mais novo, e o icônico quadro pós-corte da orelha, com o pintor mais velho.
+        </div>
+    </div>
+
+    <!-- 6. A Escola de Atenas -->
+    <div class="artwork-card">
+        <h2 class="artwork-title">6 – A Escola de Atenas (Rafael Sanzio) – Museus do Vaticano (2016)</h2>
+        <img class="artwork-img" src="http://googleusercontent.com/image_collection/image_retrieval/13853057418762934460_0" alt="A Escola de Atenas - Rafael Sanzio">
+        <div class="artwork-description">
+            Esta aqui é surpreendente, principalmente porque você não está esperando por ela. Você está andando por salas centenárias, observando obras magníficas e, de repente, em uma sala pequena, você entra, olha para o lado e lá está <em>A Escola de Atenas</em>!! Foi uma das maiores surpresas que tive na vida. É simplesmente um dos afrescos que eu sempre quis ver, e ao vivo a sensação é outra. Estar no mesmo ambiente em que foi pintada, pensar em quantas pessoas passaram por ali, naquela salinha — reis, papas, pessoas importantes, famosas, pintores, artistas... E uma obra com simples 500 anos de idade, da época em que os portugueses aportavam em nosso território.
+        </div>
+    </div>
+
+    <!-- 7. Capela Sistina -->
+    <div class="artwork-card">
+        <h2 class="artwork-title">7 – O Teto da Capela Sistina / A Criação de Adão (Michelangelo) – Museus do Vaticano (2016)</h2>
+        <img class="artwork-img" src="http://googleusercontent.com/image_collection/image_retrieval/10907156744319408985_0" alt="A Criação de Adão - Michelangelo">
+        <div class="artwork-description">
+            A saída do Museu do Vaticano é por uma pequena porta. Mas, quando você a abre, dá de cara com a Capela Sistina. Olha para cima e lá está <em>A Criação de Adão</em>. Esta obra levou 4 anos para ser pintada por Michelangelo e representa várias passagens do Gênesis ao Juízo Final Bíblico. Infelizmente não deixam você ficar muito tempo lá observando. É olhar (sem tirar fotos) e depois sair pela porta que dá para fora do Museu do Vaticano.
+        </div>
+    </div>
+
+    <div class="download-info">
+        <h3>Onde baixar as fotos em alta resolução (Domínio Público):</h3>
+        <ul>
+            <li><strong>Os Retirantes (Cândido Portinari):</strong> MASP (masp.org.br) / Google Arts & Culture.</li>
+            <li><strong>Abaporu (Tarsila do Amaral):</strong> Wikimedia Commons / Google Arts & Culture.</li>
+            <li><strong>A Grande Onda de Kanagawa (Hokusai):</strong> Metropolitan Museum of Art (metmuseum.org).</li>
+            <li><strong>O Grito (Edvard Munch):</strong> Nasjonalmuseet (nasjonalmuseet.no).</li>
+            <li><strong>Os Girassóis (Vincent van Gogh):</strong> Van Gogh Museum (vangoghmuseum.nl).</li>
+            <li><strong>A Escola de Atenas (Rafael Sanzio):</strong> Musei Vaticani (museivaticani.va) / Wikimedia Commons.</li>
+            <li><strong>A Criação de Adão (Michelangelo):</strong> Musei Vaticani / Wikimedia Commons.</li>
+        </ul>
+    </div>
+
+</body>
+</html>
+
+```
