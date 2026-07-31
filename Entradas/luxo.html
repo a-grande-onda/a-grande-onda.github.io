@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="/Imagens/favicon.png">
+
+    <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="A Grande Onda" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/agrandeondaminiatura.png" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+    <title>Preciso ou é luxo?</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: flex-start;     
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+         /* --- CONTAINER DE IMAGENS --- */
+        .container-imagem {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .container-imagem a {
+            display: block;
+            width: 100%;
+        }
+
+        .container-imagem img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 6px;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .container-imagem a:hover img {
+            transform: scale(1.01);
+            filter: brightness(0.9);
+        }
+
+        /* --- BOTÃO DE CONTATO POR E-MAIL --- */
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* Espaço entre o ícone e o texto */
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background-color: #5c8ab3;
+            color: #fff;
+            border: 2px solid #5c8ab3;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+        }
+
+        .btn-email:hover {
+            background-color: #4a7296;
+            border-color: #4a7296;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+        }
+
+        .btn-email svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* --- BOTÃO RETORNAR --- */
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-bottom: 5px;
+        }
+
+        .btn-retornar:hover {
+            background: #5c8ab3;
+            color: #fff;
+        }
+
+        /* Ajustes Responsivos para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 25px 20px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+                padding-bottom: 15px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .btn-retornar, .btn-email {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+                width: 100%; /* Botões ocupam largura total no celular */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Preciso ou é luxo?</h1>
+        <h3>29/07/2026 Perguntas</h3>
+
+<p>Existem coisas em nossas vidas de que precisamos e coisas que são luxo. Basicamente, vou levar em consideração a vida de minha família próxima: eu e meus pais, que vivemos na mesma casa.</p>
+
+    <p>Minha mãe tem algumas necessidades que eu considero luxo, mas que ela considera necessidade: academia ou pilates, salão ou roupas e serviço de saúde contínua. A questão da saúde eu considero necessidade, mas os demais acredito que sejam luxo.</p>
+
+    <p>Meu pai, por outro lado, precisa de notícias 24 horas, álcool (vinhos, caipirinha, drinks, cachaça) e um carro moderno. Eu acho que tudo isso é luxo, pois não uso nada dessa lista dele. Talvez o carro eu considerasse uma necessidade (não um modelo moderno), mas informação de baixa qualidade e álcool quase diariamente eu acho um luxo.</p>
+
+    <p>As minhas três necessidades podem ser facilmente consideradas luxo por muitas pessoas. São elas: setup de computador moderno para minhas necessidades, coleção de jogos e livros (bem como consoles portáteis e controles) e bebidas (água, chá, café, chimarrão).</p>
+
+    <p>A necessidade de um é o luxo do outro. Eu já conheci pessoas que tinham como necessário no dia a dia um gasto que era cinco vezes os meus gastos mensais, e a pessoa não considerava aquela atividade um luxo. Imagina o que seria luxo nesse contexto: os valores.</p>
+
+    <p>Pessoalmente, acho que consigo viver com um setup de eletrônicos bem mais simples do que tenho agora. Ter o que tenho hoje, na qualidade que tenho, é luxo para poucos. Outras pessoas com computadores gamer de dezenas de milhares de reais podem até achar meu setup modesto. Porém, comparando com a maioria das pessoas, que nem computador pessoal possuem e só utilizam o telefone celular, eu tenho uma boa base de eletrônicos ativa hoje.</p>
+
+    <p>Meus videogames e livros são completamente um luxo. Coleciono jogos digitais e livros físicos. Hoje tenho, no total, quase 200 livros e mais de 600 jogos digitais. Para quem lê em média 20 livros anualmente e joga de 15 a 20 jogos por ano, essa coleção durará décadas.</p>
+
+    <p>E quais seriam as necessidades? Segundo a pirâmide de Maslow, o básico é atendido no sentido fisiológico, de segurança e de relacionamentos. Só depois que isso é atendido é que sentimentos de estima e realização pessoal ou criação existem.</p>
+
+<div class="container-imagem">
+            <a href="/Imagens/meslow.png" target="_blank" rel="noopener noreferrer">
+                <img src="/Imagens/meslow.png" alt="pirâmide">
+            </a>
+        </div>
+
+    <p>Então, o básico para a vida mesmo é água, comida, abrigo, segurança, saúde e vestuário. E acredito que todas essas ideias básicas podem evoluir até o luxo. A ideia da água pode se estender a um uísque luxuoso; a comida, a um restaurante Michelin de chefs renomados; o abrigo pode ser uma mansão; a segurança se estende até condições extremas, se possível; a saúde pode envolver os maiores tratamentos possíveis, até mesmo criogenia; e, no vestuário, sabemos que existem roupas que transcendem seu propósito e se tornam obras artísticas.</p>
+
+    <p>O luxo e a necessidade se misturam, só dependem do referencial do indivíduo em questão. Para uma pessoa de baixa renda, tomar uma garrafa de Coca-Cola de 10 reais ou ir ao McDonald's de 30 reais pode ser um luxo, enquanto para quem tem meios para tal pode ser simples e trivial.</p>
+
+    <p>Então, não existe uma forma de bater o martelo. Necessidade e luxo se misturam e dependem de muitos referenciais e condições, tanto da pessoa analisada quanto de quem analisa esse cenário. O luxo para um é lixo para o outro.</p>
+
+    <p>Acredito que sim, são necessários alguns luxos na vida. Viver em uma caverna com acesso a água e alimento em quantidade seria um luxo para nossos ancestrais. Hoje, para alguns, ter o básico é um luxo. No Brasil hoje, praticamente 60% da população vive com menos de um salário mínimo domiciliar <em>(fonte: Valor Econômico)</em>. Conseguir o básico aqui já é um luxo para muitos.</p>
+
+    <p><strong>E você? Tem muitos luxos? Atende plenamente às suas necessidades? Possui atividades que os outros considerariam um luxo?</strong></p>
+
+        <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+
+        <!-- Botão de E-mail com ícone SVG centralizado -->
+        <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Comente me enviando um email
+        </a>
+    </div>
+</body>
+</html>
