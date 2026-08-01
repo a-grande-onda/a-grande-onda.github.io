@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="/Imagens/favicon.png">
+
+    <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="A Grande Onda" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/agrandeondaminiatura.png" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+    <title>2026 Julho</title>
+    <style>
+        :root {
+            --win-color: #22c55e;
+            --draw-color: #f59e0b;
+            --loss-color: #ef4444;
+            --btn-bg: #f8fafc;
+            --btn-border: #e2e8f0;
+            --btn-text: #334155;
+            --btn-hover-bg: #5c8ab3;
+            --btn-hover-text: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center;     
+            align-items: flex-start;     
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+            text-align: left;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            width: 100%;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            color: #1e293b;
+            font-size: 1.8rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #5c8ab3;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            font-weight: 600;
+            color: #475569;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* --- ESTILO DOS BOTÕES DAS CIDADES --- */
+        ul.city-list {
+            list-style: none; /* Remove marcador */
+            padding: 0;
+            margin: 0 0 25px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Centraliza os botões das cidades */
+            gap: 10px;
+            width: 100%;
+        }
+
+        ul.city-list li {
+            list-style: none; /* Remove marcador */
+            background-color: var(--btn-bg);
+            border: 1px solid var(--btn-border);
+            color: var(--btn-text);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+            transition: all 0.2s ease-in-out;
+            cursor: default;
+            user-select: none;
+        }
+
+        ul.city-list li:hover {
+            background-color: var(--btn-hover-bg);
+            color: var(--btn-hover-text);
+            border-color: var(--btn-hover-bg);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(92, 138, 179, 0.25);
+        }
+
+        /* --- BOTÕES DO RODAPÉ (FORMATO ORIGINAL MANTIDO) --- */
+        .btn-container {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .btn-retornar {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 1px solid #000000;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-retornar:hover {
+            background-color: #f0f0f0;
+        }
+
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 1px solid #000000;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-email:hover {
+            background-color: #f0f0f0;
+        }
+
+        .btn-email svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* Caixa de comentários */
+        #HCB_comment_box {
+            width: 100%;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        /* Adjustments for smaller screens */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+                margin: 20px auto;
+            }
+            
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.4rem; }
+            h3 { font-size: 1.1rem; }
+            p { font-size: 1rem; }
+
+            ul.city-list {
+                gap: 8px;
+            }
+
+            ul.city-list li {
+                padding: 6px 12px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>2026 Julho</h1>
+        <h3 class="text-center" style="font-weight: normal; color: #666; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px;">01/08/2026 Diário</h3>
+
+        <div style="text-align: center; width: 100%;">
+            <img src="/Imagens/selobeda2026.png" alt="SELO BEDA" style="margin-bottom: 20px;">
+        </div>
+
+        <p>Tenho 38 anos e já visitei vários lugares em minha vida. Irei listar logo abaixo todas as cidades em que já estive por pelo menos um dia. Não conheço a fundo todos os lugares que visitei, mas aquela passada rápida para experimentar a cidade por algumas horas é algo que sempre realizo em viagens.</p>
+        <p>Sou natural de Curitiba, Paraná. Irei listar primeiro os estados em que estive no Brasil e as cidades que conheci:</p>
+
+        <h2>Brasil</h2>
+
+        <div id="chartdiv" style="width:800px;height:500px"></div>
+<script>
+var visitedplaces_config = {
+  "map": "brazil",
+  "projection": "geoMercator",
+  "theme": "dark-green",
+  "water": 0,
+  "graticule": 1,
+  "names": 1,
+  "duration": 2000,
+  "placeduration": 100,
+  "slider": 0,
+  "autoplay": 0,
+  "autozoom": "step",
+  "autostep": 1,
+  "pie": 1,
+  "data": [
+    {
+      "places": [
+        "BR-RS",
+        "BR-SC",
+        "BR-PR",
+        "BR-SP",
+        "BR-MG",
+        "BR-RJ",
+        "BR-ES",
+        "BR-SE",
+        "BR-MS",
+        "BR-MT"
+      ]
+    }
+  ]
+};
+</script>
+<script src="https://visitedplaces.com/embed.js"></script>
+
+
+        <h3>Paraná</h3>
+        <ul class="city-list">
+            <li>Curitiba</li>
+            <li>Matinhos</li>
+            <li>Guaratuba</li>
+            <li>Pontal do Paraná</li>
+            <li>Paranaguá</li>
+            <li>São José dos Pinhais</li>
+            <li>Araucária</li>
+            <li>Mandirituba</li>
+            <li>Campo Largo</li>
+            <li>Balsa Nova</li>
+            <li>Lapa</li>
+            <li>Tunas do Paraná</li>
+            <li>Rio Branco do Sul</li>
+            <li>Maringá</li>
+            <li>Londrina</li>
+            <li>Cascavel</li>
+            <li>Cornélio Procópio</li>
+            <li>Foz do Iguaçu</li>
+            <li>Santa Terezinha de Itaipu</li>
+            <li>Jaguariaíva</li>
+            <li>Ibaiti</li>
+        </ul>
+
+        <h3>Santa Catarina</h3>
+        <ul class="city-list">
+            <li>São Francisco do Sul</li>
+            <li>Joinville</li>
+            <li>Itajaí</li>
+            <li>Penha</li>
+            <li>Balneário Camboriú</li>
+            <li>Bombinhas</li>
+            <li>Blumenau</li>
+            <li>Indaial</li>
+            <li>Ilhota</li>
+            <li>Brusque</li>
+            <li>Lages</li>
+            <li>Gaspar</li>
+            <li>Palhoça</li>
+            <li>Florianópolis</li>
+            <li>Laguna</li>
+            <li>Tubarão</li>
+            <li>São Joaquim</li>
+        </ul>
+
+        <h3>Rio Grande do Sul</h3>
+        <ul class="city-list">
+            <li>Gramado</li>
+            <li>Canela</li>
+            <li>Bento Gonçalves</li>
+            <li>Caxias do Sul</li>
+            <li>Nova Petrópolis</li>
+            <li>Ametista do Sul</li>
+            <li>Frederico Westphalen</li>
+            <li>Santa Maria</li>
+            <li>Chuí</li>
+            <li>Uruguaiana</li>
+        </ul>
+
+        <h3>São Paulo</h3>
+        <ul class="city-list">
+            <li>Peruíbe</li>
+            <li>Santos</li>
+            <li>São Sebastião</li>
+            <li>Caraguatatuba</li>
+            <li>São Paulo</li>
+            <li>São Carlos</li>
+            <li>Itu</li>
+            <li>Marília</li>
+            <li>Aparecida</li>
+            <li>Ribeirão Preto</li>
+        </ul>
+
+        <h3>Minas Gerais</h3>
+        <ul class="city-list">
+            <li>Poços de Caldas</li>
+            <li>São João del-Rei</li>
+            <li>Tiradentes</li>
+            <li>Congonhas</li>
+            <li>Ituiutaba</li>
+            <li>Uberlândia</li>
+            <li>Itabirito</li>
+            <li>Ouro Preto</li>
+        </ul>
+
+        <h3>Rio de Janeiro</h3>
+        <ul class="city-list">
+            <li>Paraty</li>
+            <li>Angra dos Reis</li>
+            <li>Rio de Janeiro</li>
+            <li>Petrópolis</li>
+        </ul>
+
+        <h3>Espírito Santo</h3>
+        <ul class="city-list">
+            <li>Vitória</li>
+            <li>Guarapari</li>
+            <li>Venda Nova do Imigrante</li>
+            <li>Vila Velha</li>
+        </ul>
+
+        <h3>Mato Grosso do Sul</h3>
+        <ul class="city-list">
+            <li>Bonito</li>
+            <li>Bodoquena</li>
+        </ul>
+
+        <h3>Mato Grosso</h3>
+        <ul class="city-list">
+            <li>Chapada dos Guimarães</li>
+        </ul>
+
+        <h3>Sergipe</h3>
+        <ul class="city-list">
+            <li>Aracaju</li>
+            <li>Canindé de São Francisco</li>
+        </ul>
+
+        <h2>Fora do Brasil</h2>
+        <p class="text-center">Fora do Brasil, irei marcar só os pontos de destaque:</p>
+
+
+        <div id="chartdiv" style="width:800px;height:500px"></div>
+<script>
+var visitedplaces_config = {
+  "map": "world",
+  "projection": "geoOrthographic",
+  "theme": "dark-green",
+  "water": 1,
+  "graticule": 1,
+  "names": 1,
+  "duration": 2000,
+  "placeduration": 100,
+  "slider": 0,
+  "autoplay": 0,
+  "autozoom": "step",
+  "autostep": 1,
+  "pie": 1,
+  "home": "BR",
+  "data": [
+    {
+      "places": [
+        "BR"
+      ],
+      "text": "My Home",
+      "position": {
+        "zoomLevel": 1.5,
+        "geoPoint": {
+          "longitude": -65.9,
+          "latitude": -20.1
+        },
+        "rotationX": 65.9,
+        "rotationY": 20.1
+      },
+      "colors": {
+        "BR": "daaa44"
+      }
+    },
+    {
+      "places": [
+        "UY",
+        "AR",
+        "PY",
+        "CL"
+      ],
+      "text": "South America",
+      "position": {
+        "geoPoint": {
+          "longitude": -65.9,
+          "latitude": -20.1
+        },
+        "rotationX": 65.9,
+        "rotationY": 20.1,
+        "zoomLevel": 1.5
+      }
+    },
+    {
+      "places": [
+        "FR",
+        "IT",
+        "DE",
+        "BE",
+        "NL",
+        "GB",
+        "NO"
+      ],
+      "text": "Europe",
+      "position": {
+        "geoPoint": {
+          "longitude": 12.1,
+          "latitude": 53.3
+        },
+        "rotationX": -12.1,
+        "rotationY": -53.3,
+        "zoomLevel": 2.4
+      }
+    },
+    {
+      "places": [
+        "JP"
+      ],
+      "text": "Asia",
+      "position": {
+        "geoPoint": {
+          "longitude": 83.8,
+          "latitude": 33.3
+        },
+        "rotationX": -83.8,
+        "rotationY": -33.3,
+        "zoomLevel": 1.5
+      }
+    }
+  ]
+};
+</script>
+<script src="https://visitedplaces.com/embed.js"></script>
+
+        <h3>Chile</h3>
+        <ul class="city-list">
+            <li>Santiago</li>
+            <li>Valparaíso</li>
+            <li>Viña del Mar</li>
+            <li>Los Chacayes (Represa El Yeso)</li>
+        </ul>
+
+        <h3>Uruguai</h3>
+        <ul class="city-list">
+            <li>Montevidéu</li>
+            <li>Punta del Este</li>
+            <li>Colônia do Sacramento</li>
+        </ul>
+
+        <h3>Argentina</h3>
+        <ul class="city-list">
+            <li>Buenos Aires</li>
+            <li>Mercedes</li>
+        </ul>
+
+        <h3>Japão</h3>
+        <ul class="city-list">
+            <li>Okayama</li>
+            <li>Akaiwa</li>
+            <li>Kurashiki</li>
+            <li>Takahashi</li>
+            <li>Hiroshima</li>
+            <li>Nobeoka</li>
+            <li>Aso</li>
+            <li>Quioto</li>
+            <li>Nara</li>
+            <li>Choshi</li>
+            <li>Urayasu</li>
+            <li>Tóquio</li>
+            <li>Yokohama</li>
+            <li>Miyajima</li>
+        </ul>
+
+        <h3>Itália</h3>
+        <ul class="city-list">
+            <li>Roma</li>
+            <li>Pompéia</li>
+            <li>Positano</li>
+            <li>Siena</li>
+            <li>Montepulciano</li>
+            <li>Arezzo</li>
+            <li>Florença</li>
+            <li>Lucca</li>
+            <li>Pisa</li>
+            <li>Bolonha</li>
+            <li>Veneza</li>
+            <li>Verona</li>
+            <li>Milão</li>
+        </ul>
+
+        <h3>Alemanha</h3>
+        <ul class="city-list">
+            <li>Aachen</li>
+            <li>Colônia</li>
+        </ul>
+
+        <h3>Bélgica</h3>
+        <ul class="city-list">
+            <li>Bruxelas</li>
+            <li>Bruges</li>
+        </ul>
+
+        <h3>Holanda (Países Baixos)</h3>
+        <ul class="city-list">
+            <li>Amsterdã</li>
+            <li>Volendam</li>
+            <li>Edam</li>
+        </ul>
+
+        <h3>Inglaterra</h3>
+        <ul class="city-list">
+            <li>Londres</li>
+            <li>Greenwich</li>
+        </ul>
+
+        <h3>França</h3>
+        <ul class="city-list">
+            <li>Calais</li>
+            <li>Lille</li>
+            <li>Paris</li>
+            <li>Versalhes</li>
+            <li>Chessy</li>
+        </ul>
+
+        <h3>Noruega</h3>
+        <ul class="city-list">
+            <li>Oslo</li>
+            <li>Lillestrøm</li>
+        </ul>
+
+        <p>Estes são basicamente todos os lugares onde pisei e visitei por um dia ou mais.</p>
+        <p>Há espaço para mais viagens? Eu acho que hoje não quero ir para mais lugar nenhum. A paz da minha casa é o suficiente.</p>
+
+        <!-- Botões Originais mantidos sem alterações de estilo -->
+        <div class="btn-container">
+            <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                Comente me enviando um email
+            </a>
+        </div>
+
+        <div class="btn-container">
+            <a href="https://a-grande-onda.blog.br/" class="btn-retornar">A Grande Onda - Início</a>
+        </div>
+
+        <!-- begin www.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+
+    </div>
+</body>
+</html>
