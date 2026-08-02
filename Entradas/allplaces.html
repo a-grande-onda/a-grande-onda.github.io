@@ -1,0 +1,4565 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="icon" type="image/x-icon" href="/Imagens/favicon.png">
+
+
+    <meta property="og:site_name" content="A Grande Onda">
+
+    <meta property="og:title" content="A Grande Onda" />
+
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/agrandeondaminiatura.png" />
+
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+
+    <title>2026 Julho</title>
+
+    <style>
+
+        :root {
+
+            --win-color: #22c55e;
+
+            --draw-color: #f59e0b;
+
+            --loss-color: #ef4444;
+
+        }
+
+
+        * {
+
+            box-sizing: border-box;
+
+        }
+
+
+        body, html {
+
+            min-height: 100vh;
+
+            margin: 0;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: flex-start;    
+
+            background-color: #f0f0f0;
+
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            line-height: 1.7;
+
+        }
+
+
+        .container {
+
+            width: 90%;
+
+            max-width: 750px;
+
+            padding: 40px 50px;
+
+            background-color: white;
+
+            border-radius: 8px;
+
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+
+            text-align: left;
+
+            margin: 40px auto;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+        }
+
+
+        p {
+
+            width: 100%;
+
+            margin-bottom: 20px;
+
+            color: #333;
+
+            font-size: 1.1rem;
+
+        }
+
+
+        h1, h3 {
+
+            text-align: center;
+
+        }
+
+
+        h1 {
+
+            color: #1a1a1a;
+
+            margin-bottom: 10px;
+
+            font-size: 2.5rem;
+
+            line-height: 1.2;
+
+        }
+
+
+        h3 {
+
+            font-weight: normal;
+
+            color: #666;
+
+            border-bottom: 1px solid #eee;
+
+            padding-bottom: 20px;
+
+            margin-bottom: 30px;
+
+            font-size: 1.2rem;
+
+            width: 100%;
+
+        }
+
+
+        /* --- CARD DE XADREZ ESTILIZADO --- */
+
+        .chess-card {
+
+            width: 100%;
+
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+
+            border-radius: 16px;
+
+            padding: 28px;
+
+            color: #ffffff;
+
+            margin: 25px 0 35px 0;
+
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
+
+            border: 1px solid rgba(255, 255, 255, 0.1);
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        .chess-card::before {
+
+            content: "♟";
+
+            position: absolute;
+
+            right: -10px;
+
+            bottom: -20px;
+
+            font-size: 140px;
+
+            opacity: 0.04;
+
+            pointer-events: none;
+
+        }
+
+
+        .chess-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 20px;
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+            padding-bottom: 14px;
+
+        }
+
+
+        .chess-header h4 {
+
+            margin: 0;
+
+            font-size: 1.2rem;
+
+            font-weight: 700;
+
+            letter-spacing: -0.3px;
+
+            color: #f8fafc;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+        }
+
+
+        .chess-platform {
+
+            font-size: 0.85rem;
+
+            background: rgba(255, 255, 255, 0.1);
+
+            padding: 4px 10px;
+
+            border-radius: 20px;
+
+            color: #cbd5e1;
+
+        }
+
+
+        /* Estilo para o link do lichess ficar branco e sem sublinhado */
+
+        .chess-platform a {
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+        }
+
+
+        .chess-platform a:hover {
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+        }
+
+
+        .chess-stats-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 12px;
+
+            text-align: center;
+
+        }
+
+
+        .stat-box {
+
+            background: rgba(255, 255, 255, 0.05);
+
+            border-radius: 12px;
+
+            padding: 14px 8px;
+
+            border: 1px solid rgba(255, 255, 255, 0.05);
+
+            backdrop-filter: blur(5px);
+
+        }
+
+
+        .stat-value {
+
+            font-size: 1.6rem;
+
+            font-weight: 700;
+
+            line-height: 1.2;
+
+        }
+
+
+        .stat-label {
+
+            font-size: 0.75rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.5px;
+
+            margin-top: 4px;
+
+            color: #94a3b8;
+
+            font-weight: 600;
+
+        }
+
+
+        .stat-box.win .stat-value { color: var(--win-color); }
+
+        .stat-box.draw .stat-value { color: var(--draw-color); }
+
+        .stat-box.loss .stat-value { color: var(--loss-color); }
+
+        .stat-box.total .stat-value { color: #f8fafc; }
+
+
+        /* Barra de Progresso do Xadrez */
+
+        .chess-progress {
+
+            margin-top: 20px;
+
+            height: 6px;
+
+            width: 100%;
+
+            background-color: rgba(255, 255, 255, 0.1);
+
+            border-radius: 10px;
+
+            display: flex;
+
+            overflow: hidden;
+
+        }
+
+
+        .progress-bar {
+
+            height: 100%;
+
+        }
+
+
+        .progress-bar.win { width: 54.1%; background-color: var(--win-color); }
+
+        .progress-bar.draw { width: 2.1%; background-color: var(--draw-color); }
+
+        .progress-bar.loss { width: 43.8%; background-color: var(--loss-color); }
+
+
+        /* --- BOTÃO DE CONTATO POR E-MAIL --- */
+
+        .btn-email {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            padding: 12px 28px;
+
+            border-radius: 10px;
+
+            font-weight: bold;
+
+            font-size: 1rem;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+
+            background-color: #5c8ab3;
+
+            color: #fff;
+
+            border: 2px solid #5c8ab3;
+
+            cursor: pointer;
+
+            margin-top: 15px;
+
+            margin-bottom: 10px;
+
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+
+        }
+
+
+        .btn-email:hover {
+
+            background-color: #4a7296;
+
+            border-color: #4a7296;
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+
+        }
+
+
+        .btn-email svg {
+
+            fill: currentColor;
+
+            width: 20px;
+
+            height: 20px;
+
+        }
+
+
+        /* --- BOTÃO RETORNAR --- */
+
+        .btn-retornar {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 10px 24px;
+
+            border-radius: 10px;
+
+            font-weight: bold;
+
+            font-size: 0.95rem;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+
+            background: transparent;
+
+            border: 2px solid #5c8ab3;
+
+            color: #5c8ab3;
+
+            cursor: pointer;
+
+            margin-top: 25px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .btn-retornar:hover {
+
+            background: #5c8ab3;
+
+            color: #fff;
+
+        }
+
+
+        /* Ajustes para a caixa de comentários */
+
+        #HCB_comment_box {
+
+            width: 100%;
+
+            margin-top: 30px;
+
+        }
+
+
+        /* Ajustes Responsivos para Mobile */
+
+        @media (max-width: 600px) {
+
+            .container {
+
+                width: 95%;
+
+                padding: 25px 20px;
+
+                margin: 20px auto;
+
+            }
+
+           
+
+            h1 {
+
+                font-size: 1.8rem;
+
+            }
+
+
+            h3 {
+
+                font-size: 1rem;
+
+                padding-bottom: 15px;
+
+            }
+
+
+            p {
+
+                font-size: 1rem;
+
+            }
+
+
+            .chess-stats-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+
+            }
+
+
+            .btn-retornar, .btn-email {
+
+                padding: 10px 20px;
+
+                font-size: 0.9rem;
+
+                width: 100%;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>2026 Julho</h1>
+
+        <h3>01/08/2026 Diário</h3>
+
+
+        <img src="/Imagens/selobeda2026.png" alt="SELO BEDA" style="margin-bottom: 20px;">
+
+
+        <p>Julho, um mês meh. A primeira semana foi a última semana do primeiro trimestre escolar. Tive que “dar um gás” nas pendências de atividades dos meus alunos na escola. Consegui concluir muita coisa e entregamos tudo antes do final da metade do trimestre.</p>
+
+
+        <p>Na segunda semana, iniciaram-se as minhas duas semanas de férias e fui para Curitiba com meus pais. Fiquei na kitnet com eles, e é extremamente estressante aquele ambiente: é basicamente uma sala/cozinha de 5x5 metros, uma TV passando notícia ruim sem parar, e eu fico na mesa da cozinha com meu computador, mas é terrível quando comparado ao meu escritório/quarto. Lá nem quarto tenho; é um colchão no chão da sala para dormir e fica nisso mesmo.</p>
+
+
+        <p>Pessoalmente, acho que só gosto de Curitiba estando sozinho ou em períodos curtos. Morar lá em três pessoas em uma kitnet de 40 metros quadrados, sem chance. Parabéns para quem consegue; eu preciso de espaço e calma.</p>
+
+
+        <p>Bom, estava em Curitiba, fiz meus exames e consultas médicas. Deu tudo certo, exceto que agora adicionei mais uma doença à minha lista: o glaucoma. Incurável, crônica… agora é só passar o colírio para evitar perdas maiores de visão. Cerca de 30% do olho esquerdo já foram para as cucuias.</p>
+
+
+        <p>Na terça-feira, dia 21, voltei para Matinhos, sozinho. E sim, neste momento tive uma boa semana. Comi algumas marmitas, fiz macarrão, racionei comida porque não queria ir ao mercado… Tudo certo, ficar sozinho é ótimo.</p>
+
+
+        <p>Quanto a jogos, acabei gastando mais do que devia este mês com games. Foram cerca de 400 reais queimados de supetão na promoção da Steam em jogos que até agora não joguei nenhum. É aquela questão de comprar em busca de um acesso e, na hora de consumir, postergar para “quando eu estiver pronto para este jogo”.</p>
+
+
+        <p>Assisti a um filme neste mês: Perfect Days. Muito bom! De início, achei uma obra-prima, mas, passados alguns dias, pensei em escrever um texto sobre ele e a empolgação se foi. Gostei do filme, certamente estaria na minha lista dos dez melhores que assisti. Mas, ao mesmo tempo, a minha primeira impressão foi muito acentuada; depois caí na real e comecei a achar defeitos na obra. Talvez reassistindo eu tenha uma resposta melhor. Contudo, o ator principal certamente mereceu a Palma de Ouro em Cannes, um trabalho exuberante.</p>
+
+
+        <p>Li também um livro do Caio Feijó sobre pedagogia. No geral, não gostei muito do livro. Achei os pontos discutidos meio fora da realidade, e ele realmente escrevia sem lugar de fala. Os problemas das escolas públicas existem desde sempre, mas ele não conseguia elaborar mais sobre o assunto porque sempre deu aula em escolas particulares. Achei válidos alguns pontos, mas o livro como um todo é de alguém que não viveu aquilo na pele. Seria como ler um livro escrito por uma pessoa branca destacando problemas relacionados ao racismo enfrentado por pessoas negras.</p>
+
+
+        <p>A parte boa de Julho foi ter descoberto o conceito de “currículo pessoal” por um vídeo do Odysseas e, depois de pesquisar melhor, vi que é uma tendência do TikTok de 2025. Achei a ideia de desenvolver um currículo pessoal de interesses e estudos muito boa. Estou pesquisando mais a fundo o conceito para depois desenvolver o meu formato. Esse processo de descoberta pode levar meses.</p>
+
+
+        <p>Ouvi muito Legião Urbana neste mês. Quero postar sobre a banda em breve; devorei os discos e acompanhei as letras. Foi muito bom, e espero comunicar melhor minhas reações em um post agora em agosto.</p>
+
+
+        <p>Em julho, entrei no grupo Entreblogs e comecei a divulgar meu blog online. Participo dos chats de WhatsApp do grupo também. Aparentemente, é um pessoal gente boa, sem grandes atritos no grupo, além de gente muito inteligente e dedicada. Também alcancei meu centésimo post no blog, o que para mim é uma grande vitória.</p>
+
+
+        <p>No final do mês, retornaram as aulas na escola. Fui aos planejamentos escolares e participei do teatro (ou do circo, como preferir chamar). Está tudo bem, as aulas continuam e agosto será ótimo.</p>
+
+       
+
+        <!-- Card Estilizado de Xadrez -->
+
+        <section class="chess-card">
+
+            <div class="chess-header">
+
+                <h4><span>♟</span> Meu Xadrez no mês</h4>
+
+                <span class="chess-platform"><a href="https://lichess.org/@/prof_felipebrasil" target="_blank" rel="noopener noreferrer">lichess.org</a></span>
+
+            </div>
+
+           
+
+            <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 20px;">
+
+                Joguei 193 partidas este mês. Aqui está o resumo:
+
+            </p>
+
+
+            <div class="chess-stats-grid">
+
+                <div class="stat-box win">
+
+                    <div class="stat-value">102</div>
+
+                    <div class="stat-label">Vitórias</div>
+
+                </div>
+
+                <div class="stat-box draw">
+
+                    <div class="stat-value">12</div>
+
+                    <div class="stat-label">Empates</div>
+
+                </div>
+
+                <div class="stat-box loss">
+
+                    <div class="stat-value">79</div>
+
+                    <div class="stat-label">Derrotas</div>
+
+                </div>
+
+                <div class="stat-box total">
+
+                    <div class="stat-value">193</div>
+
+                    <div class="stat-label">Total</div>
+
+                </div>
+
+            </div>
+
+
+            <div class="chess-progress">
+
+                <div class="progress-bar win"></div>
+
+                <div class="progress-bar draw"></div>
+
+                <div class="progress-bar loss"></div>
+
+            </div>
+
+        </section>
+
+
+        <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+
+
+        <!-- Botão de E-mail com ícone SVG centralizado -->
+
+        <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+
+            </svg>
+
+            Comente me enviando um email
+
+        </a>
+
+
+        <!-- begin www.htmlcommentbox.com -->
+
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+
+        <!-- end www.htmlcommentbox.com -->
+
+
+    </div>
+
+</body>
+
+</html>
+
+Aqui está o código atualizado.
+
+Transformei os links de navegação/posts em botões padronizados, centralizados e sem marcadores de lista (list-style: none), garantindo que fiquem bem apresentáveis tanto no desktop quanto no celular.
+HTML
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="/Imagens/favicon.png">
+
+    <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="A Grande Onda" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/agrandeondaminiatura.png" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+    <title>2026 Julho</title>
+    <style>
+        :root {
+            --win-color: #22c55e;
+            --draw-color: #f59e0b;
+            --loss-color: #ef4444;
+            --primary-btn: #5c8ab3;
+            --primary-btn-hover: #4a7296;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center;     
+            align-items: flex-start;     
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        /* --- CARD DE XADREZ ESTILIZADO --- */
+        .chess-card {
+            width: 100%;
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+            border-radius: 16px;
+            padding: 28px;
+            color: #ffffff;
+            margin: 25px 0 35px 0;
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chess-card::before {
+            content: "♟";
+            position: absolute;
+            right: -10px;
+            bottom: -20px;
+            font-size: 140px;
+            opacity: 0.04;
+            pointer-events: none;
+        }
+
+        .chess-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 14px;
+        }
+
+        .chess-header h4 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #f8fafc;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chess-platform {
+            font-size: 0.85rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 10px;
+            border-radius: 20px;
+            color: #cbd5e1;
+        }
+
+        .chess-platform a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .chess-platform a:hover {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .chess-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            text-align: center;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 14px 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+        }
+
+        .stat-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        .stat-box.win .stat-value { color: var(--win-color); }
+        .stat-box.draw .stat-value { color: var(--draw-color); }
+        .stat-box.loss .stat-value { color: var(--loss-color); }
+        .stat-box.total .stat-value { color: #f8fafc; }
+
+        .chess-progress {
+            margin-top: 20px;
+            height: 6px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+        }
+
+        .progress-bar.win { width: 54.1%; background-color: var(--win-color); }
+        .progress-bar.draw { width: 2.1%; background-color: var(--draw-color); }
+        .progress-bar.loss { width: 43.8%; background-color: var(--loss-color); }
+
+        /* --- GRUPO DE BOTÕES DE AÇÃO --- */
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            margin: 25px 0;
+            padding: 0;
+            list-style: none; /* Remove marcadores caso seja ul/li */
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            max-width: 320px;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-btn);
+            color: var(--primary-btn);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-btn);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .btn-solid {
+            background-color: var(--primary-btn);
+            color: #fff;
+            border: 2px solid var(--primary-btn);
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+        }
+
+        .btn-solid:hover {
+            background-color: var(--primary-btn-hover);
+            border-color: var(--primary-btn-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+        }
+
+        .btn svg {
+            fill: currentColor;
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Caixa de comentários */
+        #HCB_comment_box {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        /* Responsividade Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 25px 20px;
+                margin: 20px auto;
+            }
+            
+            h1 { font-size: 1.8rem; }
+            h3 { font-size: 1rem; padding-bottom: 15px; }
+            p { font-size: 1rem; }
+
+            .chess-stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .btn {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>2026 Julho</h1>
+        <h3>01/08/2026 Diário</h3>
+
+        <img src="/Imagens/selobeda2026.png" alt="SELO BEDA" style="margin-bottom: 20px;">
+
+        <p>Julho, um mês meh. A primeira semana foi a última semana do primeiro trimestre escolar. Tive que “dar um gás” nas pendências de atividades dos meus alunos na escola. Consegui concluir muita coisa e entregamos tudo antes do final da metade do trimestre.</p>
+
+        <p>Na segunda semana, iniciaram-se as minhas duas semanas de férias e fui para Curitiba com meus pais. Fiquei na kitnet com eles, e é extremamente estressante aquele ambiente: é basicamente uma sala/cozinha de 5x5 metros, uma TV passando notícia ruim sem parar, e eu fico na mesa da cozinha com meu computador, mas é terrível quando comparado ao meu escritório/quarto. Lá nem quarto tenho; é um colchão no chão da sala para dormir e fica nisso mesmo.</p>
+
+        <p>Pessoalmente, acho que só gosto de Curitiba estando sozinho ou em períodos curtos. Morar lá em três pessoas em uma kitnet de 40 metros quadrados, sem chance. Parabéns para quem consegue; eu preciso de espaço e calma.</p>
+
+        <p>Bom, estava em Curitiba, fiz meus exames e consultas médicas. Deu tudo certo, exceto que agora adicionei mais uma doença à minha lista: o glaucoma. Incurável, crônica… agora é só passar o colírio para evitar perdas maiores de visão. Cerca de 30% do olho esquerdo já foram para as cucuias.</p>
+
+        <p>Na terça-feira, dia 21, voltei para Matinhos, sozinho. E sim, neste momento tive uma boa semana. Comi algumas marmitas, fiz macarrão, racionei comida porque não queria ir ao mercado… Tudo certo, ficar sozinho é ótimo.</p>
+
+        <p>Quanto a jogos, acabei gastando mais do que devia este mês com games. Foram cerca de 400 reais queimados de supetão na promoção da Steam em jogos que até agora não joguei nenhum. É aquela questão de comprar em busca de um acesso e, na hora de consumir, postergar para “quando eu estiver pronto para este jogo”.</p>
+
+        <p>Assisti a um filme neste mês: Perfect Days. Muito bom! De início, achei uma obra-prima, mas, passados alguns dias, pensei em escrever um texto sobre ele e a empolgação se foi. Gostei do filme, certamente estaria na minha lista dos dez melhores que assisti. Mas, ao mesmo tempo, a minha primeira impressão foi muito acentuada; depois caí na real e comecei a achar defeitos na obra. Talvez reassistindo eu tenha uma resposta melhor. Contudo, o ator principal certamente mereceu a Palma de Ouro em Cannes, um trabalho exuberante.</p>
+
+        <p>Li também um livro do Caio Feijó sobre pedagogia. No geral, não gostei muito do livro. Achei os pontos discutidos meio fora da realidade, e ele realmente escrevia sem lugar de fala. Os problemas das escolas públicas existem desde sempre, mas ele não conseguia elaborar mais sobre o assunto porque sempre deu aula em escolas particulares. Achei válidos alguns pontos, mas o livro como um todo é de alguém que não viveu aquilo na pele. Seria como ler um livro escrito por uma pessoa branca destacando problemas relacionados ao racismo enfrentado por pessoas negras.</p>
+
+        <p>A parte boa de Julho foi ter descoberto o conceito de “currículo pessoal” por um vídeo do Odysseas e, depois de pesquisar melhor, vi que é uma tendência do TikTok de 2025. Achei a ideia de desenvolver um currículo pessoal de interesses e estudos muito boa. Estou pesquisando mais a fundo o conceito para depois desenvolver o meu formato. Esse processo de descoberta pode levar meses.</p>
+
+        <p>Ouvi muito Legião Urbana neste mês. Quero postar sobre a banda em breve; devorei os discos e acompanhei as letras. Foi muito bom, e espero comunicar melhor minhas reações em um post agora em agosto.</p>
+
+        <p>Em julho, entrei no grupo Entreblogs e comecei a divulgar meu blog online. Participo dos chats de WhatsApp do grupo também. Aparentemente, é um pessoal gente boa, sem grandes atritos no grupo, além de gente muito inteligente e dedicada. Também alcancei meu centésimo post no blog, o que para mim é uma grande vitória.</p>
+
+        <p>No final do mês, retornaram as aulas na escola. Fui aos planejamentos escolares e participei do teatro (ou do circo, como preferir chamar). Está tudo bem, as aulas continuam e agosto será ótimo.</p>
+        
+        <!-- Card Estilizado de Xadrez -->
+        <section class="chess-card">
+            <div class="chess-header">
+                <h4><span>♟</span> Meu Xadrez no mês</h4>
+                <span class="chess-platform"><a href="https://lichess.org/@/prof_felipebrasil" target="_blank" rel="noopener noreferrer">lichess.org</a></span>
+            </div>
+            
+            <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 20px;">
+                Joguei 193 partidas este mês. Aqui está o resumo:
+            </p>
+
+            <div class="chess-stats-grid">
+                <div class="stat-box win">
+                    <div class="stat-value">102</div>
+                    <div class="stat-label">Vitórias</div>
+                </div>
+                <div class="stat-box draw">
+                    <div class="stat-value">12</div>
+                    <div class="stat-label">Empates</div>
+                </div>
+                <div class="stat-box loss">
+                    <div class="stat-value">79</div>
+                    <div class="stat-label">Derrotas</div>
+                </div>
+                <div class="stat-box total">
+                    <div class="stat-value">193</div>
+                    <div class="stat-label">Total</div>
+                </div>
+            </div>
+
+            <div class="chess-progress">
+                <div class="progress-bar win"></div>
+                <div class="progress-bar draw"></div>
+                <div class="progress-bar loss"></div>
+            </div>
+        </section>
+
+        <!-- Botões de Ação Alinhados ao Centro -->
+        <div class="action-buttons">
+            <a href="/index.html" class="btn btn-outline">Voltar para o Início</a>
+            
+            <a href="mailto:felipefelicio@gmail.com" class="btn btn-solid">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                Comente me enviando um email
+            </a>
+        </div>
+
+        <!-- begin www.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+
+    </div>
+</body>
+</html>
+
+O que foi alterado:
+
+    Container Flexbox (.action-buttons): Agrupa os botões garantindo alinhamento centralizado perfeito (align-items: center) e espaçamento uniforme (gap: 12px).
+
+    Remoção de Marcadores: A regra list-style: none foi aplicada por garantia caso decida usar tags <ul> e <li> futuramente.
+
+    Padrão dos Botões (.btn, .btn-outline, .btn-solid): Padronizou os tamanhos e alinhamento dos textos/ícones para dar consistência visual ao rodapé.
+
+me enganei, é para fazer neste código aqui:
+
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="icon" type="image/x-icon" href="/Imagens/favicon.png">
+
+
+    <meta property="og:site_name" content="A Grande Onda">
+
+    <meta property="og:title" content="A Grande Onda" />
+
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/agrandeondaminiatura.png" />
+
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+
+    <title>2026 Julho</title>
+
+    <style>
+
+        :root {
+
+            --win-color: #22c55e;
+
+            --draw-color: #f59e0b;
+
+            --loss-color: #ef4444;
+
+        }
+
+
+        * {
+
+            box-sizing: border-box;
+
+        }
+
+
+        body, html {
+
+            min-height: 100vh;
+
+            margin: 0;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: flex-start;    
+
+            background-color: #f0f0f0;
+
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            line-height: 1.7;
+
+        }
+
+
+        .container {
+
+            width: 90%;
+
+            max-width: 750px;
+
+            padding: 40px 50px;
+
+            background-color: white;
+
+            border-radius: 8px;
+
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+
+            text-align: left;
+
+            margin: 40px auto;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+        }
+
+
+        p {
+
+            width: 100%;
+
+            margin-bottom: 20px;
+
+            color: #333;
+
+            font-size: 1.1rem;
+
+        }
+
+
+        h1, h3 {
+
+            text-align: center;
+
+        }
+
+
+        h1 {
+
+            color: #1a1a1a;
+
+            margin-bottom: 10px;
+
+            font-size: 2.5rem;
+
+            line-height: 1.2;
+
+        }
+
+
+        h3 {
+
+            font-weight: normal;
+
+            color: #666;
+
+            border-bottom: 1px solid #eee;
+
+            padding-bottom: 20px;
+
+            margin-bottom: 30px;
+
+            font-size: 1.2rem;
+
+            width: 100%;
+
+        }
+
+
+        /* --- CARD DE XADREZ ESTILIZADO --- */
+
+        .chess-card {
+
+            width: 100%;
+
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+
+            border-radius: 16px;
+
+            padding: 28px;
+
+            color: #ffffff;
+
+            margin: 25px 0 35px 0;
+
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
+
+            border: 1px solid rgba(255, 255, 255, 0.1);
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+
+        .chess-card::before {
+
+            content: "♟";
+
+            position: absolute;
+
+            right: -10px;
+
+            bottom: -20px;
+
+            font-size: 140px;
+
+            opacity: 0.04;
+
+            pointer-events: none;
+
+        }
+
+
+        .chess-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 20px;
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+            padding-bottom: 14px;
+
+        }
+
+
+        .chess-header h4 {
+
+            margin: 0;
+
+            font-size: 1.2rem;
+
+            font-weight: 700;
+
+            letter-spacing: -0.3px;
+
+            color: #f8fafc;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+        }
+
+
+        .chess-platform {
+
+            font-size: 0.85rem;
+
+            background: rgba(255, 255, 255, 0.1);
+
+            padding: 4px 10px;
+
+            border-radius: 20px;
+
+            color: #cbd5e1;
+
+        }
+
+
+        /* Estilo para o link do lichess ficar branco e sem sublinhado */
+
+        .chess-platform a {
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+        }
+
+
+        .chess-platform a:hover {
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+        }
+
+
+        .chess-stats-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 12px;
+
+            text-align: center;
+
+        }
+
+
+        .stat-box {
+
+            background: rgba(255, 255, 255, 0.05);
+
+            border-radius: 12px;
+
+            padding: 14px 8px;
+
+            border: 1px solid rgba(255, 255, 255, 0.05);
+
+            backdrop-filter: blur(5px);
+
+        }
+
+
+        .stat-value {
+
+            font-size: 1.6rem;
+
+            font-weight: 700;
+
+            line-height: 1.2;
+
+        }
+
+
+        .stat-label {
+
+            font-size: 0.75rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.5px;
+
+            margin-top: 4px;
+
+            color: #94a3b8;
+
+            font-weight: 600;
+
+        }
+
+
+        .stat-box.win .stat-value { color: var(--win-color); }
+
+        .stat-box.draw .stat-value { color: var(--draw-color); }
+
+        .stat-box.loss .stat-value { color: var(--loss-color); }
+
+        .stat-box.total .stat-value { color: #f8fafc; }
+
+
+        /* Barra de Progresso do Xadrez */
+
+        .chess-progress {
+
+            margin-top: 20px;
+
+            height: 6px;
+
+            width: 100%;
+
+            background-color: rgba(255, 255, 255, 0.1);
+
+            border-radius: 10px;
+
+            display: flex;
+
+            overflow: hidden;
+
+        }
+
+
+        .progress-bar {
+
+            height: 100%;
+
+        }
+
+
+        .progress-bar.win { width: 54.1%; background-color: var(--win-color); }
+
+        .progress-bar.draw { width: 2.1%; background-color: var(--draw-color); }
+
+        .progress-bar.loss { width: 43.8%; background-color: var(--loss-color); }
+
+
+        /* --- BOTÃO DE CONTATO POR E-MAIL --- */
+
+        .btn-email {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            padding: 12px 28px;
+
+            border-radius: 10px;
+
+            font-weight: bold;
+
+            font-size: 1rem;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+
+            background-color: #5c8ab3;
+
+            color: #fff;
+
+            border: 2px solid #5c8ab3;
+
+            cursor: pointer;
+
+            margin-top: 15px;
+
+            margin-bottom: 10px;
+
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+
+        }
+
+
+        .btn-email:hover {
+
+            background-color: #4a7296;
+
+            border-color: #4a7296;
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+
+        }
+
+
+        .btn-email svg {
+
+            fill: currentColor;
+
+            width: 20px;
+
+            height: 20px;
+
+        }
+
+
+        /* --- BOTÃO RETORNAR --- */
+
+        .btn-retornar {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 10px 24px;
+
+            border-radius: 10px;
+
+            font-weight: bold;
+
+            font-size: 0.95rem;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+
+            background: transparent;
+
+            border: 2px solid #5c8ab3;
+
+            color: #5c8ab3;
+
+            cursor: pointer;
+
+            margin-top: 25px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .btn-retornar:hover {
+
+            background: #5c8ab3;
+
+            color: #fff;
+
+        }
+
+
+        /* Ajustes para a caixa de comentários */
+
+        #HCB_comment_box {
+
+            width: 100%;
+
+            margin-top: 30px;
+
+        }
+
+
+        /* Ajustes Responsivos para Mobile */
+
+        @media (max-width: 600px) {
+
+            .container {
+
+                width: 95%;
+
+                padding: 25px 20px;
+
+                margin: 20px auto;
+
+            }
+
+           
+
+            h1 {
+
+                font-size: 1.8rem;
+
+            }
+
+
+            h3 {
+
+                font-size: 1rem;
+
+                padding-bottom: 15px;
+
+            }
+
+
+            p {
+
+                font-size: 1rem;
+
+            }
+
+
+            .chess-stats-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+
+            }
+
+
+            .btn-retornar, .btn-email {
+
+                padding: 10px 20px;
+
+                font-size: 0.9rem;
+
+                width: 100%;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>2026 Julho</h1>
+
+        <h3>01/08/2026 Diário</h3>
+
+
+        <img src="/Imagens/selobeda2026.png" alt="SELO BEDA" style="margin-bottom: 20px;">
+
+
+ <p>Tenho 38 anos e já visitei vários lugares em minha vida. Irei listar logo abaixo todas as cidades em que já estive por pelo menos um dia. Não conheço a fundo todos os lugares que visitei, mas aquela passada rápida para experimentar a cidade por algumas horas é algo que sempre realizo em viagens.</p>
+
+        <p>Sou natural de Curitiba, Paraná. Irei listar primeiro os estados em que estive no Brasil e as cidades que conheci:</p>
+
+
+
+    <h2>Brasil</h2>
+
+
+    <h3>Paraná</h3>
+
+    <ul>
+
+        <li>Curitiba</li>
+
+        <li>Matinhos</li>
+
+        <li>Guaratuba</li>
+
+        <li>Pontal do Paraná</li>
+
+        <li>Paranaguá</li>
+
+        <li>São José dos Pinhais</li>
+
+        <li>Araucária</li>
+
+        <li>Mandirituba</li>
+
+        <li>Campo Largo</li>
+
+        <li>Balsa Nova</li>
+
+        <li>Lapa</li>
+
+        <li>Tunas do Paraná</li>
+
+        <li>Rio Branco do Sul</li>
+
+        <li>Maringá</li>
+
+        <li>Londrina</li>
+
+        <li>Cascavel</li>
+
+        <li>Cornélio Procópio</li>
+
+        <li>Foz do Iguaçu</li>
+
+        <li>Santa Terezinha de Itaipu</li>
+
+        <li>Jaguariaíva</li>
+
+        <li>Ibaiti</li>
+
+    </ul>
+
+
+    <h3>Santa Catarina</h3>
+
+    <ul>
+
+        <li>São Francisco do Sul</li>
+
+        <li>Joinville</li>
+
+        <li>Itajaí</li>
+
+        <li>Penha</li>
+
+        <li>Balneário Camboriú</li>
+
+        <li>Bombinhas</li>
+
+        <li>Blumenau</li>
+
+        <li>Indaial</li>
+
+        <li>Ilhota</li>
+
+        <li>Brusque</li>
+
+        <li>Lages</li>
+
+        <li>Gaspar</li>
+
+        <li>Palhoça</li>
+
+        <li>Florianópolis</li>
+
+        <li>Laguna</li>
+
+        <li>Tubarão</li>
+
+        <li>São Joaquim</li>
+
+    </ul>
+
+
+    <h3>Rio Grande do Sul</h3>
+
+    <ul>
+
+        <li>Gramado</li>
+
+        <li>Canela</li>
+
+        <li>Bento Gonçalves</li>
+
+        <li>Caxias do Sul</li>
+
+        <li>Nova Petrópolis</li>
+
+        <li>Ametista do Sul</li>
+
+        <li>Frederico Westphalen</li>
+
+        <li>Santa Maria</li>
+
+        <li>Chuí</li>
+
+        <li>Uruguaiana</li>
+
+    </ul>
+
+
+    <h3>São Paulo</h3>
+
+    <ul>
+
+        <li>Peruíbe</li>
+
+        <li>Santos</li>
+
+        <li>São Sebastião</li>
+
+        <li>Caraguatatuba</li>
+
+        <li>São Paulo</li>
+
+        <li>São Carlos</li>
+
+        <li>Itu</li>
+
+        <li>Marília</li>
+
+        <li>Aparecida</li>
+
+        <li>Ribeirão Preto</li>
+
+    </ul>
+
+
+    <h3>Minas Gerais</h3>
+
+    <ul>
+
+        <li>Poços de Caldas</li>
+
+        <li>São João del-Rei</li>
+
+        <li>Tiradentes</li>
+
+        <li>Congonhas</li>
+
+        <li>Ituiutaba</li>
+
+        <li>Uberlândia</li>
+
+        <li>Itabirito</li>
+
+        <li>Ouro Preto</li>
+
+    </ul>
+
+
+    <h3>Rio de Janeiro</h3>
+
+    <ul>
+
+        <li>Paraty</li>
+
+        <li>Angra dos Reis</li>
+
+        <li>Rio de Janeiro</li>
+
+        <li>Petrópolis</li>
+
+    </ul>
+
+
+    <h3>Espírito Santo</h3>
+
+    <ul>
+
+        <li>Vitória</li>
+
+        <li>Guarapari</li>
+
+        <li>Venda Nova do Imigrante</li>
+
+        <li>Vila Velha</li>
+
+    </ul>
+
+
+    <h3>Mato Grosso do Sul</h3>
+
+    <ul>
+
+        <li>Bonito</li>
+
+        <li>Bodoquena</li>
+
+    </ul>
+
+
+    <h3>Mato Grosso</h3>
+
+    <ul>
+
+        <li>Chapada dos Guimarães</li>
+
+    </ul>
+
+
+    <h3>Sergipe</h3>
+
+    <ul>
+
+        <li>Aracaju</li>
+
+        <li>Canindé de São Francisco</li>
+
+    </ul>
+
+
+    <h2>Fora do Brasil</h2>
+
+    <p>Fora do Brasil, irei marcar só os pontos de destaque:</p>
+
+
+    <h3>Chile</h3>
+
+    <ul>
+
+        <li>Santiago</li>
+
+        <li>Valparaíso</li>
+
+        <li>Viña del Mar</li>
+
+        <li>Los Chacayes (Represa El Yeso)</li>
+
+    </ul>
+
+
+    <h3>Uruguai</h3>
+
+    <ul>
+
+        <li>Montevidéu</li>
+
+        <li>Punta del Este</li>
+
+        <li>Colônia do Sacramento</li>
+
+    </ul>
+
+
+    <h3>Argentina</h3>
+
+    <ul>
+
+        <li>Buenos Aires</li>
+
+        <li>Mercedes</li>
+
+    </ul>
+
+
+    <h3>Japão</h3>
+
+    <ul>
+
+        <li>Okayama</li>
+
+        <li>Akaiwa</li>
+
+        <li>Kurashiki</li>
+
+        <li>Takahashi</li>
+
+        <li>Hiroshima</li>
+
+        <li>Nobeoka</li>
+
+        <li>Aso</li>
+
+        <li>Quioto</li>
+
+        <li>Nara</li>
+
+        <li>Choshi</li>
+
+        <li>Urayasu</li>
+
+        <li>Tóquio</li>
+
+        <li>Yokohama</li>
+
+        <li>Miyajima</li>
+
+    </ul>
+
+
+    <h3>Itália</h3>
+
+    <ul>
+
+        <li>Roma</li>
+
+        <li>Pompéia</li>
+
+        <li>Positano</li>
+
+        <li>Siena</li>
+
+        <li>Montepulciano</li>
+
+        <li>Arezzo</li>
+
+        <li>Florença</li>
+
+        <li>Lucca</li>
+
+        <li>Pisa</li>
+
+        <li>Bolonha</li>
+
+        <li>Veneza</li>
+
+        <li>Verona</li>
+
+        <li>Milão</li>
+
+    </ul>
+
+
+    <h3>Alemanha</h3>
+
+    <ul>
+
+        <li>Aachen</li>
+
+        <li>Colônia</li>
+
+    </ul>
+
+
+    <h3>Bélgica</h3>
+
+    <ul>
+
+        <li>Bruxelas</li>
+
+        <li>Bruges</li>
+
+    </ul>
+
+
+    <h3>Holanda (Países Baixos)</h3>
+
+    <ul>
+
+        <li>Amsterdã</li>
+
+        <li>Volendam</li>
+
+        <li>Edam</li>
+
+    </ul>
+
+
+    <h3>Inglaterra</h3>
+
+    <ul>
+
+        <li>Londres</li>
+
+        <li>Greenwich</li>
+
+    </ul>
+
+
+    <h3>França</h3>
+
+    <ul>
+
+        <li>Calais</li>
+
+        <li>Lille</li>
+
+        <li>Paris</li>
+
+        <li>Versalhes</li>
+
+        <li>Chessy</li>
+
+    </ul>
+
+
+    <h3>Noruega</h3>
+
+    <ul>
+
+        <li>Oslo</li>
+
+        <li>Lillestrøm</li>
+
+    </ul>
+
+
+        <p>Estes são basicamente todos os lugares onde pisei e visitei por um dia ou mais.</p>
+
+        <p>Há espaço para mais viagens? Eu acho que hoje não quero ir para mais lugar nenhum. A paz da minha casa é o suficiente.</p>
+
+
+     
+
+        <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+
+
+        <!-- Botão de E-mail com ícone SVG centralizado -->
+
+        <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+
+            </svg>
+
+            Comente me enviando um email
+
+        </a>
+
+
+        <!-- begin www.htmlcommentbox.com -->
+
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+
+        <!-- end www.htmlcommentbox.com -->
+
+
+    </div>
+
+</body>
+
+</html>
+
+Aqui está o código atualizado.
+
+Converti todas as listas de cidades (<ul> / <li>) em contêineres do tipo grid de botões, removendo os marcadores de lista (list-style: none), alinhando o texto e os botões ao centro e aplicando um visual elegante e minimalista de botão para cada item. Os botões de navegação e e-mail do rodapé também foram organizados e centralizados.
+HTML
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="/Imagens/favicon.png">
+
+    <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="A Grande Onda" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/agrandeondaminiatura.png" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+    <title>2026 Julho</title>
+    <style>
+        :root {
+            --win-color: #22c55e;
+            --draw-color: #f59e0b;
+            --loss-color: #ef4444;
+            --btn-bg: #f8fafc;
+            --btn-border: #e2e8f0;
+            --btn-text: #334155;
+            --btn-hover-bg: #5c8ab3;
+            --btn-hover-text: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center;     
+            align-items: flex-start;     
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: center; /* Alinhamento centralizado para os elementos internos */
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+            text-align: left; /* Mantém os parágrafos de texto legíveis à esquerda */
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            width: 100%;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            color: #1e293b;
+            font-size: 1.8rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #5c8ab3;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            font-weight: 600;
+            color: #475569;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* --- ESTILO DOS BOTÕES DAS CIDADES --- */
+        ul.city-list {
+            list-style: none; /* Remove marcador */
+            padding: 0;
+            margin: 0 0 25px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Centraliza a linha de botões */
+            gap: 10px;
+            width: 100%;
+        }
+
+        ul.city-list li {
+            list-style: none; /* Remove marcador */
+            background-color: var(--btn-bg);
+            border: 1px solid var(--btn-border);
+            color: var(--btn-text);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+            transition: all 0.2s ease-in-out;
+            cursor: default;
+            user-select: none;
+        }
+
+        ul.city-list li:hover {
+            background-color: var(--btn-hover-bg);
+            color: var(--btn-hover-text);
+            border-color: var(--btn-hover-bg);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(92, 138, 179, 0.25);
+        }
+
+        /* --- BOTÕES DE AÇÃO DO RODAPÉ --- */
+        .footer-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-retornar:hover {
+            background: #5c8ab3;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background-color: #5c8ab3;
+            color: #fff;
+            border: 2px solid #5c8ab3;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-email:hover {
+            background-color: #4a7296;
+            border-color: #4a7296;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+        }
+
+        .btn-email svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Caixa de comentários */
+        #HCB_comment_box {
+            width: 100%;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        /* Ajustes Responsivos para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 25px 20px;
+                margin: 20px auto;
+            }
+            
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.4rem; }
+            h3 { font-size: 1.1rem; }
+            p { font-size: 1rem; }
+
+            ul.city-list {
+                gap: 8px;
+            }
+
+            ul.city-list li {
+                padding: 6px 12px;
+                font-size: 0.85rem;
+            }
+
+            .btn-retornar, .btn-email {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>2026 Julho</h1>
+        <h3 class="text-center" style="font-weight: normal; color: #666; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px;">01/08/2026 Diário</h3>
+
+        <img src="/Imagens/selobeda2026.png" alt="SELO BEDA" style="margin-bottom: 20px;">
+
+        <p>Tenho 38 anos e já visitei vários lugares em minha vida. Irei listar logo abaixo todas as cidades em que já estive por pelo menos um dia. Não conheço a fundo todos os lugares que visitei, mas aquela passada rápida para experimentar a cidade por algumas horas é algo que sempre realizo em viagens.</p>
+        <p>Sou natural de Curitiba, Paraná. Irei listar primeiro os estados em que estive no Brasil e as cidades que conheci:</p>
+
+        <h2>Brasil</h2>
+
+        <h3>Paraná</h3>
+        <ul class="city-list">
+            <li>Curitiba</li>
+            <li>Matinhos</li>
+            <li>Guaratuba</li>
+            <li>Pontal do Paraná</li>
+            <li>Paranaguá</li>
+            <li>São José dos Pinhais</li>
+            <li>Araucária</li>
+            <li>Mandirituba</li>
+            <li>Campo Largo</li>
+            <li>Balsa Nova</li>
+            <li>Lapa</li>
+            <li>Tunas do Paraná</li>
+            <li>Rio Branco do Sul</li>
+            <li>Maringá</li>
+            <li>Londrina</li>
+            <li>Cascavel</li>
+            <li>Cornélio Procópio</li>
+            <li>Foz do Iguaçu</li>
+            <li>Santa Terezinha de Itaipu</li>
+            <li>Jaguariaíva</li>
+            <li>Ibaiti</li>
+        </ul>
+
+        <h3>Santa Catarina</h3>
+        <ul class="city-list">
+            <li>São Francisco do Sul</li>
+            <li>Joinville</li>
+            <li>Itajaí</li>
+            <li>Penha</li>
+            <li>Balneário Camboriú</li>
+            <li>Bombinhas</li>
+            <li>Blumenau</li>
+            <li>Indaial</li>
+            <li>Ilhota</li>
+            <li>Brusque</li>
+            <li>Lages</li>
+            <li>Gaspar</li>
+            <li>Palhoça</li>
+            <li>Florianópolis</li>
+            <li>Laguna</li>
+            <li>Tubarão</li>
+            <li>São Joaquim</li>
+        </ul>
+
+        <h3>Rio Grande do Sul</h3>
+        <ul class="city-list">
+            <li>Gramado</li>
+            <li>Canela</li>
+            <li>Bento Gonçalves</li>
+            <li>Caxias do Sul</li>
+            <li>Nova Petrópolis</li>
+            <li>Ametista do Sul</li>
+            <li>Frederico Westphalen</li>
+            <li>Santa Maria</li>
+            <li>Chuí</li>
+            <li>Uruguaiana</li>
+        </ul>
+
+        <h3>São Paulo</h3>
+        <ul class="city-list">
+            <li>Peruíbe</li>
+            <li>Santos</li>
+            <li>São Sebastião</li>
+            <li>Caraguatatuba</li>
+            <li>São Paulo</li>
+            <li>São Carlos</li>
+            <li>Itu</li>
+            <li>Marília</li>
+            <li>Aparecida</li>
+            <li>Ribeirão Preto</li>
+        </ul>
+
+        <h3>Minas Gerais</h3>
+        <ul class="city-list">
+            <li>Poços de Caldas</li>
+            <li>São João del-Rei</li>
+            <li>Tiradentes</li>
+            <li>Congonhas</li>
+            <li>Ituiutaba</li>
+            <li>Uberlândia</li>
+            <li>Itabirito</li>
+            <li>Ouro Preto</li>
+        </ul>
+
+        <h3>Rio de Janeiro</h3>
+        <ul class="city-list">
+            <li>Paraty</li>
+            <li>Angra dos Reis</li>
+            <li>Rio de Janeiro</li>
+            <li>Petrópolis</li>
+        </ul>
+
+        <h3>Espírito Santo</h3>
+        <ul class="city-list">
+            <li>Vitória</li>
+            <li>Guarapari</li>
+            <li>Venda Nova do Imigrante</li>
+            <li>Vila Velha</li>
+        </ul>
+
+        <h3>Mato Grosso do Sul</h3>
+        <ul class="city-list">
+            <li>Bonito</li>
+            <li>Bodoquena</li>
+        </ul>
+
+        <h3>Mato Grosso</h3>
+        <ul class="city-list">
+            <li>Chapada dos Guimarães</li>
+        </ul>
+
+        <h3>Sergipe</h3>
+        <ul class="city-list">
+            <li>Aracaju</li>
+            <li>Canindé de São Francisco</li>
+        </ul>
+
+        <h2>Fora do Brasil</h2>
+        <p class="text-center">Fora do Brasil, irei marcar só os pontos de destaque:</p>
+
+        <h3>Chile</h3>
+        <ul class="city-list">
+            <li>Santiago</li>
+            <li>Valparaíso</li>
+            <li>Viña del Mar</li>
+            <li>Los Chacayes (Represa El Yeso)</li>
+        </ul>
+
+        <h3>Uruguai</h3>
+        <ul class="city-list">
+            <li>Montevidéu</li>
+            <li>Punta del Este</li>
+            <li>Colônia do Sacramento</li>
+        </ul>
+
+        <h3>Argentina</h3>
+        <ul class="city-list">
+            <li>Buenos Aires</li>
+            <li>Mercedes</li>
+        </ul>
+
+        <h3>Japão</h3>
+        <ul class="city-list">
+            <li>Okayama</li>
+            <li>Akaiwa</li>
+            <li>Kurashiki</li>
+            <li>Takahashi</li>
+            <li>Hiroshima</li>
+            <li>Nobeoka</li>
+            <li>Aso</li>
+            <li>Quioto</li>
+            <li>Nara</li>
+            <li>Choshi</li>
+            <li>Urayasu</li>
+            <li>Tóquio</li>
+            <li>Yokohama</li>
+            <li>Miyajima</li>
+        </ul>
+
+        <h3>Itália</h3>
+        <ul class="city-list">
+            <li>Roma</li>
+            <li>Pompéia</li>
+            <li>Positano</li>
+            <li>Siena</li>
+            <li>Montepulciano</li>
+            <li>Arezzo</li>
+            <li>Florença</li>
+            <li>Lucca</li>
+            <li>Pisa</li>
+            <li>Bolonha</li>
+            <li>Veneza</li>
+            <li>Verona</li>
+            <li>Milão</li>
+        </ul>
+
+        <h3>Alemanha</h3>
+        <ul class="city-list">
+            <li>Aachen</li>
+            <li>Colônia</li>
+        </ul>
+
+        <h3>Bélgica</h3>
+        <ul class="city-list">
+            <li>Bruxelas</li>
+            <li>Bruges</li>
+        </ul>
+
+        <h3>Holanda (Países Baixos)</h3>
+        <ul class="city-list">
+            <li>Amsterdã</li>
+            <li>Volendam</li>
+            <li>Edam</li>
+        </ul>
+
+        <h3>Inglaterra</h3>
+        <ul class="city-list">
+            <li>Londres</li>
+            <li>Greenwich</li>
+        </ul>
+
+        <h3>França</h3>
+        <ul class="city-list">
+            <li>Calais</li>
+            <li>Lille</li>
+            <li>Paris</li>
+            <li>Versalhes</li>
+            <li>Chessy</li>
+        </ul>
+
+        <h3>Noruega</h3>
+        <ul class="city-list">
+            <li>Oslo</li>
+            <li>Lillestrøm</li>
+        </ul>
+
+        <p>Estes são basicamente todos os lugares onde pisei e visitei por um dia ou mais.</p>
+        <p>Há espaço para mais viagens? Eu acho que hoje não quero ir para mais lugar nenhum. A paz da minha casa é o suficiente.</p>
+
+        <!-- Botões de Ação Centralizados no Rodapé -->
+        <div class="footer-actions">
+            <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+
+            <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                Comente me enviando um email
+            </a>
+        </div>
+
+        <!-- begin www.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+
+    </div>
+</body>
+</html>
+
+O que foi alterado:
+
+    Listas em Formato de Botão (ul.city-list): Removido o marcador (list-style: none) e aplicados estilos de pílula/botão em cada elemento <li>.
+
+    Alinhamento Centralizado: Os botões das cidades são renderizados em um flex-wrap centralizado (justify-content: center), adaptando-se suavemente a telas pequenas e grandes.
+
+    Efeito Hover e Transição: Adicionada uma animação leve ao passar o mouse por cima de cada botão de cidade para feedback interativo.
+
+    Organização do Rodapé: Agrupados os botões "Voltar para o Início" e "Comente me enviando um email" em um contêiner alinhado e centralizado.
+
+mantenha os botões da base da pagina na formatação em que estavam
+
+Aqui está o código com as listas de cidades transformadas em botões, mantendo a formatação original exata dos dois botões do rodapé (o botão "Comente me enviando um email" e o botão "A Grande Onda - Início" com estilo de borda, alinhamento e ícone originais):
+HTML
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="/Imagens/favicon.png">
+
+    <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="A Grande Onda" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/agrandeondaminiatura.png" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+    <title>2026 Julho</title>
+    <style>
+        :root {
+            --win-color: #22c55e;
+            --draw-color: #f59e0b;
+            --loss-color: #ef4444;
+            --btn-bg: #f8fafc;
+            --btn-border: #e2e8f0;
+            --btn-text: #334155;
+            --btn-hover-bg: #5c8ab3;
+            --btn-hover-text: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center;     
+            align-items: flex-start;     
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+            text-align: left;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            width: 100%;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            color: #1e293b;
+            font-size: 1.8rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #5c8ab3;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            font-weight: 600;
+            color: #475569;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* --- ESTILO DOS BOTÕES DAS CIDADES --- */
+        ul.city-list {
+            list-style: none; /* Remove marcador */
+            padding: 0;
+            margin: 0 0 25px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Centraliza os botões das cidades */
+            gap: 10px;
+            width: 100%;
+        }
+
+        ul.city-list li {
+            list-style: none; /* Remove marcador */
+            background-color: var(--btn-bg);
+            border: 1px solid var(--btn-border);
+            color: var(--btn-text);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+            transition: all 0.2s ease-in-out;
+            cursor: default;
+            user-select: none;
+        }
+
+        ul.city-list li:hover {
+            background-color: var(--btn-hover-bg);
+            color: var(--btn-hover-text);
+            border-color: var(--btn-hover-bg);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(92, 138, 179, 0.25);
+        }
+
+        /* --- BOTÕES DO RODAPÉ (FORMATO ORIGINAL MANTIDO) --- */
+        .btn-container {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .btn-retornar {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 1px solid #000000;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-retornar:hover {
+            background-color: #f0f0f0;
+        }
+
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 1px solid #000000;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-email:hover {
+            background-color: #f0f0f0;
+        }
+
+        .btn-email svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* Caixa de comentários */
+        #HCB_comment_box {
+            width: 100%;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        /* Adjustments for smaller screens */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+                margin: 20px auto;
+            }
+            
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.4rem; }
+            h3 { font-size: 1.1rem; }
+            p { font-size: 1rem; }
+
+            ul.city-list {
+                gap: 8px;
+            }
+
+            ul.city-list li {
+                padding: 6px 12px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>2026 Julho</h1>
+        <h3 class="text-center" style="font-weight: normal; color: #666; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px;">01/08/2026 Diário</h3>
+
+        <div style="text-align: center; width: 100%;">
+            <img src="/Imagens/selobeda2026.png" alt="SELO BEDA" style="margin-bottom: 20px;">
+        </div>
+
+        <p>Tenho 38 anos e já visitei vários lugares em minha vida. Irei listar logo abaixo todas as cidades em que já estive por pelo menos um dia. Não conheço a fundo todos os lugares que visitei, mas aquela passada rápida para experimentar a cidade por algumas horas é algo que sempre realizo em viagens.</p>
+        <p>Sou natural de Curitiba, Paraná. Irei listar primeiro os estados em que estive no Brasil e as cidades que conheci:</p>
+
+        <h2>Brasil</h2>
+
+        <h3>Paraná</h3>
+        <ul class="city-list">
+            <li>Curitiba</li>
+            <li>Matinhos</li>
+            <li>Guaratuba</li>
+            <li>Pontal do Paraná</li>
+            <li>Paranaguá</li>
+            <li>São José dos Pinhais</li>
+            <li>Araucária</li>
+            <li>Mandirituba</li>
+            <li>Campo Largo</li>
+            <li>Balsa Nova</li>
+            <li>Lapa</li>
+            <li>Tunas do Paraná</li>
+            <li>Rio Branco do Sul</li>
+            <li>Maringá</li>
+            <li>Londrina</li>
+            <li>Cascavel</li>
+            <li>Cornélio Procópio</li>
+            <li>Foz do Iguaçu</li>
+            <li>Santa Terezinha de Itaipu</li>
+            <li>Jaguariaíva</li>
+            <li>Ibaiti</li>
+        </ul>
+
+        <h3>Santa Catarina</h3>
+        <ul class="city-list">
+            <li>São Francisco do Sul</li>
+            <li>Joinville</li>
+            <li>Itajaí</li>
+            <li>Penha</li>
+            <li>Balneário Camboriú</li>
+            <li>Bombinhas</li>
+            <li>Blumenau</li>
+            <li>Indaial</li>
+            <li>Ilhota</li>
+            <li>Brusque</li>
+            <li>Lages</li>
+            <li>Gaspar</li>
+            <li>Palhoça</li>
+            <li>Florianópolis</li>
+            <li>Laguna</li>
+            <li>Tubarão</li>
+            <li>São Joaquim</li>
+        </ul>
+
+        <h3>Rio Grande do Sul</h3>
+        <ul class="city-list">
+            <li>Gramado</li>
+            <li>Canela</li>
+            <li>Bento Gonçalves</li>
+            <li>Caxias do Sul</li>
+            <li>Nova Petrópolis</li>
+            <li>Ametista do Sul</li>
+            <li>Frederico Westphalen</li>
+            <li>Santa Maria</li>
+            <li>Chuí</li>
+            <li>Uruguaiana</li>
+        </ul>
+
+        <h3>São Paulo</h3>
+        <ul class="city-list">
+            <li>Peruíbe</li>
+            <li>Santos</li>
+            <li>São Sebastião</li>
+            <li>Caraguatatuba</li>
+            <li>São Paulo</li>
+            <li>São Carlos</li>
+            <li>Itu</li>
+            <li>Marília</li>
+            <li>Aparecida</li>
+            <li>Ribeirão Preto</li>
+        </ul>
+
+        <h3>Minas Gerais</h3>
+        <ul class="city-list">
+            <li>Poços de Caldas</li>
+            <li>São João del-Rei</li>
+            <li>Tiradentes</li>
+            <li>Congonhas</li>
+            <li>Ituiutaba</li>
+            <li>Uberlândia</li>
+            <li>Itabirito</li>
+            <li>Ouro Preto</li>
+        </ul>
+
+        <h3>Rio de Janeiro</h3>
+        <ul class="city-list">
+            <li>Paraty</li>
+            <li>Angra dos Reis</li>
+            <li>Rio de Janeiro</li>
+            <li>Petrópolis</li>
+        </ul>
+
+        <h3>Espírito Santo</h3>
+        <ul class="city-list">
+            <li>Vitória</li>
+            <li>Guarapari</li>
+            <li>Venda Nova do Imigrante</li>
+            <li>Vila Velha</li>
+        </ul>
+
+        <h3>Mato Grosso do Sul</h3>
+        <ul class="city-list">
+            <li>Bonito</li>
+            <li>Bodoquena</li>
+        </ul>
+
+        <h3>Mato Grosso</h3>
+        <ul class="city-list">
+            <li>Chapada dos Guimarães</li>
+        </ul>
+
+        <h3>Sergipe</h3>
+        <ul class="city-list">
+            <li>Aracaju</li>
+            <li>Canindé de São Francisco</li>
+        </ul>
+
+        <h2>Fora do Brasil</h2>
+        <p class="text-center">Fora do Brasil, irei marcar só os pontos de destaque:</p>
+
+        <h3>Chile</h3>
+        <ul class="city-list">
+            <li>Santiago</li>
+            <li>Valparaíso</li>
+            <li>Viña del Mar</li>
+            <li>Los Chacayes (Represa El Yeso)</li>
+        </ul>
+
+        <h3>Uruguai</h3>
+        <ul class="city-list">
+            <li>Montevidéu</li>
+            <li>Punta del Este</li>
+            <li>Colônia do Sacramento</li>
+        </ul>
+
+        <h3>Argentina</h3>
+        <ul class="city-list">
+            <li>Buenos Aires</li>
+            <li>Mercedes</li>
+        </ul>
+
+        <h3>Japão</h3>
+        <ul class="city-list">
+            <li>Okayama</li>
+            <li>Akaiwa</li>
+            <li>Kurashiki</li>
+            <li>Takahashi</li>
+            <li>Hiroshima</li>
+            <li>Nobeoka</li>
+            <li>Aso</li>
+            <li>Quioto</li>
+            <li>Nara</li>
+            <li>Choshi</li>
+            <li>Urayasu</li>
+            <li>Tóquio</li>
+            <li>Yokohama</li>
+            <li>Miyajima</li>
+        </ul>
+
+        <h3>Itália</h3>
+        <ul class="city-list">
+            <li>Roma</li>
+            <li>Pompéia</li>
+            <li>Positano</li>
+            <li>Siena</li>
+            <li>Montepulciano</li>
+            <li>Arezzo</li>
+            <li>Florença</li>
+            <li>Lucca</li>
+            <li>Pisa</li>
+            <li>Bolonha</li>
+            <li>Veneza</li>
+            <li>Verona</li>
+            <li>Milão</li>
+        </ul>
+
+        <h3>Alemanha</h3>
+        <ul class="city-list">
+            <li>Aachen</li>
+            <li>Colônia</li>
+        </ul>
+
+        <h3>Bélgica</h3>
+        <ul class="city-list">
+            <li>Bruxelas</li>
+            <li>Bruges</li>
+        </ul>
+
+        <h3>Holanda (Países Baixos)</h3>
+        <ul class="city-list">
+            <li>Amsterdã</li>
+            <li>Volendam</li>
+            <li>Edam</li>
+        </ul>
+
+        <h3>Inglaterra</h3>
+        <ul class="city-list">
+            <li>Londres</li>
+            <li>Greenwich</li>
+        </ul>
+
+        <h3>França</h3>
+        <ul class="city-list">
+            <li>Calais</li>
+            <li>Lille</li>
+            <li>Paris</li>
+            <li>Versalhes</li>
+            <li>Chessy</li>
+        </ul>
+
+        <h3>Noruega</h3>
+        <ul class="city-list">
+            <li>Oslo</li>
+            <li>Lillestrøm</li>
+        </ul>
+
+        <p>Estes são basicamente todos os lugares onde pisei e visitei por um dia ou mais.</p>
+        <p>Há espaço para mais viagens? Eu acho que hoje não quero ir para mais lugar nenhum. A paz da minha casa é o suficiente.</p>
+
+        <!-- Botões Originais mantidos sem alterações de estilo -->
+        <div class="btn-container">
+            <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                Comente me enviando um email
+            </a>
+        </div>
+
+        <div class="btn-container">
+            <a href="https://a-grande-onda.blog.br/" class="btn-retornar">A Grande Onda - Início</a>
+        </div>
+
+        <!-- begin www.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+
+    </div>
+</body>
+</html>
+
+pegue este código, traduza o conteúdo para inglÊs, com os nomes das cidades em inglês quando houver, depois me forneça o HTML pronto:
+
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="icon" type="image/x-icon" href="/Imagens/favicon.png">
+
+
+    <meta property="og:site_name" content="A Grande Onda">
+
+    <meta property="og:title" content="A Grande Onda" />
+
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/agrandeondaminiatura.png" />
+
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+
+    <title>Lugares onde pisei</title>
+
+    <style>
+
+        :root {
+
+            --win-color: #22c55e;
+
+            --draw-color: #f59e0b;
+
+            --loss-color: #ef4444;
+
+            --btn-bg: #f8fafc;
+
+            --btn-border: #e2e8f0;
+
+            --btn-text: #334155;
+
+            --btn-hover-bg: #5c8ab3;
+
+            --btn-hover-text: #ffffff;
+
+        }
+
+
+        * {
+
+            box-sizing: border-box;
+
+        }
+
+
+        body, html {
+
+            min-height: 100vh;
+
+            margin: 0;
+
+            display: flex;
+
+            justify-content: center;    
+
+            align-items: flex-start;    
+
+            background-color: #f0f0f0;
+
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+            line-height: 1.7;
+
+        }
+
+
+        .container {
+
+            width: 90%;
+
+            max-width: 750px;
+
+            padding: 40px 50px;
+
+            background-color: white;
+
+            border-radius: 8px;
+
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+
+            text-align: left;
+
+            margin: 40px auto;
+
+            display: flex;
+
+            flex-direction: column;
+
+        }
+
+
+        p {
+
+            width: 100%;
+
+            margin-bottom: 20px;
+
+            color: #333;
+
+            font-size: 1.1rem;
+
+            text-align: left;
+
+        }
+
+
+        .text-center {
+
+            text-align: center;
+
+        }
+
+
+        h1, h2, h3 {
+
+            text-align: center;
+
+            width: 100%;
+
+        }
+
+
+        h1 {
+
+            color: #1a1a1a;
+
+            margin-bottom: 10px;
+
+            font-size: 2.5rem;
+
+            line-height: 1.2;
+
+        }
+
+
+        h2 {
+
+            color: #1e293b;
+
+            font-size: 1.8rem;
+
+            margin-top: 30px;
+
+            margin-bottom: 15px;
+
+            border-bottom: 2px solid #5c8ab3;
+
+            padding-bottom: 8px;
+
+        }
+
+
+        h3 {
+
+            font-weight: 600;
+
+            color: #475569;
+
+            margin-top: 25px;
+
+            margin-bottom: 15px;
+
+            font-size: 1.2rem;
+
+        }
+
+
+        /* --- ESTILO DOS BOTÕES DAS CIDADES --- */
+
+        ul.city-list {
+
+            list-style: none; /* Remove marcador */
+
+            padding: 0;
+
+            margin: 0 0 25px 0;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center; /* Centraliza os botões das cidades */
+
+            gap: 10px;
+
+            width: 100%;
+
+        }
+
+
+        ul.city-list li {
+
+            list-style: none; /* Remove marcador */
+
+            background-color: var(--btn-bg);
+
+            border: 1px solid var(--btn-border);
+
+            color: var(--btn-text);
+
+            padding: 8px 16px;
+
+            border-radius: 20px;
+
+            font-size: 0.95rem;
+
+            font-weight: 500;
+
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+
+            transition: all 0.2s ease-in-out;
+
+            cursor: default;
+
+            user-select: none;
+
+        }
+
+
+        ul.city-list li:hover {
+
+            background-color: var(--btn-hover-bg);
+
+            color: var(--btn-hover-text);
+
+            border-color: var(--btn-hover-bg);
+
+            transform: translateY(-2px);
+
+            box-shadow: 0 4px 8px rgba(92, 138, 179, 0.25);
+
+        }
+
+
+        /* --- BOTÕES DO RODAPÉ (FORMATO ORIGINAL MANTIDO) --- */
+
+        .btn-container {
+
+            text-align: center;
+
+            margin-top: 30px;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .btn-retornar {
+
+            display: inline-block;
+
+            padding: 10px 20px;
+
+            background-color: #ffffff;
+
+            color: #000000;
+
+            text-decoration: none;
+
+            border-radius: 5px;
+
+            border: 1px solid #000000;
+
+            font-weight: bold;
+
+            transition: background-color 0.3s;
+
+        }
+
+
+        .btn-retornar:hover {
+
+            background-color: #f0f0f0;
+
+        }
+
+
+        .btn-email {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 10px 20px;
+
+            background-color: #ffffff;
+
+            color: #000000;
+
+            text-decoration: none;
+
+            border-radius: 5px;
+
+            border: 1px solid #000000;
+
+            font-weight: bold;
+
+            transition: background-color 0.3s;
+
+        }
+
+
+        .btn-email:hover {
+
+            background-color: #f0f0f0;
+
+        }
+
+
+        .btn-email svg {
+
+            width: 18px;
+
+            height: 18px;
+
+            fill: currentColor;
+
+        }
+
+
+        /* Caixa de comentários */
+
+        #HCB_comment_box {
+
+            width: 100%;
+
+            margin-top: 30px;
+
+            text-align: left;
+
+        }
+
+
+        /* Adjustments for smaller screens */
+
+        @media (max-width: 600px) {
+
+            .container {
+
+                width: 95%;
+
+                padding: 20px;
+
+                margin: 20px auto;
+
+            }
+
+           
+
+            h1 { font-size: 1.8rem; }
+
+            h2 { font-size: 1.4rem; }
+
+            h3 { font-size: 1.1rem; }
+
+            p { font-size: 1rem; }
+
+
+            ul.city-list {
+
+                gap: 8px;
+
+            }
+
+
+            ul.city-list li {
+
+                padding: 6px 12px;
+
+                font-size: 0.85rem;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Lugares onde pisei</h1>
+
+        <h3 class="text-center" style="font-weight: normal; color: #666; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px;">01/08/2026 Diário</h3>
+
+
+        <div style="text-align: center; width: 100%;">
+
+            <img src="/Imagens/selobeda2026.png" alt="SELO BEDA" style="margin-bottom: 20px;">
+
+        </div>
+
+
+        <p>Tenho 38 anos e já visitei vários lugares em minha vida. Irei listar logo abaixo todas as cidades em que já estive por pelo menos um dia. Não conheço a fundo todos os lugares que visitei, mas aquela passada rápida para experimentar a cidade por algumas horas é algo que sempre realizo em viagens.</p>
+
+        <p>Sou natural de Curitiba, Paraná. Irei listar primeiro os estados em que estive no Brasil e as cidades que conheci:</p>
+
+
+        <h2>Brasil</h2>
+
+
+        <div id="chartdiv" style="width:100%;height:500px"></div>
+
+<script>
+
+var visitedplaces_config = {
+
+  "map": "brazil",
+
+  "projection": "geoMercator",
+
+  "theme": "dark-green",
+
+  "water": 0,
+
+  "graticule": 1,
+
+  "names": 1,
+
+  "duration": 2000,
+
+  "placeduration": 100,
+
+  "slider": 0,
+
+  "autoplay": 0,
+
+  "autozoom": "step",
+
+  "autostep": 1,
+
+  "pie": 1,
+
+  "data": [
+
+    {
+
+      "places": [
+
+        "BR-RS",
+
+        "BR-SC",
+
+        "BR-PR",
+
+        "BR-SP",
+
+        "BR-MG",
+
+        "BR-RJ",
+
+        "BR-ES",
+
+        "BR-SE",
+
+        "BR-MS",
+
+        "BR-MT"
+
+      ]
+
+    }
+
+  ]
+
+};
+
+</script>
+
+<script src="https://visitedplaces.com/embed.js"></script>
+
+
+
+        <h3>Paraná</h3>
+
+        <ul class="city-list">
+
+            <li>Curitiba</li>
+
+            <li>Matinhos</li>
+
+            <li>Guaratuba</li>
+
+            <li>Pontal do Paraná</li>
+
+            <li>Paranaguá</li>
+
+            <li>São José dos Pinhais</li>
+
+            <li>Araucária</li>
+
+            <li>Mandirituba</li>
+
+            <li>Campo Largo</li>
+
+            <li>Balsa Nova</li>
+
+            <li>Lapa</li>
+
+            <li>Tunas do Paraná</li>
+
+            <li>Rio Branco do Sul</li>
+
+            <li>Maringá</li>
+
+            <li>Londrina</li>
+
+            <li>Cascavel</li>
+
+            <li>Cornélio Procópio</li>
+
+            <li>Foz do Iguaçu</li>
+
+            <li>Santa Terezinha de Itaipu</li>
+
+            <li>Jaguariaíva</li>
+
+            <li>Ibaiti</li>
+
+        </ul>
+
+
+        <h3>Santa Catarina</h3>
+
+        <ul class="city-list">
+
+            <li>São Francisco do Sul</li>
+
+            <li>Joinville</li>
+
+            <li>Itajaí</li>
+
+            <li>Penha</li>
+
+            <li>Balneário Camboriú</li>
+
+            <li>Bombinhas</li>
+
+            <li>Blumenau</li>
+
+            <li>Indaial</li>
+
+            <li>Ilhota</li>
+
+            <li>Brusque</li>
+
+            <li>Lages</li>
+
+            <li>Gaspar</li>
+
+            <li>Palhoça</li>
+
+            <li>Florianópolis</li>
+
+            <li>Laguna</li>
+
+            <li>Tubarão</li>
+
+            <li>São Joaquim</li>
+
+        </ul>
+
+
+        <h3>Rio Grande do Sul</h3>
+
+        <ul class="city-list">
+
+            <li>Gramado</li>
+
+            <li>Canela</li>
+
+            <li>Bento Gonçalves</li>
+
+            <li>Caxias do Sul</li>
+
+            <li>Nova Petrópolis</li>
+
+            <li>Ametista do Sul</li>
+
+            <li>Frederico Westphalen</li>
+
+            <li>Santa Maria</li>
+
+            <li>Chuí</li>
+
+            <li>Uruguaiana</li>
+
+        </ul>
+
+
+        <h3>São Paulo</h3>
+
+        <ul class="city-list">
+
+            <li>Peruíbe</li>
+
+            <li>Santos</li>
+
+            <li>São Sebastião</li>
+
+            <li>Caraguatatuba</li>
+
+            <li>São Paulo</li>
+
+            <li>São Carlos</li>
+
+            <li>Itu</li>
+
+            <li>Marília</li>
+
+            <li>Aparecida</li>
+
+            <li>Ribeirão Preto</li>
+
+        </ul>
+
+
+        <h3>Minas Gerais</h3>
+
+        <ul class="city-list">
+
+            <li>Poços de Caldas</li>
+
+            <li>São João del-Rei</li>
+
+            <li>Tiradentes</li>
+
+            <li>Congonhas</li>
+
+            <li>Ituiutaba</li>
+
+            <li>Uberlândia</li>
+
+            <li>Itabirito</li>
+
+            <li>Ouro Preto</li>
+
+        </ul>
+
+
+        <h3>Rio de Janeiro</h3>
+
+        <ul class="city-list">
+
+            <li>Paraty</li>
+
+            <li>Angra dos Reis</li>
+
+            <li>Rio de Janeiro</li>
+
+            <li>Petrópolis</li>
+
+        </ul>
+
+
+        <h3>Espírito Santo</h3>
+
+        <ul class="city-list">
+
+            <li>Vitória</li>
+
+            <li>Guarapari</li>
+
+            <li>Venda Nova do Imigrante</li>
+
+            <li>Vila Velha</li>
+
+        </ul>
+
+
+        <h3>Mato Grosso do Sul</h3>
+
+        <ul class="city-list">
+
+            <li>Bonito</li>
+
+            <li>Bodoquena</li>
+
+        </ul>
+
+
+        <h3>Mato Grosso</h3>
+
+        <ul class="city-list">
+
+            <li>Chapada dos Guimarães</li>
+
+        </ul>
+
+
+        <h3>Sergipe</h3>
+
+        <ul class="city-list">
+
+            <li>Aracaju</li>
+
+            <li>Canindé de São Francisco</li>
+
+        </ul>
+
+
+        <h2>Fora do Brasil</h2>
+
+        <p class="text-center">Fora do Brasil, irei marcar só os pontos de destaque:</p>
+
+
+        <h3>Chile</h3>
+
+        <ul class="city-list">
+
+            <li>Santiago</li>
+
+            <li>Valparaíso</li>
+
+            <li>Viña del Mar</li>
+
+            <li>Los Chacayes (Represa El Yeso)</li>
+
+        </ul>
+
+
+        <h3>Uruguai</h3>
+
+        <ul class="city-list">
+
+            <li>Montevidéu</li>
+
+            <li>Punta del Este</li>
+
+            <li>Colônia do Sacramento</li>
+
+        </ul>
+
+
+        <h3>Argentina</h3>
+
+        <ul class="city-list">
+
+            <li>Buenos Aires</li>
+
+            <li>Mercedes</li>
+
+        </ul>
+
+
+        <h3>Japão</h3>
+
+        <ul class="city-list">
+
+            <li>Okayama</li>
+
+            <li>Akaiwa</li>
+
+            <li>Kurashiki</li>
+
+            <li>Takahashi</li>
+
+            <li>Hiroshima</li>
+
+            <li>Nobeoka</li>
+
+            <li>Aso</li>
+
+            <li>Quioto</li>
+
+            <li>Nara</li>
+
+            <li>Choshi</li>
+
+            <li>Urayasu</li>
+
+            <li>Tóquio</li>
+
+            <li>Yokohama</li>
+
+            <li>Miyajima</li>
+
+        </ul>
+
+
+        <h3>Itália</h3>
+
+        <ul class="city-list">
+
+            <li>Roma</li>
+
+            <li>Pompéia</li>
+
+            <li>Positano</li>
+
+            <li>Siena</li>
+
+            <li>Montepulciano</li>
+
+            <li>Arezzo</li>
+
+            <li>Florença</li>
+
+            <li>Lucca</li>
+
+            <li>Pisa</li>
+
+            <li>Bolonha</li>
+
+            <li>Veneza</li>
+
+            <li>Verona</li>
+
+            <li>Milão</li>
+
+        </ul>
+
+
+        <h3>Alemanha</h3>
+
+        <ul class="city-list">
+
+            <li>Aachen</li>
+
+            <li>Colônia</li>
+
+        </ul>
+
+
+        <h3>Bélgica</h3>
+
+        <ul class="city-list">
+
+            <li>Bruxelas</li>
+
+            <li>Bruges</li>
+
+        </ul>
+
+
+        <h3>Holanda (Países Baixos)</h3>
+
+        <ul class="city-list">
+
+            <li>Amsterdã</li>
+
+            <li>Volendam</li>
+
+            <li>Edam</li>
+
+        </ul>
+
+
+        <h3>Inglaterra</h3>
+
+        <ul class="city-list">
+
+            <li>Londres</li>
+
+            <li>Greenwich</li>
+
+        </ul>
+
+
+        <h3>França</h3>
+
+        <ul class="city-list">
+
+            <li>Calais</li>
+
+            <li>Lille</li>
+
+            <li>Paris</li>
+
+            <li>Versalhes</li>
+
+            <li>Chessy</li>
+
+        </ul>
+
+
+        <h3>Noruega</h3>
+
+        <ul class="city-list">
+
+            <li>Oslo</li>
+
+            <li>Lillestrøm</li>
+
+        </ul>
+
+
+        <p>Estes são basicamente todos os lugares onde pisei e visitei por um dia ou mais.</p>
+
+        <p>Há espaço para mais viagens? Eu acho que hoje não quero ir para mais lugar nenhum. A paz da minha casa é o suficiente.</p>
+
+
+        <!-- Botões Originais mantidos sem alterações de estilo -->
+
+        <div class="btn-container">
+
+            <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+
+                </svg>
+
+                Comente me enviando um email
+
+            </a>
+
+        </div>
+
+
+        <div class="btn-container">
+
+            <a href="https://a-grande-onda.blog.br/" class="btn-retornar">A Grande Onda - Início</a>
+
+        </div>
+
+
+        <!-- begin www.htmlcommentbox.com -->
+
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+
+        <!-- end www.htmlcommentbox.com -->
+
+
+    </div>
+
+</body>
+
+</html>
+
+Aqui está o código HTML totalmente traduzido para o inglês, incluindo o atributo lang="en", os títulos, parágrafos, países, estados e nomes de cidades traduzidos (como Rome, Florence, Venice, Cologne, Brussels, Kyoto, Tokyo, Uruguay, Germany, Netherlands, France, etc.), mantendo toda a estrutura de estilos CSS e o script do mapa intactos:
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="/Imagens/favicon.png">
+
+    <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="A Grande Onda" />
+    <meta property="og:description" content="Ups and downs of life with A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/agrandeondaminiatura.png" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+    <title>Places I've Been</title>
+    <style>
+        :root {
+            --win-color: #22c55e;
+            --draw-color: #f59e0b;
+            --loss-color: #ef4444;
+            --btn-bg: #f8fafc;
+            --btn-border: #e2e8f0;
+            --btn-text: #334155;
+            --btn-hover-bg: #5c8ab3;
+            --btn-hover-text: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center;     
+            align-items: flex-start;     
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+            text-align: left;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            width: 100%;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            color: #1e293b;
+            font-size: 1.8rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #5c8ab3;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            font-weight: 600;
+            color: #475569;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* --- CITY BUTTONS STYLE --- */
+        ul.city-list {
+            list-style: none; /* Remove bullet */
+            padding: 0;
+            margin: 0 0 25px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center city buttons */
+            gap: 10px;
+            width: 100%;
+        }
+
+        ul.city-list li {
+            list-style: none; /* Remove bullet */
+            background-color: var(--btn-bg);
+            border: 1px solid var(--btn-border);
+            color: var(--btn-text);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+            transition: all 0.2s ease-in-out;
+            cursor: default;
+            user-select: none;
+        }
+
+        ul.city-list li:hover {
+            background-color: var(--btn-hover-bg);
+            color: var(--btn-hover-text);
+            border-color: var(--btn-hover-bg);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(92, 138, 179, 0.25);
+        }
+
+        /* --- FOOTER BUTTONS (ORIGINAL FORMAT MAINTAINED) --- */
+        .btn-container {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        .btn-retornar {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 1px solid #000000;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-retornar:hover {
+            background-color: #f0f0f0;
+        }
+
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background-color: #ffffff;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 1px solid #000000;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-email:hover {
+            background-color: #f0f0f0;
+        }
+
+        .btn-email svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* Comment box */
+        #HCB_comment_box {
+            width: 100%;
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        /* Adjustments for smaller screens */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+                margin: 20px auto;
+            }
+            
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.4rem; }
+            h3 { font-size: 1.1rem; }
+            p { font-size: 1rem; }
+
+            ul.city-list {
+                gap: 8px;
+            }
+
+            ul.city-list li {
+                padding: 6px 12px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Places I've Been</h1>
+        <h3 class="text-center" style="font-weight: normal; color: #666; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-bottom: 30px;">08/01/2026 Journal</h3>
+
+        <div style="text-align: center; width: 100%;">
+            <img src="/Imagens/selobeda2026.png" alt="BEDA STAMP" style="margin-bottom: 20px;">
+        </div>
+
+        <p>I am 38 years old and have visited several places in my life. Below, I will list all the cities I have spent at least one day in. I don't know all the places I visited in depth, but making a quick stop to experience a city for a few hours is something I always do when traveling.</p>
+        <p>I was born in Curitiba, Paraná. I will first list the states I've been to in Brazil and the cities I visited:</p>
+
+        <h2>Brazil</h2>
+
+        <div id="chartdiv" style="width:100%;height:500px"></div>
+<script>
+var visitedplaces_config = {
+  "map": "brazil",
+  "projection": "geoMercator",
+  "theme": "dark-green",
+  "water": 0,
+  "graticule": 1,
+  "names": 1,
+  "duration": 2000,
+  "placeduration": 100,
+  "slider": 0,
+  "autoplay": 0,
+  "autozoom": "step",
+  "autostep": 1,
+  "pie": 1,
+  "data": [
+    {
+      "places": [
+        "BR-RS",
+        "BR-SC",
+        "BR-PR",
+        "BR-SP",
+        "BR-MG",
+        "BR-RJ",
+        "BR-ES",
+        "BR-SE",
+        "BR-MS",
+        "BR-MT"
+      ]
+    }
+  ]
+};
+</script>
+<script src="https://visitedplaces.com/embed.js"></script>
+
+        <h3>Paraná</h3>
+        <ul class="city-list">
+            <li>Curitiba</li>
+            <li>Matinhos</li>
+            <li>Guaratuba</li>
+            <li>Pontal do Paraná</li>
+            <li>Paranaguá</li>
+            <li>São José dos Pinhais</li>
+            <li>Araucária</li>
+            <li>Mandirituba</li>
+            <li>Campo Largo</li>
+            <li>Balsa Nova</li>
+            <li>Lapa</li>
+            <li>Tunas do Paraná</li>
+            <li>Rio Branco do Sul</li>
+            <li>Maringá</li>
+            <li>Londrina</li>
+            <li>Cascavel</li>
+            <li>Cornélio Procópio</li>
+            <li>Foz do Iguaçu</li>
+            <li>Santa Terezinha de Itaipu</li>
+            <li>Jaguariaíva</li>
+            <li>Ibaiti</li>
+        </ul>
+
+        <h3>Santa Catarina</h3>
+        <ul class="city-list">
+            <li>São Francisco do Sul</li>
+            <li>Joinville</li>
+            <li>Itajaí</li>
+            <li>Penha</li>
+            <li>Balneário Camboriú</li>
+            <li>Bombinhas</li>
+            <li>Blumenau</li>
+            <li>Indaial</li>
+            <li>Ilhota</li>
+            <li>Brusque</li>
+            <li>Lages</li>
+            <li>Gaspar</li>
+            <li>Palhoça</li>
+            <li>Florianópolis</li>
+            <li>Laguna</li>
+            <li>Tubarão</li>
+            <li>São Joaquim</li>
+        </ul>
+
+        <h3>Rio Grande do Sul</h3>
+        <ul class="city-list">
+            <li>Gramado</li>
+            <li>Canela</li>
+            <li>Bento Gonçalves</li>
+            <li>Caxias do Sul</li>
+            <li>Nova Petrópolis</li>
+            <li>Ametista do Sul</li>
+            <li>Frederico Westphalen</li>
+            <li>Santa Maria</li>
+            <li>Chuí</li>
+            <li>Uruguaiana</li>
+        </ul>
+
+        <h3>São Paulo</h3>
+        <ul class="city-list">
+            <li>Peruíbe</li>
+            <li>Santos</li>
+            <li>São Sebastião</li>
+            <li>Caraguatatuba</li>
+            <li>São Paulo</li>
+            <li>São Carlos</li>
+            <li>Itu</li>
+            <li>Marília</li>
+            <li>Aparecida</li>
+            <li>Ribeirão Preto</li>
+        </ul>
+
+        <h3>Minas Gerais</h3>
+        <ul class="city-list">
+            <li>Poços de Caldas</li>
+            <li>São João del-Rei</li>
+            <li>Tiradentes</li>
+            <li>Congonhas</li>
+            <li>Ituiutaba</li>
+            <li>Uberlândia</li>
+            <li>Itabirito</li>
+            <li>Ouro Preto</li>
+        </ul>
+
+        <h3>Rio de Janeiro</h3>
+        <ul class="city-list">
+            <li>Paraty</li>
+            <li>Angra dos Reis</li>
+            <li>Rio de Janeiro</li>
+            <li>Petropolis</li>
+        </ul>
+
+        <h3>Espírito Santo</h3>
+        <ul class="city-list">
+            <li>Vitória</li>
+            <li>Guarapari</li>
+            <li>Venda Nova do Imigrante</li>
+            <li>Vila Velha</li>
+        </ul>
+
+        <h3>Mato Grosso do Sul</h3>
+        <ul class="city-list">
+            <li>Bonito</li>
+            <li>Bodoquena</li>
+        </ul>
+
+        <h3>Mato Grosso</h3>
+        <ul class="city-list">
+            <li>Chapada dos Guimarães</li>
+        </ul>
+
+        <h3>Sergipe</h3>
+        <ul class="city-list">
+            <li>Aracaju</li>
+            <li>Canindé de São Francisco</li>
+        </ul>
+
+        <h2>Outside Brazil</h2>
+        <p class="text-center">Outside Brazil, I will highlight only the main locations:</p>
+
+        <h3>Chile</h3>
+        <ul class="city-list">
+            <li>Santiago</li>
+            <li>Valparaíso</li>
+            <li>Viña del Mar</li>
+            <li>Los Chacayes (El Yeso Dam)</li>
+        </ul>
+
+        <h3>Uruguay</h3>
+        <ul class="city-list">
+            <li>Montevideo</li>
+            <li>Punta del Este</li>
+            <li>Colonia del Sacramento</li>
+        </ul>
+
+        <h3>Argentina</h3>
+        <ul class="city-list">
+            <li>Buenos Aires</li>
+            <li>Mercedes</li>
+        </ul>
+
+        <h3>Japan</h3>
+        <ul class="city-list">
+            <li>Okayama</li>
+            <li>Akaiwa</li>
+            <li>Kurashiki</li>
+            <li>Takahashi</li>
+            <li>Hiroshima</li>
+            <li>Nobeoka</li>
+            <li>Aso</li>
+            <li>Kyoto</li>
+            <li>Nara</li>
+            <li>Choshi</li>
+            <li>Urayasu</li>
+            <li>Tokyo</li>
+            <li>Yokohama</li>
+            <li>Miyajima</li>
+        </ul>
+
+        <h3>Italy</h3>
+        <ul class="city-list">
+            <li>Rome</li>
+            <li>Pompeii</li>
+            <li>Positano</li>
+            <li>Siena</li>
+            <li>Montepulciano</li>
+            <li>Arezzo</li>
+            <li>Florence</li>
+            <li>Lucca</li>
+            <li>Pisa</li>
+            <li>Bologna</li>
+            <li>Venice</li>
+            <li>Verona</li>
+            <li>Milan</li>
+        </ul>
+
+        <h3>Germany</h3>
+        <ul class="city-list">
+            <li>Aachen</li>
+            <li>Cologne</li>
+        </ul>
+
+        <h3>Belgium</h3>
+        <ul class="city-list">
+            <li>Brussels</li>
+            <li>Bruges</li>
+        </ul>
+
+        <h3>Netherlands</h3>
+        <ul class="city-list">
+            <li>Amsterdam</li>
+            <li>Volendam</li>
+            <li>Edam</li>
+        </ul>
+
+        <h3>England</h3>
+        <ul class="city-list">
+            <li>London</li>
+            <li>Greenwich</li>
+        </ul>
+
+        <h3>France</h3>
+        <ul class="city-list">
+            <li>Calais</li>
+            <li>Lille</li>
+            <li>Paris</li>
+            <li>Versailles</li>
+            <li>Chessy</li>
+        </ul>
+
+        <h3>Norway</h3>
+        <ul class="city-list">
+            <li>Oslo</li>
+            <li>Lillestrøm</li>
+        </ul>
+
+        <p>These are basically all the places I've set foot in and visited for a day or more.</p>
+        <p>Is there room for more trips? I think today I don't feel like going anywhere else. The peace of my home is more than enough.</p>
+
+        <!-- Original buttons maintained without style changes -->
+        <div class="btn-container">
+            <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                Leave a comment by sending me an email
+            </a>
+        </div>
+
+        <div class="btn-container">
+            <a href="https://a-grande-onda.blog.br/" class="btn-retornar">A Grande Onda - Home</a>
+        </div>
+
+        <!-- begin www.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+
+    </div>
+</body>
+</html>
