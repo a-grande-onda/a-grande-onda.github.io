@@ -8,7 +8,21 @@
     <description>Feed RSS de todas as postagens de A Grande Onda</description>
     <language>pt-br</language>
     <atom:link href="https://a-grande-onda.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+<item>
+      <title>#0110 - Quando eu tiver 64</title>
+      <link>https://a-grande-onda.github.io/Entradas/0110.html</link>
+      <guid isPermaLink="true">https://a-grande-onda.github.io/Entradas/0110.html</guid>
+      <category>Escola</category>
+      <pubDate>Qua, 05 Ago 2026 00:00:00 -0300</pubDate>
 
+      <description><![CDATA["When I'm Sixty-Four" é uma música da banda de rock inglesa The Beatles, escrita por Paul McCartney (creditada a Lennon–McCartney) e lançada em seu álbum de 1967, <em>Sgt. Pepper's Lonely Hearts Club Band</em>. McCartney escreveu a música quando tinha cerca de 14 anos, provavelmente em abril ou maio de 1956, e foi uma das primeiras canções que ele compôs. A música foi gravada em um tom diferente da gravação final; ela foi acelerada a pedido de McCartney para fazer sua voz parecer mais jovem. A faixa apresenta de forma proeminente um trio de clarinetes (dois clarinetes tradicionais e um clarinete baixo) do início ao fim.]]></description>
+
+      <content:encoded><![CDATA[
+   
+    <p>Os Beatles gravaram dois takes da música em 6 de dezembro de 1966, durante uma das primeiras sessões para o álbum ainda sem nome que se tornaria o <em>Sgt. Pepper's Lonely Hearts Club Band</em>. George Martin produziu, apoiado pelos engenheiros de som Geoff Emerick e Phil McDonald. McCartney gravou seus vocais principais sobre o take dois sem a presença dos outros Beatles em 8 de dezembro. Em 20 de dezembro, McCartney, Lennon e George Harrison regravaram os vocais de apoio, e Ringo Starr adicionou o som de sinos.</p>
+
+      ]]></content:encoded>
+    </item>
 <item>
       <title>#0109 - Cartinhas dos alunos 2023</title>
       <link>https://a-grande-onda.github.io/Entradas/0109.html</link>
