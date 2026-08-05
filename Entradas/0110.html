@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="/Imagens/favicon.png">
+
+    <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="A Grande Onda" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/agrandeondaminiatura.png" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+    <title>Cartinhas dos alunos 2023</title>
+    <style>
+        :root {
+            --win-color: #22c55e;
+            --draw-color: #f59e0b;
+            --loss-color: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: flex-start;     
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        /* --- CARD DE XADREZ ESTILIZADO --- */
+        .chess-card {
+            width: 100%;
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+            border-radius: 16px;
+            padding: 28px;
+            color: #ffffff;
+            margin: 25px 0 35px 0;
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chess-card::before {
+            content: "♟";
+            position: absolute;
+            right: -10px;
+            bottom: -20px;
+            font-size: 140px;
+            opacity: 0.04;
+            pointer-events: none;
+        }
+
+        .chess-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 14px;
+        }
+
+        .chess-header h4 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #f8fafc;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chess-platform {
+            font-size: 0.85rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 10px;
+            border-radius: 20px;
+            color: #cbd5e1;
+        }
+
+        /* Estilo para o link do lichess ficar branco e sem sublinhado */
+        .chess-platform a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .chess-platform a:hover {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .chess-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            text-align: center;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 14px 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+        }
+
+        .stat-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        .stat-box.win .stat-value { color: var(--win-color); }
+        .stat-box.draw .stat-value { color: var(--draw-color); }
+        .stat-box.loss .stat-value { color: var(--loss-color); }
+        .stat-box.total .stat-value { color: #f8fafc; }
+
+        /* Barra de Progresso do Xadrez */
+        .chess-progress {
+            margin-top: 20px;
+            height: 6px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+        }
+
+        .progress-bar.win { width: 54.1%; background-color: var(--win-color); }
+        .progress-bar.draw { width: 2.1%; background-color: var(--draw-color); }
+        .progress-bar.loss { width: 43.8%; background-color: var(--loss-color); }
+
+        /* --- BOTÃO DE CONTATO POR E-MAIL --- */
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background-color: #5c8ab3;
+            color: #fff;
+            border: 2px solid #5c8ab3;
+            cursor: pointer;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+        }
+
+        .btn-email:hover {
+            background-color: #4a7296;
+            border-color: #4a7296;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+        }
+
+        .btn-email svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* --- BOTÃO RETORNAR --- */
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-bottom: 5px;
+        }
+
+        .btn-retornar:hover {
+            background: #5c8ab3;
+            color: #fff;
+        }
+
+                  /* --- CONTAINER DE IMAGENS --- */
+        .container-imagem {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .container-imagem a {
+            display: block;
+            width: 100%;
+        }
+
+        .container-imagem img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 6px;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .container-imagem a:hover img {
+            transform: scale(1.01);
+            filter: brightness(0.9);
+        }
+
+        /* Ajustes para a caixa de comentários */
+        #HCB_comment_box {
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        /* Ajustes Responsivos para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 25px 20px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+                padding-bottom: 15px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .chess-stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .btn-retornar, .btn-email {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quando eu tiver 64</h1>
+        <h3>06/08/2026 Músicas</h3>
+
+        <img src="/Imagens/selobeda2026.png" alt="SELO BEDA" style="margin-bottom: 20px;">
+
+
+<div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/watch?v=wUDRIC5RSX4" 
+                title="YouTube video player" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <p><strong>Texto traduzido da descrição deste vídeo clipe</strong></p>
+
+<p>"When I'm Sixty-Four" é uma música da banda de rock inglesa The Beatles, escrita por Paul McCartney (creditada a Lennon–McCartney) e lançada em seu álbum de 1967, <em>Sgt. Pepper's Lonely Hearts Club Band</em>. McCartney escreveu a música quando tinha cerca de 14 anos, provavelmente em abril ou maio de 1956, e foi uma das primeiras canções que ele compôs. A música foi gravada em um tom diferente da gravação final; ela foi acelerada a pedido de McCartney para fazer sua voz parecer mais jovem. A faixa apresenta de forma proeminente um trio de clarinetes (dois clarinetes tradicionais e um clarinete baixo) do início ao fim.</p>
+
+    <p><strong>Gravação:</strong></p>
+
+    <p>Os Beatles gravaram dois takes da música em 6 de dezembro de 1966, durante uma das primeiras sessões para o álbum ainda sem nome que se tornaria o <em>Sgt. Pepper's Lonely Hearts Club Band</em>. George Martin produziu, apoiado pelos engenheiros de som Geoff Emerick e Phil McDonald. McCartney gravou seus vocais principais sobre o take dois sem a presença dos outros Beatles em 8 de dezembro. Em 20 de dezembro, McCartney, Lennon e George Harrison regravaram os vocais de apoio, e Ringo Starr adicionou o som de sinos.</p>
+
+    <p>Martin fez duas mixagens de redução (takes três e quatro), sendo esta última a melhor. Em 21 de dezembro, os músicos de sessão Robert Burns, Henry MacKenzie e Frank Reidy gravaram dois clarinetes e um clarinete baixo sobre o take quatro. Emerick explicou mais tarde: "Os clarinetes nessa faixa se tornaram um som muito pessoal para mim; eu os gravei tão em destaque que se tornaram um dos pontos focais principais." Martin recordou: "Lembro-me de gravá-la no cavernoso Estúdio Número Um em Abbey Road e pensar em como os três clarinetistas pareciam tão perdidos quanto um árbitro e dois bandeirinhas sozinhos no meio do Estádio de Wembley." No mesmo dia, Martin remixou a música para mono três vezes, embora esta fosse apenas uma versão de demonstração. Ele fez quatro novas mixagens mono em 29 de dezembro.</p>
+
+    <p>Em 30 de dezembro, insatisfeito com todas essas tentativas, McCartney sugeriu acelerar a faixa para elevá-la em cerca de um semitom de seu tom original de Dó maior para Ré bemol maior. Martin lembra que McCartney sugeriu essa mudança para fazer sua voz soar mais jovem. McCartney disse: "Eu queria parecer mais jovem, mas isso foi apenas para torná-la mais animada; apenas elevar o tom porque estava começando a soar arrastada." Martin, Emerick e Richard Lush fizeram a remixagem acelerada a partir do take quatro em 17 de abril de 1967. O musicólogo Michael Hannan comenta sobre a faixa concluída: "Os timbres ricos dos clarinetes dão à mixagem um som mais encorpado e denso do que muitas das outras faixas do álbum."</p>
+
+    <p><strong>Lançamento:</strong></p>
+
+    <p>A música quase foi lançada em um compacto como o lado B de "Strawberry Fields Forever" ou de "Penny Lane". Em vez disso, ela foi guardada para ser incluída como uma faixa do álbum <em>Sgt. Pepper's Lonely Hearts Club Band</em>. Everett comenta que o protagonista de "When I'm Sixty-Four" às vezes é associado ao conceito do álbum, mas, em sua opinião, a música não tem conexão temática com as outras do disco.</p>
+
+    <p>De acordo com o autor George Case, todas as músicas de <em>Sgt. Pepper</em> foram percebidas pelos ouvintes da época como sendo inspiradas por drogas, com o ano de 1967 marcando o auge da influência do LSD na música pop. Alguns fãs viram o verso "digging the weeds" (cultivando/arrancando as ervas daninhas) de "When I'm Sixty-Four" como uma possível alusão a drogas. Em agosto de 1967, a revista <em>The Beatles Book</em> publicou um artigo discutindo se o álbum era "avançado demais para o fã médio de pop". Um leitor reclamou que todas as músicas, exceto "Sgt. Pepper" e "When I'm Sixty-Four", estavam "acima da nossa cabeça", adicionando: "Os Beatles deveriam parar de ser tão espertos e nos dar melodias que possamos aproveitar."</p>
+
+    <p>"When I'm Sixty-Four" foi incluída no filme de animação dos Beatles de 1968, <em>Yellow Submarine</em>. Ela também foi usada nos créditos de abertura do filme de 1982, <em>O Mundo Segundo Garp</em> (The World According to Garp).</p>
+
+    <p>Giles Martin remixou a música para inclusão no lançamento do 50º aniversário do álbum em 2017. Martin mixou a canção a partir das fitas originais em vez das mixagens subsequentes. O take 2 da música foi incluído como uma faixa bônus na edição de luxo.</p>
+        <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+
+        <!-- Botão de E-mail com ícone SVG centralizado -->
+        <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Comente me enviando um email
+        </a>
+
+        <!-- begin www.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+
+    </div>
+</body>
+</html>
