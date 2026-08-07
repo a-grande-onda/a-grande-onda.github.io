@@ -8,6 +8,26 @@
     <description>Feed RSS de todas as postagens de A Grande Onda</description>
     <language>pt-br</language>
     <atom:link href="https://a-grande-onda.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+
+<item>
+      <title>#0112 - Tutorial de como opero meu blog</title>
+      <link>https://a-grande-onda.github.io/Entradas/0112.html</link>
+      <guid isPermaLink="true">https://a-grande-onda.github.io/Entradas/0112.html</guid>
+      <category>Tecnologia</category>
+      <pubDate>Sex, 08 Ago 2026 00:00:00 -0300</pubDate>
+
+      <description><![CDATA[Olá, se você chegou aqui, você provavelmente já conhece meu blog. Criei-o em fevereiro de 2026 e tudo de código que sei fazer aprendi em 1 semana de um curso simples de HTML na W3Schools. Realmente não precisei aprender mais do que isto para produzir o que produzo aqui.]]></description>
+
+      <content:encoded><![CDATA[
+   
+     <p>Olá, se você chegou aqui, você provavelmente já conhece meu blog. Criei-o em fevereiro de 2026 e tudo de código que sei fazer aprendi em 1 semana de um curso simples de HTML na W3Schools. Realmente não precisei aprender mais do que isto para produzir o que produzo aqui.</p>
+
+<p>Neste vídeo abaixo, mostro o passo a passo de como criar um post no blog. Todo o processo com o GitHub, com o VS Code, IA generativa e Word. É extremamente simples. No vídeo, este processo vai demorar um pouco, mas, na prática, em 3 minutos eu subo uma postagem.</p>
+
+      ]]></content:encoded>
+    </item>
+
+
     <item>
       <title>#0111 - Paraná: a melhor educação do Brasil (2025)</title>
       <link>https://a-grande-onda.github.io/Entradas/0111.html</link>
