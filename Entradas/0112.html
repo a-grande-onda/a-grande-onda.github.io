@@ -380,6 +380,28 @@
 
 <p>Espero que este tutorial seja útil e que ele encoraje quem não tem um blog a fazer um. É simples, fácil, prático e simplesmente funciona. E para que mudar o que funciona?</p>
    
+<p><strong>PASSO A PASSO DA POSTAGEM:</strong></p>
+<p>Vamos simular a criação deste post que você está lendo:</p>
+
+<ol>
+  <li><strong>Gerar o HTML da postagem:</strong> gero o 0111.html na pasta Entradas.</li>
+  <li><strong>Copiar outro post parecido:</strong> copio a base do post 0110 porque ele já vem com a imagem do BEDA e com toda a formatação inline.</li>
+  <li><strong>Escrever o texto:</strong> escrevo no Word ou LibreOffice quando estou no Linux.</li>
+  <li>
+    <strong>Refinar o texto:</strong> passo o texto no Gemini com o seguinte prompt: “Gemini, realize uma correção ortográfica neste texto, sem grandes mudanças, mantenha a estrutura, me forneça todas as alterações realizadas em um log.”
+    <p>Depois leio o texto, avalio as alterações e o que mantenho alterado.</p>
+    <p>Depois passo o seguinte prompt: “Gemini, pegue este texto final e coloque tags de parágrafo e de listas quando necessário, respeitando a estrutura textual. Me gere um HTML do código pronto.”</p>
+  </li>
+  <li><strong>Pegar o texto com tags <code>&lt;p&gt;</code> e <code>&lt;li&gt;</code> formatado e colar no corpo do código HTML copiado:</strong> Alterar todo o texto do HTML anterior.</li>
+  <li><strong>Verificar se incluirei imagens ou vídeos:</strong> Resgatar o CSS inline e o código de posts anteriores que deram certo.</li>
+  <li><strong>Salvar tudo do HTML final após verificar a visualização no VS Code.</strong></li>
+  <li><strong>Próximo passo:</strong> alterar as tabelas onde esta nova linha de link será armazenada no blog. Neste caso, devo alterar os arquivos index.html, arquivogeral.html, tecnologia.html e beda.html. Só copiar e colar, coisa de 30 segundos, copio tudo.</li>
+  <li><strong>Fazer a alteração no feed da nova entrada:</strong> (o VS Code preenche tudo automático aqui no feed.xml).</li>
+  <li><strong>Dar um push &amp; commit em todos estes HTMLs modificados.</strong> Esperar 1 minuto e está no ar.</li>
+</ol>
+
+<p>Com o texto pronto, este processo manual não gasta nem 3 minutos meus. É rápido, só um monte de Ctrl+C / Ctrl+V. O Gemini modifica tudo em questão de 10 segundos.</p>
+
 <div class="video-container">
     <iframe 
         src="https://www.youtube.com/embed/Nh4gR-Le0E0?si=rv7ZVb7U1bOuu9WS" 
