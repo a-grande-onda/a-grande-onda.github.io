@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="/Imagens/favicon.png">
+
+    <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="Redes antissociais" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/onda500.png" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+    <title>Redes antissociais</title>
+    <style>
+        :root {
+            --win-color: #22c55e;
+            --draw-color: #f59e0b;
+            --loss-color: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: flex-start;     
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        /* --- CARD DE XADREZ ESTILIZADO --- */
+        .chess-card {
+            width: 100%;
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+            border-radius: 16px;
+            padding: 28px;
+            color: #ffffff;
+            margin: 25px 0 35px 0;
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chess-card::before {
+            content: "♟";
+            position: absolute;
+            right: -10px;
+            bottom: -20px;
+            font-size: 140px;
+            opacity: 0.04;
+            pointer-events: none;
+        }
+
+        .chess-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 14px;
+        }
+
+        .chess-header h4 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #f8fafc;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chess-platform {
+            font-size: 0.85rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 10px;
+            border-radius: 20px;
+            color: #cbd5e1;
+        }
+
+         .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            border-radius: 6px; /* Leve arredondamento para combinar com o layout */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Estilo para o link do lichess ficar branco e sem sublinhado */
+        .chess-platform a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .chess-platform a:hover {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .chess-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            text-align: center;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 14px 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+        }
+
+        .stat-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        .stat-box.win .stat-value { color: var(--win-color); }
+        .stat-box.draw .stat-value { color: var(--draw-color); }
+        .stat-box.loss .stat-value { color: var(--loss-color); }
+        .stat-box.total .stat-value { color: #f8fafc; }
+
+        /* Barra de Progresso do Xadrez */
+        .chess-progress {
+            margin-top: 20px;
+            height: 6px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+        }
+
+        .progress-bar.win { width: 54.1%; background-color: var(--win-color); }
+        .progress-bar.draw { width: 2.1%; background-color: var(--draw-color); }
+        .progress-bar.loss { width: 43.8%; background-color: var(--loss-color); }
+
+        /* --- BOTÃO DE CONTATO POR E-MAIL --- */
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background-color: #5c8ab3;
+            color: #fff;
+            border: 2px solid #5c8ab3;
+            cursor: pointer;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+        }
+
+        .btn-email:hover {
+            background-color: #4a7296;
+            border-color: #4a7296;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+        }
+
+        .btn-email svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* --- BOTÃO RETORNAR --- */
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-bottom: 5px;
+        }
+
+        .btn-retornar:hover {
+            background: #5c8ab3;
+            color: #fff;
+        }
+
+                  /* --- CONTAINER DE IMAGENS --- */
+        .container-imagem {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .container-imagem a {
+            display: block;
+            width: 100%;
+        }
+
+        .container-imagem img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 6px;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .container-imagem a:hover img {
+            transform: scale(1.01);
+            filter: brightness(0.9);
+        }
+
+         /* --- ESTILOS PARA O VÍDEO RESPONSIVO --- */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            border-radius: 6px; /* Leve arredondamento para combinar com o layout */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Ajustes para a caixa de comentários */
+        #HCB_comment_box {
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        /* Ajustes Responsivos para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 25px 20px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+                padding-bottom: 15px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .chess-stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .btn-retornar, .btn-email {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Redes antissociais</h1>
+        <h3>21/08/2026 Tecnologia</h3>
+        
+<p>Quem me conhece sabe que tenho esta característica: não uso sites e aplicativos de redes sociais. Isto desde 2011.</p>
+
+<p>Mas, antes, precisamos delimitar o que considero redes sociais. Simplificando, para mim é todo site com forte presença do algoritmo em sua tomada de decisões na plataforma. Além disso, o mecanismo de algoritmo é regulado por um sistema de validação (like, tweet, coraçãozinho, upvote), e este sistema de validação comanda as recomendações de conteúdo que lhe é mostrado. Bem como toda a rede de propagandas associada a este modelo de negócio.</p>
+
+<p>Usei sites e comunidades sociais na internet antes do advento do scroll infinito e da validação a todo momento. O Orkut tinha validação, mas era muito mais simples. Utilizei fóruns e neles não havia um algoritmo comandando para onde eu deveria olhar ou acessar.</p>
+
+<p>Mas, depois do Facebook, que comecei a acessar em 2007, minha percepção destes sites mudou drasticamente. Chamo de “sites” porque nunca usei aplicativos do Facebook no smartphone, por exemplo; eu acessava sempre no desktop. O Facebook no início era interessante; em 2007 tinha os mesmos grupos de amigos que eu tinha no Myspace e no Last.fm na época. Poucos brasileiros usavam a plataforma, enquanto o Orkut imperava aqui nesta época. Em 2010 iniciaram recomendações da plataforma para novos amigos, novos lugares para deixar seu like e você, como usuário, colocar tags e marcadores do que gostava ou não, alimentando recomendações e a criação de uma bolha de interesses. Em 2011 saí de vez do Facebook; estava com problemas de privacidade, pessoas online estavam afetando minha vida pessoal, em uma época em que o digital e o físico eram bem delimitados. 2011 foi o ano em que abandonei o Facebook. Não me arrependi: estava bem viciado, acessava todo dia, várias vezes por dia. Mas, após alguns meses tentando, consegui deletar tudo (embora nada seja realmente deletado) e fui viver minha vida.</p>
+
+<p>Em 2014 tive que entrar no Facebook com uma nova conta (a antiga deletei) para vender uns livros. Estava reduzindo a biblioteca e me disseram que o melhor canal era o Marketplace do Facebook. Sim, deu certo: vendi quase 200 livros em 6 meses só indo em grupos de leitores e ofertando meus livros. Infelizmente, se você quer vender algo, tem que ir atrás do público, e em 2014 o público estava no Facebook. Depois de 2014 nunca mais acessei o Facebook.</p>
+
+<p>Em 2018 me mudei de cidade e fui morar sozinho. Por certo medo da solidão e para poder divulgar o que estava fazendo, fiz um Instagram. Usei por uns 3 meses, mas senti que realmente não era algo orgânico e era totalmente arquitetado para afetar negativamente a mente do seu usuário, alterando seu humor. Coisas como validação das fotos, likes diários, comparações entre o que você postou e outras pessoas, uma ideia de popularidade digital e influência online que não me agradavam, FOMO, edição exagerada de tudo com filtros, Photoshop, iluminação ideal, “espaços instagramáveis”, necessidade de documentar e expor tudo da vida por Shorts... No geral, fiquei 3 meses na plataforma, postei umas 15 imagens e simplesmente não vi uma vantagem real em minha vida; na realidade, só vi desvantagens. E não preciso nem falar de propaganda excessiva... eram 3 ou 4 imagens intercaladas a uma propaganda na rolagem do feed. Como não me trazia benefícios práticos e não era meu estilo de vida, pulei fora.</p>
+
+<p>Em 2020, no pico da pandemia, na busca por encontrar mais informações e me informar melhor, fiz um Twitter. Neste me arrependi quase que instantaneamente; não aguentei uma semana de uso. Entendo que pessoas possuem ideias diversas e muito difusas, e que isto é parte da sociedade. Mas o nível de absurdo que é o Twitter realmente me fez abandonar tudo isto muito rápido. Acredito que outras alternativas, como Threads, Bluesky e Mastodon, caem neste mesmo cenário. O problema não é ter pessoas com opiniões diferentes; o problema é que ninguém sabe escrever com clareza (por analfabetismo mesmo). Na época o Twitter era limitado a uns 300 caracteres, então as postagens eram o resumo do resumo do resumo do chorume, com cobertura de fascismo, homofobia e misoginia em cada “opinião”.</p>
+
+<p>Reddit: acho que comecei a usar em 2013 para achar penpals na internet. Usava com o objetivo único de frequentar o r/penpals e não me aventurava pelo resto do site. Em 2026 usei a experiência completa por um mês e, sim, é outro antro de conteúdo lixo online, tanto em inglês quanto em português. O sistema de upvotes beneficia poucos; o nível econômico médio da maioria dos usuários é mais alto que o do Facebook, mas o nível intelectual se equipara ao do Twitter. No geral, usei por um mês em 2026 e percebo que devo ter a minha conta só para buscar penpals mesmo, porque não vi um ganho real utilizando o restante do site. É bom para tutoriais de informática, no entanto: sempre tem algum post com uma dúvida igual à sua.</p>
+
+<p>Resumindo, após algumas tentativas nas redes, hoje o único site que tem aspectos de rede social (like/algoritmo) que uso é o YouTube. Mas, como o objetivo aqui não é diretamente trocar mensagens, ideias ou fotos, acredito que a interface de rede social só funciona bem na caixa de comentários e caso você deixe seu like em vídeos. Então eu não considero o YouTube uma rede social robusta, mas sim um site de vídeos com funções de redes sociais que não são mandatórias no consumo dos vídeos. Aqui você é social se desejar usar estas funções, mas o site funciona muito bem da forma que eu uso: sem recomendações de algoritmos, seguindo somente as inscrições e não comentando ou deixando like para calibrar seu algoritmo.</p>
+
+<p>TikTok, Snapchat, Threads, Medium, Quora, Mastodon, Substack, LinkedIn: não uso. Até tive um LinkedIn, mas, depois que percebi que não preciso dele, nunca mais atualizei o currículo por lá. O problema não é usar um app, mas fazer com que ele passe de uma possibilidade de acesso à informação para uma necessidade de acesso. A partir do momento em que você não tem alternativas de uso, você é escravo daquela empresa que rege a informação que lhe disponibiliza.</p>
+
+<p>E o que eu acho das redes sociais hoje? Desenvolvi minhas necessidades diárias sem precisar delas. Tudo funciona muito bem, com menos comparações, menos interações sociais falsas, menos tempo e energia destinados a ficar pensando na vida e opinião alheias. E praticamente sem propagandas, gatilhos de consumo e novos produtos sendo despejados minuto a minuto na sua navegação de um app “gratuito”. Ainda uso o WhatsApp como comunicação, tenho alguns grupos, mas eles não são regulados por validação e um algoritmo. Acho incrível quem pula de um aplicativo de redes sociais para o outro durante o dia todo, e o mais incrível são pessoas que acham que a internet são só estes apps. É de uma ingenuidade muito grande, mas conheço muita gente nesta condição. Não sabem achar informações se não por uma IA e consideram que o que não está nas redes não existe online.</p>
+
+<p>Vale a pena uma vida fora das redes? Falando bem a verdade, se você consegue viver consigo mesmo, tem uma rede de amizades compacta, poucos interesses, baixo consumo e deseja explorar seu potencial criativo de formas diferentes de criar “conteúdo” para estas redes lucrarem com você... ficar de fora é uma opção. Não é fácil, pois muitos vivem suas vidas somente nas redes e nunca pensaram em viver fora delas. E hoje o marketing digital é todo voltado para a manada que não tem uma postura muito crítica e simplesmente acredita que este acúmulo de informações e ideias inúteis é relevante. No geral, não são relevantes e é perfeitamente possível ter uma vida diferente de alguém que vive a vida rolando tela por recomendações de máquina (atreladas aos seus cookies e ao seu consumo e interesses pessoais, que ela mesma autoriza nos termos de uso).</p>
+
+<p>Me preocupo com quem vive a vida na rolagem? Nem um pouco; eles vivem a vida deles no automático e provavelmente nunca pararam para pensar em possibilidades “fora da caixa”. A solução é simples: saia fora, se quiser. Teste um mundo fora das redes. Crie as suas redes antissociais, hehehe. Verá que as pessoas só se importam com você enquanto você alimenta estas redes com fotos, vídeos e textos. Parou de postar, será esquecido por muitos que baseiam toda a percepção de realidade dentro destes apps. Para muitos você só existe na vida deles por uma presença digital. Há vida fora delas, e percebo que há muito mais vida e autenticidade sem estas ferramentas coercitivas sociais que mais afastam grupos do que os unem.</p>
+
+<p>As redes são o reflexo digital da sociedade. Os interesses mesquinhos, a idolatria e o ego, a exposição e validação, a informação truncada, o ódio, o desinteresse e a ignorância em relação à ciência, a pregação religiosa cega, as ideias violentas se manifestando em textos. Tudo isto existe e não posso negar, mas é uma opção abrir sua porta para tudo isto, abrir uma janela, abrir uma fresta ou se fechar completamente a este conteúdo. Há coisas boas também, mas eu não acho que haja algo bom o suficiente para me fazer precisar destas redes. Quando precisei vender meus livros, usei as redes; quando precisei de apoio na solidão, também... mas não acredito que estar nestas redes sem uma real necessidade seja coerente. Ao menos é incoerente com minha forma de ver o mundo.</p>
+
+<p>Hoje vivo bem sem as redes sociais; minha comunicação social não é com milhares, mas com algumas dúzias de pessoas. Me comunico via Whats ou e-mail. Tenho quatro grupos de amizades virtuais que me atualizam quase que diariamente. O trabalho vai bem, não precisei de um LinkedIn para meu posto atual. Ganho a minha grana, vivo a minha vida. Com menos estímulos, sem a necessidade de ser aprovado por todos ou ficar triste quando meus coraçõezinhos digitais não batem uma certa meta ou quando meu post não recebe comentários. Não preciso ficar regulando o que posso ou não posso postar, ficar editando imagens e vídeos para vender algo que não existiu. Hoje encontrei pessoas com gostos parecidos (xadrez, blogs, livros, música, jogos), participo de grupos locais e não preciso de um Instagram, TikTok ou Facebook para administrar minhas relações online.</p>
+
+
+<a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+
+        <!-- Botão de E-mail com ícone SVG centralizado -->
+        <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Comente me enviando um email
+        </a>
+
+        <!-- begin www.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+
+    </div>
+</body>
+</html>
