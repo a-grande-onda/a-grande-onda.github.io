@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="/Imagens/favicon.png">
+
+    <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="Chega de comprar jogo" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/onda500.png" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+    <title>Chega de comprar jogo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: flex-start;     
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+          /* --- ESTILOS PARA O VÍDEO RESPONSIVO --- */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            border-radius: 6px; /* Leve arredondamento para combinar com o layout */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- BOTÃO DE CONTATO POR E-MAIL --- */
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* Espaço entre o ícone e o texto */
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background-color: #5c8ab3;
+            color: #fff;
+            border: 2px solid #5c8ab3;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+        }
+
+        .btn-email:hover {
+            background-color: #4a7296;
+            border-color: #4a7296;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+        }
+
+        .btn-email svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* --- BOTÃO RETORNAR --- */
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-bottom: 5px;
+        }
+
+        .btn-retornar:hover {
+            background: #5c8ab3;
+            color: #fff;
+        }
+
+        /* Ajustes Responsivos para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 25px 20px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+                padding-bottom: 15px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .btn-retornar, .btn-email {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+                width: 100%; /* Botões ocupam largura total no celular */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chega de comprar jogo</h1>
+        <h3>28/08/2026 Games</h3>
+
+
+        <a href="https://store.steampowered.com/app/3376990/Kabuto_Park/" target="_blank"></a>
+        <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3376990/header.jpg?t=1788116668" alt="KAbuto Park">
+        </a>
+
+       <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/ORNPGBfcHXQ?si=nhy1NDWpcWfy8jux" 
+                title="YouTube video player" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+<<p>Pokémon. 1996. Satoshi Tajiri cria uma franquia milionária baseando-se em experiências de infância, coleção de insetos no verão e brigas entre estes animais. Uma experiência pessoal que anos mais tarde se tornou senão a franquia de games mais valiosa da Nintendo.</p>
+
+<p>Kabuto Park é exatamente esta proposta, de forma condensada e simplificada para uma experiência breve de 3 horas. Colecione insetos e lute com eles.</p>
+
+<p>Um jogo simples, de apelo emocional, com gráficos e cores muito bem escolhidos, simplesmente aperte poucos botões, brinque de capturar insetos e batalhe em uma arena em cima de um pandeiro. Quem for empurrado para fora perde. Vença o campeonato das lutinhas com seus amigos nesta tarde de verão japonesa.</p>
+
+<p>Existem ao todo 4 áreas para capturar seus insetos, cada área possui insetos comuns, incomuns e raros. A probabilidade de encontrá-los refere-se à sua raridade, havendo também os ultrarraros shiny.</p>
+
+<p>Há uma lojinha em que você pode comprar alguns itens. Aumente o nível de:</p>
+
+<ul>
+    <li><strong>Botas:</strong> Acessam novas áreas com mais insetos para capturar</li>
+    <li><strong>Enciclopédia:</strong> Permite encontrar insetos raros e shiny com maior frequência</li>
+    <li><strong>Rede:</strong> Fornece bônus de upgrade (doces) em acertos na captura. Também aumenta as barrinhas de captura</li>
+    <li><strong>Lupa:</strong> Permite buscar mais insetos em uma caçada. O último nível permite repetir uma tentativa.</li>
+</ul>
+
+<p>Há também como comprar MEL, um item que desacelera a captura e facilita um pouco, mas que não utilizei no jogo inteiro.</p>
+
+<p>E é possível trocar dinheiro por candies, que são os doces que aumentam o nível dos seus insetos.</p>
+
+<p>A mecânica é simples: capture insetos, aumente o nível deles e seus atributos com doces e ganhe mais lutas. As lutas seguintes sempre serão mais difíceis, até você alcançar o rank número 1. Ganhe dinheiro nas lutas, compre todos os upgrades, capture todos os insetos... e o jogo termina.</p>
+
+<p>Existem 3 atributos nas lutas: Força, Defesa e Energia. A força empurra, a defesa segura os empurrões e a energia é utilizada com cartas de ataque. Cada inseto possui um moveset de 3 cartas, que podem ser buffs, debuffs e ataques de empurrão. Você pode combinar até 3 insetos na sua equipe.</p>
+
+<p>No geral, eu mal usei os insetos que davam energia. Eu ia direto pra porrada, colocava força máxima e pegava só os insetos tanques. Empurrei gostoso tudo no caminho e só perdi duas vezes.</p>
+
+<p>O jogo é fácil. Depois que você o termina (levei 2h30min), você pode fazer as conquistas que faltam. Inicialmente achei que seria muito difícil, pois algumas têm requerimentos muito específicos. Mas peguei um guia e em mais 40 minutos terminei e platinei o joguinho.</p>
+
+<p>Vale a pena? Paguei 11 reais em promoção no joguinho, me diverti por 3 horas e meia. Foi simples, direto ao ponto, fácil e interessante. Não vai ser um jogo que vou revisitar, nem é aquele jogo que te marca para sempre, mas valeu o preço pago e recomendo a todos um jogo "cozy" sem nada de dificuldade e feito para relaxar. O único contra dele são alguns menus que achei confusos e a música que, depois de uma hora, já enjoa.</p>
+
+<a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+<!-- Botão de E-mail com ícone SVG centralizado -->
+        <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Comente me enviando um email
+        </a>
+                <!-- begin www.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+
+    </div>
+</body>
+</html>
