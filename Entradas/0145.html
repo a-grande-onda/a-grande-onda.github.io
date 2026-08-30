@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="/Imagens/favicon.png">
+
+    <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="Dia do Blog 2026" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/onda500.png" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+    <title>Dia do Blog 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: center; /* ALTERADO: Centraliza o container verticalmente na tela */
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* ADICIONADO: Garante que a imagem principal não vaze no mobile e fique centralizada */
+        .header-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        /* ADICIONADO: Garante alinhamento e largura total das listas no container */
+        ul {
+            width: 100%;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* ADICIONADO: Força a caixa de comentários externa a respeitar a largura do layout */
+        #HCB_comment_box {
+            width: 100%;
+            margin-top: 25px;
+        }
+
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        /* --- ESTILOS PARA O VÍDEO RESPONSIVO --- */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- BOTÃO DE CONTATO POR E-MAIL --- */
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background-color: #5c8ab3;
+            color: #fff;
+            border: 2px solid #5c8ab3;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+        }
+
+        .btn-email:hover {
+            background-color: #4a7296;
+            border-color: #4a7296;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+        }
+
+        .btn-email svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* --- BOTÃO RETORNAR --- */
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-bottom: 5px;
+        }
+
+        .btn-retornar:hover {
+            background: #5c8ab3;
+            color: #fff;
+        }
+
+        /* Ajustes Responsivos para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 92%; /* ALTERADO: Margem ligeiramente maior para respirar na tela do celular */
+                padding: 25px 18px; /* ALTERADO: Reduzido para dar mais espaço ao texto */
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+                padding-bottom: 15px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .btn-retornar, .btn-email {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dia do Blog 2026</h1>
+        <h3>31/08/2026 Metablog</h3>
+
+   <p>Este dia foi criado em 2008 em sites gringos, basicamente é 31/08, e 3108 se assemelha com BLOG.</p>
+
+    <p>É um dia para celebrar a cultura dos blogueiros que existem por aí, recomendar blogs legais.</p>
+
+    <p>Infelizmente neste dia eu não estou 100% bem de saúde, também não me preparei para isto. Mas recomendo todos os blogs da galera do Entreblogs, o coletivo de blogueiros que participo atualmente.</p>
+
+    <p><a href="https://entreblogs.com.br/" target="_blank" rel="noopener noreferrer">https://entreblogs.com.br/</a></p>
+
+    <p>Acesse o site, dê uma olhada nos blogs.</p>
+
+    <p>Hoje é o último dia do BEDA, o desafio criado para postar em todos os 31 dias de Agosto.<br>
+    Somando meu prólogo que foi lançado no final de Julho tenho postados neste mês 42 posts.</p>
+
+    <p>Foi bastante, mais do que estou acostumado</p>
+
+    <p>Agora vou aos poucos ler os posts de todo mundo no site do evento.</p>
+
+    <p><a href="https://entreblogs.com.br/beda/2026" target="_blank" rel="noopener noreferrer">https://entreblogs.com.br/beda/2026</a></p>
+
+    <hr>
+
+    <p>Infelizmente foi um péssimo mês para mim, mas tudo bem, mês que vem melhora. Criei minhas postagens com pressa, sem muito cuidado, e postei tudo no dia 8 de Agosto.</p>
+
+    <p>Depois disto represei mais 10 postagens extremamente pessimistas, refletindo meu estado de espírito neste mês horrível.</p>
+
+    <p>Amanhã faço o recap de Agosto. Por enquanto quero só dar uma descansada. Foi produtivo mas muito cansativo.</p>
+
+    <p>Este dia do blog me fez refletir sobre os vários estilos de blogs dos companheiros do entreblogs, cada um da sua forma, escrevendo com suas características pessoais, em temas que cada um domina.</p>
+
+    <p>Felizmente abrir a porta para ler a mensagem dos outros é muito bom. E é isto que este hobby de blogagem que iniciei em Fevereiro me possibilita.</p>
+
+    <p>Agora é hora de dar uma procurada online em blogs inspiradores. Nos próximos desafios de posts diários acredito que não vou me inscrever. É muito bom, mas exaustivo. Agora é hora de pegar todos estes mais de 900 posts criados no evento e ler com cuidado.</p>
+
+    <p>Espero que em 2027 eu tenha um dia do blog mais festivo e alegre que neste 2026.</p>
+
+    <p>Não estou mais em hiato, mas vou postar quando me der vontade agora. E sobre as comunicações com o grupo, vou dar uma pausa por enquanto. O pessoal é boa gente, mas eu realmente não consigo administrar atenção em grupos grandes. Gosto do meu whatsapp minimalista e não maximalista. Estão arquivados, agora é só abrir as conversas quando eu realmente for citado e aparecer um @ na minha aba de conversas arquivadas.</p>
+
+    <p>Feliz dia do Blog a todos que mantêm esta forma única de comunicação e expressão online.</p>
+
+        <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+
+        <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Comente me enviando um email
+        </a>
+
+        <!-- begin www.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+
+</body>
+</html>
