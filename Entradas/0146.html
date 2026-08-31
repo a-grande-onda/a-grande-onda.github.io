@@ -6,15 +6,20 @@
 
     <link rel="icon" type="image/x-icon" href="/Imagens/favicon.png">
 
-
     <meta property="og:site_name" content="A Grande Onda">
     <meta property="og:title" content="2026 Agosto" />
     <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
-    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/onda500.png" />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/agrandeondaminiatura.png" />
     <meta property="og:type" content="https://a-grande-onda.blog.br/" />
 
     <title>2026 Agosto</title>
     <style>
+        :root {
+            --win-color: #22c55e;
+            --draw-color: #f59e0b;
+            --loss-color: #ef4444;
+        }
+
         * {
             box-sizing: border-box;
         }
@@ -24,7 +29,7 @@
             margin: 0;
             display: flex;
             justify-content: center; 
-            align-items: center; /* ALTERADO: Centraliza o container verticalmente na tela */
+            align-items: flex-start;     
             background-color: #f0f0f0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.7;
@@ -42,28 +47,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
-
-        /* ADICIONADO: Garante que a imagem principal não vaze no mobile e fique centralizada */
-        .header-img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 6px;
-            margin-bottom: 20px;
-        }
-
-        /* ADICIONADO: Garante alinhamento e largura total das listas no container */
-        ul {
-            width: 100%;
-            padding-left: 20px;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        /* ADICIONADO: Força a caixa de comentários externa a respeitar a largura do layout */
-        #HCB_comment_box {
-            width: 100%;
-            margin-top: 25px;
         }
 
         p {
@@ -94,27 +77,122 @@
             width: 100%;
         }
 
-        /* --- ESTILOS PARA O VÍDEO RESPONSIVO --- */
-        .video-container {
-            position: relative;
+        /* --- CARD DE XADREZ ESTILIZADO --- */
+        .chess-card {
             width: 100%;
-            padding-bottom: 56.25%; /* Proporção 16:9 */
-            height: 0;
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+            border-radius: 16px;
+            padding: 28px;
+            color: #ffffff;
+            margin: 25px 0 35px 0;
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
             overflow: hidden;
-            margin-top: 10px;
-            margin-bottom: 25px;
-            border-radius: 6px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
-        .video-container iframe {
+        .chess-card::before {
+            content: "♟";
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
+            right: -10px;
+            bottom: -20px;
+            font-size: 140px;
+            opacity: 0.04;
+            pointer-events: none;
         }
+
+        .chess-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 14px;
+        }
+
+        .chess-header h4 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #f8fafc;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chess-platform {
+            font-size: 0.85rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 10px;
+            border-radius: 20px;
+            color: #cbd5e1;
+        }
+
+        /* Estilo para o link do lichess ficar branco e sem sublinhado */
+        .chess-platform a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .chess-platform a:hover {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .chess-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            text-align: center;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 14px 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+        }
+
+        .stat-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 4px;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        .stat-box.win .stat-value { color: var(--win-color); }
+        .stat-box.draw .stat-value { color: var(--draw-color); }
+        .stat-box.loss .stat-value { color: var(--loss-color); }
+        .stat-box.total .stat-value { color: #f8fafc; }
+
+        /* Barra de Progresso do Xadrez */
+        .chess-progress {
+            margin-top: 20px;
+            height: 6px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+        }
+
+        .progress-bar.win { width: 54.1%; background-color: var(--win-color); }
+        .progress-bar.draw { width: 2.1%; background-color: var(--draw-color); }
+        .progress-bar.loss { width: 43.8%; background-color: var(--loss-color); }
 
         /* --- BOTÃO DE CONTATO POR E-MAIL --- */
         .btn-email {
@@ -132,7 +210,7 @@
             color: #fff;
             border: 2px solid #5c8ab3;
             cursor: pointer;
-            margin-top: 20px;
+            margin-top: 15px;
             margin-bottom: 10px;
             box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
         }
@@ -174,11 +252,17 @@
             color: #fff;
         }
 
+        /* Ajustes para a caixa de comentários */
+        #HCB_comment_box {
+            width: 100%;
+            margin-top: 30px;
+        }
+
         /* Ajustes Responsivos para Mobile */
         @media (max-width: 600px) {
             .container {
-                width: 92%; /* ALTERADO: Margem ligeiramente maior para respirar na tela do celular */
-                padding: 25px 18px; /* ALTERADO: Reduzido para dar mais espaço ao texto */
+                width: 95%;
+                padding: 25px 20px;
                 margin: 20px auto;
             }
             
@@ -195,8 +279,12 @@
                 font-size: 1rem;
             }
 
+            .chess-stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .btn-retornar, .btn-email {
-                padding: 12px 20px;
+                padding: 10px 20px;
                 font-size: 0.9rem;
                 width: 100%;
             }
@@ -208,16 +296,68 @@
         <h1>2026 Agosto</h1>
         <h3>01/09/2026 Diário</h3>
 
+       <p>Certamente o pior mês do ano para mim. Nota 4/10.</p>
 
+<p>Agosto começou com muitas promessas. Um mês a mais de trabalho, preparativos para o PSS a se realizar, concurso da prefeitura aberto, BEDA… No geral, tinha tudo para ser um bom mês.</p>
 
+<p>Inicio o mês sabendo que meu aluno na escola tentou se suicidar. Foi hospitalizado, mas agora está tudo bem. O porém é que ele não vem mais para a escola e, consequentemente, sem o aluno na escola há a real possibilidade de perder minhas aulas com ele e estar desempregado.</p>
 
+<p>A mãe dele deu entrada no processo de atendimento domiciliar do menino, mas isso demora. Por ora, agosto acabou e ainda não fui demitido. Ainda dou suporte aos outros dois alunos na sala. Vamos ver mais para a frente o que ocorrerá. Em setembro perco meu trabalho? Será?</p>
 
+<p>Concurso PSS e Prefeitura. Tenho que fazer, mas fiz para PAEE e Pedagogia. Vamos ver se dará certo, gravei os vídeos, fiz a aula… agora é só ir bem na prova. Este processo foi fácil, então não posso dizer que estes preparativos para os concursos foram um problema grave este mês.</p>
 
+<p>BEDA (Blog Every Day August), um desafio para postar todo dia em meu blog. Eu havia me preparado, estava com 20 posts arquivados para postar, somei com mais alguns e no dia 8 de agosto já postei os 31 posts do mês. Saí do grupo de WhatsApp do Entreblogs. Realmente não sei lidar com grupos de WhatsApp, ainda mais os que a todo momento geram conversas. Não leve a mal, gosto de conversar, só não gosto de ter a minha lista de todas as novas postagens acumulando somente os grupos do Entreblogs. Arquivei tudo e fiquei umas 2 semanas fora.</p>
 
+<p>Voltei aos grupos no final do mês e deu tudo certo, escrevi mais 10 postagens, publiquei e este foi meu BEDA. Não acompanhei os posts de todo mundo, mas li muita coisa interessante no mês. Acho que foi um bom evento, mas eu não consigo administrar grupos de WhatsApp como gostaria. Me causa muita ansiedade toda esta pressão social na palma da minha mão. Detesto WhatsApp.</p>
 
-        
+<p>Além disso, tive uma crise depressiva com ansiedade. Episódio misto da bipolaridade. Faltei 3 dias de aula e agora o meu psiquiatra disse para tentarmos trocar o remédio que uso. Nos últimos anos venho tendo muitas crises, que não deveriam acontecer com tanta frequência assim. Um novo remédio provavelmente me colocaria em uma situação melhor.</p>
+
+<p>Neste mês também removi a função de PC portátil com Windows do meu ROG Ally X. Agora ele virou um console portátil mesmo e coloquei SteamOS nele. Como PC, voltei ao SER5, e estou usando ele com mais restrições. Uma redução no uso de YouTube e um foco maior em xadrez e jogos.</p>
+
+<p>No final do mês terminei um jogo curto, e criei a regra de só adquirir jogos caso eu tenha terminado 10 dos meus e resenhado. É algo difícil? Não sei, só espero que reduza minhas aquisições.</p>
+
+<p>Este foi o meu agosto, um mês ruim no geral. Poderia ser pior? Claro, sempre há formas de tudo ser pior, por isso dei apenas uma nota 4 para ele. Por um setembro melhor.</p>
+
+        <!-- Card Estilizado de Xadrez -->
+        <section class="chess-card">
+            <div class="chess-header">
+                <h4><span>♟</span> Meu Xadrez no mês</h4>
+                <span class="chess-platform"><a href="https://lichess.org/@/prof_felipebrasil" target="_blank" rel="noopener noreferrer">lichess.org</a></span>
+            </div>
+            
+            <p style="color: #94a3b8; font-size: 0.95rem; margin-bottom: 20px;">
+                Joguei 232 partidas este mês. Aqui está o resumo:
+            </p>
+
+            <div class="chess-stats-grid">
+                <div class="stat-box win">
+                    <div class="stat-value">118</div>
+                    <div class="stat-label">Vitórias</div>
+                </div>
+                <div class="stat-box draw">
+                    <div class="stat-value">8</div>
+                    <div class="stat-label">Empates</div>
+                </div>
+                <div class="stat-box loss">
+                    <div class="stat-value">106</div>
+                    <div class="stat-label">Derrotas</div>
+                </div>
+                <div class="stat-box total">
+                    <div class="stat-value">232</div>
+                    <div class="stat-label">Total</div>
+                </div>
+            </div>
+
+            <div class="chess-progress">
+                <div class="progress-bar win"></div>
+                <div class="progress-bar draw"></div>
+                <div class="progress-bar loss"></div>
+            </div>
+        </section>
+
         <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
 
+        <!-- Botão de E-mail com ícone SVG centralizado -->
         <a href="mailto:felipefelicio@gmail.com" class="btn-email">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
@@ -231,5 +371,6 @@
         <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
         <!-- end www.htmlcommentbox.com -->
 
+    </div>
 </body>
 </html>
