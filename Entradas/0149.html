@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="/Imagens/favicon.png">
+
+    <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="Prioridades de Jogos Steam" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/onda500.png" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+    <title>Prioridades de Jogos Steam</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: center; /* ALTERADO: Centraliza o container verticalmente na tela */
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* ADICIONADO: Garante que a imagem principal não vaze no mobile e fique centralizada */
+        .header-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        /* ADICIONADO: Garante alinhamento e largura total das listas no container */
+        ul {
+            width: 100%;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* ADICIONADO: Força a caixa de comentários externa a respeitar a largura do layout */
+        #HCB_comment_box {
+            width: 100%;
+            margin-top: 25px;
+        }
+
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        /* --- ESTILOS PARA O VÍDEO RESPONSIVO --- */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- BOTÃO DE CONTATO POR E-MAIL --- */
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background-color: #5c8ab3;
+            color: #fff;
+            border: 2px solid #5c8ab3;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+        }
+
+        .btn-email:hover {
+            background-color: #4a7296;
+            border-color: #4a7296;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+        }
+
+        .btn-email svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* --- BOTÃO RETORNAR --- */
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-bottom: 5px;
+        }
+
+        .btn-retornar:hover {
+            background: #5c8ab3;
+            color: #fff;
+        }
+
+        /* Ajustes Responsivos para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 92%; /* ALTERADO: Margem ligeiramente maior para respirar na tela do celular */
+                padding: 25px 18px; /* ALTERADO: Reduzido para dar mais espaço ao texto */
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+                padding-bottom: 15px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .btn-retornar, .btn-email {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prioridades de Jogos Steam</h1>
+        <h3>08/09/2026 Games</h3>
+
+    <p>Bom, você já sabe a história… tenho quase 600 jogos na Steam, e hoje em dia joguei cerca de 250 (em 16 anos) e tenho 350 ainda não jogados. Minha taxa anual é de 15 a 20 jogos jogados ao ano. Ou seja, para cobrir 350 jogos seria mais ou menos 18 anos para colocar tudo para rodar. E estou ignorando demais jogos nesta conta; emulação e 3DS é outro cálculo.</p>
+
+    <p>Ok, 350 jogos, tenho que ter alguma prioridade de consumo. Primeiro penso que terei meu ROG ALLY X por ao menos mais 7 ou 8 anos. Totalizando 120 a 150 jogos que eu venha a jogar no dispositivo na melhor das hipóteses. O ROG aguenta jogos mais pesados, então é prioridade terminar nele o que mais exige uma máquina forte.</p>
+
+    <p>Desta forma, listei dos jogos que tenho e os que estão disponíveis na minha família Steam. Os mais pesados, que não rodam em meu notebook simples, nem em meus miniPC modestos. Estes são a prioridade para jogar no portátil.</p>
+
+    <h2>Dos que possuo:</h2>
+    <ul>
+        <li>1000x Resist</li>
+        <li>Ace combat 7</li>
+        <li>Atelier Ryza</li>
+        <li>Black Mesa</li>
+        <li>Call of the Sea</li>
+        <li>Crash Trilogy</li>
+        <li>Doom</li>
+        <li>Dragon Quest XI</li>
+        <li>Dragon Quest 1+2</li>
+        <li>Dragon Quest 3</li>
+        <li>Final Fantasy Tactics</li>
+        <li>Final Fantasy XII</li>
+        <li>Final Fantasy X - X2</li>
+        <li>Legend of Grimrock 2</li>
+        <li>Luma Island</li>
+        <li>Mass Effect Trilogy</li>
+        <li>Obduction</li>
+        <li>Outer Wilds</li>
+        <li>Paradise Killer</li>
+        <li>Persona 5 Royal</li>
+        <li>Prince of Persia: the lost crown</li>
+        <li>Red dead redemption 2</li>
+        <li>Tomb Raider</li>
+        <li>Rise of the Tomb Raider</li>
+        <li>Shadow of the Tomb Raider</li>
+        <li>Octopath Traveler</li>
+        <li>Shin Megami Tensei 3</li>
+        <li>Tetris Effect</li>
+        <li>The Walking dead definitive</li>
+        <li>Ys VIII</li>
+    </ul>
+
+    <h2>E entre jogos pesados da família Steam, quero rodar estes:</h2>
+    <ul>
+        <li>Beyond Two Souls</li>
+        <li>Expedition 33</li>
+        <li>Detroit Become Human</li>
+        <li>Final Fantasy XV</li>
+        <li>Forza Horizon 5</li>
+        <li>Halo</li>
+        <li>Heavy Rain</li>
+        <li>The last of Us</li>
+        <li>The last of Us 2</li>
+        <li>Octopath Traveler II</li>
+        <li>Persona 3 reloaded</li>
+        <li>Shin Megami Tensei V</li>
+        <li>Tony Hawk pro skater 1+2</li>
+    </ul>
+
+    <p>Se contei certo, são 43 jogos atualmente, que podem aumentar conforme as compras de meus amigos na família Steam.</p>
+
+   <p>Calculo que considerando o fato que são jogos normalmente grandes (Persona 5 120h / Red dead 2 100h+ / Dragon Quest XII 100h+) eu levarei ao menos 4 a 5 anos para jogar essa lista.</p>
+
+<p>Tenho pressa em jogar isto tudo? Claro que não. Eu acredito que nesta próxima década, pelo que conheço meus amigos da família adicionarão mais uns 20 jogos AAA de meu interesse. E talvez eu leve 6 ou 7 anos para jogar tudo, incluindo os novos adicionados. Mas tudo bem, esta é só uma fração dos meus jogos, os que requerem mais hardware. Jogos da nova geração, Playstation 6 e afins nem rodarão neste meu aparelho, pois virão com necessidades de hardware bem acima do que o ROG ALLY X de 2025 conseguirá fornecer. Acho que nem GTA 6 o ROG ALLY vai segurar (talvez em 720p LOW).</p>
+
+<p>Agora é jogar aos poucos, pretendo revezar um jogo pesado com um jogo leve. a idéia de jogar os 350 jogos que faltam pode levar muito tempo. Hoje de certa forma me arrependo de comprar tanto jogo assim. No geral, tenho interesse por todos os que eu tenho e por mais uns 50 a 70 jogos dos meus amigos. É muita disponibilidade, e comprar coisas novas agora só se for algo muito fora da caixa e que meus amigos não adquiriram ainda.</p>
+
+<p>No final das contas, os triple A ficam nas contas dos meus amigos e os Puzzle, Casual, Adventure point and click, Visual Novel, Plataforma e RPGs ficam na minha conta.</p>
+
+        <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+
+        <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Comente me enviando um email
+        </a>
+
+        <!-- begin www.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+
+</body>
+</html>
