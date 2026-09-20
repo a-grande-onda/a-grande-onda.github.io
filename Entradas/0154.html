@@ -23,7 +23,7 @@
             margin: 0;
             display: flex;
             justify-content: center; 
-            align-items: center; /* ALTERADO: Centraliza o container verticalmente na tela */
+            align-items: center;
             background-color: #f0f0f0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.7;
@@ -43,13 +43,22 @@
             align-items: center;
         }
 
-         .container-imagem {
+        .container-imagem {
             text-align: center;
             margin: 20px 0;
-            width: 100%; /* Garante que o container da imagem ocupe toda a largura disponível */
+            width: 100%;
         }
 
-        /* ADICIONADO: Garante que a imagem principal não vaze no mobile e fique centralizada */
+        /* ADICIONADO: Garante que as imagens do artigo fiquem totalmente responsivas e formatadas */
+        .container-imagem img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: block;
+            margin: 0 auto;
+        }
+
         .header-img {
             max-width: 100%;
             height: auto;
@@ -57,7 +66,6 @@
             margin-bottom: 20px;
         }
 
-        /* ADICIONADO: Garante alinhamento e largura total das listas no container */
         ul {
             width: 100%;
             padding-left: 20px;
@@ -65,7 +73,6 @@
             color: #333;
         }
 
-        /* ADICIONADO: Força a caixa de comentários externa a respeitar a largura do layout */
         #HCB_comment_box {
             width: 100%;
             margin-top: 25px;
@@ -103,7 +110,7 @@
         .video-container {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* Proporção 16:9 */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             margin-top: 10px;
@@ -182,8 +189,8 @@
         /* Ajustes Responsivos para Mobile */
         @media (max-width: 600px) {
             .container {
-                width: 92%; /* ALTERADO: Margem ligeiramente maior para respirar na tela do celular */
-                padding: 25px 18px; /* ALTERADO: Reduzido para dar mais espaço ao texto */
+                width: 92%;
+                padding: 25px 18px;
                 margin: 20px auto;
             }
             
@@ -213,32 +220,31 @@
         <h1>Não deixe para depois – A história de um MOLESKINE de 16 anos</h1>
         <h3>19/09/2026 Listas</h3>
 
-<p>Em 2010, minha irmã fez um intercâmbio para os Estados Unidos. Pedi a ela que me trouxesse algumas coisas que, na época, não eram vendidas no Brasil ou cujo preço era proibitivo. Comprei dois Moleskines, cadernos que sempre foram caros. Hoje, um destes que tenho custa mais de 200 reais. Mas... eu o comprei em 2010; usei o dito caderno?</p>
+        <p>Em 2010, minha irmã fez um intercâmbio para os Estados Unidos. Pedi a ela que me trouxesse algumas coisas que, na época, não eram vendidas no Brasil ou cujo preço era proibitivo. Comprei dois Moleskines, cadernos que sempre foram caros. Hoje, um destes que tenho custa mais de 200 reais. Mas... eu o comprei em 2010; usei o dito caderno?</p>
 
-    <p>Estava intacto na minha estante. Eu sempre dizia que iria utilizá-lo em um projeto grande, como um mestrado ou um doutorado. Sempre posterguei seu uso para algum evento que nunca veio.</p>
+        <p>Estava intacto na minha estante. Eu sempre dizia que iria utilizá-lo em um projeto grande, como um mestrado ou um doutorado. Sempre posterguei seu uso para algum evento que nunca veio.</p>
 
-    <p>Esta semana, decidi escrever sobre o meu projeto de jardim digital no meu site pessoal. E cogitei abrir, tirar o plástico e usar. Sim... 16 anos lacrado. Abri o pacote e a capa estava esfarelando; um desgaste do material. Em um produto ainda no plástico!</p>
+        <p>Esta semana, decidi escrever sobre o meu projeto de jardim digital no meu site pessoal. E cogitei abrir, tirar o plástico e usar. Sim... 16 anos lacrado. Abri o pacote e a capa estava esfarelando; um desgaste do material. Em um produto ainda no plástico!</p>
 
-    <p>Não sei se me sinto um idiota ou se isto foi uma lição para eu viver o agora e não postergar o uso de objetos. Foram 16 anos esperando um bom motivo para usar e, quando abro, está desgastado e avariado.</p>
+        <p>Não sei se me sinto um idiota ou se isto foi uma lição para eu viver o agora e não postergar o uso de objetos. Foram 16 anos esperando um bom motivo para usar e, quando abro, está desgastado e avariado.</p>
 
-    <p>Isso me fez refletir sobre a quantidade de projetos e ideias que deixo para depois. Deveria focar mais no que tenho. Hoje tenho alguns videogames que mal uso, mas guardo "para valorizar". Um pensamento bobo, como este de prolongar a vida dos Moleskines.</p>
+        <p>Isso me fez refletir sobre a quantidade de projetos e ideias que deixo para depois. Deveria focar mais no que tenho. Hoje tenho alguns videogames que mal uso, mas guardo "para valorizar". Um pensamento bobo, como este de prolongar a vida dos Moleskines.</p>
 
-    <p>No final das contas, amanhã vou ver se descasco esta capa e uso o caderno mesmo assim: menos bonito, porém funcional. No andar da carruagem, o caderno me ensinou uma boa lição hoje. Use e não guarde. Objetos não duram para sempre, mesmo lacrados. Postergar o uso de algo atrelado a outra atividade não é sábio.</p>
-   
-   <div class="container-imagem">
+        <p>No final das contas, amanhã vou ver se descasco esta capa e uso o caderno mesmo assim: menos bonito, porém funcional. No andar da carruagem, o caderno me ensinou uma boa lição hoje. Use e não guarde. Objetos não duram para sempre, mesmo lacrados. Postergar o uso de algo atrelado a outra atividade não é sábio.</p>
+       
+        <div class="container-imagem">
             <a href="/Imagens/mol1.jpg" target="_blank" rel="noopener noreferrer">
-                <img src="/Imagens/mol1.jpg" alt="Quarto">
+                <img src="/Imagens/mol1.jpg" alt="Caderno Moleskine esfarelando 1">
             </a>
-            </div>
+        </div>
 
-            <div class="container-imagem">
+        <div class="container-imagem">
             <a href="/Imagens/mol2.jpeg" target="_blank" rel="noopener noreferrer">
-                <img src="/Imagens/mol2.jpeg" alt="Quarto">
+                <img src="/Imagens/mol2.jpeg" alt="Caderno Moleskine esfarelando 2">
             </a>
-            </div>
+        </div>
 
-   
-    <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+        <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
 
         <a href="mailto:felipefelicio@gmail.com" class="btn-email">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -252,6 +258,6 @@
         <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
         <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
         <!-- end www.htmlcommentbox.com -->
-
+    </div>
 </body>
 </html>
