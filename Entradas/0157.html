@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="/Imagens/favicon.png">
+
+    <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="De PHD a professor substituto - Uma lição sobre status" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/onda500.png" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+    <title>De PHD a professor substituto - Uma lição sobre status</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container-imagem {
+            text-align: center;
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        /* ADICIONADO: Garante que as imagens do artigo fiquem totalmente responsivas e formatadas */
+        .container-imagem img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .header-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            width: 100%;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        #HCB_comment_box {
+            width: 100%;
+            margin-top: 25px;
+        }
+
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        /* --- ESTILOS PARA O VÍDEO RESPONSIVO --- */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- BOTÃO DE CONTATO POR E-MAIL --- */
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background-color: #5c8ab3;
+            color: #fff;
+            border: 2px solid #5c8ab3;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+        }
+
+        .btn-email:hover {
+            background-color: #4a7296;
+            border-color: #4a7296;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+        }
+
+        .btn-email svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* --- BOTÃO RETORNAR --- */
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-bottom: 5px;
+        }
+
+        .btn-retornar:hover {
+            background: #5c8ab3;
+            color: #fff;
+        }
+
+        /* Ajustes Responsivos para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 92%;
+                padding: 25px 18px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+                padding-bottom: 15px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .btn-retornar, .btn-email {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>De PHD a professor substituto - Uma lição sobre status</h1>
+        <h3>25/09/2026 YouTUbe</h3>
+
+<p>Hoje assisti a este vídeo e me interessei bastante pelo tópico. Escrevo isto em um misto de resumo com comentários pessoais. Achei a abordagem do autor muito boa e concisa, e é um vídeo que vale a pena assistir se você quer refletir mais sobre status, trabalho e sua vida.</p>
+
+        <p>O autor fala de sua experiência ensinando temas complexos com fósseis e o descaso de alunos do oitavo ano, os quais inclusive desenharam um pênis com caneta permanente em seu fóssil de 510 milhões de anos. Esta contextualização mostra a realidade de um professor substituto que ganha 160 dólares por dia, o que resulta em algo entre 30 e 40 mil dólares ao ano, dependendo do cálculo (um salário baixo mesmo para o padrão dos Estados Unidos).</p>
+
+        <p>A introdução é seguida pela apresentação da formação do professor, PhD em paleontologia em universidades ilustres dos Estados Unidos, que já ministrou palestras importantes e é especialista na área. O autor não entra em detalhes sobre o motivo de sua redução salarial e de cargo, mas é claro que hoje ele não possui o status que já teve no meio acadêmico.</p>
+
+        <p>Eu conheço alguns doutores em grupos de pesquisa da universidade em que já trabalhei que, em relação à remuneração, recebem praticamente a metade do que eu recebo dando minhas aulas como professor no estado. Vivem de uma bolsa de pós-doutorado de três salários mínimos e de um "status" dentro da universidade. Trabalhar no ensino público básico fora da universidade e conquistar entre cinco e seis salários mínimos não é raro. "Mas aí você é só um professorzinho de escola, e não um pós-doutor dando palestras em eventos científicos" (ganhando metade do que ganha um professor de nível básico e atuando como doutor ainda não efetivado, mas tudo bem...).</p>
+
+        <p>Voltando ao vídeo, há uma fala sobre status e posições de status, delimitando algumas formas de status contextual:</p>
+        <ul>
+            <li><strong>Relacional:</strong> Quantos contatos você tem?</li>
+            <li><strong>Material:</strong> Quantas propriedades e recursos você tem?</li>
+            <li><strong>Somático:</strong> O quão forte fisicamente você é?</li>
+            <li><strong>Noético:</strong> As coisas que você sabe e que os outros não sabem.</li>
+        </ul>
+        <p>Você pode ser bom em uma dessas formas e ruim nas outras. Dependendo do contexto, um tipo é mais importante do que o outro e lhe dá acessos que os demais não permitem.</p>
+
+        <blockquote>
+            <p><em>"O que os outros pensam sobre mim não é de meu interesse."</em></p>
+        </blockquote>
+
+        <p>O autor apresenta uma situação em que pesquisou sobre um colega do ensino médio e descobriu que hoje ele é empresário em uma grande empresa. Isso o deixou abalado, considerando que ambos estavam na mesma realidade no passado.</p>
+
+        <p>Quem nunca fez isso? Conversar com alguém décadas depois e notar que a pessoa aparenta estar em uma condição melhor, seja social, econômica, de relacionamento, de trabalho, moradia ou estudos...</p>
+
+        <p>Depois, o autor entra em discussões sobre o modo de vida de seus pais e como isso influencia em suas decisões hoje: uma mãe relativamente rica, mas que vive uma vida frugal ao extremo; e um pai que era da universidade e morreu tendo as fraldas trocadas, segundo o vídeo.</p>
+
+        <p>Essas reflexões sobre o fim da vida e o fato de o status ser irrelevante em certas situações são clássicas em descrições sobre a finitude humana. Tudo o que está relacionado a objetivos de vida, funções sociais e interesses se esvai com a idade e com as necessidades dos idosos. A doença surge, assim como as dificuldades. Ser um PhD não interessa mais quando a sua fralda é trocada por um enfermeiro devido à incontinência urinária.</p>
+
+        <blockquote>
+            <p><em>"O jogo só acaba quando você para de jogar."</em></p>
+        </blockquote>
+
+        <p>Acho interessante essa frase, que pode ser utilizada em múltiplos contextos. O status só acaba quando você deixa de se importar com ele. E acredito que essa libertação dos vínculos e das amarras (seja em questões pessoais de status ou de relacionamentos, ou até mesmo de ideias e projetos pessoais ou de trabalho) só ocorre quando eu me permito. E posso antecipar esse fim, abandonando e saindo do jogo antes, sempre.</p>
+
+        <p>Ao final do vídeo, o autor fala sobre a famosa carteirada:</p>
+
+        <blockquote>
+            <p><em>"Você sabe quem eu sou?"</em></p>
+        </blockquote>
+
+        <p>Eu tenho uma postura simples sobre isso: não importa quem eu sou, mas sim as ações que posso desempenhar da forma que desejo desempenhar. Você sabe que eu sou um PhD renomado? Neste contexto escolar, ele é só um professor substituto. Porém, sua influência ainda se mantém vinculada às funções que já desempenhou. Acredito que dar a carteirada do "Você sabe quem eu sou?" é irrelevante em todos os contextos. Apresentar-se como professor substituto, e não como doutor, é o mais correto, ainda mais em um ambiente que o depreciaria por ter reduzido seu status acadêmico.</p>
+
+        <p>Ao final do vídeo, percebi que ele me trouxe boas reflexões sobre status, nossas necessidades ao longo da vida, como balancear o status e quais são os seus parâmetros e métricas. E sim, trouxe o ponto de que tudo isso nem faz sentido com a aproximação da morte. De nada adiantam os seus contatos, o seu conhecimento e as suas posses quando se está com uma doença degenerativa na proximidade do óbito.</p>
+
+        <p>Hoje acredito que, dentro dos parâmetros do autor, enquanto estivermos vivos e ativos, há uma necessidade de manter o que ele considera status, mas viver para essas atribuições e acreditar que elas o definem é um tiro no pé. Ao final da vida, pouco importa toda essa preocupação com a visão do outro, com o que tenho, com o que fiz e com os símbolos que carrego, como postos e empregos em que estive. Ao final da vida, nada disso importa mais. No entanto, enquanto estamos jogando o jogo, há de se dar algum valor a pontos específicos do status, mesmo sabendo que tudo se altera e pode mudar em relação a essas quatro categorias que o autor defende.</p>
+
+
+        <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+
+        <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Comente me enviando um email
+        </a>
+
+        <!-- begin www.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+    </div>
+</body>
+</html>
+
