@@ -93,6 +93,29 @@
             width: 100%;
         }
 
+                /* --- CONTAINER DE IMAGENS --- */
+        .container-imagem {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .container-imagem a {
+            display: block;
+            width: 100%;
+        }
+
+        .container-imagem img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 6px;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .container-imagem a:hover img {
+            transform: scale(1.01);
+            filter: brightness(0.9);
+
         /* --- ESTILOS PARA O VÍDEO RESPONSIVO --- */
         .video-container {
             position: relative;
@@ -211,10 +234,11 @@
             <img src="/Imagens/crescexub.png" alt="carta magic" style="margin-bottom: 20px;">
         </div>
 
-        <div style="text-align: center; width: 100%;">
-            <img src="/Imagens/0068.jpg" alt="carta magic" style="margin-bottom: 20px;">
+          <div class="container-imagem">
+            <a >
+                <img src="/Imagens/0068.jpg" alt="A onda de Hokusai" class="header-img">
+            </a>
         </div>
- 
         <p>Hoje fui dar uma pesquisada em cartas de Magic: The Gathering e descobri algo surpreendente. A carta Crescimento Exuberante é A Grande Onda. Depois fui buscar informações se aquilo era verdade e o artita que desenhou a imagem disse que teve por inspiração o quadro japonês.</p>
    
         <p>Meu olho está treinado.</p>
