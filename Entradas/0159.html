@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="/Imagens/favicon.png">
+
+    <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="Os anos 2000 para mim" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/onda500.png" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+    <title>Os anos 2000 para mim</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container-imagem {
+            text-align: center;
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        /* ADICIONADO: Garante que as imagens do artigo fiquem totalmente responsivas e formatadas */
+        .container-imagem img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .header-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            width: 100%;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        #HCB_comment_box {
+            width: 100%;
+            margin-top: 25px;
+        }
+
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        /* --- ESTILOS PARA O VÍDEO RESPONSIVO --- */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            border-radius: 6px; /* Leve arredondamento para combinar com o layout */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- BOTÃO DE CONTATO POR E-MAIL --- */
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background-color: #5c8ab3;
+            color: #fff;
+            border: 2px solid #5c8ab3;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+        }
+
+        .btn-email:hover {
+            background-color: #4a7296;
+            border-color: #4a7296;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+        }
+
+        .btn-email svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* --- BOTÃO RETORNAR --- */
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-bottom: 5px;
+        }
+
+        .btn-retornar:hover {
+            background: #5c8ab3;
+            color: #fff;
+        }
+
+        /* Ajustes Responsivos para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 92%;
+                padding: 25px 18px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+                padding-bottom: 15px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .btn-retornar, .btn-email {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Os anos 2000 para mim</h1>
+        <h3>28/09/2026 YouTube</h3>
+
+
+<p>Os anos 2000, hoje em dia, são celebrados com nostalgia na internet: o Frutiger Aero do Windows XP e do Vista, Avril Lavigne, Counter-Strike, Linkin Park, <em>Malhação</em>, o bruxo Ronaldinho Gaúcho, Charlie Brown Jr., câmeras digitais, Game Boy Advance e Nintendo DS, MTV, pirataria P2P na internet pós-Napster, Coldplay, o final de <em>Friends</em>, MSN Messenger, mIRC, LAN Houses, pendrive, Torrent, Brasil Pentacampeão, The Strokes, o fenômeno <em>Lost</em>, <em>The Walking Dead</em> e o renascimento zumbi, Orkut, MP3 players, The White Stripes, iPhone, o 11 de Setembro, fansubs de anime, PS2 e PS3, MySpace, Facebook.</p>
+
+<p>Tudo começou no ano 2000, o ano do bug do milênio, que nunca ocorreu. Na época, eu tinha 12 anos de idade; pelas minhas contas, estava na sétima série do ensino fundamental no colégio de freiras em que estudava. Passava os dias em uma rotina simples: ir para a escola de manhã e, antes de sair, deixar o toca-fita gravando em baixa qualidade. A fita gravava por 6 horas e conseguia capturar os desenhos que eu queria, que passavam na TV Globinho depois das 10h.</p>
+
+<p>Chegava em casa, rezava para que ninguém desligasse o meu gravador de fitas cassete e, durante a tarde, assistia a duas horas de desenhos gravados em qualidade lastimável. <em>Sakura Cardcaptors</em>, <em>Digimon</em>, <em>Hamtaro</em> e <em>Dragon Ball GT</em> eram os meus preferidos. À tarde, assistia a essas duas horas e depois já engatava o programa <em>Band Kids</em>. Das 15h até as 18h: <em>Tenchi Muyo!</em>, <em>Bucky</em>, <em>Monster Rancher</em>, <em>Slayers</em>, <em>Os 6 Biônicos</em>, <em>El-Hazard</em>, <em>Dragon Ball Z</em>. Já no programa da Eliana passava <em>Pokémon</em>, que depois foi para a Globo também.</p>
+
+<p>Depois das 18h, fazia minhas lições de casa ou estudava para as provas. Sem internet, sem estresse, sem notícias ruins a todo momento, sem estar disponível para os outros 24 horas por dia, 7 dias por semana. Era uma boa vida. À noite, eu jogava meu Super Nintendo e as únicas 7 fitas que eu tinha, ou jogava no PC os mesmos 10 CDs de sempre, jogos completos da revista <em>CD Expert</em> ou <em>Fullgames</em>, ou os clássicos mais baratos traduzidos pela Brasoft, somados a <em>Campo Minado</em> e <em>Paciência</em>/<em>FreeCell</em> no Windows.</p>
+
+<p>Conheci a internet por volta de 1999. Nós até tínhamos internet e modem em casa, mas era muito caro acessar. Muito mesmo, pelo menos para a minha realidade. Então, eu acessava só aos finais de semana, porque a ligação custava apenas um pulso da tarde de sábado até as 6 horas da manhã de segunda-feira. Eu tinha um Pentium 233 MHz nessa época, com kit multimídia Sound Blaster AWE64 e Windows 98 Plus. Fui ter o Windows XP anos mais tarde, em um computador que ganhei em 2003: um Pentium 4 com uma placa FX5200. Mas, sobre a internet, eu a usava somente aos finais de semana. Era um evento navegar na rede e, para quem não consegue entender como era, o modem de 56 kbps baixava a 4 KB/s. Então, uma página de 1 MB levava 4 minutos para abrir. Uma imagem simples de 400 KB levava 2 minutos, e uma música levava de 15 a 25 minutos para ser baixada. Uma única música em MP3. <em>Streaming</em> nem em sonho; até no YouTube você tinha que deixar o vídeo carregando por uns 5 a 10 minutos antes de dar o <em>play</em>.</p>
+
+<p>A internet era fantástica, tudo era lento, tudo tinha um custo de tempo. E sim, se a conexão caísse, você perdia o seu <em>download</em> (e era comum acontecer). Isso até criarem programas que dividiam o arquivo em partes e gerenciam os <em>downloads</em> de arquivos grandes. Assim, mesmo que a internet caísse, você dava um <em>resume</em>. Baixar um CD de software era impossível; 700 MB era algo para deixar dois finais de semana dedicados só a isso, sem poder acessar mais nada. Nesse cenário, era popular a pirataria em banquinhas de CD/DVD, pois o tempo economizado compensava os 10 reais que custava um CD pirata.</p>
+
+<p>Em 2003, tive Orkut; em 2006, MySpace; e em 2008, Facebook. As redes sociais eram muito diferentes das modernas. O Orkut tinha páginas estáticas, assim como o MySpace. O Facebook criou o novo padrão: páginas com rolagem e carregamento infinitos. Depois, no fim da década de 2000, a monetização das redes se tornou onipresente, usando os dados e o tempo do usuário como moeda de troca por propagandas direcionadas aos seus interesses. Nos anos 2000 não era assim: existia, sim, monetização com <em>banners</em>, mas ela não era controlada por algoritmos de recomendação. Era menos invasiva e direcionada, e a engenharia social voltada ao consumo estava em outro nível.</p>
+
+<p>Os anos 2000 foram a transição entre o fim do meu ensino fundamental, o ensino médio e os anos iniciais da minha primeira faculdade, o bacharelado em Geologia na UFPR. Tive uma namorada nessa época, no ensino médio, e no restante do tempo estive solteiro. Um namoro de 7 meses não é exatamente o mais importante em uma vida, mas na época, por ser o primeiro, era importante.</p>
+
+<p>Eu nadava em mar aberto, fazia travessias de 3 a 5 km no mar e circuitos de natação livre. Cheguei a fazer parte da equipe de natação do meu clube; gostava muito de nadar nessa época. Nunca ganhei nada; normalmente era um dos últimos a chegar nos campeonatos, mas sempre conseguia concluir a prova, mesmo sob condições ruins de tempo e temperatura. Nadei em Santa Catarina e no Paraná em vários campeonatos, e foi interessante.</p>
+
+<p>Em 2006, fiz minha primeira viagem internacional, para o Uruguai e a Argentina. Em 2008, fiz um intercâmbio universitário no Japão por 5 semanas e apresentei um trabalho acadêmico na Noruega por 10 dias. Também nessa época, a partir de 2008, entrei em depressão profunda, a ponto de desistir de tudo o que fazia na época. Só em 2012 isso foi resolvido, quando tive o diagnóstico correto de transtorno bipolar, passando a ser acompanhado com a medicação adequada desde então.</p>
+
+<p>Entre 2003 e 2008, fui metaleiro. Ouvia as músicas que conseguia baixar, comprava CDs e cheguei a ter a discografia física de Sonata Arctica, Luca Turilli e Rhapsody. Também colecionava discos das <em>Melhores da Pan</em>, que eram compilações de músicas da rádio que eu ouvia muito, a Jovem Pan. Quase fui <em>clubber</em>, inclusive.</p>
+
+<p>Quanto a shows, lembro que fui a mais de 40 nessa época. A meia-entrada de estudante custava de 15 a 20 reais. Todo mês eu ia a um show novo, principalmente de <em>heavy metal</em>. Curitiba era rota de bandas internacionais, então vi muitos shows bons de bandas clássicas: Dream Theater, Stratovarius, Angra, Shaman, Sepultura, Helloween, Iron Maiden, Iced Earth, Sonata Arctica, W.A.S.P., Massacration, Edguy, Grave Digger, Blind Guardian, Racer X, entre outras. Em outros estilos musicais, fui a shows do Oasis, Mordida, Blindagem, Jens Lekman, Yelle e dezenas de outros artistas nacionais na Virada Cultural de Curitiba. Foi um tempo muito bom nesse aspecto.</p>
+
+<p>Em 2008, comecei a ir a baladas. Ia principalmente ao James Bar, em Curitiba; depois, meus lugares eram o V.U., o Bar do Simão e o Wonka Bar. Gostava mesmo desses quatro lugares da cidade e ia todo final de semana. Eram bares que hoje poderiam ser considerados <em>gays</em>, mas eu ia pela música alternativa, pop, <em>indie rock</em>, <em>electropop</em>, rock e <em>indie pop</em>. Era um ambiente de que eu gostava, e eu ia com meus amigos. Nunca fiquei com ninguém nessas baladas, mas gostava das coisas banais: o cheiro do cigarro no fumódromo, a <em>long neck</em> que eu comprava, o "litrão" compartilhado e, principalmente, a música. A pista de dança pouco me importava, pois nunca fui dançarino; mas as luzes, o som alto, as roupas das pessoas e o ambiente eram muito bons. Tanto que eu repetia a dose todo final de semana. Foi assim de 2008 a 2011; depois, mudei de hábitos.</p>
+
+<p>Não sei como explicar, mas, sem uma internet onipresente, a realidade era muito mais palpável do que hoje. Os conceitos de sociedade líquida do sociólogo Zygmunt Bauman fazem muito sentido no período pós-2010, com a popularização massiva da internet. O que mais se destacava nessa época era o fato de você entrar na internet quando desejasse, sem que ela controlasse vários processos, como ocorre hoje. Sinto falta disso nos anos 2000: a transição entre um mundo hiperconectado e outro que ainda usava celulares simples, televisão como meio principal de entretenimento, cinema mais popular, rádio, CDs e muitos processos e trabalhos manuais, no papel mesmo, como o jornal impresso. Acredito que a menor abundância de informação deixava tudo mais interessante do que hoje.</p>
+
+<p>Os anos 2000 foram intrigantes, o que depende muito da sua idade nessa época e das suas experiências de vida. Para mim, foram uma transição muito boa, dos meus 12 aos 22 anos. Percebo que é uma época que, para muitos, é marcada por músicas, filmes e eventos culturais, mas para mim a mudança mais drástica foi a internet. Em 2006, migrei de uma realidade de uso restrito aos finais de semana para uma conexão 24/7. Mantenho essa realidade atualmente, sem uma possibilidade real de retorno ao que era no passado. Hoje, desconectar-se é um luxo; em 2000, era o padrão. Essas mudanças fazem com que haja nostalgia por uma época com menos informação, menos ideias circulando e menos presença de algoritmos ditando tendências de consumo.</p>
+
+<p>Os anos 2000 nunca voltarão. Hoje tenho <em>playlists</em> com músicas da época, emulo jogos de Nintendo DS, PlayStation 2 e Game Boy Advance que jogava no período, mas os locais a que eu ia não existem mais, e os shows das bandas hoje custam um rim... A tecnologia mudou muito em 20 anos. Hoje é "melhor", mas é melhor mesmo? Os novos hábitos atuais podem tentar emular a realidade nostálgica de décadas atrás, mas nada será como antes. O mundo mudou e nós mudamos. O que resta são as sensações e os sentimentos recriados ao ouvir "Reptilia" (The Strokes), "Fluorescent Adolescent" (Arctic Monkeys), "Sinais de Fumaça" (Mordida), "Rebirth" (Angra) ou "Kids" (MGMT) mais uma vez.</p>
+
+        <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+
+        <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Comente me enviando um email
+        </a>
+
+        <!-- begin www.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+    </div>
+</body>
+</html>
+
