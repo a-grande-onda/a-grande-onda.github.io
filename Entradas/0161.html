@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="/Imagens/favicon.png">
+
+    <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="Biblioteca Steam consolidada" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/onda500.png" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+    <title>Biblioteca Steam consolidada</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container-imagem {
+            text-align: center;
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        /* ADICIONADO: Garante que as imagens do artigo fiquem totalmente responsivas e formatadas */
+        .container-imagem img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .header-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            width: 100%;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        #HCB_comment_box {
+            width: 100%;
+            margin-top: 25px;
+        }
+
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        /* --- ESTILOS PARA O VÍDEO RESPONSIVO --- */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            border-radius: 6px; /* Leve arredondamento para combinar com o layout */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- BOTÃO DE CONTATO POR E-MAIL --- */
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background-color: #5c8ab3;
+            color: #fff;
+            border: 2px solid #5c8ab3;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+        }
+
+        .btn-email:hover {
+            background-color: #4a7296;
+            border-color: #4a7296;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+        }
+
+        .btn-email svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* --- BOTÃO RETORNAR --- */
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-bottom: 5px;
+        }
+
+        .btn-retornar:hover {
+            background: #5c8ab3;
+            color: #fff;
+        }
+
+        /* Ajustes Responsivos para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 92%;
+                padding: 25px 18px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+                padding-bottom: 15px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .btn-retornar, .btn-email {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Biblioteca Steam consolidada</h1>
+        <h3>29/09/2026 Games</h3>
+
+            <p>600 jogos, mais do que o suficiente.<br>
+17 anos de coleção. Quase maior de idade.<br>
+Em média, 35 jogos comprados por ano.<br>
+3 jogos adquiridos por mês, em média.<br>
+E somente 15 jogos jogados por ano.<br>
+Um excedente de 20 jogos por ano que comprei e não joguei.<br>
+Taxa de jogos completados do total: ~40%.<br>
+Jogos jogados: 250.<br>
+Jogos ainda sem jogar: 350.<br>
+Preço total da conta: mais de 15 mil reais.<br>
+Gastos anuais da ordem de 1.000 reais.<br>
+90 a 100 reais de gastos mensais, em média.</p>
+
+<h2>Me arrependo desta coleção?</h2>
+<p>Não. Iniciei a coleção em 2010 e consegui acumular tudo o que sempre quis em termos de jogos. Não me arrependo dos gastos com ela, nem de não ter concluído tudo o que comprei.</p>
+
+<h2>Quando terminará de jogar tudo?</h2>
+<p>Considerando que jogo em média 15 jogos da Steam por ano... e são 350 jogos, isto durará 23 anos na melhor das hipóteses. Mas acredito que 30 anos seja um número mais correto. Hoje tenho 39 anos de idade... vou praticamente até os meus 69 anos só com o que tenho aqui, sem precisar comprar e sem contar jogos de emulação do meu interesse.</p>
+
+<h2>Mais compras de jogos?</h2>
+<p>Acho que agora é hora de parar, não acessar mais a loja e não ser alvo de gatilhos de consumo. Um jogo de 10 reais em promoção é barato, mas um jogo de 10 reais não jogado é dinheiro no lixo.</p>
+
+<h2>E os DLCs?</h2>
+<p>Os DLCs eu me permito comprar, apenas dos jogos que já tenho. Só não posso passar de 600 jogos no total.</p>
+
+<h2>Tem fontes adicionais para jogar?</h2>
+<p>A Família Steam e amigos que também compram jogos. Se a cada 100 jogos que eles compram anualmente eu tiver 5 jogos de interesse, são jogos novos a mais para jogar todo ano.</p>
+
+<h2>Outra biblioteca de games comprados e que poderá jogar?</h2>
+<p>Sim, tenho uma biblioteca de 80 jogos na loja GOG.com, mas ainda não joguei uns 40 jogos por lá. E lá já encerrei minhas compras; tenho só jogos sem DRM para instalar no Linux, com o próprio instalador.</p>
+
+<h2>Valeu a pena colecionar jogos digitais?</h2>
+<p>Acredito que sim, mesmo não sendo os jogos físicos, e sim licenças de uso enquanto tiver a conta na loja. Esta disponibilidade de jogos é tudo o que sonhei quando criança e adolescente. Hoje tenho tudo o que quero, e muito além do que preciso. É só instalar e jogar.</p>
+
+<p>Quando criança, e até meus 22 anos de idade, contabilizei que terminei cerca de 150 jogos em 17 anos (considerando que comecei a jogar aos 5 anos de idade). Agora, em mais 17 anos (de 2010 até 2026), joguei 250 jogos; ou seja, joguei bem mais entre os meus 22 e 39 anos de idade do que na infância. E ter mais 350 jogos parados e intocados só indica que tenho jogos demais para as próximas décadas.</p>
+
+<p>Se valeu a pena gastar esta grana toda? Conheço pessoas que queimam 15 mil reais em menos de um ano com coisas supérfluas. Eu levei 17 anos para gastar isso, a conta-gotas. Acho que gastar 90 reais por mês em um hobby não é extremamente grave. Hoje vejo pessoas que gastam bem mais do que isto mensalmente em coisas tão ou mais irrelevantes que games. É um fardinho de cerveja ou uma injeção de Ozempic/Mounjaro e mais de 100 reais são queimados facilmente por semana, e não por mês. Muito mais... Prioridades pessoais.</p>
+
+<p>E hoje tenho material para décadas de jogos. O tal do <em>backlog</em>, que jogarei com calma por um bom tempo.</p>
+
+
+
+        <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+
+        <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Comente me enviando um email
+        </a>
+
+        <!-- begin www.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+    </div>
+</body>
+</html>
+
