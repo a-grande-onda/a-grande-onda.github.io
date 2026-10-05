@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="/Imagens/favicon.png">
+
+    <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="Meu fluxo de trabalho no Blog" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/onda500.png" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+    <title>Meu fluxo de trabalho no Blog</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container-imagem {
+            text-align: center;
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        /* ADICIONADO: Garante que as imagens do artigo fiquem totalmente responsivas e formatadas */
+        .container-imagem img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .header-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            width: 100%;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        #HCB_comment_box {
+            width: 100%;
+            margin-top: 25px;
+        }
+
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        /* --- ESTILOS PARA O VÍDEO RESPONSIVO --- */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            border-radius: 6px; /* Leve arredondamento para combinar com o layout */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- BOTÃO DE CONTATO POR E-MAIL --- */
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background-color: #5c8ab3;
+            color: #fff;
+            border: 2px solid #5c8ab3;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+        }
+
+        .btn-email:hover {
+            background-color: #4a7296;
+            border-color: #4a7296;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+        }
+
+        .btn-email svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* --- BOTÃO RETORNAR --- */
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-bottom: 5px;
+        }
+
+        .btn-retornar:hover {
+            background: #5c8ab3;
+            color: #fff;
+        }
+
+        /* Ajustes Responsivos para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 92%;
+                padding: 25px 18px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+                padding-bottom: 15px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .btn-retornar, .btn-email {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Meu fluxo de trabalho no Blog</h1>
+        <h3>05/10/2026  TAGs</h3>
+
+  <h3>Como escrevo uma entrada no blog?</h3>
+
+  <p>Tudo começa com uma ideia simples, que surge usualmente em caminhadas, no banho ou quando estou em momentos de puro tédio. O melhor momento é quando não se está pensando em nada. A ideia preenche este espaço e espontaneamente cresce e se desenvolve.</p>
+
+  <p>Depois de um título pronto, um tema para a entrada no blog… é hora de desenvolver a ideia. Utilizo as mesmas caminhadas diárias e períodos de 1 hora para pensar a respeito do tema a ser escrito. Gosto de caminhar pelo bairro sem distrações, sem música, somente pensando sobre a postagem, como a desenvolvo, o que tenho que escrever e a estrutura geral do post. Penso em imagens e vídeos que colocarei, se precisarei fazer um gráfico, uma fórmula, uma foto, etc.</p>
+
+  <p>A pesquisa de conteúdo para a postagem deve ser feita em algum momento. Somente escrever o que penso não é o suficiente. Usar um ou outro link ou ideias externas para referenciar é sempre necessário. Uma notícia, um documento, uma questão, uma definição, um vídeo… Afinal, tudo surge de algo, e nada é 100% inédito neste mundo.</p>
+
+  <p>Então idealizo minha versão, busco referências, faço uma pesquisa breve sobre o tema. Mas não o transformo em um artigo que somente referencia outras fontes. A originalidade é necessária, e os erros são comuns. As opiniões são minhas e ocorrem textos de pura opinião em meu blog. Alguns textos são exclusivamente de opinião, como este aqui, em que não busquei nenhuma referência por ser um relato pessoal.</p>
+
+  <p>E a escrita vem em momentos oportunos. Final de semana em meu computador, no meio das aulas na escola em meu Chromebook… quando consigo sentar e escrever componho o texto. Reviso algumas vezes. Deixo alguns dias parado. Depois reescrevo o que faltou. E a parte final é a correção de IA.</p>
+
+  <p>A IA me ajuda na correção ortográfica. Somente ortográfica; ela regula alguns detalhes bobos como a inclusão de referências a dias da semana, horas, datas… e também sempre corrige algumas questões referentes a unidades de medida. Também corrige ponto e vírgula, dois-pontos e vírgulas. Peço para a IA me informar as alterações, assim aprendo com os erros.</p>
+
+  <p>Esta correção da IA é extremamente simples, ela não modifica o texto de forma exagerada. Os termos são sugeridos, mas muito do que a IA sugere eu não modifico. Alterações de ordem de sentenças e mudança de vocabulário eu não peço para modificar. A IA desregulada pode alterar o seu texto completamente e tirar todo o estilo do autor.</p>
+
+  <p>Depois de ter o texto pronto, vou atrás das imagens e faço todo o processo de postagem que relatei nesta minha entrada sobre “Como eu posto uma nova entrada em meu blog”. O processo é simples e leva no máximo 10 minutos. Muitos acham isso um exagero, mas eu me divirto no processo de postagem manual dos sites estáticos usando VS Code. É simples, é fácil e fica da forma que eu gosto. Caso algo quebre no código é só restaurar uma versão anterior e está tudo no GitHub bem armazenado.</p>
+
+  <p>Postar é simples. Depois eu acompanho os comentários pelo HTML Comment Box, um serviço de comentários que eu uso nos meus posts. Algumas vezes por semana verifico no site, que me informa se há comentários novos. Raramente respondo às postagens, mas normalmente vou ao site de quem posta e começo a acompanhar novos blogs quando eles me informam no comentário o blog pessoal deles.</p>
+
+  <p>Este processo de escrita, edição, formatação, código, subir tudo no GitHub e verificar comentários pode durar de 3 dias a uma semana. É rápido, mas sempre reviso meu texto várias vezes antes de postar. É lento e manual, levo horas para montar um texto, 10 minutos para subir os arquivos, e normalmente os comentários aparecem na primeira semana após a postagem. Depois a entrada é esquecida, arquivada, e fica disponível no meu botão Arquivo no topo do blog.</p>
+
+</body>
+</html>
+
+        <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+
+        <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Comente me enviando um email
+        </a>
+
+        <!-- begin www.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+    </div>
+</body>
+</html>
+
