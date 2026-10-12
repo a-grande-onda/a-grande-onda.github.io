@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="/Imagens/favicon.png">
+
+    <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="Obtive as asas de patrono vitalício no lichess.org" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/banner1200x630.jpg" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+    <title>Obtive as asas de patrono vitalício no lichess.org</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container-imagem {
+            text-align: center;
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        /* ADICIONADO: Garante que as imagens do artigo fiquem totalmente responsivas e formatadas */
+        .container-imagem img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .header-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            width: 100%;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        #HCB_comment_box {
+            width: 100%;
+            margin-top: 25px;
+        }
+
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        /* --- ESTILOS PARA O VÍDEO RESPONSIVO --- */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            border-radius: 6px; /* Leve arredondamento para combinar com o layout */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- BOTÃO DE CONTATO POR E-MAIL --- */
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background-color: #5c8ab3;
+            color: #fff;
+            border: 2px solid #5c8ab3;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+        }
+
+        .btn-email:hover {
+            background-color: #4a7296;
+            border-color: #4a7296;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+        }
+
+        .btn-email svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* --- BOTÃO RETORNAR --- */
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-bottom: 5px;
+        }
+
+        .btn-retornar:hover {
+            background: #5c8ab3;
+            color: #fff;
+        }
+
+        /* Ajustes Responsivos para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 92%;
+                padding: 25px 18px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+                padding-bottom: 15px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .btn-retornar, .btn-email {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Obtive as asas de patrono vitalício no lichess.org</h1>
+        <h3>13/10/2026  Xadrez</h3>
+
+<p>Após jogar por quase 8 anos no site de graça e não pagar nem um tostão por um serviço excelente que uso diariamente e que me engrandece como hobby... resolvi pagar por isso.</p>
+
+  <p>Não me entenda mal, <em>“o lichess.org é totalmente gratuito. E sempre será”</em>, segundo o próprio idealizador do website.</p>
+
+  <p>É um site de xadrez extremamente completo e com funções muito úteis, além de um serviço 24/7 em que pouquíssimas vezes vi problemas de conexão no servidor ou inatividade.</p>
+
+  <p>Você pode estudar todas as aberturas de graça, pode fazer quebra-cabeças baseados em partidas reais, <em>puzzle rush</em>, pode estudar com livros ou estudar os estudos criados por outras pessoas.</p>
+
+  <p>Há estatísticas de todos os seus jogos, indicações e gráficos de jogadas e aberturas mais usadas, taxas de vitórias/derrotas/empates, comparativos detalhados do seu desempenho para cada tipo de variante empregada.</p>
+
+  <p>E mais: agora há uma função de tutor que analisa suas partidas e fornece <em>insights</em> que melhoram o seu jogo.</p>
+
+  <p>Jogos online, sistema de <em>rating</em>, múltiplos formatos de jogo, campeonatos suíços, campeonatos de arena, gráficos comparativos, estatísticas detalhadas de tudo... É o sonho de qualquer enxadrista, com o oponente que você deseja a qualquer hora do dia a menos de 20 segundos de espera. Nivelado de acordo com seu <em>rating</em>.</p>
+
+  <p>São 5.200.000, cinco milhões e duzentos mil jogos por dia na plataforma. E ela rivaliza com a plataforma paga mais famosa, o Chess.com.</p>
+
+  <p>Mas se é de graça, por que pagar?</p>
+
+  <p>Veja bem, meu caro <em>padawan</em>: eu uso o Lichess há mais de 8 anos, tive duas contas que somadas tiveram mais de 10 mil partidas. Jogo entre 5 e 15 partidas <strong>TODO SANTO DIA</strong>. O custo de manutenção do site como um todo é de 1,50 dólar por minuto.</p>
+
+  <p>Se considerarmos outros sites como o Chess.com, a mensalidade é de 33 reais hoje em dia para ter praticamente os mesmos benefícios. O Chess.com é mais voltado para o jogador titulado de alto nível: mestres, mestres FIDE, mestres internacionais e GMs. Para este público, neste nível de jogo, o Chess.com oferece um suporte melhor. Há jogadores titulados no lichess.org, mas em menor quantidade. Como eu não sou titulado e fico entre 1900 e 2100 pontos de <em>rating</em> no Lichess... neste caso, o Lichess ainda é a melhor opção para mim. Ah, e sem os <em>cheaters</em> do Chess.com, que existem em número absurdo.</p>
+
+  <p>O sistema de doação do lichess.org é simples. Você pode doar, acho que 20, 50 ou 100 reais mensais. Ou partir para a ignorância e fazer uma doação vitalícia de 1.000 reais. Considerando que joguei 10 mil partidas e que, se eu der mil reais, cada partida que joguei terá me custado 10 centavos... acho extremamente justa essa conversão. Fora as milhares de partidas que ainda jogarei. Doar dá uma pequena asa de doador no seu perfil, mas você não ganha nada além disso, nada extra; tudo o que um doador tem, o jogador gratuito também tem.</p>
+
+<p><div class="container-imagem">
+            <a href="/Imagens/asapatrono.png" target="_blank" rel="noopener noreferrer">
+                <img src="/Imagens/asapatrono.png" alt="Asas de Patrono Vitalício no Lichess.org" class="header-img">
+            </a>
+        </div>
+
+  <p>Doar é necessário? Certamente não. O site é feito de graça para todos e é 100% acessível. Doei porque é o equivalente a 30 meses de mensalidades do Chess.com: 2 anos e meio de assinatura do Chess.com custam os mesmos mil reais. Mas, como usufrui do Lichess por tanto tempo e considerando que posso pagar e ajudar na manutenção do site, acho justo. Se fossem 3 mil reais, aí seria inviável para mim... mas, dentro do que falei, acho que pagar 10 centavos por jogo que joguei até hoje na plataforma, fora todo o suporte do site... acho mais que justo esse valor.</p>
+
+  <p>Os custos anuais do site são de cerca de 4 milhões e meio de reais. Mil reais é uma gota d’água no mar. Mas é um sinal de que apoio de alguma forma e de que reconheço que utilizei este site por mais de 2 meses ininterruptos somando o tempo de todas as minhas partidas. Praticamente 1.400 horas de jogo em 8 anos. 70 centavos por hora de jogo. Pelo preço de duas cópias de GTA 6 “quito minha dívida” com o site. Não sei você, mas eu pagava muito mais do que isso na época das LAN Houses nos anos 2000 para jogar CS.</p></body>
+
+  </html>
+
+        <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+
+        <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Comente me enviando um email
+        </a>
+
+        <!-- begin www.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+    </div>
+</body>
+</html>
+
