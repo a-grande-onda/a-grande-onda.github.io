@@ -8,7 +8,20 @@
     <description>Feed RSS de todas as postagens de A Grande Onda</description>
     <language>pt-br</language>
     <atom:link href="https://a-grande-onda.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-
+<item>
+      <title>#0178 - 15 anos sem Facebook</title>
+      <link>https://a-grande-onda.github.io/Entradas/0178.html</link>
+      <guid isPermaLink="true">https://a-grande-onda.github.io/Entradas/0178.html</guid>
+      <category>Tecnologia</category>
+      <pubDate>Qui, 15 Out 2026 00:00:00 -0300</pubDate>
+      <description><![CDATA[Saí do facebook em 2011, 15 anos atrás. Em que isto muda na vida de alguém, você me pergunta… e eu respondo.
+Entrei no face em 2007 via convite, antes de ser aberto ao público. Conheci pessoas universitárias dos estados unidos no myspace na época que me passaram o e-mail de acesso. Era tipo orkut no início, somente com convite se podia acessar.
+]]></description>
+      <content:encoded><![CDATA[    
+<p>Saí do facebook em 2011, 15 anos atrás. Em que isto muda na vida de alguém, você me pergunta… e eu respondo.
+Entrei no face em 2007 via convite, antes de ser aberto ao público. Conheci pessoas universitárias dos estados unidos no myspace na época que me passaram o e-mail de acesso. Era tipo orkut no início, somente com convite se podia acessar.</p>]]></content:encoded>
+    </item>
+       
 <item>
       <title>#0176 - Obtive as asas de patrono vitalício no lichess.org</title>
       <link>https://a-grande-onda.github.io/Entradas/0176.html</link>
