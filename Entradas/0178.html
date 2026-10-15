@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="/Imagens/favicon.png">
+
+    <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="15 anos sem Facebook" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/banner1200x630.jpg" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+    <title>15 anos sem Facebook</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container-imagem {
+            text-align: center;
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        /* ADICIONADO: Garante que as imagens do artigo fiquem totalmente responsivas e formatadas */
+        .container-imagem img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .header-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            width: 100%;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        #HCB_comment_box {
+            width: 100%;
+            margin-top: 25px;
+        }
+
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        /* --- ESTILOS PARA O VÍDEO RESPONSIVO --- */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            border-radius: 6px; /* Leve arredondamento para combinar com o layout */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- BOTÃO DE CONTATO POR E-MAIL --- */
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background-color: #5c8ab3;
+            color: #fff;
+            border: 2px solid #5c8ab3;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+        }
+
+        .btn-email:hover {
+            background-color: #4a7296;
+            border-color: #4a7296;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+        }
+
+        .btn-email svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* --- BOTÃO RETORNAR --- */
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-bottom: 5px;
+        }
+
+        .btn-retornar:hover {
+            background: #5c8ab3;
+            color: #fff;
+        }
+
+        /* Ajustes Responsivos para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 92%;
+                padding: 25px 18px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+                padding-bottom: 15px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .btn-retornar, .btn-email {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>15 anos sem Facebook</h1>
+        <h3>15/10/2026  Tecnologia</h3>
+
+<p>Saí do Facebook em 2011, 15 anos atrás. Em que isto muda na vida de alguém, você me pergunta… e eu respondo.</p>
+
+<p>Entrei no Face em 2007 via convite, antes de ser aberto ao público. Conheci pessoas universitárias dos Estados Unidos no Myspace na época, que me passaram o e-mail de acesso. Era tipo Orkut no início: somente com convite se podia acessar.</p>
+
+<p>Entre 2007 e 2009, só tinha amigos estrangeiros no site. O mesmo pessoalzinho do Myspace. Eu postava pouco, e era bem limitada a estrutura do site. Eu acessava no computador, claro; smartphone só fui ter em 2014.</p>
+
+<p>Entre 2009 e 2011, o pessoal BR invadiu a plataforma. Entre os mais tech savvy, já tinham acesso desde 2009. Em 2010, era popular entre os mais nerds. O povão BR começou a entrar em 2011, e a geral mesmo só veio depois com o app de celular e a popularização dos smartphones.</p>
+
+<p>Acho que em 2009 inventaram o doomscrolling; antes disso, as páginas do Facebook tinham começo e fim. Agora elas rolavam infinitamente. Isto me incomodou um pouco, para te falar a verdade. Muito, porque meu tempo na plataforma mais que duplicou: ficava facilmente 3 horas por dia no Facebook nesta época.</p>
+
+<p>O segundo incômodo que tive foi em 2009, quando apareceu a sugestão baseada em seus likes. Basicamente, antes dessa época você tinha que ativamente buscar o que gostava. Depois de 2009, a base do algoritmo de recomendação foi criada. Quem se lembra do Facebook antes do algoritmo viveu outros tempos.</p>
+
+<p>E com as recomendações automáticas, também vieram as recomendações de amigos. Algo chato pra caralho. Isto porque o algoritmo recomendava todo mundo das suas possíveis redes. Todo mundo das escolas pelas quais passei, dos locais a que eu ia, amigos dos amigos, etc. Tudo era recomendado, principalmente pessoas que você nunca viu na vida ou, pior, gente que você detesta. Este era o primórdio do Facebook, uma bosta pra te falar a verdade.</p>
+
+<p>Em 2010 e 2011, com mais brasileiros, tudo estava lá: colegas, amigos, parentes… E sim, nesta época era insuportável: o algoritmo era ruim, as recomendações piores, os stalkers no seu perfil, os parentes, as pessoas que te detestavam, as que você curtia…</p>
+
+<p>Até o momento em que coisas que eu postava nas redes e no Facebook começaram a afetar minha vida real fora da internet. Nesta época ainda havia uma distinção entre "estar na internet" e "estar fora da internet". E quando as coisas se misturaram, tudo se complicou.</p>
+
+<p>Algo que você verbaliza tem uma resposta, mas um textão em rede social é perene. Vai ser lido anacronicamente com o que você pensa hoje, vai ser repetido e utilizado por outras pessoas em contextos diversos. Contra ou a seu favor. Sabe aqueles tweets do Neymar de antes de ser famoso que são repetidos em contextos distintos no futuro? É isso, mas é pior. Aquela opinião fica marcada de forma pública; é pior que gritar na Ágora, é simplesmente deixar uma marca digital eterna.</p>
+
+<p>Isto me incomodava? Sim. E quando o que eu escrevia em grupos de faculdade corria pelas redes e um dia, do nada, uma pessoa que eu nunca vi na vida chegou para mim e falou: "Ah, você que é o Felipe do grupo X da faculdade, gosto dos seus posts".</p>
+
+<p>Quando o virtual intercepta o real, as coisas complicam. Uma coisa é saber que as relações estão dentro de um PC, mas o extravasamento de opiniões e o ordenamento social através do que você cria digitalmente… é um problema. Brigas em grupos, pessoas que cortam relações por mensagens que você publica, ideias divergentes das demais e que não compactuam com aquele grupo de que você está participando, engenharia social… são múltiplas as possibilidades de dar merda estando ativamente em uma rede social.</p>
+
+<p>Pode parecer bobagem, porque hoje tenho este blog, escrevo até coisas pessoais nele. Mas é bem diferente do Facebook, com qualquer usuário tendo acesso dentro de uma plataforma que não é sua, com dados usados para venda de informações para publicidade e demais big techs que moldam seu consumo digital e fora das redes. No blog hoje, se eu tiver 10 leitores acho muito; a maioria deles está fora dos meus círculos reais de influência. Então, neste caso, tudo bem. Evito ao máximo expor este blog para pessoas próximas para não ter os mesmos problemas que me ocorriam no Facebook em 2011.</p>
+
+<p>Ok, saí do Facebook em 2011, o que mudou? Basicamente, tive uma redução extrema dos meus círculos de influência e amizades. Os amigos virtuais nunca mais me contataram. Nunca mais; eu não era um link de acesso para eles, então para muitos isso é o suficiente para não haver mais interação. Grupos da faculdade, nunca mais falei com ninguém. Até os amigos próximos reduziram significativamente as interações.</p>
+
+<p>Lembro que na época eu me comunicava por SMS e e-mail. Convidava pessoas para festas em casa por e-mail. Basicamente estava 10 anos atrasado digitalmente sem um smartphone e o Facebook. Mas era bom. Consegui filtrar quem realmente importava em minha vida, focar em quem era interessante e não em todo o ruído que o Facebook causava nas minhas interações sociais. Menos de 10 pessoas me contataram fora do Facebook e quiseram saber por que saí da plataforma. Menos de 10 me ligavam, com menos de 10 eu saía presencialmente. Quem estava ativo presencialmente na minha vida perdurava, pois digitalmente eu não estava mais presente.</p>
+
+<p>O ruído que o Facebook me causava na época é equivalente ao ruído por que muitos passam hoje. Acreditam que realmente têm 500 amigos, mas, na real, os com quem você pode contar de verdade cabem nos dedos de duas mãos. Sair das redes é um suicídio social. Mas te ensina a valorizar as pessoas que importam. Hoje valorizo quem está comigo presencialmente, ou quem digitalmente se comunica semanalmente. Os demais, realmente acredito que não precisam estar em minha vida.</p>
+
+<p>Creio que fiz a melhor coisa da vida saindo das redes. As interações são fracas e frias; as opiniões são líquidas, mudam todo dia. O senso de urgência digital é muito pior que o senso real. É muito difícil administrar 500 pessoas ao invés de 10. Já acho 10 uma tarefa complexa, mas 500 é insustentável. Isto quando a pessoa não é realmente um influenciador com milhares de seguidores de seu conteúdo.</p>
+
+<p>Seu conteúdo. A internet transforma ideias em "conteúdo", algo consumível, algo fabricado e editado para ser vendido. Influência digital é engraçado. E o mais engraçado é eu estar fora disto. Hoje não tenho Facebook, Instagram, Snapchat, Twitter, TikTok ou qualquer outra rede que venha a existir. O único que uso que chega perto disso é o YouTube, mas sem as funções sociais de comentários e like. Passamos de ideias em texto no Facebook para imagens no Instagram e vídeos no TikTok. A mudança foi drástica em 15 anos. Hoje vale mais quem edita bem, quem viraliza, independentemente da qualidade da mensagem… tem que ser bonito, ter uma boa iluminação, ser rápido e ser totalmente desprezível em conteúdo intrínseco. Basta ser palatável para um público sem crítica alguma e pronto: vendeu e ainda monetiza em cima de lixo. E a maioria das pessoas adora lixo, um conteúdo fácil e raso, essa é a verdade.</p>
+
+<p>O Facebook me mostrou como não preciso desse tipo de interação. Hoje minhas interações sociais são 4 grupos distintos de amigos no WhatsApp, duas ou três pessoas com quem mantenho contato quase semanal, e os grupos de trabalho e do condomínio do local onde moro. Estou melhor que antes; hoje não tenho controle sobre as pessoas, claro. Mas é melhor ter uma aparente sensação de controle em pequenos grupos e lidando com poucas pessoas do que com centenas ou milhares. É uma completa ilusão administrar 1000 pessoas. Dizem que nós, seres humanos, temos limitações sociais quanto ao número de conexões reais simultâneas que podemos ter. E certamente estas conexões não são com centenas e milhares de pessoas.</p>
+
+  </html>
+
+        <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+
+        <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Comente me enviando um email
+        </a>
+
+        <!-- begin www.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+    </div>
+</body>
+</html>
+
