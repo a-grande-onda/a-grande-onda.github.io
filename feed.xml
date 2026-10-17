@@ -8,6 +8,18 @@
     <description>Feed RSS de todas as postagens de A Grande Onda</description>
     <language>pt-br</language>
     <atom:link href="https://a-grande-onda.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+
+<item>
+      <title>#0181 - Provérbio Chinês da árvore torta e “inútil”</title>
+      <link>https://a-grande-onda.github.io/Entradas/0181.html</link>
+      <guid isPermaLink="true">https://a-grande-onda.github.io/Entradas/0181.html</guid>
+      <category>Objetos</category>
+      <pubDate>Sex, 16 Out 2026 00:00:00 -0300</pubDate>
+      <description><![CDATA[Hoje assisti a um vídeo que de certa forma evidencia meu estilo de vida. Veja o vídeo abaixo se tiver interesse, relata sobre utilidade/funcionalidade e estar disponível permanentemente.]]></description>
+      <content:encoded><![CDATA[    
+<p>Hoje assisti a um vídeo que de certa forma evidencia meu estilo de vida. Veja o vídeo abaixo se tiver interesse, relata sobre utilidade/funcionalidade e estar disponível permanentemente.</p>]]></content:encoded>
+</item>
+
 <item>
       <title>#0179 - Meus relógios baratos e moda</title>
       <link>https://a-grande-onda.github.io/Entradas/0179.html</link>
