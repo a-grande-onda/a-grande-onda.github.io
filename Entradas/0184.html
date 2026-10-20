@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="Descaso com a narrativa" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/banner1200x630.jpg" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+
+    <title>Descaso com a narrativa</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: flex-start;     
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            /* Garante que os elementos flex internos respeitem o alinhamento central */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Garante que os parágrafos ocupem a largura total do container */
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        /* CENTRALIZAÇÃO DO TÍTULO DA TABELA E DA TABELA */
+        h2 {
+            text-align: center; 
+            margin-top: 40px;
+            color: #222;
+        }
+
+        table {
+            margin: 20px auto; 
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 500px; 
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8f8f8;
+        }
+
+        ul {
+            margin-bottom: 25px;
+            width: 100%;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        li p {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* --- ESTILOS PARA O VÍDEO RESPONSIVO --- */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            border-radius: 6px; /* Leve arredondamento para combinar com o layout */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+         /* --- BOTÃO DE CONTATO POR E-MAIL --- */
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* Espaço entre o ícone e o texto */
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background-color: #5c8ab3;
+            color: #fff;
+            border: 2px solid #5c8ab3;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+        }
+
+        .btn-email:hover {
+            background-color: #4a7296;
+            border-color: #4a7296;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+        }
+
+        .btn-email svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* --- BOTÃO RETORNAR (Estilo SITEFELIPE) --- */
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .btn-retornar:hover {
+            background: #5c8ab3;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Ajustes Responsivos para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 25px 20px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+                padding-bottom: 15px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            table {
+                width: 100%; 
+            }
+
+            .btn-retornar {
+                padding: 8px 20px;
+                font-size: 0.85rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Descaso com a narrativa</h1>
+        <h3>21/10/2026 filmes</h3>
+      
+<p>Desde 2018 tenho tomado atitudes que me desestabilizam quanto a narrativas em mídias.</p>
+
+<p>Primeiramente, aboli a TV da minha vida, tanto os canais abertos quanto Netflix e streamings. Simplesmente, desde 2018 assisti a somente uns 3 filmes, baixados da internet.</p>
+
+<p>Isto fez algo simples ocorrer: passei a menosprezar as mídias focadas em narrativa. Tudo se tornou extremamente repetitivo e igual. Os padrões, os personagens, os arcos narrativos, os <em>cliffhangers</em>, os <em>deus ex machina</em>, as estruturas narrativas, as histórias… tudo para mim é “mais do mesmo”. Quando você estuda estruturas narrativas, consegue encaixar qualquer obra em um modelo, e depois já sabe o resultado final.</p>
+
+<p>Não consigo focar em um filme por mais de 30 minutos. Em 2026 assisti ao filme <em>Perfect Days</em> em 4 dias! Meia hora por dia. Outras obras caem nesta mesma falta de interesse. E não é um <em>brainrot</em> midiático causado por falta de foco nas demais atividades. No restante tudo anda muito bem, foco por horas; mas, especificamente em filmes e séries, é tudo homogêneo e desinteressante.</p>
+
+<p>Para jogos também: prefiro um jogo baseado em mecânica e ações rápidas do que algo com centenas de <em>cutscenes</em>. Não suporto <em>cutscene</em>… se estou querendo jogar algo, eu quero jogar e apertar botões. Caso contrário, leio um livro. Sou mais um TETRIS do que um jogo da série Yakuza.</p>
+
+<p>E quanto aos livros, após a leitura de vários livros de ficção, percebi que o modo ativo de interação com a obra pela leitura é muito mais interessante do que colocar um filme na TV e desligar o cérebro. Fora que narrativas em livros (se você lê os livros certos) são muito superiores a qualquer filme, na minha opinião.</p>
+
+<p>Então é isso: não consigo mais me divertir ou me informar com TV, filmes ou séries. Nos últimos 8 anos assisti a apenas 3 filmes e, mesmo assistindo às obras, não acredito que tenham me agregado muito.</p>
+
+<p>Para quem está “vidrado” em uma mídia: dar um passo para trás e se afastar um pouco te faz ver que muito do que se assiste é feito de modo automático, sem reflexão. Não há tempo para uma reflexão apurada em 2 horas de filme, ainda mais nos filmes atuais, com velocidade absurda de execução. Outras mídias te dão tempo para pensar. Nos filmes de streaming, é o <em>binge-watching</em> que impera; não há tempo para pensar.</p>
+
+<p>Agora, se você assiste a algo justamente como distração e não como aprendizado… vá lá e assista a mais um filme de ação com necessidade zero de análise. Neste caso, você está certo.</p>
+
+        <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+<!-- Botão de E-mail com ícone SVG centralizado -->
+        <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Comente me enviando um email
+        </a>
+                <!-- begin www.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+
+    </div>
+</body>
+</html>
