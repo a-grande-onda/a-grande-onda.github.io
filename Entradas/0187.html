@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="Outubro 2026" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/banner1200x630.jpg" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+
+    <title>Outubro 2026</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: flex-start;     
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            /* Garante que os elementos flex internos respeitem o alinhamento central */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Garante que os parágrafos ocupem a largura total do container */
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        /* CENTRALIZAÇÃO DO TÍTULO DA TABELA E DA TABELA */
+        h2 {
+            text-align: center; 
+            margin-top: 40px;
+            color: #222;
+        }
+
+        table {
+            margin: 20px auto; 
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 500px; 
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8f8f8;
+        }
+
+        ul {
+            margin-bottom: 25px;
+            width: 100%;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        li p {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* --- ESTILOS PARA O VÍDEO RESPONSIVO --- */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            border-radius: 6px; /* Leve arredondamento para combinar com o layout */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+         /* --- BOTÃO DE CONTATO POR E-MAIL --- */
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* Espaço entre o ícone e o texto */
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background-color: #5c8ab3;
+            color: #fff;
+            border: 2px solid #5c8ab3;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+        }
+
+        .btn-email:hover {
+            background-color: #4a7296;
+            border-color: #4a7296;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+        }
+
+        .btn-email svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* --- BOTÃO RETORNAR (Estilo SITEFELIPE) --- */
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .btn-retornar:hover {
+            background: #5c8ab3;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Ajustes Responsivos para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 25px 20px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+                padding-bottom: 15px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            table {
+                width: 100%; 
+            }
+
+            .btn-retornar {
+                padding: 8px 20px;
+                font-size: 0.85rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Outubro 2026</h1>
+        <h3>01/11/2026 Diário</h3>
+      
+<p>Outubro foi rápido. Um mês de descobertas e de algumas vitórias pessoais. Mas também foi morno, nota 6 de 10. O lado positivo sobrepôs só um pouco o negativo, e fiquei neutro.</p>
+
+    <p>Neste mês tivemos eleições e os ânimos se acirraram em todos os locais a que eu ia. Discussões intermináveis e um senso de urgência, principalmente após, no primeiro turno, Flávio Bolsonaro estar na liderança dos votos. O mês foi da reconquista política de Lula, intensificado pela grande presença nas redes e o povo da esquerda indo para as ruas e se manifestando no digital.</p>
+
+    <p>Eu fiquei de fora disso tudo, mas senti o clima de tensão no ar, nas conversas e entre as pessoas. Não estava “normal”. Eu mesmo fui banido de um grupo por me portar de forma isenta. Mas tudo bem, acho que não perdi muito saindo do grupo; consigo me divertir de outras formas online e ativamente em outros espaços.</p>
+
+    <p>Outubro foi um mês em que me revoltei com a mesquinhez humana. Sem estar relacionado à política partidária, mas simplesmente a fofocas em ambiente de trabalho e fora dele. Pessoas que modificam o que foi dito, alteram dados e fatos, e te colocam na parede juntamente com os demais por opiniões alteradas e enviesadas. Decidi ser o menos expositivo sobre minha vida pessoal neste mês, e vou seguir assim daqui em diante. Não posso controlar as modificações de informações que os outros geram, mas posso cortar o mal pela raiz não informando nada para ninguém.</p>
+
+    <p>No blog postei bastante coisa, mas no geral escrevi por 20 dias fervorosamente e depois parei. Acho que o efeito externo na minha vida me tirou um pouco a paixão por postar. Agora estou na função de conseguir publicar 200 postagens até o fim do ano. Pouco mais de 10 posts e chego lá; consigo sem problemas até o Natal.</p>
+
+    <p>No trabalho, tudo certo. Estou dando suporte a 4 autistas e acho que estou sendo útil para eles dentro da escola. Estou feliz com a minha atuação e espero que continue assim ano que vem.</p>
+
+    <p>No PSS, tirei 90% na prova de educação especial e 72% em pedagogia. Espero que eu consiga uma boa nota no vídeo e no plano de aula, e que eu alcance uma boa posição na lista geral do ano que vem. No geral, acho que fui bem, mas pontuo pouco na prova de títulos e experiência. Porém, em 4 anos vou reverter este quadro se eu conseguir trabalho perene por este período.</p>
+
+    <p>Também foi o mês em que montei meu site, cartão de visitas, assinatura de e-mail, adesivos e demais mecanismos de divulgação pessoal. Na realidade, isso serve de pouco na minha função profissional, mas acho legal ter tudo organizado, com um design limpo e pronto para uma apresentação mais formal do que simplesmente adicionar seu WhatsApp e as redes sociais ao conhecer uma nova pessoa. Acho que passa uma boa impressão. Fora que prefiro ter meu site e meus dados todos em minhas mãos, escritos por mim da forma que quero.</p>
+
+    <p>Ouvi mais músicas, joguei umas 5 horas de Plants vs. Zombies nesse mês, mas não me interessou tanto assim. Filmes, zero; TV, zero. Livros, li só o de Citologia e alguns capítulos de um livro de fundamentos de cibernética bem interessante de 1948 com ideias muito modernas. No geral, estou bem cansado ultimamente e ter só 2h livres por dia é um pouco decepcionante. Ao menos nos finais de semana eu ainda tenho tempo livre.</p>
+
+    <p>Pensei em recomeçar Stardew Valley, pois é um jogo em que recuperei minhas conquistas na Steam e isso me incentivou a fazer as restantes e chegar na “Perfeição”, o 100% do jogo.</p>
+
+    <p>Fui para Curitiba fazer a última prova de Biologia, a de Citologia, e acredito que encerrei o curso da UNIASSELVI. Agora é só esperar e colar grau. Terminei a pós-graduação em Educação Especial e aguardo o certificado de conclusão.</p>
+
+    <p>No final das contas, um mês equilibrado no bom e no ruim. Estabilizei meu humor muito bem e não tive problemas maiores. Mesmo com intempéries este mês e decepções, minha resposta às adversidades foi bem acima da média. Não taquei o foda-se para tudo, mas consegui ficar estável mesmo frente a situações problemáticas. Acho que meu remédio novo está funcionando para esta estabilidade.</p>
+
+  <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+<!-- Botão de E-mail com ícone SVG centralizado -->
+        <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Comente me enviando um email
+        </a>
+                <!-- begin www.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+
+    </div>
+</body>
+</html>
