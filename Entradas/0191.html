@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="2 horas de descanso" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/banner1200x630.jpg" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+
+    <title>2 horas de descanso</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: flex-start;     
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            /* Garante que os elementos flex internos respeitem o alinhamento central */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Garante que os parágrafos ocupem a largura total do container */
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        /* CENTRALIZAÇÃO DO TÍTULO DA TABELA E DA TABELA */
+        h2 {
+            text-align: center; 
+            margin-top: 40px;
+            color: #222;
+        }
+
+        table {
+            margin: 20px auto; 
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 500px; 
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8f8f8;
+        }
+
+        ul {
+            margin-bottom: 25px;
+            width: 100%;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        li p {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* --- ESTILOS PARA O VÍDEO RESPONSIVO --- */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            border-radius: 6px; /* Leve arredondamento para combinar com o layout */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+         /* --- BOTÃO DE CONTATO POR E-MAIL --- */
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* Espaço entre o ícone e o texto */
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background-color: #5c8ab3;
+            color: #fff;
+            border: 2px solid #5c8ab3;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+        }
+
+        .btn-email:hover {
+            background-color: #4a7296;
+            border-color: #4a7296;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+        }
+
+        .btn-email svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* --- BOTÃO RETORNAR (Estilo SITEFELIPE) --- */
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .btn-retornar:hover {
+            background: #5c8ab3;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Ajustes Responsivos para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 25px 20px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+                padding-bottom: 15px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            table {
+                width: 100%; 
+            }
+
+            .btn-retornar {
+                padding: 8px 20px;
+                font-size: 0.85rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>2 horas de descanso</h1>
+        <h3>10/11/2026 Impressões</h3>
+
+<p>Aprendi a usar um novo conceito. O 'tempo morto' (como chamo) é como um intervalo de meditação: quase nada está acontecendo, mas o que é importante está sob suas mãos. Uma dilatação temporal e alto aproveitamento deste período curto que, para mim, são duas horas do dia.</p>
+
+            <p>Pela manhã, acordo às 6h e às 7h saio de casa para o trabalho. Uma hora é o que tenho para meus afazeres e não posso desperdiçar este potencial que surge todas as manhãs. Acordo às 6h com um bipe no relógio ou naturalmente alguns minutos antes. E tudo segue nesta ordem: ducha de cinco minutos, vestir-me em cinco minutos, colocar a água para esquentar e preparar meu café em dez minutos, comer algo em mais uns quinze minutos, escovar os dentes em cinco minutos; pronto, ainda sobram uns vinte minutos.</p>
+
+            <p>Vinte minutos para fazer nada, literalmente nada. Não pego o celular, não entro em nenhum site, não verifico mensagens, nada de TV, nenhum dispositivo eletrônico, nada. Sento no sofá ou na varanda e reflito sobre os objetivos do meu dia, o que espero do meu trabalho, ou simplesmente paro e fico aproveitando a manhã com calma, parado olhando pela janela. Caso eu tenha alguma pendência, o momento de resolvê-la não é agora. E não, nada de atualizações ou TV enquanto tomo meu café com calma também.</p>
+
+            <p>A primeira hora do dia é sagrada. Não vou me abalar por mais uma notícia ruim, mais um assassinato, acidente na rodovia, político corrupto, desastres naturais, guerra, problemas sociais, feminicídio, violência no trânsito ou familiar, racismo, etc. Não é se abster desses temas, mas a primeira hora do dia é de descanso total, e ser alvo de conteúdo negativo logo após acordar é desrespeitar sua saúde mental. Não converso com ninguém nestes primeiros momentos do dia, e a paz é reconfortante.</p>
+
+            <p>Às 7h, desbloqueio meu celular, verifico rapidamente se tive mensagens nas últimas dez horas, vejo as previsões de chuva, verifico se levo guarda-chuva e jaqueta de acordo com a previsão do tempo... e vou para o trabalho. Em vinte minutos estou lá, e o dia de tensões se inicia.</p>
+
+            <p>À noite, antes de dormir, faço o mesmo processo. Normalmente durmo às 22h, então, ao tocar 21h no alarme do meu celular, me preparo para o ritual noturno. São quinze minutos para a higiene do final do dia, tomo meus remédios com um copo d'água e tenho quarenta e cinco minutos de leitura. Pego o livro, estipulo quantas páginas lerei naquela noite com base no tamanho dos capítulos do livro, e leio. Sem computador, sem TV, sem conversas com mais ninguém. Esta minha uma hora noturna antes de dormir também é sagrada. Dormir é automático: termino a leitura e caio no sono.</p>
+
+            <p>Estas mudanças são básicas, mas anteriormente eu tinha dois problemas:</p>
+            <ol>
+                <li>Não tinha o hábito da leitura diária definido.</li>
+                <li>Costumava ficar no computador e às vezes dormia às 22h30 ou 23h, perdendo uma hora de descanso à noite.</li>
+            </ol>
+            <p>O que me define é a hora de acordar, e calculo oito horas a menos para dormir. Ficar acordado até meia-noite é dormir somente seis horas por noite, o que é totalmente problemático para os seus ciclos de sono.</p>
+
+            <p>Esta rotina <em>off-line</em> é fácil de aplicar e totalmente recompensadora em vários aspectos. Não sei por que não fazia isso antigamente. No passado, eu acordava atrasado, fazia um café sem cuidados, comia qualquer coisa e já pulava na frente da TV ou do celular lendo notícias antes de ir ao trabalho. Dormir era complexo: ficava sob a luz da tela do computador até tarde, ia dormir e ainda me debatia na cama por mais meia hora até realmente repousar.</p>
+
+            <p>Tirar as telas é interessante e é um hábito muito fácil de implementar. Duas horas, praticamente 10% do seu dia em paz, é ótimo e recomendo a todos que enxergam benefícios em pequenas mudanças. Inicia como um desafio e, em algumas semanas, as vantagens são claras.</p>
+
+
+    <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+<!-- Botão de E-mail com ícone SVG centralizado -->
+        <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Comente me enviando um email
+        </a>
+                <!-- begin www.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+
+    </div>
+</body>
+</html>
