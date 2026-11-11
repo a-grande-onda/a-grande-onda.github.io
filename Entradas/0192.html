@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="Porque pulei fora da academia" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/banner1200x630.jpg" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+
+    <title>Porque pulei fora da academia</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: flex-start;     
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            /* Garante que os elementos flex internos respeitem o alinhamento central */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Garante que os parágrafos ocupem a largura total do container */
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        /* CENTRALIZAÇÃO DO TÍTULO DA TABELA E DA TABELA */
+        h2 {
+            text-align: center; 
+            margin-top: 40px;
+            color: #222;
+        }
+
+        table {
+            margin: 20px auto; 
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 500px; 
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8f8f8;
+        }
+
+        ul {
+            margin-bottom: 25px;
+            width: 100%;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        li p {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* --- ESTILOS PARA O VÍDEO RESPONSIVO --- */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            border-radius: 6px; /* Leve arredondamento para combinar com o layout */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+         /* --- BOTÃO DE CONTATO POR E-MAIL --- */
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* Espaço entre o ícone e o texto */
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background-color: #5c8ab3;
+            color: #fff;
+            border: 2px solid #5c8ab3;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+        }
+
+        .btn-email:hover {
+            background-color: #4a7296;
+            border-color: #4a7296;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+        }
+
+        .btn-email svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* --- BOTÃO RETORNAR (Estilo SITEFELIPE) --- */
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .btn-retornar:hover {
+            background: #5c8ab3;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Ajustes Responsivos para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 25px 20px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+                padding-bottom: 15px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            table {
+                width: 100%; 
+            }
+
+            .btn-retornar {
+                padding: 8px 20px;
+                font-size: 0.85rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Porque pulei fora da academia</h1>
+        <h3>11/11/2026 Educação</h3>
+
+<p>Refletindo sobre minhas escolhas pessoais e reiterando as minhas decisões de vida: em 2025, abandonei meu mestrado quase completo por insatisfação com a academia (universitária). Também porque minha pesquisa foi para o ralo após os sujeitos da pesquisa não fornecerem dados para análise.</p>
+
+    <p>Mas vamos lá… qual é minha insatisfação com o mestrado e, consequentemente, com o doutorado, e com este mundo de publicações de artigos, pesquisas, títulos universitários, viver de bolsa e focar nos estudos sem uma garantia de trabalho futuro? Em que isso me desmotiva?</p>
+
+    <p>Inicialmente, devo deixar claro: não sou contra a instituição universidade pública; sou só contra alguns modos de produção dentro dela e, consequentemente, toda a esfera acadêmica voltada para a pesquisa. Compreendo que ela deva existir e que o Brasil segue uma lógica de mercado diferente da dos países de primeiro mundo. Aqui, as pesquisas são prioritariamente financiadas pelo governo, com bolsas e verbas para programas de pesquisa, e por instituições privadas e parcerias. No exterior, quase tudo é privado, todo o conhecimento é uma mercadoria, nada é público e o retorno social quase sempre é colocado para baixo dos panos em prol da venda de artigos, livros, cursos e palestras. É outro modelo, muito mais predatório que no Brasil, onde o dinheiro manda acima de tudo e de todos.</p>
+
+    <p>Para elucidar as diferenças, é comum, em editoras internacionais, um acesso de 48 horas a um artigo custar entre 30 e 100 dólares, apenas para ler 20 ou 30 páginas e ter a oportunidade de utilizá-lo em seu trabalho. Nesse caso, as universidades pagam por planos e assinaturas oficiais de grandes plataformas editoriais científicas e possibilitam que o pesquisador dentro da instituição tenha acesso pelo sistema de bibliotecas.</p>
+
+    <p>Já no Brasil, grande parte das pesquisas é publicada em revistas também, ou livros, mas usualmente a oferta é sem custo, dependendo da revista. Há boas revistas aqui, gratuitas, mas, em escores de produção científica global, são muito fracas (pouco relevantes cientificamente) em relação aos grandes conglomerados editoriais de ciência internacionais.</p>
+
+    <p>E a pesquisa, é feita por quem? Eu participei de um grupo de pesquisa na Universidade Federal do Paraná por 3 anos e ativamente realizei pesquisas, participei de eventos científicos, publiquei e fui coautor de artigos e livros produzidos pelo grupo, trabalhei na elaboração e edição de cursos online promovidos por ele, ia a reuniões semanais de discussão de métodos e metodologias de pesquisa e fazia tudo relacionado ao mundo científico e de divulgação científica em pesquisa e extensão universitária.</p>
+
+    <p>No geral, vivi o meio acadêmico enquanto realizava meu mestrado, e vi muitos problemas. O grupo em que eu estava era de abrangência estadual e coordenava 12 universidades estaduais e mais de 200 pessoas, se considerarmos todos os bolsistas e voluntários de todas as instituições. No núcleo de Curitiba, semanalmente, atuava com cerca de 40 pesquisadores, expandindo para mais 15 ou 30 professores, bolsistas e afiliados de cada “braço” em que o grupo atuava.</p>
+
+    <p>O que senti foi muito positivo pelos resultados alcançados e pela mudança social das pesquisas e da extensão, mas, ao mesmo tempo, do ponto de vista individual e das pesquisas, achei tudo meio insosso. Eu sentia um estado perene de “síndrome de narizinho”, um nariz empinado entre muitos pesquisadores (não todos), castas e classes de alunos de acordo com os títulos e currículos. Também senti as diferenças no grupo entre estudantes bolsistas de graduação que se esforçavam enormemente para se exibir, enquanto os superiores, ganhando 10 vezes ou mais, eram indiferentes a todo o esforço nas “castas mais baixas”. No final, o trabalho dos “menores” era totalmente rebaixado e, sim, eles recebiam bolsas de valor irrisório quanto ao que um profissional da área fora da universidade cobraria para realizar o mesmo serviço. Alguns recebiam menos de um salário mínimo e trabalhavam como profissionais que, em situações de orçamento de mercado, fariam o trabalho por 5, 6 ou mais salários mínimos.</p>
+
+    <p>Não desmereço o esforço dos líderes do grupo, pois trabalharam para estar nesse patamar. Montar um grupo com centenas de bolsistas, angariar fundos e patrocínios, passar em editais de pesquisa nacionais e ainda serem professores titulados de uma universidade federal… tudo isso leva tempo e muito esforço. Não digo que não merecem.</p>
+
+    <p>Mas a base da pirâmide muitas vezes passa a vida dependendo de bolsa aqui e ali, recebendo menos do que o mercado exterior à universidade paga, e tendo que suportar essa estrutura hierárquica de títulos, importância e relevância dentro da instituição. Tudo é muito a longo prazo e sem garantia nenhuma de sucesso. Sei que, no mercado externo à universidade, a garantia também não existe, mas existem planos de progressão, existe fundo de garantia, INSS, benefícios… Na universidade, é uma bolsa seca que não é reajustada há décadas e que, muitas vezes, paga apenas a sobrevivência do bolsista, nada além disso. Ah, sem nada adicional e sem garantia de progressão como ocorre na “empresa”.</p>
+
+    <p>A título de comparação, hoje uma bolsa de pós-doc é de pouco mais de 5.200 reais (são necessários 4 anos de graduação, mais 2 anos de mestrado e mais 4 anos de doutorado). No mercado de trabalho, um doutor professor de universidade particular recebe, sem muito esforço, 10 mil reais líquidos, embora envolva outra dinâmica de mercado. A diferença salarial entre pesquisar e trabalhar fora do ambiente universitário é considerável. Ganho hoje, como professor do Estado, mais do que um doutor com bolsa de pós-doc, mesmo com menos títulos e ao menos 6 anos a menos de estudos na academia.</p>
+
+    <p>Agora, exceto essa questão salarial, outras coisas me desanimaram bastante na academia. Uma que é clara é a relevância e a importância do seu trabalho do ponto de vista social e de divulgação. Os artigos e livros produzidos eram extremamente nichados, voltados a um grupo muito pequeno de algumas dezenas ou centenas de leitores. Mesmo entre os trabalhos de doutores, quem lê o que é escrito é uma parcela tão pequena que, atualmente, se eu criar um vídeo no YouTube, em algumas semanas essa minha mensagem é enviada a um público maior que os leitores dos artigos rebuscados, que levam meses ou anos de pesquisa para serem produzidos.</p>
+
+    <p>O público geral não se importa com mais uma análise epistemológica, mais um recorte de minorias, mais um trabalho que somente doutores conseguem ler com propriedade. O público é limitado em quantidade e em suas capacidades técnicas de compreensão. Os autores escrevem para seus pares, são referenciados, e o ciclo de recomendações e derivações de trabalhos continua indefinidamente. A pesquisa não chega ao público comum, só a um seleto e mínimo grupo que consegue entender a complexidade de alguns desses trabalhos.</p>
+
+    <p>E sim, não digo que isso é errado ou desnecessário, mas é de um acesso cada vez mais impossível para a população. Essa falta de acesso é mais uma barreira da universidade com o povo que sustenta essa máquina girando com seus impostos. Não vejo muitas ações voltadas à população, exceto a extensão… mas a pesquisa é crua e, muitas vezes, sem sentido, a meu ver. A cada 100 artigos que vi, considero que 3 ou 4 possuem relevância clara e aplicação. Os demais são bucha de canhão. Existem para alimentar um sistema acadêmico que se sustenta por meio de barreiras que vão desde físicas e de recursos até mesmo barreiras intelectuais. Tente escrever e publicar algo que não seja formatado exatamente conforme a academia: seu trabalho não tem validade se seus artigos referenciados não seguem normas específicas. Tudo é muito engessado e padronizado, e isso impede muitos de adentrarem nesses espaços, em uma rigidez que por si só afasta a todos.</p>
+
+    <p>Em meu mestrado, a cada mês que passava, menos relevância real existia. A dissertação seria mais um papel engavetado na biblioteca. A prática não chegaria ao meu objetivo de construção de novas práticas de ensino nas escolas. Nenhum professor de ensino básico deliberadamente escolhe buscar nos arquivos de uma biblioteca pública a pesquisa em questão, nem se publicada como artigo. Tenho um artigo que tem de 3 a 4 downloads mensais em uma revista. Que público é esse que não acessa as pesquisas? Para quem escrevo, senão para mim mesmo, em busca de um título, mais um papel no currículo? Onde há transformação real com a pesquisa? Sim, não há, talvez só a longuíssimo prazo. É um moedor de carne que comprova quem sabe pesquisar e escrever nos conformes desse grupinho seleto de pesquisadores, independentemente da real mudança que anos de esforço geram. A mudança? Zero.</p>
+
+    <p>Aprendi muito estando em grupos da academia, mas hoje passo longe. Só farei mestrado novamente se me der um diferencial salarial significativo. Objetivos na academia não tenho mais; estou focado em uma prática de trabalho como professor e, hoje, acredito que vale mais do que viver de bolsa, tanto em faixa salarial quanto em um trabalho que me dignifica mais hoje do que no passado. Vejo real mudança afetando 5 ou 6 estudantes ao ano, ou 300 como professor regente, versus dedicar um bom tempo escrevendo algo que, ao final, menos de 50 pessoas lerão e menos de 5 utilizarão para algo maior que simplesmente citar o texto como referência para alimentar mais um trabalho universitário.</p>
+
+    <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+<!-- Botão de E-mail com ícone SVG centralizado -->
+        <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Comente me enviando um email
+        </a>
+                <!-- begin www.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+
+    </div>
+</body>
+</html>
