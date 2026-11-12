@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="Fechamento de ano 2026" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/banner1200x630.jpg" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+
+    <title>Fechamento de ano 2026</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: flex-start;     
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            /* Garante que os elementos flex internos respeitem o alinhamento central */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Garante que os parágrafos ocupem a largura total do container */
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        /* CENTRALIZAÇÃO DO TÍTULO DA TABELA E DA TABELA */
+        h2 {
+            text-align: center; 
+            margin-top: 40px;
+            color: #222;
+        }
+
+        table {
+            margin: 20px auto; 
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 500px; 
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8f8f8;
+        }
+
+        ul {
+            margin-bottom: 25px;
+            width: 100%;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        li p {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* --- ESTILOS PARA O VÍDEO RESPONSIVO --- */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            border-radius: 6px; /* Leve arredondamento para combinar com o layout */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+         /* --- BOTÃO DE CONTATO POR E-MAIL --- */
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* Espaço entre o ícone e o texto */
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background-color: #5c8ab3;
+            color: #fff;
+            border: 2px solid #5c8ab3;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+        }
+
+        .btn-email:hover {
+            background-color: #4a7296;
+            border-color: #4a7296;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+        }
+
+        .btn-email svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* --- BOTÃO RETORNAR (Estilo SITEFELIPE) --- */
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .btn-retornar:hover {
+            background: #5c8ab3;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Ajustes Responsivos para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 25px 20px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+                padding-bottom: 15px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            table {
+                width: 100%; 
+            }
+
+            .btn-retornar {
+                padding: 8px 20px;
+                font-size: 0.85rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fechamento de ano 2026</h1>
+        <h3>12/11/2026 Diário</h3>
+
+
+    <p>2026 se encerra para mim. Um ano de eleições, Copa do Mundo, mudanças de residência, mudança de cidade e de vida, adaptações. Uma nova função, mudanças de empregos, cursos concluídos, provas, concursos e de novos hobbies.</p>
+
+    <p>Este foi o ano em que comecei a blogar publicamente. Deveria ter feito isso desde 2011, quando abri meu primeiro blog privado. Escrever é bom; conheci pessoas interessantes nesse hobby este ano e, no geral, conseguir 200 entradas no site em cerca de 10 meses foi excelente. Tem muito babaca também, mas isso é onipresente na realidade em que vivemos: onde quer que você vá, eles existem.</p>
+
+    <p>Mudar-me de Curitiba para Matinhos (uma cidade de 40 mil habitantes, menor do que meu bairro em Curitiba) e encarar uma nova realidade foi muito bom para mim. É um retorno aos anos em que morei sozinho na cidade, entre 2018 e 2022. A cidade é pacata e oferece muito menos que Curitiba, mas às vezes o pouco é mais que o necessário. Gosto de Matinhos, só não curto o El Niño e as chuvas e tornados intermitentes por praticamente toda a segunda metade do ano.</p>
+
+    <p>Arrumei trabalho em Matinhos a partir de junho, iniciando na função de professor de educação especial. Estou gostando da atividade; me sinto útil de verdade ajudando de 5 a 6 alunos com deficiências, transtornos ou síndromes todo dia, em vez de lecionar para 400 e ser respeitado por 10 como quando dava aulas de Ciências. A educação especial é mais dinâmica e com menos amarras do que o ensino em uma disciplina tradicional, mas também tem muito mais dificuldades intrínsecas. E estar empregado também envolve você ser pago pelo seu trabalho, algo interessante. Em um ano em que eu achei que iria só gastar minha reserva de emergência aguardando por emprego em 2027… 7 meses de trabalho e de grana caindo na conta foi algo melhor que a encomenda e me possibilitou até fazer um pé de meia significativo no fim do ano. E a melhor parte foi que fiquei desempregado por só um mês este ano. Saí da bolsa da UFPR em Curitiba em abril e em junho já estava dando aulas em Matinhos, inicialmente 25h e depois 50h semanais.</p>
+
+    <p>Muitos cursos se concluíram este ano: Licenciatura em Pedagogia em abril, pós-graduação em Gestão Escolar em julho, pós-graduação em Educação Especial Inclusiva em setembro e Licenciatura em Ciências Biológicas em outubro. Tudo concluído, estágios feitos, extensões realizadas, horas formativas adicionais, tudo como manda o ritual. Este ano compensou o fracasso acadêmico de 2025.</p>
+
+    <p>Nas provas, fiz o concurso de professor de Matinhos e tirei 73%, fiz a Prova Nacional Docente e não sei a nota ainda, fiz o PSS e tirei 90% em Educação Especial e 72% em Pedagogia. No geral, não posso reclamar de minhas notas: 70% é mais de um desvio padrão acima da maioria das médias, portanto acredito que fiquei entre os 15% com maiores notas nesses concursos.</p>
+
+    <p>Leituras, músicas e jogos. Li o suficiente: contei 17 livros no ano, nenhum superinteressante e revolucionário que mudasse de verdade minha vida. Fico me perguntando por que insisto nesse hobby há anos, em busca de algo revolucionário e novo. Nada contra quem lê como hobby principal, mas eu, a cada ano que passa, tenho menos tesão pela leitura. Tudo é muito previsível e tedioso; minhas maiores leituras este ano foram livros dos cursos que fiz e livros que responderam a dúvidas pessoais na área de educação; a ficção, por outro lado, não me prende mais tanto assim como no passado.</p>
+
+    <p>Sobre música, ouvi discos com mais propriedade, analisando as letras, focado em escutar com calma e compreendendo a estrutura dos álbuns em seu contexto cultural e histórico. Montei meu top 100 artistas offline e tenho 250 GB de músicas (discografias completas) em um pendrive.</p>
+
+    <p>Quanto a jogos, não joguei muito este ano, mas comprei muito jogo em promoção. Comprei 35 jogos na Steam (uma cólera consumista), joguei 6 dos que foram comprados este ano, 3 aquisições mais antigas e mais 5 retrô de consoles antigos em emuladores. Videogame é hoje um hobby do passado. Xadrez eu joguei em média 5 partidas ao dia, praticamente todo dia; também joguei bastante presencial este ano e espero que reativem o clube de xadrez aqui de Matinhos para eu participar jogando OTB (<em>over the board</em>).</p>
+
+    <p>Filmes e séries: acredito que assisti a 1 filme no ano (<em>Perfect Days</em>), nada de séries.</p>
+
+    <p>Fiz um <em>branding</em> pessoal: site pessoal, assinatura de e-mail, adesivos, cartão de visitas… algo que eu queria fazer há anos. Aprendi a programar um site de forma básica (<a href="https://www.felipebf.com.br" target="_blank">www.felipebf.com.br</a>), tive ajuda de inteligência artificial na edição do código e deu certo: hoje tenho um site só meu que vale mais que um perfil chapado de rede social.</p>
+
+    <p>Eventos nacionais não acompanhei, nem a Copa nem as eleições. Menos estresse é o que estou calibrando em minha vida. Hoje, se eu tiver a condição de evitar algo que me incomoda, eu o farei, pelo bem da minha saúde mental e dos meus quadros de psoríase. Fui um crítico ferrenho de notícias este ano e sei que consigo viver sem isso. Conseguindo viver com menos distrações, há um maior foco no que mais me importa hoje.</p>
+
+    <p>E o que me importa hoje? Além de levar uma boa vida em paz com meus pais no litoral (com bem menos estresse que Curitiba), também estou em busca de uma liberdade financeira um pouco mais ampla, conseguindo juntar um valor substancial de segurança contra emergências. Por mais alguns anos de salário economizados, só para me sentir livre das amarras do trabalho, mesmo que seja só por um tempo breve. Para sinistros, prevenir é melhor que remediar. E, caso precise remediar, que seja à vista e não devendo no cartão ou pegando emprestado no banco. Nunca se sabe quais imprevistos virão, nem quando. E por isso é necessária a reserva.</p>
+
+    <p>E estou oficialmente em transição de remédios do TAB. Estive testando a nova medicação e a substituição é lenta, ainda mais porque já tomo o outro remédio há pelo menos 15 anos. A mudança vem para melhor. Neste ano tive algumas crises pontuais, mas persistentes, de forma que uma mudança de medicação se fez necessária. Com o remédio novo, me sinto mais estável do que nunca emocionalmente em relação a desvios de humor. Funciona bem e espero trocar totalmente de um remédio para o novo em 2027. Ah, em 2026 também iniciei tratamento para glaucoma: já perdi 30% da visão do olho esquerdo e não quero perder mais.</p>
+
+    <h3>Balanço de gastos</h3>
+    <p>Gastos este ano eu divido entre supérfluos e realmente úteis:</p>
+    <ul>
+        <li><strong>Supérfluos:</strong> Comprei 2 mouses e um microfone (que mal usei, pois cancelei meu canal do YouTube neste ano); também foi supérfluo gastar cerca de 50 reais mensais com loterias. Ganhei uma vez ou outra, mas não cheguei a recuperar nem 10% do dinheiro gasto. Além disso, os jogos na Steam: comprei 35 jogos e, se você considerar o preço médio dos jogos que comprei entre 30 e 40 reais, já dá para calcular este rombo na carteira durante o ano.</li>
+        <li><strong>Úteis:</strong> O Lenovo IdeaTab que peguei em janeiro, um tablet que uso muito para leitura (principalmente na plataforma MEC Livros) e como PC secundário pela portabilidade. Não faz tudo o que um PC faz, ainda é um “celularzão”, mas quebra um galho pois vem com teclado. Também gastei uma grana em domínios de internet para hospedar meus websites e blog: aproveitei para deixar vários anos já pagos e foram uns 500 reais nessa brincadeira. E a última aquisição relevante foi o Lenovo IdeaPad Slim 3x, um notebook de entrada com tela de 15 polegadas, processador Snapdragon X, 1 TB de SSD e 16 GB de RAM que substitui meu Chromebook, o qual já vendi. Será meu notebook de trabalho, pois ele aguenta mais de 15 horas de bateria (24h sob economia de energia) e preciso de algo que suporte ao menos 10h para trabalhar diariamente nas escolas, pois em sala de aula tomadas são escassas — isto quando tem alguma.</li>
+    </ul>
+
+    <p>O YouTube está sendo meu último bastião das redes sociais em 2026. Difícil de transpor. Ao contrário do feed infinito de vídeos curtíssimos e discussões polarizadas de outras redes, o YouTube ainda entrega valor real. Isso pode incluir conteúdos de formato longo, documentários, tutoriais, entretenimento focado ou aprendizado, onde sinto que tenho mais controle sobre o que consumo. No final do ano matei o algoritmo dele novamente, fiz uma seleção de canais que desejo acompanhar e, como dizem por aí, ele “foi de base”. Estou procurando recomendações por IA em busca de canais correlatos aos meus e já encontrei uns 60 canais novos. Hoje só abro a aba de inscrições e navego pelas dezenas de canais assinados; só de vídeos de anos anteriores destes canais tenho conteúdo para uma vida inteira. E, de certa forma, voltei com meu canal, desta vez <em>dark</em>, só com <em>voiceover</em> da minha voz em cima de um <em>gameplay</em> que eu mesmo gravo.</p>
+
+    <p>Uma nota para fechar o ano? 8. Foi acima da média, com novas descobertas, e a maior delas é que não preciso ser igual aos demais em praticamente nada se eu optar por isso (me causando bem ou mal neste processo). Tudo é uma mudança de hábitos e costumes. E há como ter sucesso dentro dos seus próprios parâmetros, sem comparações com tudo e todos e sem estar vivendo para os objetivos dos outros: grupos políticos, grandes empresas de tecnologia e bens de consumo, ou <em>powerhouses</em> midiáticas.</p>
+
+    <p>Que venha 2027, e com as descobertas deste ano aprendidas, será um ano certamente melhor.</p>
+
+
+    <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+<!-- Botão de E-mail com ícone SVG centralizado -->
+        <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Comente me enviando um email
+        </a>
+                <!-- begin www.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+
+    </div>
+</body>
+</html>
