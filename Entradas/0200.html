@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="Ranking de Refrigerante" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/banner1200x630.jpg" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+
+    <title>Ranking de Refrigerante</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: flex-start;     
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            /* Garante que os elementos flex internos respeitem o alinhamento central */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Garante que os parágrafos ocupem a largura total do container */
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        /* CENTRALIZAÇÃO DO TÍTULO DA TABELA E DA TABELA */
+        h2 {
+            text-align: center; 
+            margin-top: 40px;
+            color: #222;
+        }
+
+        table {
+            margin: 20px auto; 
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 500px; 
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8f8f8;
+        }
+
+        ul {
+            margin-bottom: 25px;
+            width: 100%;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        li p {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* --- ESTILOS PARA O VÍDEO RESPONSIVO --- */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            border-radius: 6px; /* Leve arredondamento para combinar com o layout */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+         /* --- BOTÃO DE CONTATO POR E-MAIL --- */
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* Espaço entre o ícone e o texto */
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background-color: #5c8ab3;
+            color: #fff;
+            border: 2px solid #5c8ab3;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+        }
+
+        .btn-email:hover {
+            background-color: #4a7296;
+            border-color: #4a7296;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+        }
+
+        .btn-email svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* --- BOTÃO RETORNAR (Estilo SITEFELIPE) --- */
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .btn-retornar:hover {
+            background: #5c8ab3;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Ajustes Responsivos para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 25px 20px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+                padding-bottom: 15px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            table {
+                width: 100%; 
+            }
+
+            .btn-retornar {
+                padding: 8px 20px;
+                font-size: 0.85rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ranking de Refrigerante</h1>
+        <h3>21/11/2026 Objetos</h3>
+
+<p>Este é meu ranking de refrigerantes, o meu top 10 dos melhores que já tive a oportunidade de tomar.</p>
+
+  <h2>1 - Dr. Pepper</h2>
+  <p>Sim, é um refrigerante com gosto de remédio infantil. Sabor cereja. E eu gosto dele justamente por este sabor. Tomava muito desse aí no Japão e, infelizmente, no Brasil é só importando, ou seja, uma latinha dele por aqui custa o equivalente a umas 7 latinhas de um refrigerante nacional. É caro; no Brasil consumi umas duas vezes somente, pelo preço proibitivo. Tem a versão sabor baunilha que é boa também, mas fico com a receita original.</p>
+
+  <h2>2 - Cini Gengibirra</h2>
+  <p>O refrigerante de gengibre é patrimônio cultural do município de Palmeira e do Estado do Paraná. Eu acho este refrigerante fantástico, e a melhor parte é que ele é nacional e existe abundantemente na minha cidade. O de 2 litros custa metade do preço da Coca de 2 litros em Curitiba e região. Muitos não gostam desse sabor, mas é só gengibre com pouca filtragem, uma receita de mais de 100 anos de colônias europeias da região.</p>
+
+  <h2>3 - Coca-Cola</h2>
+  <p>Coca é coca, não pode ficar fora do top 3. Hoje eu não vejo muita diferença da versão zero e da normal. Mas em calorias é absurda a mudança. Tomei outras cocas já, aquelas de café, a Cherry Coke nos anos 90 e outras variações… Mas fico com a original. Infelizmente o preço da coquinha só sobe, então consumo mais com pizza, hambúrguer ou no almoço de domingo; fora destes cenários eu não encaro uma coquinha.</p>
+
+  <h2>4 - Guaraná Antarctica</h2>
+  <p>É bom e refrescante. Dos guaranás do mercado, acho que nenhum bate o Antarctica. Associo a muitas coisas, principalmente àquela música da propaganda “Sou louco por pipoca e Guaraná!”. Acho que o guaraná é a melhor pedida para tomar em um dia quente, sem estar se alimentando de nada. Um copo de guaraná trincando cura qualquer calor.</p>
+
+  <h2>5 - Água Tônica</h2>
+  <p>Não sei se isso é refrigerante, mas eu classifico como um, assim como aquelas H2OO. Água tônica vai muito bem em drinks e, mesmo tomando sozinha, o gosto de quinino adstringente na sua garganta é fabuloso. Realmente um sabor diferenciado e que marca. Tomo sempre que possível; gostaria que tivesse garrafa de 2 litros dessa aqui, mas só acho latinha.</p>
+
+  <h2>6 - Ginger Ale</h2>
+  <p>Este é de gengibre também, mas é um sabor bem mais brando que o da Cini. Tomei no exterior e, para mim, ele se equipara a um guaraná de gringo. Ele é muito refrescante e é muito bem filtrado. Quando tenho oportunidade tomo este aqui, mas são raras as vezes que tenho acesso. Não sei se tem para comprar no Brasil, mas o mercado municipal deve ter sim, em lojas especializadas de bebidas. O preço deve ser salgado.</p>
+
+  <h2>7 - Tubaína de bar</h2>
+  <p>Este aqui nem tem marca direito, é a clássica tubaína de bar, casco de cerveja marrom. Tem várias marcas dependendo da região; eu lembro de uma chamada tubaína Funada que era ótima. Acho que este aqui no sabor tutti-frutti é a melhor invenção para comer com um X-Tudo, ou como eu fazia muito no bar Montesquieu em Curitiba, quando comia com um X-Montanha e um X-pastel. É um refrigerante cheio de lembranças do ensino médio e, sempre que vou a um bar, prefiro ele a uma cerveja.</p>
+
+  <h2>8 - Pepsi Twist</h2>
+  <p>A única Pepsi que presta. E sim, é boa demais a combinação de Pepsi com limão. Me lembra aqueles comerciais de TV com os limões conversando. Pepsi Twist é um refri que refinou em muito o sabor original da Pepsi. A Pepsi original e a Black são extremamente sem graça, mas com limão a coisa muda.</p>
+
+  <h2>9 - Soda Limonada Antarctica</h2>
+  <p>Outro refri da Antarctica na lista, desta vez a soda. Ao meu ver, muito melhor que Sprite. Sem dúvidas este aqui é mais difícil de encontrar hoje em dia, mas na minha infância tomava muito dela. Tem sabor de festa infantil, salgadinho e bolo. O refrigerante de limão é muito bom e recomendo a todos tomar este aqui; é melhor que qualquer outro que existe por aí.</p>
+
+  <h2>10 - Schweppes Citrus</h2>
+  <p>Melhor refri de citrus no Brasil atualmente. Schweppes também tem outros sabores, tem até um ginger ale de Schweppes que é bem ruim. Mas no geral, o Citrus deles é o melhor. Normalmente vejo em festas de gente abastada para combinar com bebidas alcoólicas. Tomar puro é possível e é muito bom, mas acho que o público desse refri já prefere misturar com outras bebidas.</p>
+
+  <p>E os demais? Não chegam nem perto destes 10. Sprite, Sukita, Wimi, Fanta, Laranjinha da Serra, Guaraná Jesus, Dolly, Kuat, Taí e Cini Framboesa eu evito com todas as forças.</p>
+    <a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+<!-- Botão de E-mail com ícone SVG centralizado -->
+        <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Comente me enviando um email
+        </a>
+                <!-- begin www.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+
+    </div>
+</body>
+</html>
