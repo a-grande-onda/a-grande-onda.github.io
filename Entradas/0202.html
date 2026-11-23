@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="Buscando coisas difíceis" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/banner1200x630.jpg" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+
+    <title>Buscando coisas difíceis</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: flex-start;     
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            /* Garante que os elementos flex internos respeitem o alinhamento central */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Garante que os parágrafos ocupem a largura total do container */
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        /* CENTRALIZAÇÃO DO TÍTULO DA TABELA E DA TABELA */
+        h2 {
+            text-align: center; 
+            margin-top: 40px;
+            color: #222;
+        }
+
+        table {
+            margin: 20px auto; 
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 500px; 
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8f8f8;
+        }
+
+        ul {
+            margin-bottom: 25px;
+            width: 100%;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        li p {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* --- ESTILOS PARA O VÍDEO RESPONSIVO --- */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            border-radius: 6px; /* Leve arredondamento para combinar com o layout */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+         /* --- BOTÃO DE CONTATO POR E-MAIL --- */
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* Espaço entre o ícone e o texto */
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background-color: #5c8ab3;
+            color: #fff;
+            border: 2px solid #5c8ab3;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+        }
+
+        .btn-email:hover {
+            background-color: #4a7296;
+            border-color: #4a7296;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+        }
+
+        .btn-email svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* --- BOTÃO RETORNAR (Estilo SITEFELIPE) --- */
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .btn-retornar:hover {
+            background: #5c8ab3;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Ajustes Responsivos para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 25px 20px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+                padding-bottom: 15px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            table {
+                width: 100%; 
+            }
+
+            .btn-retornar {
+                padding: 8px 20px;
+                font-size: 0.85rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Buscando coisas difíceis</h1>
+        <h3>23/11/2026 Impressões</h3>
+
+<p>Vi um vídeo outro dia sobre a importância de fazer coisas difíceis em sua vida. O foco do vídeo era meio coisa de coach: “Coisas difíceis te preparam para as adversidades da vida / Coisas difíceis te tornam resiliente em relação a coisas fáceis / Coisas difíceis são fruto de um esforço contínuo e essa habilidade é importante”.</p>
+
+<p>Por ora, vi o vídeo descrente dessa proposição. Mas eu gosto de coisas difíceis também. Estou aprendendo japonês novamente e acho que mais difícil que isto só o árabe ou o mandarim. É difícil, leva anos para ter um nível fluente. E realmente é um desafio de resistência bem maior que o que precisei para aprender inglês ou qualquer língua latina.</p>
+
+<p>Tenho outras metas acadêmicas que considero difíceis. Mais algumas pós-graduações e cursos que quero concluir nos próximos anos. Mas sempre haverá um curso mais difícil pela frente, e se quiser dificuldade de verdade, vá fazer um curso no exterior em uma faculdade renomada.</p>
+
+<p>E aí vem a dificuldade do dinheiro. Pessoalmente, estou em uma situação mais confortável em que não trabalho unicamente para sobreviver. Não sou abastado financeiramente a ponto de não precisar de dinheiro ou trabalho na vida, mas tenho uma reserva de segurança que muitos não possuem. Posso ficar mais de dois anos inativo vivendo do que tenho guardado e minhas contas não iriam me solapar. No entanto, para muitos, simplesmente manter as contas é uma dificuldade hercúlea. E para uma parcela da população o dinheiro é sobrevivência real, cada centavo conta na compra de alimentação básica.</p>
+
+<p>Tenho problemas relacionados à saúde, várias doenças crônicas me afligem. No entanto, isto é contornado por acesso à saúde privada e possibilidade de comprar remédios. Consigo consultas com certa facilidade, escolho a data e compro os remédios com antecedência, evitando qualquer tipo de sinistro (ficar sem remédio). Há quem viva com doenças em condições bem complexas de se lidar. E a dificuldade nem sempre é uma escolha, mas é imposta.</p>
+
+<p>Eu acredito que a dificuldade na vida, a partir do momento em que você alcança um patamar de tranquilidade, é completamente regulada muitas vezes por suas metas e objetivos. Você pode desejar coisas impossíveis de se realizar, ou estipular metas claras e fáceis. Há quem viva uma vida difícil pelas circunstâncias externas e há quem limite o seu crescimento desejando mais do que pode controlar, não alcançando e se sentindo culpado e inferiorizado.</p>
+
+<p>Dito isto, vale a pena almejar coisas difíceis? Acredito que se sua vida já é um inferno, buscar mais dificuldade é um tiro no pé. Resolva seus assuntos antes, abrande sua condição e só depois vá atrás de conquistas pessoais mais complexas. Nada se sustenta sem uma base, e sem uma estrutura sólida tanto emocional, profissional, financeira quanto interpessoal, nada se cria.</p>
+
+<p>Quando vejo os vídeos novamente, eu penso que há muito privilégio para alguém decidir por conta própria correr uma maratona, escalar uma montanha, navegar sozinho no mar, ter um hobby caro, ter sucesso em uma empresa, ou ter a vantagem de poder destinar uma porção significativa do seu tempo para malhar o bumbum, ser excelente no yoga ou ter um abdômen trincado. É preciso estar bem longe de um cenário de sobrevivência para desejar pessoalmente algo extremamente difícil de alcançar. Para os menos abastados, a vida em si já é este jogo no modo difícil.</p>
+
+<p>E ao final, eu acredito que a dificuldade pode te levar mais longe. Ninguém alcança algo grandioso assistindo TV ou rolando feed no sofá de casa. Coisas maiores são frutos de alocação de tempo e esforço maior que ser um consumidor passivo. O difícil é recompensador, embora nem sempre seja recompensado. Quando o indivíduo entende as conquistas como processos e não como um fim, muito se aprende nesta busca por realizar algo verdadeiramente desafiador na vida. No final, todos morreremos, mas os desafios pessoais serão lembrados por você a sua vida toda. A dificuldade é mensurada e calibrada por você. Independentemente da aprovação do outro, você conseguiu!</p>
+
+<a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+<!-- Botão de E-mail com ícone SVG centralizado -->
+        <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Comente me enviando um email
+        </a>
+                <!-- begin www.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+
+    </div>
+</body>
+</html>
