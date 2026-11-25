@@ -111,12 +111,12 @@
             align-items: center;
         }
 
-        /* Configuração da imagem para ocupar no máximo 40% horizontalmente e ficar centralizada */
+        /* Configuração da imagem */
         .avatar-blog {
             max-width: 70%;
             height: auto;
             display: block;
-            margin: 0 auto 10px auto; /* Centraliza horizontalmente e dá margem abaixo */
+            margin: 0 auto 10px auto;
         }
 
         /* --- GRUPO DE BOTÕES EM LINHA (SITEFELIPE) --- */
@@ -202,7 +202,7 @@
             text-align: center; 
         }
 
-        /* Ajuste de larguras originais das colunas da tabela */
+        /* Larguras desktop */
         .tabela-principal th:nth-child(1),
         .tabela-principal td:nth-child(1) { width: 12%; color: #888; font-size: 0.9rem; }
         .tabela-principal th:nth-child(2),
@@ -320,15 +320,39 @@
         /* --- RESPONSIVIDADE --- */
         @media (max-width: 600px) {
             body { padding: 10px; }
-            .container { padding: 20px; border-radius: 12px; }
+            .container { padding: 16px; border-radius: 12px; }
             h1 { font-size: 1.5rem; }
             .menu-botoes { gap: 6px; }
             .btn-menu { padding: 8px 10px; font-size: 0.85rem; }
-            .tabela-principal { font-size: 0.85rem; }
-            .tabela-principal th { font-size: 0.75rem; letter-spacing: 0; }
-            .tabela-principal th, .tabela-principal td { padding: 8px 4px; }
-            .tabela-principal td:nth-child(1),
-            .tabela-principal td:nth-child(4) { font-size: 0.78rem; }
+
+            .tabela-principal { font-size: 0.82rem; }
+            .tabela-principal th { font-size: 0.72rem; letter-spacing: 0; }
+            .tabela-principal th, .tabela-principal td { padding: 8px 4px; vertical-align: top; }
+
+            /* Ajuste fino das colunas para mobile */
+            .tabela-principal th:nth-child(1),
+            .tabela-principal td:nth-child(1) {
+                width: 15%;
+                font-size: 0.75rem;
+                white-space: nowrap;
+            }
+            .tabela-principal th:nth-child(2),
+            .tabela-principal td:nth-child(2) {
+                width: 41%;
+                padding-right: 6px;
+            }
+            .tabela-principal th:nth-child(3),
+            .tabela-principal td:nth-child(3) {
+                width: 21%;
+                font-size: 0.78rem;
+            }
+            .tabela-principal th:nth-child(4),
+            .tabela-principal td:nth-child(4) {
+                width: 23%;
+                font-size: 0.74rem;
+                white-space: nowrap;
+            }
+
             .secao-botao-idioma { flex-direction: column; gap: 15px; }
             .texto-lateral-verde { width: 100%; text-align: center; }
             .texto-lateral-verde.direita { text-align: center; }
@@ -339,11 +363,6 @@
     </style>
 </head>
 <body>
-
-<!--<div class="contador-visitas">
-    <img src="https://hitscounter.dev/api/hit?url=felipebrasilblog.github.io&label=Visitantes&icon=broadcast&color=%23198754&message=&style=social&tz=Brazil%2FEast" alt="Contador de Visitas">
-</div>
--->
 
 <a href="/feed.xml" class="btn-rss" target="_blank">
     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 2px;"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
