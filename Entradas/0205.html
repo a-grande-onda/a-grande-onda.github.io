@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="RTS antigos e seu gameplay datado" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/banner1200x630.jpg" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+
+    <title>RTS antigos e seu gameplay datado</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body, html {
+            min-height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: flex-start;     
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px 50px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            text-align: left;
+            margin: 40px auto;
+            /* Garante que os elementos flex internos respeitem o alinhamento central */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Garante que os parágrafos ocupem a largura total do container */
+        p {
+            width: 100%;
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        h1, h3 {
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-weight: normal;
+            color: #666;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            width: 100%;
+        }
+
+        /* CENTRALIZAÇÃO DO TÍTULO DA TABELA E DA TABELA */
+        h2 {
+            text-align: center; 
+            margin-top: 40px;
+            color: #222;
+        }
+
+        table {
+            margin: 20px auto; 
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 500px; 
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f8f8f8;
+        }
+
+        ul {
+            margin-bottom: 25px;
+            width: 100%;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        li p {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* --- ESTILOS PARA O VÍDEO RESPONSIVO --- */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+            overflow: hidden;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            border-radius: 6px; /* Leve arredondamento para combinar com o layout */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+         /* --- BOTÃO DE CONTATO POR E-MAIL --- */
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px; /* Espaço entre o ícone e o texto */
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background-color: #5c8ab3;
+            color: #fff;
+            border: 2px solid #5c8ab3;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(92, 138, 179, 0.2);
+        }
+
+        .btn-email:hover {
+            background-color: #4a7296;
+            border-color: #4a7296;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(92, 138, 179, 0.3);
+        }
+
+        .btn-email svg {
+            fill: currentColor;
+            width: 20px;
+            height: 20px;
+        }
+
+        /* --- BOTÃO RETORNAR (Estilo SITEFELIPE) --- */
+        .btn-retornar {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .btn-retornar:hover {
+            background: #5c8ab3;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Ajustes Responsivos para Mobile */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 25px 20px;
+                margin: 20px auto;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+                padding-bottom: 15px;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            table {
+                width: 100%; 
+            }
+
+            .btn-retornar {
+                padding: 8px 20px;
+                font-size: 0.85rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>RTS antigos e seu gameplay datado</h1>
+        <h3>25/11/2026 Games</h3>
+
+<p>Nas últimas duas semanas venho jogando uns jogos de PC do gênero estratégia (RTS - Real Time Strategy) antigos. Na realidade, estou jogando as versões remaster lançadas recentemente com melhorias de resolução para monitores modernos. Mas o gameplay original é mantido, e os problemas antigos se mantêm.</p>
+
+<p>Command and Conquer (1995) e sua versão RED ALERT (1996) estão disponíveis na Steam por cerca de 30 reais em promoção. Quando este jogo saiu, vibrei de alegria, pois esperava por anos por este relançamento de um jogo que joguei pelos idos de 1995-1997 em meu antigo Pentium 166Mhz e Windows 95.</p>
+
+<p>Ok, o jogo continua bom, para quem tem o apelo nostálgico, mas as unidades deste jogo se movimentam de forma muito burra. Não tenho outra palavra para descrever, elas são simplesmente BURRAS. Vou te dar um exemplo, existe nesse jogo a possibilidade de atropelar unidades de soldados. Sim, o tanque ou carro de minério pode passar por cima de muitas unidades suas com morte instantânea. E as suas unidades parecem ser burras o suficiente para não desviar. O que fica tudo a cargo do jogador ficar realocando a posição de todo mundo, e esta realocação é meio aleatória, nem sempre as unidades vão onde você deseja. Usar infantaria é complicado, pois você tem que destinar um tempo e atenção absurda para que elas não sejam simplesmente atropeladas pelo inimigo. Ah, sim... quando é você que quer atropelar as unidades inimigas, elas magicamente desviam de quase tudo. Não sei se estou jogando errado ou se o jogo está roubando.</p>
+
+<p>Outro jogo que peguei para jogar foi o Age of Empires 2, nesse caso, você manda as unidades do ponto A ao ponto B e elas só vão. Ignoram qualquer luta no meio do caminho, e o objetivo delas é a movimentação e não se defender. Ou seja, se no meio da rota estipulada existirem inimigos, elas só fazem um desvio de rota, mas as unidades permitem serem atacadas e não revidam os ataques. Acredito eu que no Age of Mythology, próximo jogo da série, lançado em 2002, as unidades eram mais inteligentes. Pelo menos no Age of Empires 2 Definitive Edition o trabalho gráfico e de menus foi primoroso, se adequa muito à realidade atual e é um jogo competitivo que muita gente ainda joga. É um bom jogo, mas o gameplay está travado em alguns aspectos.</p>
+
+<p>E o StarCraft original de 1999, como anda? Mesma coisa, aqui no remaster você ainda tem uma limitação de 16 unidades por vez, se for infantaria, pois se forem unidades maiores você pode comandar menos unidades simultaneamente. O que faz com que você tenha que mandar um CTRL+1, CTRL+2 e ir gerenciando blocos de unidades. Até aí tudo bem, mas manter um ataque massivo com 48 unidades é controlar 3 grupos... controlar o ataque manualmente, esqueça. Você tem que deixar claro onde atacar, e se os seus bonecos estiverem com alvo uma construção inimiga e zergs vierem atacar sua equipe, eles não fazem NADA e vão morrer para os zergs porque estão travados no ataque da construção!! Senso de autopreservação zero das unidades. StarCraft funciona na base de grupos de ataque. Eu, como terrano, tentando atacar uma base zerg tive o mesmo problema do Age of Empires, você ordena que a unidade vá para um ponto no mapa e as unidades ignoram qualquer ataque inimigo. O pior, nem revidam, só aceitam ser mortas aos poucos. Então o cuidado com os grupos é redobrado aqui, e sua atenção é dividida entre 3 grupos de ataque (ou mais), sua economia da base e expansão territorial em busca de minérios e as limitações das barracas que produzem no máximo 5 unidades por vez (para os terranos).</p>
+
+<p>De qualquer forma, temos que considerar que são jogos antigos. Acredito que os RTSs novos não têm mais este problema de burrice das unidades. Acho que quando eu joguei o Command and Conquer Generals no início da década de 2000, a inteligência artificial que comandava as unidades era no mínimo inteligente o suficiente para saber que quando sua unidade é atacada ela deve se preservar e revidar o ataque, mesmo que tenha sido designada para ir até um ponto no mapa.</p>
+
+<p>Não sei como as coisas funcionam hoje. No futuro vou pegar pra jogar o C&amp;C Red Alert 2, Age of Mythology e o StarCraft 2 para saber se estes problemas dos anos 90 já foram corrigidos. No mais, gosto de poder jogar os jogos originais com os problemas originais. Na época nem achávamos que era problema, era só uma feature do jogo, não conhecíamos novas possibilidades de movimentação neste gênero. Mas é bom saber que as coisas mudam com o tempo. RTS hoje em 2026 é um gênero morto, embora tenhamos um teaser do StarCraft para lançamento em 2030 divulgado, acho que não ressuscitará nem a franquia e nem este tipo de jogo que peca muito por ser lento. Os MOBA já dominaram o espaço deixado pelos RTS e acho que uma nova era de ouro não volta mais.</p>
+
+<a href="/index.html" class="btn-retornar">Voltar para o Início</a>
+<!-- Botão de E-mail com ícone SVG centralizado -->
+        <a href="mailto:felipefelicio@gmail.com" class="btn-email">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Comente me enviando um email
+        </a>
+                <!-- begin www.htmlcommentbox.com -->
+        <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">Comment Box</a> is loading comments...</div>
+        <link rel="stylesheet" type="text/css" href="https://www.htmlcommentbox.com/static/skins/bootstrap/twitter-bootstrap.css?v=0" />
+        <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} (function(){var s=document.createElement("script"), l=hcb_user.PAGE || (""+window.location).replace(/'/g,"%27"), h="https://www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&mod=%241%24wq1rdBcg%24s.iwmvDuUJUevvraDre.z."+"&opts=16798&num=10&ts=1785275505711");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+        <!-- end www.htmlcommentbox.com -->
+
+    </div>
+</body>
+</html>
