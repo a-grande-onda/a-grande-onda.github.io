@@ -126,7 +126,7 @@
             gap: 10px;
             justify-content: center;
             width: 100%;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .btn-menu {
@@ -155,6 +155,19 @@
             text-decoration: none;
         }
 
+        /* Aviso superior da tabela (largura total sem colspan) */
+        .tabela-aviso {
+            width: 100%;
+            min-width: 0;
+            font-size: 0.95rem;
+            color: #5c8ab3;
+            line-height: 1.45;
+            border-bottom: 1px dashed #5c8ab3;
+            padding: 4px 0 14px 0;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+
         /* Wrapper seguro para a tabela */
         .tabela-wrapper {
             width: 100%;
@@ -168,7 +181,7 @@
             table-layout: fixed;
             border-collapse: collapse;
             font-size: 1rem;
-            margin: 15px 0 10px 0;
+            margin: 8px 0 10px 0;
         }
 
         .tabela-principal th, .tabela-principal td {
@@ -188,18 +201,6 @@
             text-transform: uppercase;
             font-size: 0.9rem;
             letter-spacing: 1px;
-        }
-
-        /* Estilo específico para a linha de aviso superior da tabela */
-        .tabela-aviso {
-            font-size: 0.95rem;
-            color: #5c8ab3;
-            text-transform: none;
-            letter-spacing: normal;
-            font-weight: normal;
-            border-bottom: 1px dashed #5c8ab3 !important;
-            padding-bottom: 15px;
-            text-align: center; 
         }
 
         /* Larguras desktop */
@@ -322,8 +323,10 @@
             body { padding: 10px; }
             .container { padding: 16px; border-radius: 12px; }
             h1 { font-size: 1.5rem; }
-            .menu-botoes { gap: 6px; }
+            .menu-botoes { gap: 6px; margin-bottom: 16px; }
             .btn-menu { padding: 8px 10px; font-size: 0.85rem; }
+
+            .tabela-aviso { font-size: 0.88rem; padding-bottom: 12px; }
 
             .tabela-principal { font-size: 0.82rem; }
             .tabela-principal th { font-size: 0.72rem; letter-spacing: 0; }
@@ -380,14 +383,13 @@
         <a href="/Cabecalho/arquivo.html" class="btn-menu">Arquivo</a>
     </div>
 
+    <div class="tabela-aviso">
+        Estas são as 10 postagens mais recentes do blog, acesse todos os posts clicando <a href="arquivogeral.html">aqui</a> ou navegue por Temas no botão acima.
+    </div>
+
     <div class="tabela-wrapper">
         <table class="tabela-principal">
             <thead>
-                <tr>
-                    <th colspan="4" class="tabela-aviso">
-                        Estas são as 10 postagens mais recentes do blog, acesse todos os posts clicando <a href="arquivogeral.html">aqui</a> ou navegue por Temas no botão acima.
-                    </th>
-                </tr>
                 <tr>
                     <th>Cód</th>
                     <th>Título do Artigo</th>
