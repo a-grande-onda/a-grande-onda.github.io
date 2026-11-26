@@ -3,14 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Leitura — Felipe Brasil Felicio</title>
 
     <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-K6NPWZF5"></script>
+=======
+
+    <link rel="icon" type="image/x-icon" href="/Imagens/favicon.png">
+
+    <meta property="og:site_name" content="A Grande Onda">
+    <meta property="og:title" content="A Grande Onda" />
+    <meta property="og:description" content="Altos e baixos da vida com A Grande Onda." />
+    <meta property="og:image" itemprop="image" content="https://a-grande-onda.github.io/Imagens/banner1200x630.jpg" />
+    <meta property="og:type" content="https://a-grande-onda.blog.br/" />
+
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-P3CTH96N"></script>
+>>>>>>> f8412826a362fecb2ec5b34b2fea8d2d0a8ab72d
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
     </script>
+<<<<<<< HEAD
     
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -51,11 +65,358 @@
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
+=======
+
+    <title>A Grande Onda</title>
+    <link rel="alternate" type="application/rss+xml" title="Feed RSS - Felipe Brasil Blog" href="/feed.xml" />
+    
+    <style>
+        /* Estilos Globais baseados no SITEFELIPE */
+        *, *::before, *::after { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        body { 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px; 
+            background-color: #f2f5f3; /* Fundo esverdeado claro do SITEFELIPE */
+            color: #1a1a1a;
+            font-family: 'Segoe UI', sans-serif;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        /* Container Principal (Estilo do Card do SITEFELIPE) */
+        .container { 
+            width: 100%;
+            max-width: 740px;
+            min-width: 0;
+            background: #fff; 
+            padding: 30px; 
+            border-radius: 20px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Alinhamento do Contador de Visitas */
+        .contador-visitas {
+            margin-bottom: 8px;
+        }
+
+        /* Estilo do Botão RSS Pequeno */
+        .btn-rss {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid #5c8ab3;
+            color: #5c8ab3;
+            background: transparent;
+            transition: 0.3s;
+            margin-bottom: 15px;
+        }
+
+        .btn-rss:hover {
+            background: #5c8ab3;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Título do Blog (Estilo H1 do SITEFELIPE) */
+        h1 { 
+            font-size: 1.8rem; 
+            margin-bottom: 20px; 
+            color: #354f66; 
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Configuração da imagem */
+        .avatar-blog {
+            max-width: 70%;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px auto;
+        }
+
+        /* --- GRUPO DE BOTÕES EM LINHA (SITEFELIPE) --- */
+        .menu-botoes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .btn-menu {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: 0.3s;
+            background: transparent;
+            border: 2px solid #5c8ab3;
+            color: #5c8ab3;
+            cursor: pointer;
+            flex: 1;
+            max-width: 120px;
+            min-width: 0;
+        }
+
+        .btn-menu:hover {
+            background: #5c8ab3;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Aviso superior da tabela (largura total sem colspan) */
+        .tabela-aviso {
+            width: 100%;
+            min-width: 0;
+            font-size: 0.95rem;
+            color: #5c8ab3;
+            line-height: 1.45;
+            border-bottom: 1px dashed #5c8ab3;
+            padding: 4px 0 14px 0;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+
+        /* Wrapper seguro para a tabela */
+        .tabela-wrapper {
+            width: 100%;
+            min-width: 0;
+            overflow-x: auto;
+        }
+
+        /* Tabela Principal de Entradas (Estilo do SITEFELIPE) */
+        .tabela-principal {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+            font-size: 1rem;
+            margin: 8px 0 10px 0;
+        }
+
+        .tabela-principal th, .tabela-principal td {
+            text-align: left;
+            padding: 12px 10px;
+            border-bottom: 1px solid #e8eee9;
+            color: #444;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .tabela-principal th {
+            color: #5c8ab3;
+            font-weight: 600;
+            background: transparent;
+            border-bottom: 2px solid #5c8ab3;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* Larguras desktop */
+        .tabela-principal th:nth-child(1),
+        .tabela-principal td:nth-child(1) { width: 12%; color: #888; font-size: 0.9rem; }
+        .tabela-principal th:nth-child(2),
+        .tabela-principal td:nth-child(2) { width: 50%; }
+        .tabela-principal th:nth-child(3),
+        .tabela-principal td:nth-child(3) { width: 20%; }
+        .tabela-principal th:nth-child(4),
+        .tabela-principal td:nth-child(4) { width: 18%; text-align: right; color: #666; }
+        .tabela-principal th:nth-child(4) { text-align: right; color: #5c8ab3; font-size: 0.9rem; }
+        .tabela-principal th:nth-child(1) { color: #5c8ab3; font-size: 0.9rem; }
+
+        /* Links Gerais */
+        a { 
+            color: #5c8ab3; 
+            text-decoration: none; 
+            font-weight: 500; 
+        }
+        a:hover { 
+            text-decoration: underline; 
+            color: #5c8ab3; 
+        }
+
+        /* --- CONFIGURAÇÃO ADICIONADA: TEXTOS LATERAIS --- */
+        .secao-botao-idioma {
+            width: 100%;
+            min-width: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .texto-lateral-verde {
+            font-size: 1rem; 
+            font-weight: bold;
+            color: #5c8ab3;
+            width: 30%;
+            min-width: 0;
+        }
+
+        .texto-lateral-verde a {
+            font-weight: bold;
+            color: #5c8ab3;
+        }
+
+        .texto-lateral-verde.direita {
+            text-align: right;
+        }
+
+        /* Bloco para agrupar o botão e o webring verticalmente no centro */
+        .bloco-central {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            width: 40%;
+            min-width: 0;
+        }
+
+        /* Estilização do texto do Webring */
+        .webring {
+            font-size: 0.9rem;
+            color: #444;
+            text-align: center;
+            max-width: 100%;
+        }
+
+        .btn-tema {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .btn-tema:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .solido-azul { 
+            background-color: #5c8ab3; 
+            border: 1px solid #5c8ab3; 
+        }
+        
+        .solido-azul:hover { 
+            background-color: #436d94; 
+            border-color: #436d94; 
+        }
+
+        /* --- SEÇÃO DE CRÉDITOS (FORA DO FRAME BRANCO) --- */
+        .creditos-rodape {
+            width: 100%;
+            max-width: 740px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #5c8ab3; 
+            font-weight: 500;
+            line-height: 1.4;
+            overflow-wrap: anywhere;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            .container { padding: 16px; border-radius: 12px; }
+            h1 { font-size: 1.5rem; }
+            .menu-botoes { gap: 6px; margin-bottom: 16px; }
+            .btn-menu { padding: 8px 10px; font-size: 0.85rem; }
+
+            .tabela-aviso { font-size: 0.88rem; padding-bottom: 12px; }
+
+            .tabela-principal { font-size: 0.82rem; }
+            .tabela-principal th { font-size: 0.72rem; letter-spacing: 0; }
+            .tabela-principal th, .tabela-principal td { padding: 8px 4px; vertical-align: top; }
+
+            /* Ajuste fino das colunas para mobile */
+            .tabela-principal th:nth-child(1),
+            .tabela-principal td:nth-child(1) {
+                width: 15%;
+                font-size: 0.75rem;
+                white-space: nowrap;
+            }
+            .tabela-principal th:nth-child(2),
+            .tabela-principal td:nth-child(2) {
+                width: 41%;
+                padding-right: 6px;
+            }
+            .tabela-principal th:nth-child(3),
+            .tabela-principal td:nth-child(3) {
+                width: 21%;
+                font-size: 0.78rem;
+            }
+            .tabela-principal th:nth-child(4),
+            .tabela-principal td:nth-child(4) {
+                width: 23%;
+                font-size: 0.74rem;
+                white-space: nowrap;
+            }
+
+            .secao-botao-idioma { flex-direction: column; gap: 15px; }
+            .texto-lateral-verde { width: 100%; text-align: center; }
+            .texto-lateral-verde.direita { text-align: center; }
+            .bloco-central { width: 100%; gap: 10px; }
+            .btn-tema { padding: 12px 8px; font-size: 0.9rem; border-radius: 10px; }
+            .avatar-blog { max-width: 50%; }
+>>>>>>> f8412826a362fecb2ec5b34b2fea8d2d0a8ab72d
         }
     </style>
 </head>
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen transition-colors duration-200 flex flex-col justify-between">
 
+<<<<<<< HEAD
     <!-- Header / Navbar -->
     <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
@@ -173,6 +534,140 @@
             © 2026 Felipe Brasil Felicio. Copie mas Cite.
         </div>
     </footer>
+=======
+<a href="/feed.xml" class="btn-rss" target="_blank">
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 2px;"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
+    RSS Feed
+</a>
+
+<div class="container">
+    <img src="/Imagens/kanagawaavatar.jpg" alt="A Grande Onda" class="avatar-blog" />
+    
+    <h1>A Grande Onda</h1>
+
+    <div class="menu-botoes">
+        <a href="/Cabecalho/sobre.html" class="btn-menu">Sobre</a>
+        <a href="/Cabecalho/temas.html" class="btn-menu">Temas</a>
+        <a href="/Cabecalho/arquivo.html" class="btn-menu">Arquivo</a>
+    </div>
+
+    <div class="tabela-aviso">
+        Estas são as 10 postagens mais recentes do blog, acesse todos os posts clicando <a href="arquivogeral.html">aqui</a> ou navegue por Temas no botão acima.
+    </div>
+
+    <div class="tabela-wrapper">
+        <table class="tabela-principal">
+            <thead>
+                <tr>
+                    <th>Cód</th>
+                    <th>Título do Artigo</th>
+                    <th>Tema</th>
+                    <th style="text-align: right;">Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#0205</td>
+                    <td><a href="/Entradas/0205.html">RTS antigos e seu gameplay datado</a></td>
+                    <td><a href="/Classes/games.html">Games</a></td>
+                    <td style="text-align: right;">25/11/2026</td>
+                </tr>
+                <tr>
+                    <td>#0204</td>
+                    <td><a href="/Entradas/0204.html">May's Resolutions Breakout</a></td>
+                    <td><a href="/Classes/inenglish.html">In English</a></td>
+                    <td style="text-align: right;">24/11/2026</td>
+                </tr>
+                <tr>
+                    <td>#0203</td>
+                    <td><a href="/Entradas/0203.html">Dando entrada em Neuropsicopedagogia e TEA</a></td>
+                    <td><a href="/Classes/educacao.html">Educação</a></td>
+                    <td style="text-align: right;">24/11/2026</td>
+                </tr>
+                <tr>
+                    <td>#0202</td>
+                    <td><a href="/Entradas/0202.html">Buscando coisas difíceis</a></td>
+                    <td><a href="/Classes/impressoes.html">Impressões</a></td>
+                    <td style="text-align: right;">23/11/2026</td>
+                </tr>
+                <tr>
+                    <td>#0201</td>
+                    <td><a href="/Entradas/0201.html">Houston - Cover de KIRINJI</a></td>
+                    <td><a href="/Classes/youtube.html">YouTube</a></td>
+                    <td style="text-align: right;">22/11/2026</td>
+                </tr>
+                <tr>
+                    <td>#0200</td>
+                    <td><a href="/Entradas/0200.html">Ranking de Refrigerante</a></td>
+                    <td><a href="/Classes/listas.html">Listas</a></td>
+                    <td style="text-align: right;">21/11/2026</td>
+                </tr>
+                <tr>
+                    <td>#0199</td>
+                    <td><a href="/Entradas/0199.html">A visão de mundo do outro na internet (e fora dela)</a></td>
+                    <td><a href="/Classes/tecnologia.html">Tecnologia</a></td>
+                    <td style="text-align: right;">17/11/2026</td>
+                </tr>
+                <tr>
+                    <td>#0198</td>
+                    <td><a href="/Entradas/0198.html">O ano sem Steam</a></td>
+                    <td><a href="/Classes/games.html">Games</a></td>
+                    <td style="text-align: right;">16/11/2026</td>
+                </tr>
+                <tr>
+                    <td>#0197</td>
+                    <td><a href="/Entradas/0197.html">Expectations and Goals 2027</a></td>
+                    <td><a href="/Classes/inenglish.html">In English</a></td>
+                    <td style="text-align: right;">15/11/2026</td>
+                </tr>
+                <tr>
+                    <td>#0196</td>
+                    <td><a href="/Entradas/0196.html">Quero-querinhos, o retorno</a></td>
+                    <td><a href="/Classes/registros.html">Registros</a></td>
+                    <td style="text-align: right;">13/11/2026</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="secao-botao-idioma">
+        <div class="texto-lateral-verde">AI-free content</div>
+        
+        <div class="bloco-central">
+            <a href="/Classes/inenglish.html" class="btn-tema solido-azul">Posts In English here</a>
+            <div class="webring">
+                <a href="https://xn--sr8hvo.ws/previous">←</a>
+                An <a href="https://xn--sr8hvo.ws">IndieWeb Webring</a> 🕸💍
+                <a href="https://xn--sr8hvo.ws/next">→</a>
+            </div>
+        </div>
+        
+        <div class="texto-lateral-verde direita">
+            <a href="/Cabecalho/blogroll.html">My Blogroll</a>
+        </div>
+    </div>
+</div>
+
+<div class="creditos-rodape">
+    <ul>
+        <li><a href="https://github.com/a-grande-onda" rel="me">@a-grande-onda on Github</a></li>
+        <li>contato: <a href="mailto:felipefelicio@gmail.com" rel="me">felipefelicio@gmail.com</a></li>
+        
+        <div class="h-card">
+            <a rel="me" class="u-url p-name" href="https://a-grande-onda.blog.br/">
+                A Grande Onda
+            </a>
+            <img class="u-photo" src="/Imagens/onda500.png" style="display: none;" alt="Felipe Brasil Felicio" />
+            <data class="p-note" value="Life's ups and downs like the great wave. Posts in English and Portuguese"></data>
+        </div>  
+        
+        <li>
+            <a href="https://www.felipebf.com.br">Felipe Brasil Felicio</a>
+        </li>
+    </ul>
+    <div>© 2026 - 2026</div>
+</div>
+>>>>>>> f8412826a362fecb2ec5b34b2fea8d2d0a8ab72d
 
     <!-- Script Alternador de Tema Dark/Light -->
     <script>
